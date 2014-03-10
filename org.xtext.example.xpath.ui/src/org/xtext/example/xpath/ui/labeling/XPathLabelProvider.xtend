@@ -4,6 +4,7 @@
 package org.xtext.example.xpath.ui.labeling
 
 import com.google.inject.Inject
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * Provides labels for a EObjects.
@@ -26,4 +27,8 @@ class XPathLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 //	def image(Greeting ele) {
 //		'Greeting.gif'
 //	}
+
+   def text(EObject object) {
+   	  object.getClass().getName();
+   }
 }
