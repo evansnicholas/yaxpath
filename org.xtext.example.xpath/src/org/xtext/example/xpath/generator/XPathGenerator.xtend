@@ -6,6 +6,10 @@ package org.xtext.example.xpath.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.xtext.example.xpath.xPath.*
+import org.eclipse.emf.ecore.EObject;
+
+import java.lang.StringBuilder
 
 /**
  * Generates code from your model files on save.
@@ -15,10 +19,35 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 class XPathGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		val sb = new StringBuilder() 
+		for (e: resource.allContents.toIterable){
+			sb.append(e.compile)
+		}
+		fsa.generateFile("generation.x", sb)
 	}
+	
+	def dispatch compile(PathExpr pathExpr) {
+		'''Found path expression with: 
+		   single expression = «pathExpr.singlePath»
+		   double = «pathExpr.doublePath»
+		   path = «pathExpr.path»
+		   
+		'''
+	}
+	
+	def dispatch compile(RelativePathExpr relPathExpr) {
+		'''Found RelativePathExpr: 
+		   left expression = «relPathExpr.left.class.name»		   
+		   «FOR f:relPathExpr.rights»
+		     Right expression:«f.class.name»
+		   «ENDFOR»
+		   End of RelativePathExpression
+		   
+		'''
+	}
+	
+	def dispatch compile(EObject o) {
+		""
+	}
+	
 }

@@ -3,9 +3,18 @@
  */
 package org.xtext.example.xpath.generator;
 
+import java.util.Arrays;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.RelativePathExpr;
+import org.xtext.example.xpath.xPath.StepExpr;
 
 /**
  * Generates code from your model files on save.
@@ -15,5 +24,86 @@ import org.eclipse.xtext.generator.IGenerator;
 @SuppressWarnings("all")
 public class XPathGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    StringBuilder _stringBuilder = new StringBuilder();
+    final StringBuilder sb = _stringBuilder;
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    for (final EObject e : _iterable) {
+      CharSequence _compile = this.compile(e);
+      sb.append(_compile);
+    }
+    fsa.generateFile("generation.x", sb);
+  }
+  
+  protected CharSequence _compile(final PathExpr pathExpr) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Found path expression with: ");
+    _builder.newLine();
+    _builder.append("\t\t   ");
+    _builder.append("single expression = ");
+    RelativePathExpr _singlePath = pathExpr.getSinglePath();
+    _builder.append(_singlePath, "\t\t   ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t   ");
+    _builder.append("double = ");
+    RelativePathExpr _doublePath = pathExpr.getDoublePath();
+    _builder.append(_doublePath, "\t\t   ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t   ");
+    _builder.append("path = ");
+    RelativePathExpr _path = pathExpr.getPath();
+    _builder.append(_path, "\t\t   ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t   ");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final RelativePathExpr relPathExpr) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Found RelativePathExpr: ");
+    _builder.newLine();
+    _builder.append("\t\t   ");
+    _builder.append("left expression = ");
+    StepExpr _left = relPathExpr.getLeft();
+    Class<? extends StepExpr> _class = _left.getClass();
+    String _name = _class.getName();
+    _builder.append(_name, "\t\t   ");
+    _builder.append("\t\t   ");
+    _builder.newLineIfNotEmpty();
+    {
+      EList<StepExpr> _rights = relPathExpr.getRights();
+      for(final StepExpr f : _rights) {
+        _builder.append("\t\t   ");
+        _builder.append("Right expression:");
+        Class<? extends StepExpr> _class_1 = f.getClass();
+        String _name_1 = _class_1.getName();
+        _builder.append(_name_1, "\t\t   ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t\t   ");
+    _builder.append("End of RelativePathExpression");
+    _builder.newLine();
+    _builder.append("\t\t   ");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final EObject o) {
+    return "";
+  }
+  
+  public CharSequence compile(final EObject pathExpr) {
+    if (pathExpr instanceof PathExpr) {
+      return _compile((PathExpr)pathExpr);
+    } else if (pathExpr instanceof RelativePathExpr) {
+      return _compile((RelativePathExpr)pathExpr);
+    } else if (pathExpr != null) {
+      return _compile(pathExpr);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(pathExpr).toString());
+    }
   }
 }

@@ -29,7 +29,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////Removed ? from "/" singlePath=RelativePathExpr? in RelativePathExpr because this caused the grammar to be 
 		////ambiguous, couldn't work out how to solve this.
-		////Did the same for occInd=OccurenceIndicator? This also gave an ambiguity error.
+		////Did the same for occInd=OccurenceIndicator? This also gave an ambiguity error but should be addressed.
 		//Expr:
 		//	exprSingle=ExprSingle ("," exprsSingle+=ExprSingle)*;
 		public ParserRule getRule() { return rule; }
@@ -2369,7 +2369,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Removed ? from "/" singlePath=RelativePathExpr? in RelativePathExpr because this caused the grammar to be 
 	////ambiguous, couldn't work out how to solve this.
-	////Did the same for occInd=OccurenceIndicator? This also gave an ambiguity error.
+	////Did the same for occInd=OccurenceIndicator? This also gave an ambiguity error but should be addressed.
 	//Expr:
 	//	exprSingle=ExprSingle ("," exprsSingle+=ExprSingle)*;
 	public ExprElements getExprAccess() {
