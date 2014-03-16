@@ -19,16 +19,19 @@ import org.xtext.example.xpath.xPath.AxisStep;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.RelSingle;
 import org.xtext.example.xpath.xPath.RelativePathExpr;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.Wildcard;
 
@@ -48,7 +51,13 @@ public class XPathGenerator implements IGenerator {
     for (final ValueExpr e : _filter) {
       {
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("def xpath(elem: Elem): Elem = {");
+        _builder.append("def xpath(elem: Elem): IndexedSeq[Elem] = {");
+        _builder.newLine();
+        _builder.append("\t\t\t\t  ");
+        _builder.append("val documentElem = Elem(QName(\"documentNode\"))");
+        _builder.newLine();
+        _builder.append("                  ");
+        _builder.append("val totalElem = documentElem.withChildren(Vector(elem))");
         _builder.newLine();
         _builder.append("\t\t\t      ");
         CharSequence _compile = this.compile(e);
@@ -74,7 +83,7 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final RelSingle rs) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("elem.filterChildElems(");
+    _builder.append("totalElem.filterChildElems(");
     RelativePathExpr _relPathExpr = rs.getRelPathExpr();
     StepExpr _step = _relPathExpr.getStep();
     Object _compile = this.compile(_step);
@@ -103,11 +112,11 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final Single s) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".filterChildElems(");
+    _builder.append(".flatMap {  _.filterChildElems(");
     StepExpr _step = s.getStep();
     Object _compile = this.compile(_step);
     _builder.append(_compile, "");
-    _builder.append(")");
+    _builder.append(") }");
     return _builder;
   }
   
@@ -174,11 +183,12 @@ public class XPathGenerator implements IGenerator {
   protected CharSequence _compile(final NameTest nat) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      String _qName = nat.getQName();
+      QName _qName = nat.getQName();
       boolean _notEquals = (!Objects.equal(_qName, null));
       if (_notEquals) {
-        String _qName_1 = nat.getQName();
-        _builder.append(_qName_1, "");
+        QName _qName_1 = nat.getQName();
+        Object _compile = this.compile(_qName_1);
+        _builder.append(_compile, "");
       }
     }
     {
@@ -186,8 +196,8 @@ public class XPathGenerator implements IGenerator {
       boolean _notEquals_1 = (!Objects.equal(_wildcard, null));
       if (_notEquals_1) {
         Wildcard _wildcard_1 = nat.getWildcard();
-        Object _compile = this.compile(_wildcard_1);
-        _builder.append(_compile, "");
+        Object _compile_1 = this.compile(_wildcard_1);
+        _builder.append(_compile_1, "");
       }
     }
     return _builder;
@@ -239,6 +249,16 @@ public class XPathGenerator implements IGenerator {
     return _builder;
   }
   
+  protected CharSequence _compile(final UnprefixedName un) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("EName(\"");
+    NCName _localPart = un.getLocalPart();
+    String _ncName = _localPart.getNcName();
+    _builder.append(_ncName, "");
+    _builder.append("\")");
+    return _builder;
+  }
+  
   protected CharSequence _compile(final EObject o) {
     return null;
   }
@@ -252,6 +272,8 @@ public class XPathGenerator implements IGenerator {
       return _compile((RelSingle)axs);
     } else if (axs instanceof Single) {
       return _compile((Single)axs);
+    } else if (axs instanceof UnprefixedName) {
+      return _compile((UnprefixedName)axs);
     } else if (axs instanceof AbbrevForwardStep) {
       return _compile((AbbrevForwardStep)axs);
     } else if (axs instanceof ForwardStep) {

@@ -51,7 +51,9 @@ import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrefixedName;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
 import org.xtext.example.xpath.xPath.RelDouble;
@@ -70,6 +72,7 @@ import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
 import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
@@ -438,6 +441,21 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNCName(NCName object)
       {
         return createNCNameAdapter();
+      }
+      @Override
+      public Adapter caseQName(QName object)
+      {
+        return createQNameAdapter();
+      }
+      @Override
+      public Adapter casePrefixedName(PrefixedName object)
+      {
+        return createPrefixedNameAdapter();
+      }
+      @Override
+      public Adapter caseUnprefixedName(UnprefixedName object)
+      {
+        return createUnprefixedNameAdapter();
       }
       @Override
       public Adapter caseRelSingle(RelSingle object)
@@ -1387,6 +1405,51 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNCNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.QName <em>QName</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.QName
+   * @generated
+   */
+  public Adapter createQNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.PrefixedName <em>Prefixed Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.PrefixedName
+   * @generated
+   */
+  public Adapter createPrefixedNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.UnprefixedName <em>Unprefixed Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.UnprefixedName
+   * @generated
+   */
+  public Adapter createUnprefixedNameAdapter()
   {
     return null;
   }

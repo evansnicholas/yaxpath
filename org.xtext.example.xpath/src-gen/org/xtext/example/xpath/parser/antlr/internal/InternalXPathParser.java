@@ -21,10 +21,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_VALUECOMP", "RULE_GENERALCOMP", "RULE_NODECOMP", "RULE_FORWARDAXIS", "RULE_REVERSEAXIS", "RULE_ABBREVREVERSESTEP", "RULE_ID", "RULE_CONTEXTITEMEXPR", "RULE_STRINGLITERAL", "RULE_INTLITERAL", "RULE_DECIMALLITERAL", "RULE_DOUBLELITERAL", "RULE_EMPTYSEQUENCETYPE", "RULE_EMPTYITEMTYPE", "RULE_COMMENTTEST", "RULE_TEXTTEST", "RULE_ANYKINDTEST", "RULE_WS", "','", "'return'", "'for'", "'$'", "'in'", "'some'", "'every'", "'satisfies'", "'if'", "'('", "')'", "'then'", "'else'", "'or'", "'and'", "'to'", "'+'", "'-'", "'*'", "'div'", "'idiv'", "'mod'", "'union'", "'|'", "'intersect'", "'except'", "'instance'", "'of'", "'treat'", "'as'", "'castable'", "'cast'", "'/'", "'//'", "'@'", "':'", "'['", "']'", "'?'", "'document-node'", "'processing-instruction'", "'attribute'", "'schema-attribute'", "'element'", "'schema-element'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_VALUECOMP", "RULE_GENERALCOMP", "RULE_NODECOMP", "RULE_FORWARDAXIS", "RULE_REVERSEAXIS", "RULE_ABBREVREVERSESTEP", "RULE_CONTEXTITEMEXPR", "RULE_STRINGLITERAL", "RULE_INTLITERAL", "RULE_DECIMALLITERAL", "RULE_DOUBLELITERAL", "RULE_EMPTYSEQUENCETYPE", "RULE_EMPTYITEMTYPE", "RULE_ID", "RULE_COMMENTTEST", "RULE_TEXTTEST", "RULE_ANYKINDTEST", "RULE_WS", "','", "'return'", "'for'", "'$'", "'in'", "'some'", "'every'", "'satisfies'", "'if'", "'('", "')'", "'then'", "'else'", "'or'", "'and'", "'to'", "'+'", "'-'", "'*'", "'div'", "'idiv'", "'mod'", "'union'", "'|'", "'intersect'", "'except'", "'instance'", "'of'", "'treat'", "'as'", "'castable'", "'cast'", "'/'", "'//'", "'@'", "':'", "'['", "']'", "'?'", "'document-node'", "'processing-instruction'", "'attribute'", "'schema-attribute'", "'element'", "'schema-element'"
     };
-    public static final int RULE_INTLITERAL=13;
-    public static final int RULE_ID=10;
+    public static final int RULE_ID=17;
+    public static final int RULE_INTLITERAL=12;
     public static final int T__66=66;
     public static final int T__64=64;
     public static final int T__29=29;
@@ -52,7 +52,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int RULE_STRINGLITERAL=12;
+    public static final int RULE_STRINGLITERAL=11;
     public static final int T__59=59;
     public static final int RULE_COMMENTTEST=18;
     public static final int RULE_FORWARDAXIS=7;
@@ -68,10 +68,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__48=48;
-    public static final int RULE_DOUBLELITERAL=15;
+    public static final int RULE_DOUBLELITERAL=14;
     public static final int T__49=49;
     public static final int RULE_REVERSEAXIS=8;
-    public static final int RULE_CONTEXTITEMEXPR=11;
+    public static final int RULE_CONTEXTITEMEXPR=10;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
@@ -80,12 +80,12 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int RULE_DECIMALLITERAL=14;
+    public static final int RULE_DECIMALLITERAL=13;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_EMPTYITEMTYPE=17;
-    public static final int RULE_EMPTYSEQUENCETYPE=16;
+    public static final int RULE_EMPTYITEMTYPE=16;
+    public static final int RULE_EMPTYSEQUENCETYPE=15;
     public static final int RULE_WS=21;
 
     // delegates
@@ -370,12 +370,12 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             case RULE_FORWARDAXIS:
             case RULE_REVERSEAXIS:
             case RULE_ABBREVREVERSESTEP:
-            case RULE_ID:
             case RULE_CONTEXTITEMEXPR:
             case RULE_STRINGLITERAL:
             case RULE_INTLITERAL:
             case RULE_DECIMALLITERAL:
             case RULE_DOUBLELITERAL:
+            case RULE_ID:
             case RULE_COMMENTTEST:
             case RULE_TEXTTEST:
             case RULE_ANYKINDTEST:
@@ -4061,12 +4061,12 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             case RULE_FORWARDAXIS:
             case RULE_REVERSEAXIS:
             case RULE_ABBREVREVERSESTEP:
-            case RULE_ID:
             case RULE_CONTEXTITEMEXPR:
             case RULE_STRINGLITERAL:
             case RULE_INTLITERAL:
             case RULE_DECIMALLITERAL:
             case RULE_DOUBLELITERAL:
+            case RULE_ID:
             case RULE_COMMENTTEST:
             case RULE_TEXTTEST:
             case RULE_ANYKINDTEST:
@@ -4617,20 +4617,84 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                 break;
             case RULE_ID:
                 {
-                int LA27_2 = input.LA(2);
+                switch ( input.LA(2) ) {
+                case 57:
+                    {
+                    int LA27_4 = input.LA(3);
 
-                if ( (LA27_2==EOF||(LA27_2>=RULE_VALUECOMP && LA27_2<=RULE_NODECOMP)||(LA27_2>=22 && LA27_2<=23)||LA27_2==29||LA27_2==32||(LA27_2>=34 && LA27_2<=48)||LA27_2==50||(LA27_2>=52 && LA27_2<=55)||(LA27_2>=57 && LA27_2<=59)) ) {
-                    alt27=2;
-                }
-                else if ( (LA27_2==31) ) {
+                    if ( (LA27_4==40) ) {
+                        alt27=2;
+                    }
+                    else if ( (LA27_4==RULE_ID) ) {
+                        int LA27_5 = input.LA(4);
+
+                        if ( (LA27_5==31) ) {
+                            alt27=1;
+                        }
+                        else if ( (LA27_5==EOF||(LA27_5>=RULE_VALUECOMP && LA27_5<=RULE_NODECOMP)||(LA27_5>=22 && LA27_5<=23)||LA27_5==29||LA27_5==32||(LA27_5>=34 && LA27_5<=48)||LA27_5==50||(LA27_5>=52 && LA27_5<=55)||(LA27_5>=58 && LA27_5<=59)) ) {
+                            alt27=2;
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 27, 5, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 27, 4, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 31:
+                    {
                     alt27=1;
-                }
-                else {
+                    }
+                    break;
+                case EOF:
+                case RULE_VALUECOMP:
+                case RULE_GENERALCOMP:
+                case RULE_NODECOMP:
+                case 22:
+                case 23:
+                case 29:
+                case 32:
+                case 34:
+                case 35:
+                case 36:
+                case 37:
+                case 38:
+                case 39:
+                case 40:
+                case 41:
+                case 42:
+                case 43:
+                case 44:
+                case 45:
+                case 46:
+                case 47:
+                case 48:
+                case 50:
+                case 52:
+                case 53:
+                case 54:
+                case 55:
+                case 58:
+                case 59:
+                    {
+                    alt27=2;
+                    }
+                    break;
+                default:
                     NoViableAltException nvae =
                         new NoViableAltException("", 27, 2, input);
 
                     throw nvae;
                 }
+
                 }
                 break;
             case RULE_FORWARDAXIS:
@@ -4779,7 +4843,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             if ( ((LA28_0>=RULE_REVERSEAXIS && LA28_0<=RULE_ABBREVREVERSESTEP)) ) {
                 alt28=1;
             }
-            else if ( (LA28_0==RULE_FORWARDAXIS||LA28_0==RULE_ID||(LA28_0>=RULE_COMMENTTEST && LA28_0<=RULE_ANYKINDTEST)||LA28_0==40||LA28_0==56||(LA28_0>=61 && LA28_0<=66)) ) {
+            else if ( (LA28_0==RULE_FORWARDAXIS||(LA28_0>=RULE_ID && LA28_0<=RULE_ANYKINDTEST)||LA28_0==40||LA28_0==56||(LA28_0>=61 && LA28_0<=66)) ) {
                 alt28=2;
             }
             else {
@@ -4977,7 +5041,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             if ( (LA29_0==RULE_FORWARDAXIS) ) {
                 alt29=1;
             }
-            else if ( (LA29_0==RULE_ID||(LA29_0>=RULE_COMMENTTEST && LA29_0<=RULE_ANYKINDTEST)||LA29_0==40||LA29_0==56||(LA29_0>=61 && LA29_0<=66)) ) {
+            else if ( ((LA29_0>=RULE_ID && LA29_0<=RULE_ANYKINDTEST)||LA29_0==40||LA29_0==56||(LA29_0>=61 && LA29_0<=66)) ) {
                 alt29=2;
             }
             else {
@@ -5641,21 +5705,22 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2113:1: ruleNameTest returns [EObject current=null] : ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2113:1: ruleNameTest returns [EObject current=null] : ( ( (lv_qName_0_0= ruleQName ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) ;
     public final EObject ruleNameTest() throws RecognitionException {
         EObject current = null;
 
-        Token lv_qName_0_0=null;
+        EObject lv_qName_0_0 = null;
+
         EObject lv_wildcard_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2116:28: ( ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:1: ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2116:28: ( ( ( (lv_qName_0_0= ruleQName ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:1: ( ( (lv_qName_0_0= ruleQName ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:1: ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:1: ( ( (lv_qName_0_0= ruleQName ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
             int alt33=2;
             int LA33_0 = input.LA(1);
 
@@ -5663,7 +5728,20 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                 int LA33_1 = input.LA(2);
 
                 if ( (LA33_1==57) ) {
-                    alt33=2;
+                    int LA33_3 = input.LA(3);
+
+                    if ( (LA33_3==40) ) {
+                        alt33=2;
+                    }
+                    else if ( (LA33_3==RULE_ID) ) {
+                        alt33=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 33, 3, input);
+
+                        throw nvae;
+                    }
                 }
                 else if ( (LA33_1==EOF||(LA33_1>=RULE_VALUECOMP && LA33_1<=RULE_NODECOMP)||(LA33_1>=22 && LA33_1<=23)||LA33_1==29||LA33_1==32||(LA33_1>=34 && LA33_1<=48)||LA33_1==50||(LA33_1>=52 && LA33_1<=55)||(LA33_1>=58 && LA33_1<=59)) ) {
                     alt33=1;
@@ -5686,27 +5764,32 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt33) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:2: ( (lv_qName_0_0= RULE_ID ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:2: ( (lv_qName_0_0= ruleQName ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:2: ( (lv_qName_0_0= RULE_ID ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2118:1: (lv_qName_0_0= RULE_ID )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:2: ( (lv_qName_0_0= ruleQName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2118:1: (lv_qName_0_0= ruleQName )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2118:1: (lv_qName_0_0= RULE_ID )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2119:3: lv_qName_0_0= RULE_ID
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2118:1: (lv_qName_0_0= ruleQName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2119:3: lv_qName_0_0= ruleQName
                     {
-                    lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNameTest4547); 
+                     
+                    	        newCompositeNode(grammarAccess.getNameTestAccess().getQNameQNameParserRuleCall_0_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleQName_in_ruleNameTest4551);
+                    lv_qName_0_0=ruleQName();
 
-                    			newLeafNode(lv_qName_0_0, grammarAccess.getNameTestAccess().getQNameIDTerminalRuleCall_0_0()); 
-                    		
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getNameTestRule());
+                    	            current = createModelElementForParent(grammarAccess.getNameTestRule());
                     	        }
-                           		setWithLastConsumed(
+                           		set(
                            			current, 
                            			"qName",
                             		lv_qName_0_0, 
-                            		"ID");
+                            		"QName");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -5729,7 +5812,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getNameTestAccess().getWildcardWildcardParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleWildcard_in_ruleNameTest4579);
+                    pushFollow(FOLLOW_ruleWildcard_in_ruleNameTest4578);
                     lv_wildcard_1_0=ruleWildcard();
 
                     state._fsp--;
@@ -5787,13 +5870,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2164:2: iv_ruleWildcard= ruleWildcard EOF
             {
              newCompositeNode(grammarAccess.getWildcardRule()); 
-            pushFollow(FOLLOW_ruleWildcard_in_entryRuleWildcard4615);
+            pushFollow(FOLLOW_ruleWildcard_in_entryRuleWildcard4614);
             iv_ruleWildcard=ruleWildcard();
 
             state._fsp--;
 
              current =iv_ruleWildcard; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWildcard4625); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWildcard4624); 
 
             }
 
@@ -5838,11 +5921,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             if ( (LA34_0==40) ) {
                 int LA34_1 = input.LA(2);
 
-                if ( (LA34_1==EOF||(LA34_1>=RULE_VALUECOMP && LA34_1<=RULE_NODECOMP)||(LA34_1>=22 && LA34_1<=23)||LA34_1==29||LA34_1==32||(LA34_1>=34 && LA34_1<=48)||LA34_1==50||(LA34_1>=52 && LA34_1<=55)||(LA34_1>=58 && LA34_1<=59)) ) {
-                    alt34=1;
-                }
-                else if ( (LA34_1==57) ) {
+                if ( (LA34_1==57) ) {
                     alt34=3;
+                }
+                else if ( (LA34_1==EOF||(LA34_1>=RULE_VALUECOMP && LA34_1<=RULE_NODECOMP)||(LA34_1>=22 && LA34_1<=23)||LA34_1==29||LA34_1==32||(LA34_1>=34 && LA34_1<=48)||LA34_1==50||(LA34_1>=52 && LA34_1<=55)||(LA34_1>=58 && LA34_1<=59)) ) {
+                    alt34=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -5870,7 +5953,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2176:1: (lv_wild_0_0= '*' )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2177:3: lv_wild_0_0= '*'
                     {
-                    lv_wild_0_0=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4668); 
+                    lv_wild_0_0=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4667); 
 
                             newLeafNode(lv_wild_0_0, grammarAccess.getWildcardAccess().getWildAsteriskKeyword_0_0());
                         
@@ -5904,7 +5987,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getWildcardAccess().getLeftNCNameParserRuleCall_1_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4709);
+                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4708);
                     lv_left_1_0=ruleNCName();
 
                     state._fsp--;
@@ -5926,11 +6009,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4721); 
+                    otherlv_2=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4720); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getWildcardAccess().getColonKeyword_1_1());
                         
-                    otherlv_3=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4733); 
+                    otherlv_3=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4732); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getWildcardAccess().getAsteriskKeyword_1_2());
                         
@@ -5946,11 +6029,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2218:6: (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2218:8: otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) )
                     {
-                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4753); 
+                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4752); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getWildcardAccess().getAsteriskKeyword_2_0());
                         
-                    otherlv_5=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4765); 
+                    otherlv_5=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4764); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getWildcardAccess().getColonKeyword_2_1());
                         
@@ -5963,7 +6046,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getWildcardAccess().getRightNCNameParserRuleCall_2_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4786);
+                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4785);
                     lv_right_6_0=ruleNCName();
 
                     state._fsp--;
@@ -6024,13 +6107,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2254:2: iv_ruleFilterExpr= ruleFilterExpr EOF
             {
              newCompositeNode(grammarAccess.getFilterExprRule()); 
-            pushFollow(FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4823);
+            pushFollow(FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4822);
             iv_ruleFilterExpr=ruleFilterExpr();
 
             state._fsp--;
 
              current =iv_ruleFilterExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFilterExpr4833); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFilterExpr4832); 
 
             }
 
@@ -6075,7 +6158,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getFilterExprAccess().getPrimaryPrimaryExprParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4879);
+            pushFollow(FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4878);
             lv_primary_0_0=rulePrimaryExpr();
 
             state._fsp--;
@@ -6106,7 +6189,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getFilterExprAccess().getPredicateListPredicateListParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_rulePredicateList_in_ruleFilterExpr4900);
+            pushFollow(FOLLOW_rulePredicateList_in_ruleFilterExpr4899);
             lv_predicateList_1_0=rulePredicateList();
 
             state._fsp--;
@@ -6161,13 +6244,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2311:2: iv_rulePredicateList= rulePredicateList EOF
             {
              newCompositeNode(grammarAccess.getPredicateListRule()); 
-            pushFollow(FOLLOW_rulePredicateList_in_entryRulePredicateList4936);
+            pushFollow(FOLLOW_rulePredicateList_in_entryRulePredicateList4935);
             iv_rulePredicateList=rulePredicateList();
 
             state._fsp--;
 
              current =iv_rulePredicateList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateList4946); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateList4945); 
 
             }
 
@@ -6233,7 +6316,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getPredicateListAccess().getPredicatesPredicateParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePredicate_in_rulePredicateList5001);
+            	    pushFollow(FOLLOW_rulePredicate_in_rulePredicateList5000);
             	    lv_predicates_1_0=rulePredicate();
 
             	    state._fsp--;
@@ -6294,13 +6377,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2356:2: iv_rulePredicate= rulePredicate EOF
             {
              newCompositeNode(grammarAccess.getPredicateRule()); 
-            pushFollow(FOLLOW_rulePredicate_in_entryRulePredicate5038);
+            pushFollow(FOLLOW_rulePredicate_in_entryRulePredicate5037);
             iv_rulePredicate=rulePredicate();
 
             state._fsp--;
 
              current =iv_rulePredicate; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicate5048); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicate5047); 
 
             }
 
@@ -6336,7 +6419,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2367:1: (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' )
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2367:3: otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']'
             {
-            otherlv_0=(Token)match(input,58,FOLLOW_58_in_rulePredicate5085); 
+            otherlv_0=(Token)match(input,58,FOLLOW_58_in_rulePredicate5084); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPredicateAccess().getLeftSquareBracketKeyword_0());
                 
@@ -6349,7 +6432,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getPredicateAccess().getExprExprParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpr_in_rulePredicate5106);
+            pushFollow(FOLLOW_ruleExpr_in_rulePredicate5105);
             lv_expr_1_0=ruleExpr();
 
             state._fsp--;
@@ -6371,7 +6454,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,59,FOLLOW_59_in_rulePredicate5118); 
+            otherlv_2=(Token)match(input,59,FOLLOW_59_in_rulePredicate5117); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getPredicateAccess().getRightSquareBracketKeyword_2());
                 
@@ -6408,13 +6491,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2403:2: iv_rulePrimaryExpr= rulePrimaryExpr EOF
             {
              newCompositeNode(grammarAccess.getPrimaryExprRule()); 
-            pushFollow(FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr5154);
+            pushFollow(FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr5153);
             iv_rulePrimaryExpr=rulePrimaryExpr();
 
             state._fsp--;
 
              current =iv_rulePrimaryExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpr5164); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpr5163); 
 
             }
 
@@ -6503,7 +6586,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getLiteralLiteralParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLiteral_in_rulePrimaryExpr5210);
+                    pushFollow(FOLLOW_ruleLiteral_in_rulePrimaryExpr5209);
                     lv_literal_0_0=ruleLiteral();
 
                     state._fsp--;
@@ -6540,7 +6623,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getVarRefVarRefParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleVarRef_in_rulePrimaryExpr5237);
+                    pushFollow(FOLLOW_ruleVarRef_in_rulePrimaryExpr5236);
                     lv_varRef_1_0=ruleVarRef();
 
                     state._fsp--;
@@ -6577,7 +6660,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getParExprParenthesizedExprParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5264);
+                    pushFollow(FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5263);
                     lv_parExpr_2_0=ruleParenthesizedExpr();
 
                     state._fsp--;
@@ -6611,7 +6694,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2472:1: (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2473:3: lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR
                     {
-                    lv_conItemExpr_3_0=(Token)match(input,RULE_CONTEXTITEMEXPR,FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5287); 
+                    lv_conItemExpr_3_0=(Token)match(input,RULE_CONTEXTITEMEXPR,FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5286); 
 
                     			newLeafNode(lv_conItemExpr_3_0, grammarAccess.getPrimaryExprAccess().getConItemExprCONTEXTITEMEXPRTerminalRuleCall_3_0()); 
                     		
@@ -6646,7 +6729,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getFunctionCallFunctionCallParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5319);
+                    pushFollow(FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5318);
                     lv_functionCall_4_0=ruleFunctionCall();
 
                     state._fsp--;
@@ -6704,13 +6787,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2518:2: iv_ruleLiteral= ruleLiteral EOF
             {
              newCompositeNode(grammarAccess.getLiteralRule()); 
-            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral5355);
+            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral5354);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
 
              current =iv_ruleLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral5365); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral5364); 
 
             }
 
@@ -6771,7 +6854,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getLiteralAccess().getNumNumericLiteralParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumericLiteral_in_ruleLiteral5411);
+                    pushFollow(FOLLOW_ruleNumericLiteral_in_ruleLiteral5410);
                     lv_num_0_0=ruleNumericLiteral();
 
                     state._fsp--;
@@ -6805,7 +6888,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2549:1: (lv_string_1_0= RULE_STRINGLITERAL )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2550:3: lv_string_1_0= RULE_STRINGLITERAL
                     {
-                    lv_string_1_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5434); 
+                    lv_string_1_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5433); 
 
                     			newLeafNode(lv_string_1_0, grammarAccess.getLiteralAccess().getStringSTRINGLITERALTerminalRuleCall_1_0()); 
                     		
@@ -6861,13 +6944,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2576:2: iv_ruleNumericLiteral= ruleNumericLiteral EOF
             {
              newCompositeNode(grammarAccess.getNumericLiteralRule()); 
-            pushFollow(FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5475);
+            pushFollow(FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5474);
             iv_ruleNumericLiteral=ruleNumericLiteral();
 
             state._fsp--;
 
              current =iv_ruleNumericLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericLiteral5485); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericLiteral5484); 
 
             }
 
@@ -6934,7 +7017,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2588:1: (lv_intLit_0_0= RULE_INTLITERAL )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2589:3: lv_intLit_0_0= RULE_INTLITERAL
                     {
-                    lv_intLit_0_0=(Token)match(input,RULE_INTLITERAL,FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5527); 
+                    lv_intLit_0_0=(Token)match(input,RULE_INTLITERAL,FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5526); 
 
                     			newLeafNode(lv_intLit_0_0, grammarAccess.getNumericLiteralAccess().getIntLitINTLITERALTerminalRuleCall_0_0()); 
                     		
@@ -6966,7 +7049,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2607:1: (lv_decLit_1_0= RULE_DECIMALLITERAL )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2608:3: lv_decLit_1_0= RULE_DECIMALLITERAL
                     {
-                    lv_decLit_1_0=(Token)match(input,RULE_DECIMALLITERAL,FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5555); 
+                    lv_decLit_1_0=(Token)match(input,RULE_DECIMALLITERAL,FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5554); 
 
                     			newLeafNode(lv_decLit_1_0, grammarAccess.getNumericLiteralAccess().getDecLitDECIMALLITERALTerminalRuleCall_1_0()); 
                     		
@@ -6998,7 +7081,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2626:1: (lv_doubleLit_2_0= RULE_DOUBLELITERAL )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2627:3: lv_doubleLit_2_0= RULE_DOUBLELITERAL
                     {
-                    lv_doubleLit_2_0=(Token)match(input,RULE_DOUBLELITERAL,FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5583); 
+                    lv_doubleLit_2_0=(Token)match(input,RULE_DOUBLELITERAL,FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5582); 
 
                     			newLeafNode(lv_doubleLit_2_0, grammarAccess.getNumericLiteralAccess().getDoubleLitDOUBLELITERALTerminalRuleCall_2_0()); 
                     		
@@ -7054,13 +7137,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2653:2: iv_ruleVarRef= ruleVarRef EOF
             {
              newCompositeNode(grammarAccess.getVarRefRule()); 
-            pushFollow(FOLLOW_ruleVarRef_in_entryRuleVarRef5624);
+            pushFollow(FOLLOW_ruleVarRef_in_entryRuleVarRef5623);
             iv_ruleVarRef=ruleVarRef();
 
             state._fsp--;
 
              current =iv_ruleVarRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVarRef5634); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVarRef5633); 
 
             }
 
@@ -7095,14 +7178,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2664:1: (otherlv_0= '$' this_VarName_1= ruleVarName )
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2664:3: otherlv_0= '$' this_VarName_1= ruleVarName
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleVarRef5671); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleVarRef5670); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getVarRefAccess().getDollarSignKeyword_0());
                 
              
                     newCompositeNode(grammarAccess.getVarRefAccess().getVarNameParserRuleCall_1()); 
                 
-            pushFollow(FOLLOW_ruleVarName_in_ruleVarRef5693);
+            pushFollow(FOLLOW_ruleVarName_in_ruleVarRef5692);
             this_VarName_1=ruleVarName();
 
             state._fsp--;
@@ -7144,13 +7227,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2687:2: iv_ruleVarName= ruleVarName EOF
             {
              newCompositeNode(grammarAccess.getVarNameRule()); 
-            pushFollow(FOLLOW_ruleVarName_in_entryRuleVarName5728);
+            pushFollow(FOLLOW_ruleVarName_in_entryRuleVarName5727);
             iv_ruleVarName=ruleVarName();
 
             state._fsp--;
 
              current =iv_ruleVarName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVarName5738); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVarName5737); 
 
             }
 
@@ -7168,37 +7251,43 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVarName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2694:1: ruleVarName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2694:1: ruleVarName returns [EObject current=null] : ( (lv_qName_0_0= ruleQName ) ) ;
     public final EObject ruleVarName() throws RecognitionException {
         EObject current = null;
 
-        Token lv_qName_0_0=null;
+        EObject lv_qName_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2697:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2698:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2697:28: ( ( (lv_qName_0_0= ruleQName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2698:1: ( (lv_qName_0_0= ruleQName ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2698:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2699:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2698:1: ( (lv_qName_0_0= ruleQName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2699:1: (lv_qName_0_0= ruleQName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2699:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2700:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2699:1: (lv_qName_0_0= ruleQName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2700:3: lv_qName_0_0= ruleQName
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVarName5779); 
+             
+            	        newCompositeNode(grammarAccess.getVarNameAccess().getQNameQNameParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQName_in_ruleVarName5782);
+            lv_qName_0_0=ruleQName();
 
-            			newLeafNode(lv_qName_0_0, grammarAccess.getVarNameAccess().getQNameIDTerminalRuleCall_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getVarNameRule());
+            	            current = createModelElementForParent(grammarAccess.getVarNameRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"qName",
                     		lv_qName_0_0, 
-                    		"ID");
+                    		"QName");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -7236,13 +7325,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2726:2: iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF
             {
              newCompositeNode(grammarAccess.getParenthesizedExprRule()); 
-            pushFollow(FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5819);
+            pushFollow(FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5817);
             iv_ruleParenthesizedExpr=ruleParenthesizedExpr();
 
             state._fsp--;
 
              current =iv_ruleParenthesizedExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParenthesizedExpr5829); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParenthesizedExpr5827); 
 
             }
 
@@ -7289,7 +7378,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleParenthesizedExpr5875); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleParenthesizedExpr5873); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getParenthesizedExprAccess().getLeftParenthesisKeyword_1());
                 
@@ -7297,7 +7386,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             int alt39=2;
             int LA39_0 = input.LA(1);
 
-            if ( ((LA39_0>=RULE_FORWARDAXIS && LA39_0<=RULE_DOUBLELITERAL)||(LA39_0>=RULE_COMMENTTEST && LA39_0<=RULE_ANYKINDTEST)||(LA39_0>=24 && LA39_0<=25)||(LA39_0>=27 && LA39_0<=28)||(LA39_0>=30 && LA39_0<=31)||(LA39_0>=38 && LA39_0<=40)||(LA39_0>=54 && LA39_0<=56)||(LA39_0>=61 && LA39_0<=66)) ) {
+            if ( ((LA39_0>=RULE_FORWARDAXIS && LA39_0<=RULE_DOUBLELITERAL)||(LA39_0>=RULE_ID && LA39_0<=RULE_ANYKINDTEST)||(LA39_0>=24 && LA39_0<=25)||(LA39_0>=27 && LA39_0<=28)||(LA39_0>=30 && LA39_0<=31)||(LA39_0>=38 && LA39_0<=40)||(LA39_0>=54 && LA39_0<=56)||(LA39_0>=61 && LA39_0<=66)) ) {
                 alt39=1;
             }
             switch (alt39) {
@@ -7310,7 +7399,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getParenthesizedExprAccess().getExprExprParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpr_in_ruleParenthesizedExpr5896);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleParenthesizedExpr5894);
                     lv_expr_2_0=ruleExpr();
 
                     state._fsp--;
@@ -7335,7 +7424,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleParenthesizedExpr5909); 
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleParenthesizedExpr5907); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getParenthesizedExprAccess().getRightParenthesisKeyword_3());
                 
@@ -7372,13 +7461,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2779:2: iv_ruleFunctionCall= ruleFunctionCall EOF
             {
              newCompositeNode(grammarAccess.getFunctionCallRule()); 
-            pushFollow(FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5945);
+            pushFollow(FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5943);
             iv_ruleFunctionCall=ruleFunctionCall();
 
             state._fsp--;
 
              current =iv_ruleFunctionCall; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionCall5955); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionCall5953); 
 
             }
 
@@ -7396,14 +7485,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2786:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2786:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_qName_0_0= ruleQName ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
-        Token lv_qName_0_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
+        EObject lv_qName_0_0 = null;
+
         EObject lv_expr_2_0 = null;
 
         EObject lv_exprs_4_0 = null;
@@ -7412,31 +7502,36 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2789:28: ( ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:1: ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2789:28: ( ( ( (lv_qName_0_0= ruleQName ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:1: ( ( (lv_qName_0_0= ruleQName ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:1: ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:2: ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:1: ( ( (lv_qName_0_0= ruleQName ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:2: ( (lv_qName_0_0= ruleQName ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:2: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2791:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:2: ( (lv_qName_0_0= ruleQName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2791:1: (lv_qName_0_0= ruleQName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2791:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2792:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2791:1: (lv_qName_0_0= ruleQName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2792:3: lv_qName_0_0= ruleQName
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunctionCall5997); 
+             
+            	        newCompositeNode(grammarAccess.getFunctionCallAccess().getQNameQNameParserRuleCall_0_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQName_in_ruleFunctionCall5999);
+            lv_qName_0_0=ruleQName();
 
-            			newLeafNode(lv_qName_0_0, grammarAccess.getFunctionCallAccess().getQNameIDTerminalRuleCall_0_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getFunctionCallRule());
+            	            current = createModelElementForParent(grammarAccess.getFunctionCallRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"qName",
                     		lv_qName_0_0, 
-                    		"ID");
+                    		"QName");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -7444,7 +7539,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleFunctionCall6014); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleFunctionCall6011); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1());
                 
@@ -7452,7 +7547,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( ((LA41_0>=RULE_FORWARDAXIS && LA41_0<=RULE_DOUBLELITERAL)||(LA41_0>=RULE_COMMENTTEST && LA41_0<=RULE_ANYKINDTEST)||(LA41_0>=24 && LA41_0<=25)||(LA41_0>=27 && LA41_0<=28)||(LA41_0>=30 && LA41_0<=31)||(LA41_0>=38 && LA41_0<=40)||(LA41_0>=54 && LA41_0<=56)||(LA41_0>=61 && LA41_0<=66)) ) {
+            if ( ((LA41_0>=RULE_FORWARDAXIS && LA41_0<=RULE_DOUBLELITERAL)||(LA41_0>=RULE_ID && LA41_0<=RULE_ANYKINDTEST)||(LA41_0>=24 && LA41_0<=25)||(LA41_0>=27 && LA41_0<=28)||(LA41_0>=30 && LA41_0<=31)||(LA41_0>=38 && LA41_0<=40)||(LA41_0>=54 && LA41_0<=56)||(LA41_0>=61 && LA41_0<=66)) ) {
                 alt41=1;
             }
             switch (alt41) {
@@ -7468,7 +7563,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getFunctionCallAccess().getExprExprSingleParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall6036);
+                    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall6033);
                     lv_expr_2_0=ruleExprSingle();
 
                     state._fsp--;
@@ -7505,7 +7600,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2830:4: otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleFunctionCall6049); 
+                    	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleFunctionCall6046); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getFunctionCallAccess().getCommaKeyword_2_1_0());
                     	        
@@ -7518,7 +7613,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     	     
                     	    	        newCompositeNode(grammarAccess.getFunctionCallAccess().getExprsExprSingleParserRuleCall_2_1_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall6070);
+                    	    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall6067);
                     	    lv_exprs_4_0=ruleExprSingle();
 
                     	    state._fsp--;
@@ -7555,7 +7650,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleFunctionCall6086); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleFunctionCall6083); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_3());
                 
@@ -7592,13 +7687,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2866:2: iv_ruleSingleType= ruleSingleType EOF
             {
              newCompositeNode(grammarAccess.getSingleTypeRule()); 
-            pushFollow(FOLLOW_ruleSingleType_in_entryRuleSingleType6122);
+            pushFollow(FOLLOW_ruleSingleType_in_entryRuleSingleType6119);
             iv_ruleSingleType=ruleSingleType();
 
             state._fsp--;
 
              current =iv_ruleSingleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSingleType6132); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSingleType6129); 
 
             }
 
@@ -7636,7 +7731,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSingleTypeAccess().getAtomicTypeParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAtomicType_in_ruleSingleType6179);
+            pushFollow(FOLLOW_ruleAtomicType_in_ruleSingleType6176);
             this_AtomicType_0=ruleAtomicType();
 
             state._fsp--;
@@ -7656,7 +7751,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2886:3: otherlv_1= '?'
                     {
-                    otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleSingleType6191); 
+                    otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleSingleType6188); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getSingleTypeAccess().getQuestionMarkKeyword_1());
                         
@@ -7699,13 +7794,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2900:2: iv_ruleSequenceType= ruleSequenceType EOF
             {
              newCompositeNode(grammarAccess.getSequenceTypeRule()); 
-            pushFollow(FOLLOW_ruleSequenceType_in_entryRuleSequenceType6229);
+            pushFollow(FOLLOW_ruleSequenceType_in_entryRuleSequenceType6226);
             iv_ruleSequenceType=ruleSequenceType();
 
             state._fsp--;
 
              current =iv_ruleSequenceType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSequenceType6239); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSequenceType6236); 
 
             }
 
@@ -7746,7 +7841,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             if ( (LA43_0==RULE_EMPTYSEQUENCETYPE) ) {
                 alt43=1;
             }
-            else if ( (LA43_0==RULE_ID||(LA43_0>=RULE_EMPTYITEMTYPE && LA43_0<=RULE_ANYKINDTEST)||(LA43_0>=61 && LA43_0<=66)) ) {
+            else if ( ((LA43_0>=RULE_EMPTYITEMTYPE && LA43_0<=RULE_ANYKINDTEST)||(LA43_0>=61 && LA43_0<=66)) ) {
                 alt43=2;
             }
             else {
@@ -7765,7 +7860,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2912:1: (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2913:3: lv_empty_0_0= RULE_EMPTYSEQUENCETYPE
                     {
-                    lv_empty_0_0=(Token)match(input,RULE_EMPTYSEQUENCETYPE,FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6281); 
+                    lv_empty_0_0=(Token)match(input,RULE_EMPTYSEQUENCETYPE,FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6278); 
 
                     			newLeafNode(lv_empty_0_0, grammarAccess.getSequenceTypeAccess().getEmptyEMPTYSEQUENCETYPETerminalRuleCall_0_0()); 
                     		
@@ -7803,7 +7898,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getSequenceTypeAccess().getItemTypeItemTypeParserRuleCall_1_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleItemType_in_ruleSequenceType6314);
+                    pushFollow(FOLLOW_ruleItemType_in_ruleSequenceType6311);
                     lv_itemType_1_0=ruleItemType();
 
                     state._fsp--;
@@ -7834,7 +7929,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getSequenceTypeAccess().getOccIndOccurenceIndicatorParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6335);
+                    pushFollow(FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6332);
                     lv_occInd_2_0=ruleOccurenceIndicator();
 
                     state._fsp--;
@@ -7895,13 +7990,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2976:2: iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF
             {
              newCompositeNode(grammarAccess.getOccurenceIndicatorRule()); 
-            pushFollow(FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6373);
+            pushFollow(FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6370);
             iv_ruleOccurenceIndicator=ruleOccurenceIndicator();
 
             state._fsp--;
 
              current =iv_ruleOccurenceIndicator.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOccurenceIndicator6384); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOccurenceIndicator6381); 
 
             }
 
@@ -7960,7 +8055,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2988:2: kw= '?'
                     {
-                    kw=(Token)match(input,60,FOLLOW_60_in_ruleOccurenceIndicator6422); 
+                    kw=(Token)match(input,60,FOLLOW_60_in_ruleOccurenceIndicator6419); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOccurenceIndicatorAccess().getQuestionMarkKeyword_0()); 
@@ -7971,7 +8066,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2995:2: kw= '*'
                     {
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOccurenceIndicator6441); 
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOccurenceIndicator6438); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOccurenceIndicatorAccess().getAsteriskKeyword_1()); 
@@ -7982,7 +8077,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                 case 3 :
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3002:2: kw= '+'
                     {
-                    kw=(Token)match(input,38,FOLLOW_38_in_ruleOccurenceIndicator6460); 
+                    kw=(Token)match(input,38,FOLLOW_38_in_ruleOccurenceIndicator6457); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOccurenceIndicatorAccess().getPlusSignKeyword_2()); 
@@ -8023,13 +8118,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3017:2: iv_ruleItemType= ruleItemType EOF
             {
              newCompositeNode(grammarAccess.getItemTypeRule()); 
-            pushFollow(FOLLOW_ruleItemType_in_entryRuleItemType6500);
+            pushFollow(FOLLOW_ruleItemType_in_entryRuleItemType6497);
             iv_ruleItemType=ruleItemType();
 
             state._fsp--;
 
              current =iv_ruleItemType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemType6510); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemType6507); 
 
             }
 
@@ -8109,7 +8204,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getItemTypeAccess().getKindTestKindTestParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleKindTest_in_ruleItemType6556);
+                    pushFollow(FOLLOW_ruleKindTest_in_ruleItemType6553);
                     lv_kindTest_0_0=ruleKindTest();
 
                     state._fsp--;
@@ -8143,7 +8238,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3048:1: (lv_empty_1_0= RULE_EMPTYITEMTYPE )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3049:3: lv_empty_1_0= RULE_EMPTYITEMTYPE
                     {
-                    lv_empty_1_0=(Token)match(input,RULE_EMPTYITEMTYPE,FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6579); 
+                    lv_empty_1_0=(Token)match(input,RULE_EMPTYITEMTYPE,FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6576); 
 
                     			newLeafNode(lv_empty_1_0, grammarAccess.getItemTypeAccess().getEmptyEMPTYITEMTYPETerminalRuleCall_1_0()); 
                     		
@@ -8178,7 +8273,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getItemTypeAccess().getAtomicTypeAtomicTypeParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAtomicType_in_ruleItemType6611);
+                    pushFollow(FOLLOW_ruleAtomicType_in_ruleItemType6608);
                     lv_atomicType_2_0=ruleAtomicType();
 
                     state._fsp--;
@@ -8236,13 +8331,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3094:2: iv_ruleAtomicType= ruleAtomicType EOF
             {
              newCompositeNode(grammarAccess.getAtomicTypeRule()); 
-            pushFollow(FOLLOW_ruleAtomicType_in_entryRuleAtomicType6647);
+            pushFollow(FOLLOW_ruleAtomicType_in_entryRuleAtomicType6644);
             iv_ruleAtomicType=ruleAtomicType();
 
             state._fsp--;
 
              current =iv_ruleAtomicType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicType6657); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicType6654); 
 
             }
 
@@ -8278,7 +8373,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3106:1: (lv_type_0_0= RULE_ID )
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3107:3: lv_type_0_0= RULE_ID
             {
-            lv_type_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicType6698); 
+            lv_type_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicType6695); 
 
             			newLeafNode(lv_type_0_0, grammarAccess.getAtomicTypeAccess().getTypeIDTerminalRuleCall_0()); 
             		
@@ -8328,13 +8423,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3133:2: iv_ruleKindTest= ruleKindTest EOF
             {
              newCompositeNode(grammarAccess.getKindTestRule()); 
-            pushFollow(FOLLOW_ruleKindTest_in_entryRuleKindTest6738);
+            pushFollow(FOLLOW_ruleKindTest_in_entryRuleKindTest6735);
             iv_ruleKindTest=ruleKindTest();
 
             state._fsp--;
 
              current =iv_ruleKindTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleKindTest6748); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleKindTest6745); 
 
             }
 
@@ -8446,7 +8541,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getDocTestDocumentTestParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDocumentTest_in_ruleKindTest6794);
+                    pushFollow(FOLLOW_ruleDocumentTest_in_ruleKindTest6791);
                     lv_docTest_0_0=ruleDocumentTest();
 
                     state._fsp--;
@@ -8483,7 +8578,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getElemTestElementTestParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementTest_in_ruleKindTest6821);
+                    pushFollow(FOLLOW_ruleElementTest_in_ruleKindTest6818);
                     lv_elemTest_1_0=ruleElementTest();
 
                     state._fsp--;
@@ -8520,7 +8615,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getAttributeTestAttributeTestParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAttributeTest_in_ruleKindTest6848);
+                    pushFollow(FOLLOW_ruleAttributeTest_in_ruleKindTest6845);
                     lv_attributeTest_2_0=ruleAttributeTest();
 
                     state._fsp--;
@@ -8557,7 +8652,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getSchemaElemTestSchemaElementTestParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleKindTest6875);
+                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleKindTest6872);
                     lv_schemaElemTest_3_0=ruleSchemaElementTest();
 
                     state._fsp--;
@@ -8594,7 +8689,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getSchemaAttributeTestSchemaAttributeTestParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6902);
+                    pushFollow(FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6899);
                     lv_schemaAttributeTest_4_0=ruleSchemaAttributeTest();
 
                     state._fsp--;
@@ -8631,7 +8726,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getPitTestPITestParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePITest_in_ruleKindTest6929);
+                    pushFollow(FOLLOW_rulePITest_in_ruleKindTest6926);
                     lv_pitTest_5_0=rulePITest();
 
                     state._fsp--;
@@ -8665,7 +8760,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3259:1: (lv_commentTest_6_0= RULE_COMMENTTEST )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3260:3: lv_commentTest_6_0= RULE_COMMENTTEST
                     {
-                    lv_commentTest_6_0=(Token)match(input,RULE_COMMENTTEST,FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6952); 
+                    lv_commentTest_6_0=(Token)match(input,RULE_COMMENTTEST,FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6949); 
 
                     			newLeafNode(lv_commentTest_6_0, grammarAccess.getKindTestAccess().getCommentTestCOMMENTTESTTerminalRuleCall_6_0()); 
                     		
@@ -8697,7 +8792,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3278:1: (lv_textTest_7_0= RULE_TEXTTEST )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3279:3: lv_textTest_7_0= RULE_TEXTTEST
                     {
-                    lv_textTest_7_0=(Token)match(input,RULE_TEXTTEST,FOLLOW_RULE_TEXTTEST_in_ruleKindTest6980); 
+                    lv_textTest_7_0=(Token)match(input,RULE_TEXTTEST,FOLLOW_RULE_TEXTTEST_in_ruleKindTest6977); 
 
                     			newLeafNode(lv_textTest_7_0, grammarAccess.getKindTestAccess().getTextTestTEXTTESTTerminalRuleCall_7_0()); 
                     		
@@ -8729,7 +8824,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3297:1: (lv_anyKindTest_8_0= RULE_ANYKINDTEST )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3298:3: lv_anyKindTest_8_0= RULE_ANYKINDTEST
                     {
-                    lv_anyKindTest_8_0=(Token)match(input,RULE_ANYKINDTEST,FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest7008); 
+                    lv_anyKindTest_8_0=(Token)match(input,RULE_ANYKINDTEST,FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest7005); 
 
                     			newLeafNode(lv_anyKindTest_8_0, grammarAccess.getKindTestAccess().getAnyKindTestANYKINDTESTTerminalRuleCall_8_0()); 
                     		
@@ -8785,13 +8880,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3324:2: iv_ruleDocumentTest= ruleDocumentTest EOF
             {
              newCompositeNode(grammarAccess.getDocumentTestRule()); 
-            pushFollow(FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest7049);
+            pushFollow(FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest7046);
             iv_ruleDocumentTest=ruleDocumentTest();
 
             state._fsp--;
 
              current =iv_ruleDocumentTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDocumentTest7059); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDocumentTest7056); 
 
             }
 
@@ -8841,11 +8936,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleDocumentTest7105); 
+            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleDocumentTest7102); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDocumentTestAccess().getDocumentNodeKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleDocumentTest7117); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleDocumentTest7114); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDocumentTestAccess().getLeftParenthesisKeyword_2());
                 
@@ -8872,7 +8967,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getDocumentTestAccess().getElemTestElementTestParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementTest_in_ruleDocumentTest7139);
+                    pushFollow(FOLLOW_ruleElementTest_in_ruleDocumentTest7136);
                     lv_elemTest_3_0=ruleElementTest();
 
                     state._fsp--;
@@ -8909,7 +9004,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getDocumentTestAccess().getSchemaElemTestSchemaElementTestParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7166);
+                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7163);
                     lv_schemaElemTest_4_0=ruleSchemaElementTest();
 
                     state._fsp--;
@@ -8937,7 +9032,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleDocumentTest7180); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleDocumentTest7177); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getDocumentTestAccess().getRightParenthesisKeyword_4());
                 
@@ -8974,13 +9069,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3400:2: iv_rulePITest= rulePITest EOF
             {
              newCompositeNode(grammarAccess.getPITestRule()); 
-            pushFollow(FOLLOW_rulePITest_in_entryRulePITest7216);
+            pushFollow(FOLLOW_rulePITest_in_entryRulePITest7213);
             iv_rulePITest=rulePITest();
 
             state._fsp--;
 
              current =iv_rulePITest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePITest7226); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePITest7223); 
 
             }
 
@@ -9029,11 +9124,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,62,FOLLOW_62_in_rulePITest7272); 
+            otherlv_1=(Token)match(input,62,FOLLOW_62_in_rulePITest7269); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPITestAccess().getProcessingInstructionKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_rulePITest7284); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_rulePITest7281); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getPITestAccess().getLeftParenthesisKeyword_2());
                 
@@ -9060,7 +9155,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getPITestAccess().getNcNameNCNameParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNCName_in_rulePITest7306);
+                    pushFollow(FOLLOW_ruleNCName_in_rulePITest7303);
                     lv_ncName_3_0=ruleNCName();
 
                     state._fsp--;
@@ -9094,7 +9189,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3445:1: (lv_string_4_0= RULE_STRINGLITERAL )
                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3446:3: lv_string_4_0= RULE_STRINGLITERAL
                     {
-                    lv_string_4_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_rulePITest7329); 
+                    lv_string_4_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_rulePITest7326); 
 
                     			newLeafNode(lv_string_4_0, grammarAccess.getPITestAccess().getStringSTRINGLITERALTerminalRuleCall_3_1_0()); 
                     		
@@ -9120,7 +9215,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_32_in_rulePITest7348); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_rulePITest7345); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getPITestAccess().getRightParenthesisKeyword_4());
                 
@@ -9157,13 +9252,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3476:2: iv_ruleAttributeTest= ruleAttributeTest EOF
             {
              newCompositeNode(grammarAccess.getAttributeTestRule()); 
-            pushFollow(FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7384);
+            pushFollow(FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7381);
             iv_ruleAttributeTest=ruleAttributeTest();
 
             state._fsp--;
 
              current =iv_ruleAttributeTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeTest7394); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeTest7391); 
 
             }
 
@@ -9214,11 +9309,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,63,FOLLOW_63_in_ruleAttributeTest7440); 
+            otherlv_1=(Token)match(input,63,FOLLOW_63_in_ruleAttributeTest7437); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAttributeTestAccess().getAttributeKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleAttributeTest7452); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleAttributeTest7449); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAttributeTestAccess().getLeftParenthesisKeyword_2());
                 
@@ -9242,7 +9337,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getAttributeTestAccess().getAttrOrWildAttribNameOrWildcardParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7474);
+                    pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7471);
                     lv_attrOrWild_3_0=ruleAttribNameOrWildcard();
 
                     state._fsp--;
@@ -9275,7 +9370,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3519:4: otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) )
                             {
-                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleAttributeTest7487); 
+                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleAttributeTest7484); 
 
                                 	newLeafNode(otherlv_4, grammarAccess.getAttributeTestAccess().getCommaKeyword_3_1_0());
                                 
@@ -9288,7 +9383,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                              
                             	        newCompositeNode(grammarAccess.getAttributeTestAccess().getTypeNameTypeNameParserRuleCall_3_1_1_0()); 
                             	    
-                            pushFollow(FOLLOW_ruleTypeName_in_ruleAttributeTest7508);
+                            pushFollow(FOLLOW_ruleTypeName_in_ruleAttributeTest7505);
                             lv_typeName_5_0=ruleTypeName();
 
                             state._fsp--;
@@ -9322,7 +9417,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,32,FOLLOW_32_in_ruleAttributeTest7524); 
+            otherlv_6=(Token)match(input,32,FOLLOW_32_in_ruleAttributeTest7521); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getAttributeTestAccess().getRightParenthesisKeyword_4());
                 
@@ -9359,13 +9454,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3555:2: iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF
             {
              newCompositeNode(grammarAccess.getAttribNameOrWildcardRule()); 
-            pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7560);
+            pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7557);
             iv_ruleAttribNameOrWildcard=ruleAttribNameOrWildcard();
 
             state._fsp--;
 
              current =iv_ruleAttribNameOrWildcard; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7570); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7567); 
 
             }
 
@@ -9426,7 +9521,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getAttribNameOrWildcardAccess().getAttNameAttributeNameParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7616);
+                    pushFollow(FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7613);
                     lv_attName_0_0=ruleAttributeName();
 
                     state._fsp--;
@@ -9468,7 +9563,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleAttribNameOrWildcard7644); 
+                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleAttribNameOrWildcard7641); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getAttribNameOrWildcardAccess().getAsteriskKeyword_1_1());
                         
@@ -9511,13 +9606,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3605:2: iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF
             {
              newCompositeNode(grammarAccess.getSchemaAttributeTestRule()); 
-            pushFollow(FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7681);
+            pushFollow(FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7678);
             iv_ruleSchemaAttributeTest=ruleSchemaAttributeTest();
 
             state._fsp--;
 
              current =iv_ruleSchemaAttributeTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaAttributeTest7691); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaAttributeTest7688); 
 
             }
 
@@ -9554,11 +9649,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3616:1: (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' )
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3616:3: otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,64,FOLLOW_64_in_ruleSchemaAttributeTest7728); 
+            otherlv_0=(Token)match(input,64,FOLLOW_64_in_ruleSchemaAttributeTest7725); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSchemaAttributeTestAccess().getSchemaAttributeKeyword_0());
                 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaAttributeTest7740); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaAttributeTest7737); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSchemaAttributeTestAccess().getLeftParenthesisKeyword_1());
                 
@@ -9571,7 +9666,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSchemaAttributeTestAccess().getAttDecAttributeDeclarationParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7761);
+            pushFollow(FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7758);
             lv_attDec_2_0=ruleAttributeDeclaration();
 
             state._fsp--;
@@ -9593,7 +9688,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaAttributeTest7773); 
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaAttributeTest7770); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSchemaAttributeTestAccess().getRightParenthesisKeyword_3());
                 
@@ -9630,13 +9725,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3656:2: iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF
             {
              newCompositeNode(grammarAccess.getAttributeDeclarationRule()); 
-            pushFollow(FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7809);
+            pushFollow(FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7806);
             iv_ruleAttributeDeclaration=ruleAttributeDeclaration();
 
             state._fsp--;
 
              current =iv_ruleAttributeDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeDeclaration7819); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeDeclaration7816); 
 
             }
 
@@ -9676,7 +9771,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getAttributeDeclarationAccess().getAttNameAttributeNameParserRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7864);
+            pushFollow(FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7861);
             lv_attName_0_0=ruleAttributeName();
 
             state._fsp--;
@@ -9728,13 +9823,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3695:2: iv_ruleElementTest= ruleElementTest EOF
             {
              newCompositeNode(grammarAccess.getElementTestRule()); 
-            pushFollow(FOLLOW_ruleElementTest_in_entryRuleElementTest7899);
+            pushFollow(FOLLOW_ruleElementTest_in_entryRuleElementTest7896);
             iv_ruleElementTest=ruleElementTest();
 
             state._fsp--;
 
              current =iv_ruleElementTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementTest7909); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementTest7906); 
 
             }
 
@@ -9786,11 +9881,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleElementTest7955); 
+            otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleElementTest7952); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getElementTestAccess().getElementKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleElementTest7967); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleElementTest7964); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getElementTestAccess().getLeftParenthesisKeyword_2());
                 
@@ -9814,7 +9909,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getElementTestAccess().getElemOrWildElementNameOrWildcardParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7989);
+                    pushFollow(FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7986);
                     lv_elemOrWild_3_0=ruleElementNameOrWildcard();
 
                     state._fsp--;
@@ -9847,7 +9942,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3738:4: otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )?
                             {
-                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleElementTest8002); 
+                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleElementTest7999); 
 
                                 	newLeafNode(otherlv_4, grammarAccess.getElementTestAccess().getCommaKeyword_3_1_0());
                                 
@@ -9860,7 +9955,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                              
                             	        newCompositeNode(grammarAccess.getElementTestAccess().getTypeNameTypeNameParserRuleCall_3_1_1_0()); 
                             	    
-                            pushFollow(FOLLOW_ruleTypeName_in_ruleElementTest8023);
+                            pushFollow(FOLLOW_ruleTypeName_in_ruleElementTest8020);
                             lv_typeName_5_0=ruleTypeName();
 
                             state._fsp--;
@@ -9893,7 +9988,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                                 case 1 :
                                     // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:4: otherlv_6= '?'
                                     {
-                                    otherlv_6=(Token)match(input,60,FOLLOW_60_in_ruleElementTest8036); 
+                                    otherlv_6=(Token)match(input,60,FOLLOW_60_in_ruleElementTest8033); 
 
                                         	newLeafNode(otherlv_6, grammarAccess.getElementTestAccess().getQuestionMarkKeyword_3_1_2());
                                         
@@ -9915,7 +10010,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleElementTest8054); 
+            otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleElementTest8051); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getElementTestAccess().getRightParenthesisKeyword_4());
                 
@@ -9952,13 +10047,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3778:2: iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF
             {
              newCompositeNode(grammarAccess.getElementNameOrWildcardRule()); 
-            pushFollow(FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard8090);
+            pushFollow(FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard8087);
             iv_ruleElementNameOrWildcard=ruleElementNameOrWildcard();
 
             state._fsp--;
 
              current =iv_ruleElementNameOrWildcard; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementNameOrWildcard8100); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementNameOrWildcard8097); 
 
             }
 
@@ -10019,7 +10114,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getElementNameOrWildcardAccess().getElemNameElementNameParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementName_in_ruleElementNameOrWildcard8146);
+                    pushFollow(FOLLOW_ruleElementName_in_ruleElementNameOrWildcard8143);
                     lv_elemName_0_0=ruleElementName();
 
                     state._fsp--;
@@ -10061,7 +10156,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleElementNameOrWildcard8174); 
+                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleElementNameOrWildcard8171); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getElementNameOrWildcardAccess().getAsteriskKeyword_1_1());
                         
@@ -10104,13 +10199,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3828:2: iv_ruleSchemaElementTest= ruleSchemaElementTest EOF
             {
              newCompositeNode(grammarAccess.getSchemaElementTestRule()); 
-            pushFollow(FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8211);
+            pushFollow(FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8208);
             iv_ruleSchemaElementTest=ruleSchemaElementTest();
 
             state._fsp--;
 
              current =iv_ruleSchemaElementTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaElementTest8221); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaElementTest8218); 
 
             }
 
@@ -10147,11 +10242,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3839:1: (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' )
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3839:3: otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,66,FOLLOW_66_in_ruleSchemaElementTest8258); 
+            otherlv_0=(Token)match(input,66,FOLLOW_66_in_ruleSchemaElementTest8255); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSchemaElementTestAccess().getSchemaElementKeyword_0());
                 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaElementTest8270); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaElementTest8267); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSchemaElementTestAccess().getLeftParenthesisKeyword_1());
                 
@@ -10164,7 +10259,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSchemaElementTestAccess().getElemDecElementDeclarationParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8291);
+            pushFollow(FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8288);
             lv_elemDec_2_0=ruleElementDeclaration();
 
             state._fsp--;
@@ -10186,7 +10281,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaElementTest8303); 
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaElementTest8300); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSchemaElementTestAccess().getRightParenthesisKeyword_3());
                 
@@ -10223,13 +10318,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3879:2: iv_ruleElementDeclaration= ruleElementDeclaration EOF
             {
              newCompositeNode(grammarAccess.getElementDeclarationRule()); 
-            pushFollow(FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8339);
+            pushFollow(FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8336);
             iv_ruleElementDeclaration=ruleElementDeclaration();
 
             state._fsp--;
 
              current =iv_ruleElementDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementDeclaration8349); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementDeclaration8346); 
 
             }
 
@@ -10263,7 +10358,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getElementDeclarationAccess().getElementNameParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleElementName_in_ruleElementDeclaration8395);
+            pushFollow(FOLLOW_ruleElementName_in_ruleElementDeclaration8392);
             this_ElementName_0=ruleElementName();
 
             state._fsp--;
@@ -10302,13 +10397,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3909:2: iv_ruleAttributeName= ruleAttributeName EOF
             {
              newCompositeNode(grammarAccess.getAttributeNameRule()); 
-            pushFollow(FOLLOW_ruleAttributeName_in_entryRuleAttributeName8429);
+            pushFollow(FOLLOW_ruleAttributeName_in_entryRuleAttributeName8426);
             iv_ruleAttributeName=ruleAttributeName();
 
             state._fsp--;
 
              current =iv_ruleAttributeName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeName8439); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeName8436); 
 
             }
 
@@ -10326,37 +10421,43 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3916:1: ruleAttributeName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3916:1: ruleAttributeName returns [EObject current=null] : ( (lv_qName_0_0= ruleQName ) ) ;
     public final EObject ruleAttributeName() throws RecognitionException {
         EObject current = null;
 
-        Token lv_qName_0_0=null;
+        EObject lv_qName_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3919:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3920:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3919:28: ( ( (lv_qName_0_0= ruleQName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3920:1: ( (lv_qName_0_0= ruleQName ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3920:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3921:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3920:1: ( (lv_qName_0_0= ruleQName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3921:1: (lv_qName_0_0= ruleQName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3921:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3922:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3921:1: (lv_qName_0_0= ruleQName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3922:3: lv_qName_0_0= ruleQName
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttributeName8480); 
+             
+            	        newCompositeNode(grammarAccess.getAttributeNameAccess().getQNameQNameParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQName_in_ruleAttributeName8481);
+            lv_qName_0_0=ruleQName();
 
-            			newLeafNode(lv_qName_0_0, grammarAccess.getAttributeNameAccess().getQNameIDTerminalRuleCall_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getAttributeNameRule());
+            	            current = createModelElementForParent(grammarAccess.getAttributeNameRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"qName",
                     		lv_qName_0_0, 
-                    		"ID");
+                    		"QName");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -10394,13 +10495,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3948:2: iv_ruleElementName= ruleElementName EOF
             {
              newCompositeNode(grammarAccess.getElementNameRule()); 
-            pushFollow(FOLLOW_ruleElementName_in_entryRuleElementName8520);
+            pushFollow(FOLLOW_ruleElementName_in_entryRuleElementName8516);
             iv_ruleElementName=ruleElementName();
 
             state._fsp--;
 
              current =iv_ruleElementName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementName8530); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementName8526); 
 
             }
 
@@ -10418,37 +10519,43 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3955:1: ruleElementName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3955:1: ruleElementName returns [EObject current=null] : ( (lv_qName_0_0= ruleQName ) ) ;
     public final EObject ruleElementName() throws RecognitionException {
         EObject current = null;
 
-        Token lv_qName_0_0=null;
+        EObject lv_qName_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3958:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3959:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3958:28: ( ( (lv_qName_0_0= ruleQName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3959:1: ( (lv_qName_0_0= ruleQName ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3959:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3960:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3959:1: ( (lv_qName_0_0= ruleQName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3960:1: (lv_qName_0_0= ruleQName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3960:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3961:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3960:1: (lv_qName_0_0= ruleQName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3961:3: lv_qName_0_0= ruleQName
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementName8571); 
+             
+            	        newCompositeNode(grammarAccess.getElementNameAccess().getQNameQNameParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQName_in_ruleElementName8571);
+            lv_qName_0_0=ruleQName();
 
-            			newLeafNode(lv_qName_0_0, grammarAccess.getElementNameAccess().getQNameIDTerminalRuleCall_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getElementNameRule());
+            	            current = createModelElementForParent(grammarAccess.getElementNameRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"qName",
                     		lv_qName_0_0, 
-                    		"ID");
+                    		"QName");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -10486,13 +10593,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3987:2: iv_ruleTypeName= ruleTypeName EOF
             {
              newCompositeNode(grammarAccess.getTypeNameRule()); 
-            pushFollow(FOLLOW_ruleTypeName_in_entryRuleTypeName8611);
+            pushFollow(FOLLOW_ruleTypeName_in_entryRuleTypeName8606);
             iv_ruleTypeName=ruleTypeName();
 
             state._fsp--;
 
              current =iv_ruleTypeName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeName8621); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeName8616); 
 
             }
 
@@ -10510,37 +10617,43 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3994:1: ruleTypeName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3994:1: ruleTypeName returns [EObject current=null] : ( (lv_qName_0_0= ruleQName ) ) ;
     public final EObject ruleTypeName() throws RecognitionException {
         EObject current = null;
 
-        Token lv_qName_0_0=null;
+        EObject lv_qName_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3997:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3998:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3997:28: ( ( (lv_qName_0_0= ruleQName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3998:1: ( (lv_qName_0_0= ruleQName ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3998:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3999:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3998:1: ( (lv_qName_0_0= ruleQName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3999:1: (lv_qName_0_0= ruleQName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3999:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4000:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3999:1: (lv_qName_0_0= ruleQName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4000:3: lv_qName_0_0= ruleQName
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeName8662); 
+             
+            	        newCompositeNode(grammarAccess.getTypeNameAccess().getQNameQNameParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQName_in_ruleTypeName8661);
+            lv_qName_0_0=ruleQName();
 
-            			newLeafNode(lv_qName_0_0, grammarAccess.getTypeNameAccess().getQNameIDTerminalRuleCall_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTypeNameRule());
+            	            current = createModelElementForParent(grammarAccess.getTypeNameRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"qName",
                     		lv_qName_0_0, 
-                    		"ID");
+                    		"QName");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -10578,13 +10691,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4026:2: iv_ruleNCName= ruleNCName EOF
             {
              newCompositeNode(grammarAccess.getNCNameRule()); 
-            pushFollow(FOLLOW_ruleNCName_in_entryRuleNCName8702);
+            pushFollow(FOLLOW_ruleNCName_in_entryRuleNCName8696);
             iv_ruleNCName=ruleNCName();
 
             state._fsp--;
 
              current =iv_ruleNCName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNCName8712); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNCName8706); 
 
             }
 
@@ -10620,7 +10733,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4038:1: (lv_ncName_0_0= RULE_ID )
             // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4039:3: lv_ncName_0_0= RULE_ID
             {
-            lv_ncName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNCName8753); 
+            lv_ncName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNCName8747); 
 
             			newLeafNode(lv_ncName_0_0, grammarAccess.getNCNameAccess().getNcNameIDTerminalRuleCall_0()); 
             		
@@ -10656,6 +10769,381 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleNCName"
 
+
+    // $ANTLR start "entryRuleQName"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:1: entryRuleQName returns [EObject current=null] : iv_ruleQName= ruleQName EOF ;
+    public final EObject entryRuleQName() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleQName = null;
+
+
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4064:2: (iv_ruleQName= ruleQName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:2: iv_ruleQName= ruleQName EOF
+            {
+             newCompositeNode(grammarAccess.getQNameRule()); 
+            pushFollow(FOLLOW_ruleQName_in_entryRuleQName8787);
+            iv_ruleQName=ruleQName();
+
+            state._fsp--;
+
+             current =iv_ruleQName; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQName8797); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleQName"
+
+
+    // $ANTLR start "ruleQName"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4072:1: ruleQName returns [EObject current=null] : (this_PrefixedName_0= rulePrefixedName | this_UnprefixedName_1= ruleUnprefixedName ) ;
+    public final EObject ruleQName() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_PrefixedName_0 = null;
+
+        EObject this_UnprefixedName_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4075:28: ( (this_PrefixedName_0= rulePrefixedName | this_UnprefixedName_1= ruleUnprefixedName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:1: (this_PrefixedName_0= rulePrefixedName | this_UnprefixedName_1= ruleUnprefixedName )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:1: (this_PrefixedName_0= rulePrefixedName | this_UnprefixedName_1= ruleUnprefixedName )
+            int alt56=2;
+            int LA56_0 = input.LA(1);
+
+            if ( (LA56_0==RULE_ID) ) {
+                int LA56_1 = input.LA(2);
+
+                if ( (LA56_1==57) ) {
+                    alt56=1;
+                }
+                else if ( (LA56_1==EOF||(LA56_1>=RULE_VALUECOMP && LA56_1<=RULE_NODECOMP)||(LA56_1>=22 && LA56_1<=23)||LA56_1==26||LA56_1==29||(LA56_1>=31 && LA56_1<=32)||(LA56_1>=34 && LA56_1<=48)||LA56_1==50||(LA56_1>=52 && LA56_1<=55)||(LA56_1>=58 && LA56_1<=60)) ) {
+                    alt56=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 56, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 56, 0, input);
+
+                throw nvae;
+            }
+            switch (alt56) {
+                case 1 :
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4077:5: this_PrefixedName_0= rulePrefixedName
+                    {
+                     
+                            newCompositeNode(grammarAccess.getQNameAccess().getPrefixedNameParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_rulePrefixedName_in_ruleQName8844);
+                    this_PrefixedName_0=rulePrefixedName();
+
+                    state._fsp--;
+
+                     
+                            current = this_PrefixedName_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4087:5: this_UnprefixedName_1= ruleUnprefixedName
+                    {
+                     
+                            newCompositeNode(grammarAccess.getQNameAccess().getUnprefixedNameParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleUnprefixedName_in_ruleQName8871);
+                    this_UnprefixedName_1=ruleUnprefixedName();
+
+                    state._fsp--;
+
+                     
+                            current = this_UnprefixedName_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleQName"
+
+
+    // $ANTLR start "entryRulePrefixedName"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4103:1: entryRulePrefixedName returns [EObject current=null] : iv_rulePrefixedName= rulePrefixedName EOF ;
+    public final EObject entryRulePrefixedName() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePrefixedName = null;
+
+
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4104:2: (iv_rulePrefixedName= rulePrefixedName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4105:2: iv_rulePrefixedName= rulePrefixedName EOF
+            {
+             newCompositeNode(grammarAccess.getPrefixedNameRule()); 
+            pushFollow(FOLLOW_rulePrefixedName_in_entryRulePrefixedName8906);
+            iv_rulePrefixedName=rulePrefixedName();
+
+            state._fsp--;
+
+             current =iv_rulePrefixedName; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrefixedName8916); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePrefixedName"
+
+
+    // $ANTLR start "rulePrefixedName"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4112:1: rulePrefixedName returns [EObject current=null] : ( ( (lv_prefix_0_0= ruleNCName ) ) otherlv_1= ':' ( (lv_localPart_2_0= ruleNCName ) ) ) ;
+    public final EObject rulePrefixedName() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        EObject lv_prefix_0_0 = null;
+
+        EObject lv_localPart_2_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4115:28: ( ( ( (lv_prefix_0_0= ruleNCName ) ) otherlv_1= ':' ( (lv_localPart_2_0= ruleNCName ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4116:1: ( ( (lv_prefix_0_0= ruleNCName ) ) otherlv_1= ':' ( (lv_localPart_2_0= ruleNCName ) ) )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4116:1: ( ( (lv_prefix_0_0= ruleNCName ) ) otherlv_1= ':' ( (lv_localPart_2_0= ruleNCName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4116:2: ( (lv_prefix_0_0= ruleNCName ) ) otherlv_1= ':' ( (lv_localPart_2_0= ruleNCName ) )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4116:2: ( (lv_prefix_0_0= ruleNCName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4117:1: (lv_prefix_0_0= ruleNCName )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4117:1: (lv_prefix_0_0= ruleNCName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4118:3: lv_prefix_0_0= ruleNCName
+            {
+             
+            	        newCompositeNode(grammarAccess.getPrefixedNameAccess().getPrefixNCNameParserRuleCall_0_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNCName_in_rulePrefixedName8962);
+            lv_prefix_0_0=ruleNCName();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getPrefixedNameRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"prefix",
+                    		lv_prefix_0_0, 
+                    		"NCName");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,57,FOLLOW_57_in_rulePrefixedName8974); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getPrefixedNameAccess().getColonKeyword_1());
+                
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4138:1: ( (lv_localPart_2_0= ruleNCName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4139:1: (lv_localPart_2_0= ruleNCName )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4139:1: (lv_localPart_2_0= ruleNCName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4140:3: lv_localPart_2_0= ruleNCName
+            {
+             
+            	        newCompositeNode(grammarAccess.getPrefixedNameAccess().getLocalPartNCNameParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNCName_in_rulePrefixedName8995);
+            lv_localPart_2_0=ruleNCName();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getPrefixedNameRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"localPart",
+                    		lv_localPart_2_0, 
+                    		"NCName");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePrefixedName"
+
+
+    // $ANTLR start "entryRuleUnprefixedName"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4164:1: entryRuleUnprefixedName returns [EObject current=null] : iv_ruleUnprefixedName= ruleUnprefixedName EOF ;
+    public final EObject entryRuleUnprefixedName() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleUnprefixedName = null;
+
+
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4165:2: (iv_ruleUnprefixedName= ruleUnprefixedName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4166:2: iv_ruleUnprefixedName= ruleUnprefixedName EOF
+            {
+             newCompositeNode(grammarAccess.getUnprefixedNameRule()); 
+            pushFollow(FOLLOW_ruleUnprefixedName_in_entryRuleUnprefixedName9031);
+            iv_ruleUnprefixedName=ruleUnprefixedName();
+
+            state._fsp--;
+
+             current =iv_ruleUnprefixedName; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnprefixedName9041); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleUnprefixedName"
+
+
+    // $ANTLR start "ruleUnprefixedName"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4173:1: ruleUnprefixedName returns [EObject current=null] : ( (lv_localPart_0_0= ruleNCName ) ) ;
+    public final EObject ruleUnprefixedName() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_localPart_0_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4176:28: ( ( (lv_localPart_0_0= ruleNCName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4177:1: ( (lv_localPart_0_0= ruleNCName ) )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4177:1: ( (lv_localPart_0_0= ruleNCName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4178:1: (lv_localPart_0_0= ruleNCName )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4178:1: (lv_localPart_0_0= ruleNCName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4179:3: lv_localPart_0_0= ruleNCName
+            {
+             
+            	        newCompositeNode(grammarAccess.getUnprefixedNameAccess().getLocalPartNCNameParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNCName_in_ruleUnprefixedName9086);
+            lv_localPart_0_0=ruleNCName();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getUnprefixedNameRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"localPart",
+                    		lv_localPart_0_0, 
+                    		"NCName");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleUnprefixedName"
+
     // Delegated rules
 
 
@@ -10664,7 +11152,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleExpr_in_entryRuleExpr75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExpr85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleExpr131 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_22_in_ruleExpr144 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_22_in_ruleExpr144 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleExpr165 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_ruleExprSingle_in_entryRuleExprSingle203 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExprSingle213 = new BitSet(new long[]{0x0000000000000002L});
@@ -10675,129 +11163,129 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleForExpr_in_entryRuleForExpr376 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleForExpr386 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleForClause_in_ruleForExpr432 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleForExpr444 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_23_in_ruleForExpr444 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleForExpr465 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleForClause_in_entryRuleSimpleForClause501 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSimpleForClause511 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_24_in_ruleSimpleForClause548 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleSimpleForClause560 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_25_in_ruleSimpleForClause560 = new BitSet(new long[]{0x0000000082027C00L});
     public static final BitSet FOLLOW_ruleVarName_in_ruleSimpleForClause581 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleSimpleForClause593 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_26_in_ruleSimpleForClause593 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleSimpleForClause614 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_ruleAdditionalIn_in_ruleSimpleForClause635 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_ruleAdditionalIn_in_entryRuleAdditionalIn672 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAdditionalIn682 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ruleAdditionalIn719 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleAdditionalIn731 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_25_in_ruleAdditionalIn731 = new BitSet(new long[]{0x0000000082027C00L});
     public static final BitSet FOLLOW_ruleVarName_in_ruleAdditionalIn752 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleAdditionalIn764 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_26_in_ruleAdditionalIn764 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleAdditionalIn785 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQuantifiedExpr_in_entryRuleQuantifiedExpr821 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQuantifiedExpr831 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_ruleQuantifiedExpr869 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_28_in_ruleQuantifiedExpr887 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleQuantifiedExpr900 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_25_in_ruleQuantifiedExpr900 = new BitSet(new long[]{0x0000000082027C00L});
     public static final BitSet FOLLOW_ruleVarName_in_ruleQuantifiedExpr921 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleQuantifiedExpr933 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_26_in_ruleQuantifiedExpr933 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleQuantifiedExpr954 = new BitSet(new long[]{0x0000000020400000L});
     public static final BitSet FOLLOW_ruleAdditionalIn_in_ruleQuantifiedExpr975 = new BitSet(new long[]{0x0000000020400000L});
-    public static final BitSet FOLLOW_29_in_ruleQuantifiedExpr988 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_29_in_ruleQuantifiedExpr988 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleQuantifiedExpr1009 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIfExpr_in_entryRuleIfExpr1045 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIfExpr1055 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_30_in_ruleIfExpr1092 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleIfExpr1104 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_31_in_ruleIfExpr1104 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExpr_in_ruleIfExpr1125 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_32_in_ruleIfExpr1137 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleIfExpr1149 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_33_in_ruleIfExpr1149 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleIfExpr1170 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleIfExpr1182 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_34_in_ruleIfExpr1182 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleExprSingle_in_ruleIfExpr1203 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOrExpr_in_entryRuleOrExpr1239 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOrExpr1249 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAndExpr_in_ruleOrExpr1295 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_35_in_ruleOrExpr1308 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_35_in_ruleOrExpr1308 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleAndExpr_in_ruleOrExpr1329 = new BitSet(new long[]{0x0000000800000002L});
     public static final BitSet FOLLOW_ruleAndExpr_in_entryRuleAndExpr1367 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndExpr1377 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComparisonExpr_in_ruleAndExpr1423 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_36_in_ruleAndExpr1436 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_36_in_ruleAndExpr1436 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleComparisonExpr_in_ruleAndExpr1457 = new BitSet(new long[]{0x0000001000000002L});
     public static final BitSet FOLLOW_ruleComparisonExpr_in_entryRuleComparisonExpr1495 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpr1505 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRangeExpr_in_ruleComparisonExpr1551 = new BitSet(new long[]{0x0000000000000072L});
-    public static final BitSet FOLLOW_RULE_VALUECOMP_in_ruleComparisonExpr1570 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_RULE_GENERALCOMP_in_ruleComparisonExpr1598 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_RULE_NODECOMP_in_ruleComparisonExpr1626 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_RULE_VALUECOMP_in_ruleComparisonExpr1570 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_RULE_GENERALCOMP_in_ruleComparisonExpr1598 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_RULE_NODECOMP_in_ruleComparisonExpr1626 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleRangeExpr_in_ruleComparisonExpr1653 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRangeExpr_in_entryRuleRangeExpr1691 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRangeExpr1701 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAdditiveExpr_in_ruleRangeExpr1747 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_37_in_ruleRangeExpr1760 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_37_in_ruleRangeExpr1760 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleAdditiveExpr_in_ruleRangeExpr1781 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAdditiveExpr_in_entryRuleAdditiveExpr1819 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAdditiveExpr1829 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMultiplicativeExpr_in_ruleAdditiveExpr1875 = new BitSet(new long[]{0x000000C000000002L});
-    public static final BitSet FOLLOW_38_in_ruleAdditiveExpr1889 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_39_in_ruleAdditiveExpr1907 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_38_in_ruleAdditiveExpr1889 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_39_in_ruleAdditiveExpr1907 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleMultiplicativeExpr_in_ruleAdditiveExpr1929 = new BitSet(new long[]{0x000000C000000002L});
     public static final BitSet FOLLOW_ruleMultiplicativeExpr_in_entryRuleMultiplicativeExpr1967 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicativeExpr1977 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUnionExpr_in_ruleMultiplicativeExpr2023 = new BitSet(new long[]{0x00000F0000000002L});
-    public static final BitSet FOLLOW_40_in_ruleMultiplicativeExpr2037 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_41_in_ruleMultiplicativeExpr2055 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_42_in_ruleMultiplicativeExpr2073 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_43_in_ruleMultiplicativeExpr2091 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_40_in_ruleMultiplicativeExpr2037 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_41_in_ruleMultiplicativeExpr2055 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_42_in_ruleMultiplicativeExpr2073 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_43_in_ruleMultiplicativeExpr2091 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleUnionExpr_in_ruleMultiplicativeExpr2113 = new BitSet(new long[]{0x00000F0000000002L});
     public static final BitSet FOLLOW_ruleUnionExpr_in_entryRuleUnionExpr2151 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleUnionExpr2161 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIntersectExceptExpr_in_ruleUnionExpr2207 = new BitSet(new long[]{0x0000300000000002L});
-    public static final BitSet FOLLOW_44_in_ruleUnionExpr2221 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_45_in_ruleUnionExpr2239 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_44_in_ruleUnionExpr2221 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_45_in_ruleUnionExpr2239 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleIntersectExceptExpr_in_ruleUnionExpr2261 = new BitSet(new long[]{0x0000300000000002L});
     public static final BitSet FOLLOW_ruleIntersectExceptExpr_in_entryRuleIntersectExceptExpr2299 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIntersectExceptExpr2309 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInstanceofExpr_in_ruleIntersectExceptExpr2355 = new BitSet(new long[]{0x0000C00000000002L});
-    public static final BitSet FOLLOW_46_in_ruleIntersectExceptExpr2369 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_47_in_ruleIntersectExceptExpr2387 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_46_in_ruleIntersectExceptExpr2369 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_47_in_ruleIntersectExceptExpr2387 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleInstanceofExpr_in_ruleIntersectExceptExpr2409 = new BitSet(new long[]{0x0000C00000000002L});
     public static final BitSet FOLLOW_ruleInstanceofExpr_in_entryRuleInstanceofExpr2447 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstanceofExpr2457 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTreatExpr_in_ruleInstanceofExpr2503 = new BitSet(new long[]{0x0001000000000002L});
     public static final BitSet FOLLOW_48_in_ruleInstanceofExpr2516 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleInstanceofExpr2528 = new BitSet(new long[]{0xE0000000001F0400L,0x0000000000000007L});
+    public static final BitSet FOLLOW_49_in_ruleInstanceofExpr2528 = new BitSet(new long[]{0xE0000000001F8000L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleSequenceType_in_ruleInstanceofExpr2549 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTreatExpr_in_entryRuleTreatExpr2587 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTreatExpr2597 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCastableExpr_in_ruleTreatExpr2643 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_50_in_ruleTreatExpr2656 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_ruleTreatExpr2668 = new BitSet(new long[]{0xE0000000001F0400L,0x0000000000000007L});
+    public static final BitSet FOLLOW_51_in_ruleTreatExpr2668 = new BitSet(new long[]{0xE0000000001F8000L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleSequenceType_in_ruleTreatExpr2689 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCastableExpr_in_entryRuleCastableExpr2727 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCastableExpr2737 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCastExpr_in_ruleCastableExpr2783 = new BitSet(new long[]{0x0010000000000002L});
     public static final BitSet FOLLOW_52_in_ruleCastableExpr2796 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_ruleCastableExpr2808 = new BitSet(new long[]{0xE0000000001F0400L,0x0000000000000007L});
+    public static final BitSet FOLLOW_51_in_ruleCastableExpr2808 = new BitSet(new long[]{0xE0000000001F8000L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleSingleType_in_ruleCastableExpr2829 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCastExpr_in_entryRuleCastExpr2867 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCastExpr2877 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUnaryExpr_in_ruleCastExpr2923 = new BitSet(new long[]{0x0020000000000002L});
     public static final BitSet FOLLOW_53_in_ruleCastExpr2936 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_ruleCastExpr2948 = new BitSet(new long[]{0xE0000000001F0400L,0x0000000000000007L});
+    public static final BitSet FOLLOW_51_in_ruleCastExpr2948 = new BitSet(new long[]{0xE0000000001F8000L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleSingleType_in_ruleCastExpr2969 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUnaryExpr_in_entryRuleUnaryExpr3007 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleUnaryExpr3017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleUnaryExpr3055 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_38_in_ruleUnaryExpr3073 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_39_in_ruleUnaryExpr3055 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_38_in_ruleUnaryExpr3073 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleValueExpr_in_ruleUnaryExpr3096 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueExpr_in_entryRuleValueExpr3132 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValueExpr3142 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePathExpr_in_ruleValueExpr3187 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePathExpr_in_entryRulePathExpr3222 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePathExpr3232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rulePathExpr3270 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_54_in_rulePathExpr3270 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rulePathExpr3320 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_55_in_rulePathExpr3320 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3342 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3380 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRelativePathExpr_in_entryRuleRelativePathExpr3425 = new BitSet(new long[]{0x0000000000000000L});
@@ -10806,9 +11294,9 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleExtraStepExpr_in_ruleRelativePathExpr3502 = new BitSet(new long[]{0x00C0000000000002L});
     public static final BitSet FOLLOW_ruleExtraStepExpr_in_entryRuleExtraStepExpr3539 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExtraStepExpr3549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleExtraStepExpr3587 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_54_in_ruleExtraStepExpr3587 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleStepExpr_in_ruleExtraStepExpr3609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleExtraStepExpr3637 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_55_in_ruleExtraStepExpr3637 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleStepExpr_in_ruleExtraStepExpr3659 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStepExpr_in_entryRuleStepExpr3704 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStepExpr3714 = new BitSet(new long[]{0x0000000000000002L});
@@ -10821,16 +11309,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_rulePredicateList_in_ruleAxisStep3929 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForwardStep_in_entryRuleForwardStep3965 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleForwardStep3975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FORWARDAXIS_in_ruleForwardStep4018 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_RULE_FORWARDAXIS_in_ruleForwardStep4018 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleNodeTest_in_ruleForwardStep4044 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAbbrevForwardStep_in_ruleForwardStep4072 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAbbrevForwardStep_in_entryRuleAbbrevForwardStep4108 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAbbrevForwardStep4118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleAbbrevForwardStep4161 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_56_in_ruleAbbrevForwardStep4161 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleNodeTest_in_ruleAbbrevForwardStep4196 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReverseStep_in_entryRuleReverseStep4232 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleReverseStep4242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_REVERSEAXIS_in_ruleReverseStep4285 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_RULE_REVERSEAXIS_in_ruleReverseStep4285 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
     public static final BitSet FOLLOW_ruleNodeTest_in_ruleReverseStep4311 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ABBREVREVERSESTEP_in_ruleReverseStep4335 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNodeTest_in_entryRuleNodeTest4376 = new BitSet(new long[]{0x0000000000000000L});
@@ -10839,166 +11327,178 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleNameTest_in_ruleNodeTest4459 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNameTest_in_entryRuleNameTest4495 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNameTest4505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNameTest4547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWildcard_in_ruleNameTest4579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWildcard_in_entryRuleWildcard4615 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWildcard4625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleWildcard4668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4709 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleWildcard4721 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleWildcard4733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleWildcard4753 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleWildcard4765 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4823 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFilterExpr4833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4879 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_rulePredicateList_in_ruleFilterExpr4900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateList_in_entryRulePredicateList4936 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateList4946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicate_in_rulePredicateList5001 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate5038 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicate5048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_rulePredicate5085 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExpr_in_rulePredicate5106 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_59_in_rulePredicate5118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr5154 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpr5164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_rulePrimaryExpr5210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarRef_in_rulePrimaryExpr5237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral5355 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral5365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericLiteral_in_ruleLiteral5411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5475 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumericLiteral5485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarRef_in_entryRuleVarRef5624 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVarRef5634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleVarRef5671 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleVarName_in_ruleVarRef5693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarName_in_entryRuleVarName5728 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVarName5738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVarName5779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5819 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParenthesizedExpr5829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleParenthesizedExpr5875 = new BitSet(new long[]{0xE1C001C1DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleParenthesizedExpr5896 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleParenthesizedExpr5909 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5945 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall5955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionCall5997 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleFunctionCall6014 = new BitSet(new long[]{0xE1C001C1DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall6036 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_22_in_ruleFunctionCall6049 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall6070 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_32_in_ruleFunctionCall6086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSingleType_in_entryRuleSingleType6122 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSingleType6132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicType_in_ruleSingleType6179 = new BitSet(new long[]{0x1000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleSingleType6191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequenceType_in_entryRuleSequenceType6229 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSequenceType6239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemType_in_ruleSequenceType6314 = new BitSet(new long[]{0x1000014000000000L});
-    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6373 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOccurenceIndicator6384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleOccurenceIndicator6422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleOccurenceIndicator6441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleOccurenceIndicator6460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemType_in_entryRuleItemType6500 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemType6510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKindTest_in_ruleItemType6556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicType_in_ruleItemType6611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicType_in_entryRuleAtomicType6647 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicType6657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicType6698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKindTest_in_entryRuleKindTest6738 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleKindTest6748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocumentTest_in_ruleKindTest6794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementTest_in_ruleKindTest6821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeTest_in_ruleKindTest6848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleKindTest6875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePITest_in_ruleKindTest6929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TEXTTEST_in_ruleKindTest6980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest7008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest7049 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDocumentTest7059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleDocumentTest7105 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleDocumentTest7117 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_ruleElementTest_in_ruleDocumentTest7139 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7166 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleDocumentTest7180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePITest_in_entryRulePITest7216 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePITest7226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rulePITest7272 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_rulePITest7284 = new BitSet(new long[]{0x0000000100001400L});
-    public static final BitSet FOLLOW_ruleNCName_in_rulePITest7306 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_rulePITest7329 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_rulePITest7348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7384 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeTest7394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleAttributeTest7440 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleAttributeTest7452 = new BitSet(new long[]{0x0000010100000400L});
-    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7474 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_22_in_ruleAttributeTest7487 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleTypeName_in_ruleAttributeTest7508 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleAttributeTest7524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7560 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleAttribNameOrWildcard7644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7681 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaAttributeTest7691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleSchemaAttributeTest7728 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleSchemaAttributeTest7740 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7761 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleSchemaAttributeTest7773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7809 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeDeclaration7819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementTest_in_entryRuleElementTest7899 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementTest7909 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleElementTest7955 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleElementTest7967 = new BitSet(new long[]{0x0000010100000400L});
-    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7989 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_22_in_ruleElementTest8002 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleTypeName_in_ruleElementTest8023 = new BitSet(new long[]{0x1000000100000000L});
-    public static final BitSet FOLLOW_60_in_ruleElementTest8036 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleElementTest8054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard8090 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementNameOrWildcard8100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementName_in_ruleElementNameOrWildcard8146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleElementNameOrWildcard8174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8211 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaElementTest8221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleSchemaElementTest8258 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleSchemaElementTest8270 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8291 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleSchemaElementTest8303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8339 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementDeclaration8349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementName_in_ruleElementDeclaration8395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeName_in_entryRuleAttributeName8429 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeName8439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeName8480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementName_in_entryRuleElementName8520 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementName8530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElementName8571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeName_in_entryRuleTypeName8611 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeName8621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeName8662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNCName_in_entryRuleNCName8702 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNCName8712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNCName8753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleNameTest4551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWildcard_in_ruleNameTest4578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWildcard_in_entryRuleWildcard4614 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWildcard4624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleWildcard4667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4708 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_ruleWildcard4720 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleWildcard4732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleWildcard4752 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_ruleWildcard4764 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4822 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFilterExpr4832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4878 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_rulePredicateList_in_ruleFilterExpr4899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateList_in_entryRulePredicateList4935 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateList4945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicate_in_rulePredicateList5000 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate5037 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicate5047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_rulePredicate5084 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExpr_in_rulePredicate5105 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_59_in_rulePredicate5117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr5153 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpr5163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rulePrimaryExpr5209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarRef_in_rulePrimaryExpr5236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral5354 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral5364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericLiteral_in_ruleLiteral5410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5433 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5474 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumericLiteral5484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarRef_in_entryRuleVarRef5623 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVarRef5633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleVarRef5670 = new BitSet(new long[]{0x0000000082027C00L});
+    public static final BitSet FOLLOW_ruleVarName_in_ruleVarRef5692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarName_in_entryRuleVarName5727 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVarName5737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleVarName5782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5817 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParenthesizedExpr5827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleParenthesizedExpr5873 = new BitSet(new long[]{0xE1C001C1DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleParenthesizedExpr5894 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleParenthesizedExpr5907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5943 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall5953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleFunctionCall5999 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleFunctionCall6011 = new BitSet(new long[]{0xE1C001C1DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall6033 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_22_in_ruleFunctionCall6046 = new BitSet(new long[]{0xE1C001C0DB1E7F80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall6067 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_32_in_ruleFunctionCall6083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSingleType_in_entryRuleSingleType6119 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSingleType6129 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicType_in_ruleSingleType6176 = new BitSet(new long[]{0x1000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleSingleType6188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSequenceType_in_entryRuleSequenceType6226 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSequenceType6236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemType_in_ruleSequenceType6311 = new BitSet(new long[]{0x1000014000000000L});
+    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6370 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOccurenceIndicator6381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleOccurenceIndicator6419 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleOccurenceIndicator6438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleOccurenceIndicator6457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemType_in_entryRuleItemType6497 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemType6507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKindTest_in_ruleItemType6553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicType_in_ruleItemType6608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicType_in_entryRuleAtomicType6644 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicType6654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicType6695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKindTest_in_entryRuleKindTest6735 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleKindTest6745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocumentTest_in_ruleKindTest6791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementTest_in_ruleKindTest6818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeTest_in_ruleKindTest6845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleKindTest6872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePITest_in_ruleKindTest6926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6949 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TEXTTEST_in_ruleKindTest6977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest7005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest7046 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDocumentTest7056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleDocumentTest7102 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleDocumentTest7114 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_ruleElementTest_in_ruleDocumentTest7136 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7163 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleDocumentTest7177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePITest_in_entryRulePITest7213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePITest7223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rulePITest7269 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_rulePITest7281 = new BitSet(new long[]{0x0000000100020800L});
+    public static final BitSet FOLLOW_ruleNCName_in_rulePITest7303 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_rulePITest7326 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_rulePITest7345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7381 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeTest7391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleAttributeTest7437 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleAttributeTest7449 = new BitSet(new long[]{0x0000010182027C00L});
+    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7471 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_22_in_ruleAttributeTest7484 = new BitSet(new long[]{0x0000000082027C00L});
+    public static final BitSet FOLLOW_ruleTypeName_in_ruleAttributeTest7505 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleAttributeTest7521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7557 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleAttribNameOrWildcard7641 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7678 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaAttributeTest7688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ruleSchemaAttributeTest7725 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleSchemaAttributeTest7737 = new BitSet(new long[]{0x0000000082027C00L});
+    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7758 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleSchemaAttributeTest7770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7806 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeDeclaration7816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementTest_in_entryRuleElementTest7896 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementTest7906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleElementTest7952 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleElementTest7964 = new BitSet(new long[]{0x0000010182027C00L});
+    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7986 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_22_in_ruleElementTest7999 = new BitSet(new long[]{0x0000000082027C00L});
+    public static final BitSet FOLLOW_ruleTypeName_in_ruleElementTest8020 = new BitSet(new long[]{0x1000000100000000L});
+    public static final BitSet FOLLOW_60_in_ruleElementTest8033 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleElementTest8051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard8087 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementNameOrWildcard8097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementName_in_ruleElementNameOrWildcard8143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleElementNameOrWildcard8171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8208 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaElementTest8218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleSchemaElementTest8255 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleSchemaElementTest8267 = new BitSet(new long[]{0x0000000082027C00L});
+    public static final BitSet FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8288 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleSchemaElementTest8300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8336 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementDeclaration8346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementName_in_ruleElementDeclaration8392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeName_in_entryRuleAttributeName8426 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeName8436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleAttributeName8481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementName_in_entryRuleElementName8516 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementName8526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleElementName8571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeName_in_entryRuleTypeName8606 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeName8616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_ruleTypeName8661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNCName_in_entryRuleNCName8696 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNCName8706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNCName8747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQName_in_entryRuleQName8787 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQName8797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrefixedName_in_ruleQName8844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnprefixedName_in_ruleQName8871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrefixedName_in_entryRulePrefixedName8906 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrefixedName8916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNCName_in_rulePrefixedName8962 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_rulePrefixedName8974 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_ruleNCName_in_rulePrefixedName8995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnprefixedName_in_entryRuleUnprefixedName9031 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnprefixedName9041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNCName_in_ruleUnprefixedName9086 = new BitSet(new long[]{0x0000000000000002L});
 
 }

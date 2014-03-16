@@ -49,7 +49,9 @@ import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrefixedName;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
 import org.xtext.example.xpath.xPath.RelDouble;
@@ -68,6 +70,7 @@ import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
 import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
@@ -564,6 +567,29 @@ public class XPathSwitch<T> extends Switch<T>
       {
         NCName ncName = (NCName)theEObject;
         T result = caseNCName(ncName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.QNAME:
+      {
+        QName qName = (QName)theEObject;
+        T result = caseQName(qName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.PREFIXED_NAME:
+      {
+        PrefixedName prefixedName = (PrefixedName)theEObject;
+        T result = casePrefixedName(prefixedName);
+        if (result == null) result = caseQName(prefixedName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.UNPREFIXED_NAME:
+      {
+        UnprefixedName unprefixedName = (UnprefixedName)theEObject;
+        T result = caseUnprefixedName(unprefixedName);
+        if (result == null) result = caseQName(unprefixedName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1575,6 +1601,54 @@ public class XPathSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNCName(NCName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>QName</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>QName</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQName(QName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Prefixed Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Prefixed Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrefixedName(PrefixedName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unprefixed Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unprefixed Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnprefixedName(UnprefixedName object)
   {
     return null;
   }

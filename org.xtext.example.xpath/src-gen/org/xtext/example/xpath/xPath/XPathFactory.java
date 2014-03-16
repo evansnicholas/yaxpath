@@ -563,6 +563,33 @@ public interface XPathFactory extends EFactory
   NCName createNCName();
 
   /**
+   * Returns a new object of class '<em>QName</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>QName</em>'.
+   * @generated
+   */
+  QName createQName();
+
+  /**
+   * Returns a new object of class '<em>Prefixed Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Prefixed Name</em>'.
+   * @generated
+   */
+  PrefixedName createPrefixedName();
+
+  /**
+   * Returns a new object of class '<em>Unprefixed Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unprefixed Name</em>'.
+   * @generated
+   */
+  UnprefixedName createUnprefixedName();
+
+  /**
    * Returns a new object of class '<em>Rel Single</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

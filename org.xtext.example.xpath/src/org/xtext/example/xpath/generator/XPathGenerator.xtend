@@ -22,7 +22,9 @@ class XPathGenerator implements IGenerator {
 		val sb = new StringBuilder() 
 		for (e: resource.allContents.toIterable.filter(ValueExpr)){
 			val compiled = 
-			'''def xpath(elem: Elem): Elem = {
+			'''def xpath(elem: Elem): IndexedSeq[Elem] = {
+				  val documentElem = Elem(QName("documentNode"))
+                  val totalElem = documentElem.withChildren(Vector(elem))
 			      «e.compile»
 			   }
 			'''
@@ -36,7 +38,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(RelSingle rs) {
-		'''elem.filterChildElems(«rs.relPathExpr.step.compile»)
+		'''totalElem.filterChildElems(«rs.relPathExpr.step.compile»)
 		«IF rs.relPathExpr.extraSteps != null»
 		«FOR extra: rs.relPathExpr.extraSteps»
 		«extra.compile»
@@ -46,7 +48,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(Single s) {
-		'''.filterChildElems(«s.step.compile»)'''
+		'''.flatMap {  _.filterChildElems(«s.step.compile») }'''
 	}
 	
 	def dispatch compile(AxisStep axs) {
@@ -66,7 +68,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(NameTest nat) {
-		'''«IF nat.QName != null»«nat.QName»«ENDIF»«IF nat.wildcard != null»«nat.wildcard.compile»«ENDIF»'''
+		'''«IF nat.QName != null»«nat.QName.compile»«ENDIF»«IF nat.wildcard != null»«nat.wildcard.compile»«ENDIF»'''
 	}
 	
 	def dispatch compile(FilterExpr f) {
@@ -79,6 +81,10 @@ class XPathGenerator implements IGenerator {
 	
 	def dispatch compile(Literal l) {
 		'''«IF l.num != null»«l.num»«ENDIF»«IF l.string != null»«l.string»«ENDIF»'''
+	}
+	
+	def dispatch compile(UnprefixedName un) {
+		'''EName("«un.localPart.ncName»")'''
 	}
 	
 	def dispatch compile(EObject o) {

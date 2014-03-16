@@ -52,6 +52,7 @@ import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrefixedName;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
@@ -69,6 +70,7 @@ import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
 import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.Wildcard;
@@ -327,6 +329,13 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.PREFIXED_NAME:
+				if(context == grammarAccess.getPrefixedNameRule() ||
+				   context == grammarAccess.getQNameRule()) {
+					sequence_PrefixedName(context, (PrefixedName) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.PRIMARY_EXPR:
 				if(context == grammarAccess.getPrimaryExprRule()) {
 					sequence_PrimaryExpr(context, (PrimaryExpr) semanticObject); 
@@ -430,6 +439,13 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case XPathPackage.UNION_EXPR:
 				if(context == grammarAccess.getUnionExprRule()) {
 					sequence_UnionExpr(context, (UnionExpr) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.UNPREFIXED_NAME:
+				if(context == grammarAccess.getQNameRule() ||
+				   context == grammarAccess.getUnprefixedNameRule()) {
+					sequence_UnprefixedName(context, (UnprefixedName) semanticObject); 
 					return; 
 				}
 				else break;
@@ -545,7 +561,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     qName=ID
+	 *     qName=QName
 	 */
 	protected void sequence_AttributeName(EObject context, AttributeName semanticObject) {
 		if(errorAcceptor != null) {
@@ -554,7 +570,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAttributeNameAccess().getQNameIDTerminalRuleCall_0(), semanticObject.getQName());
+		feeder.accept(grammarAccess.getAttributeNameAccess().getQNameQNameParserRuleCall_0(), semanticObject.getQName());
 		feeder.finish();
 	}
 	
@@ -624,7 +640,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     qName=ID
+	 *     qName=QName
 	 */
 	protected void sequence_ElementName(EObject context, ElementName semanticObject) {
 		if(errorAcceptor != null) {
@@ -633,7 +649,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getElementNameAccess().getQNameIDTerminalRuleCall_0(), semanticObject.getQName());
+		feeder.accept(grammarAccess.getElementNameAccess().getQNameQNameParserRuleCall_0(), semanticObject.getQName());
 		feeder.finish();
 	}
 	
@@ -737,7 +753,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (qName=ID (expr=ExprSingle exprs+=ExprSingle*)?)
+	 *     (qName=QName (expr=ExprSingle exprs+=ExprSingle*)?)
 	 */
 	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -848,7 +864,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (qName=ID | wildcard=Wildcard)
+	 *     (qName=QName | wildcard=Wildcard)
 	 */
 	protected void sequence_NameTest(EObject context, NameTest semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -975,6 +991,25 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (prefix=NCName localPart=NCName)
+	 */
+	protected void sequence_PrefixedName(EObject context, PrefixedName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.QNAME__LOCAL_PART) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.QNAME__LOCAL_PART));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.PREFIXED_NAME__PREFIX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.PREFIXED_NAME__PREFIX));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPrefixedNameAccess().getPrefixNCNameParserRuleCall_0_0(), semanticObject.getPrefix());
+		feeder.accept(grammarAccess.getPrefixedNameAccess().getLocalPartNCNameParserRuleCall_2_0(), semanticObject.getLocalPart());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (literal=Literal | varRef=VarRef | parExpr=ParenthesizedExpr | conItemExpr=CONTEXTITEMEXPR | functionCall=FunctionCall)
 	 */
 	protected void sequence_PrimaryExpr(EObject context, PrimaryExpr semanticObject) {
@@ -1079,7 +1114,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     qName=ID
+	 *     qName=QName
 	 */
 	protected void sequence_TypeName(EObject context, TypeName semanticObject) {
 		if(errorAcceptor != null) {
@@ -1088,7 +1123,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTypeNameAccess().getQNameIDTerminalRuleCall_0(), semanticObject.getQName());
+		feeder.accept(grammarAccess.getTypeNameAccess().getQNameQNameParserRuleCall_0(), semanticObject.getQName());
 		feeder.finish();
 	}
 	
@@ -1120,6 +1155,22 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     localPart=NCName
+	 */
+	protected void sequence_UnprefixedName(EObject context, UnprefixedName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.QNAME__LOCAL_PART) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.QNAME__LOCAL_PART));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUnprefixedNameAccess().getLocalPartNCNameParserRuleCall_0(), semanticObject.getLocalPart());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=PathExpr
 	 */
 	protected void sequence_ValueExpr(EObject context, ValueExpr semanticObject) {
@@ -1136,7 +1187,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     qName=ID
+	 *     qName=QName
 	 */
 	protected void sequence_VarName(EObject context, VarName semanticObject) {
 		if(errorAcceptor != null) {
@@ -1145,7 +1196,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVarNameAccess().getQNameIDTerminalRuleCall_0(), semanticObject.getQName());
+		feeder.accept(grammarAccess.getVarNameAccess().getQNameQNameParserRuleCall_0(), semanticObject.getQName());
 		feeder.finish();
 	}
 	

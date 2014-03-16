@@ -1140,7 +1140,7 @@ public interface XPathPackage extends EPackage
   int NAME_TEST = 29;
 
   /**
-   * The feature id for the '<em><b>QName</b></em>' attribute.
+   * The feature id for the '<em><b>QName</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1482,7 +1482,7 @@ public interface XPathPackage extends EPackage
   int VAR_NAME = 38;
 
   /**
-   * The feature id for the '<em><b>QName</b></em>' attribute.
+   * The feature id for the '<em><b>QName</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1538,7 +1538,7 @@ public interface XPathPackage extends EPackage
   int FUNCTION_CALL = 40;
 
   /**
-   * The feature id for the '<em><b>QName</b></em>' attribute.
+   * The feature id for the '<em><b>QName</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2112,7 +2112,7 @@ public interface XPathPackage extends EPackage
   int ATTRIBUTE_NAME = 56;
 
   /**
-   * The feature id for the '<em><b>QName</b></em>' attribute.
+   * The feature id for the '<em><b>QName</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2140,7 +2140,7 @@ public interface XPathPackage extends EPackage
   int ELEMENT_NAME = 57;
 
   /**
-   * The feature id for the '<em><b>QName</b></em>' attribute.
+   * The feature id for the '<em><b>QName</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2168,7 +2168,7 @@ public interface XPathPackage extends EPackage
   int TYPE_NAME = 58;
 
   /**
-   * The feature id for the '<em><b>QName</b></em>' attribute.
+   * The feature id for the '<em><b>QName</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2214,6 +2214,99 @@ public interface XPathPackage extends EPackage
   int NC_NAME_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.QNameImpl <em>QName</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.QNameImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getQName()
+   * @generated
+   */
+  int QNAME = 60;
+
+  /**
+   * The feature id for the '<em><b>Local Part</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QNAME__LOCAL_PART = 0;
+
+  /**
+   * The number of structural features of the '<em>QName</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QNAME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.PrefixedNameImpl <em>Prefixed Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.PrefixedNameImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPrefixedName()
+   * @generated
+   */
+  int PREFIXED_NAME = 61;
+
+  /**
+   * The feature id for the '<em><b>Local Part</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIXED_NAME__LOCAL_PART = QNAME__LOCAL_PART;
+
+  /**
+   * The feature id for the '<em><b>Prefix</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIXED_NAME__PREFIX = QNAME_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Prefixed Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIXED_NAME_FEATURE_COUNT = QNAME_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.UnprefixedNameImpl <em>Unprefixed Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.UnprefixedNameImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnprefixedName()
+   * @generated
+   */
+  int UNPREFIXED_NAME = 62;
+
+  /**
+   * The feature id for the '<em><b>Local Part</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPREFIXED_NAME__LOCAL_PART = QNAME__LOCAL_PART;
+
+  /**
+   * The number of structural features of the '<em>Unprefixed Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPREFIXED_NAME_FEATURE_COUNT = QNAME_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.RelSingleImpl <em>Rel Single</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2221,7 +2314,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelSingle()
    * @generated
    */
-  int REL_SINGLE = 60;
+  int REL_SINGLE = 63;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2249,7 +2342,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelDouble()
    * @generated
    */
-  int REL_DOUBLE = 61;
+  int REL_DOUBLE = 64;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2277,7 +2370,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelNoSelector()
    * @generated
    */
-  int REL_NO_SELECTOR = 62;
+  int REL_NO_SELECTOR = 65;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2305,7 +2398,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSingle()
    * @generated
    */
-  int SINGLE = 63;
+  int SINGLE = 66;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference.
@@ -2333,7 +2426,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDouble()
    * @generated
    */
-  int DOUBLE = 64;
+  int DOUBLE = 67;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference.
@@ -2361,7 +2454,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPITTest()
    * @generated
    */
-  int PIT_TEST = 65;
+  int PIT_TEST = 68;
 
   /**
    * The feature id for the '<em><b>Nc Name</b></em>' containment reference.
@@ -3330,15 +3423,15 @@ public interface XPathPackage extends EPackage
   EClass getNameTest();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.NameTest#getQName <em>QName</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.NameTest#getQName <em>QName</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>QName</em>'.
+   * @return the meta object for the containment reference '<em>QName</em>'.
    * @see org.xtext.example.xpath.xPath.NameTest#getQName()
    * @see #getNameTest()
    * @generated
    */
-  EAttribute getNameTest_QName();
+  EReference getNameTest_QName();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.NameTest#getWildcard <em>Wildcard</em>}'.
@@ -3629,15 +3722,15 @@ public interface XPathPackage extends EPackage
   EClass getVarName();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.VarName#getQName <em>QName</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.VarName#getQName <em>QName</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>QName</em>'.
+   * @return the meta object for the containment reference '<em>QName</em>'.
    * @see org.xtext.example.xpath.xPath.VarName#getQName()
    * @see #getVarName()
    * @generated
    */
-  EAttribute getVarName_QName();
+  EReference getVarName_QName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.ParenthesizedExpr <em>Parenthesized Expr</em>}'.
@@ -3671,15 +3764,15 @@ public interface XPathPackage extends EPackage
   EClass getFunctionCall();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.FunctionCall#getQName <em>QName</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.FunctionCall#getQName <em>QName</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>QName</em>'.
+   * @return the meta object for the containment reference '<em>QName</em>'.
    * @see org.xtext.example.xpath.xPath.FunctionCall#getQName()
    * @see #getFunctionCall()
    * @generated
    */
-  EAttribute getFunctionCall_QName();
+  EReference getFunctionCall_QName();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.FunctionCall#getExpr <em>Expr</em>}'.
@@ -4161,15 +4254,15 @@ public interface XPathPackage extends EPackage
   EClass getAttributeName();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.AttributeName#getQName <em>QName</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.AttributeName#getQName <em>QName</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>QName</em>'.
+   * @return the meta object for the containment reference '<em>QName</em>'.
    * @see org.xtext.example.xpath.xPath.AttributeName#getQName()
    * @see #getAttributeName()
    * @generated
    */
-  EAttribute getAttributeName_QName();
+  EReference getAttributeName_QName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.ElementName <em>Element Name</em>}'.
@@ -4182,15 +4275,15 @@ public interface XPathPackage extends EPackage
   EClass getElementName();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ElementName#getQName <em>QName</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ElementName#getQName <em>QName</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>QName</em>'.
+   * @return the meta object for the containment reference '<em>QName</em>'.
    * @see org.xtext.example.xpath.xPath.ElementName#getQName()
    * @see #getElementName()
    * @generated
    */
-  EAttribute getElementName_QName();
+  EReference getElementName_QName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.TypeName <em>Type Name</em>}'.
@@ -4203,15 +4296,15 @@ public interface XPathPackage extends EPackage
   EClass getTypeName();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.TypeName#getQName <em>QName</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.TypeName#getQName <em>QName</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>QName</em>'.
+   * @return the meta object for the containment reference '<em>QName</em>'.
    * @see org.xtext.example.xpath.xPath.TypeName#getQName()
    * @see #getTypeName()
    * @generated
    */
-  EAttribute getTypeName_QName();
+  EReference getTypeName_QName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.NCName <em>NC Name</em>}'.
@@ -4233,6 +4326,58 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EAttribute getNCName_NcName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.QName <em>QName</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>QName</em>'.
+   * @see org.xtext.example.xpath.xPath.QName
+   * @generated
+   */
+  EClass getQName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.QName#getLocalPart <em>Local Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Local Part</em>'.
+   * @see org.xtext.example.xpath.xPath.QName#getLocalPart()
+   * @see #getQName()
+   * @generated
+   */
+  EReference getQName_LocalPart();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.PrefixedName <em>Prefixed Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Prefixed Name</em>'.
+   * @see org.xtext.example.xpath.xPath.PrefixedName
+   * @generated
+   */
+  EClass getPrefixedName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.PrefixedName#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Prefix</em>'.
+   * @see org.xtext.example.xpath.xPath.PrefixedName#getPrefix()
+   * @see #getPrefixedName()
+   * @generated
+   */
+  EReference getPrefixedName_Prefix();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.UnprefixedName <em>Unprefixed Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unprefixed Name</em>'.
+   * @see org.xtext.example.xpath.xPath.UnprefixedName
+   * @generated
+   */
+  EClass getUnprefixedName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.RelSingle <em>Rel Single</em>}'.
@@ -5159,12 +5304,12 @@ public interface XPathPackage extends EPackage
     EClass NAME_TEST = eINSTANCE.getNameTest();
 
     /**
-     * The meta object literal for the '<em><b>QName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>QName</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAME_TEST__QNAME = eINSTANCE.getNameTest_QName();
+    EReference NAME_TEST__QNAME = eINSTANCE.getNameTest_QName();
 
     /**
      * The meta object literal for the '<em><b>Wildcard</b></em>' containment reference feature.
@@ -5401,12 +5546,12 @@ public interface XPathPackage extends EPackage
     EClass VAR_NAME = eINSTANCE.getVarName();
 
     /**
-     * The meta object literal for the '<em><b>QName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>QName</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VAR_NAME__QNAME = eINSTANCE.getVarName_QName();
+    EReference VAR_NAME__QNAME = eINSTANCE.getVarName_QName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ParenthesizedExprImpl <em>Parenthesized Expr</em>}' class.
@@ -5437,12 +5582,12 @@ public interface XPathPackage extends EPackage
     EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
 
     /**
-     * The meta object literal for the '<em><b>QName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>QName</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION_CALL__QNAME = eINSTANCE.getFunctionCall_QName();
+    EReference FUNCTION_CALL__QNAME = eINSTANCE.getFunctionCall_QName();
 
     /**
      * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
@@ -5837,12 +5982,12 @@ public interface XPathPackage extends EPackage
     EClass ATTRIBUTE_NAME = eINSTANCE.getAttributeName();
 
     /**
-     * The meta object literal for the '<em><b>QName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>QName</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE_NAME__QNAME = eINSTANCE.getAttributeName_QName();
+    EReference ATTRIBUTE_NAME__QNAME = eINSTANCE.getAttributeName_QName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ElementNameImpl <em>Element Name</em>}' class.
@@ -5855,12 +6000,12 @@ public interface XPathPackage extends EPackage
     EClass ELEMENT_NAME = eINSTANCE.getElementName();
 
     /**
-     * The meta object literal for the '<em><b>QName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>QName</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENT_NAME__QNAME = eINSTANCE.getElementName_QName();
+    EReference ELEMENT_NAME__QNAME = eINSTANCE.getElementName_QName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.TypeNameImpl <em>Type Name</em>}' class.
@@ -5873,12 +6018,12 @@ public interface XPathPackage extends EPackage
     EClass TYPE_NAME = eINSTANCE.getTypeName();
 
     /**
-     * The meta object literal for the '<em><b>QName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>QName</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE_NAME__QNAME = eINSTANCE.getTypeName_QName();
+    EReference TYPE_NAME__QNAME = eINSTANCE.getTypeName_QName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.NCNameImpl <em>NC Name</em>}' class.
@@ -5897,6 +6042,52 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EAttribute NC_NAME__NC_NAME = eINSTANCE.getNCName_NcName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.QNameImpl <em>QName</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.QNameImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getQName()
+     * @generated
+     */
+    EClass QNAME = eINSTANCE.getQName();
+
+    /**
+     * The meta object literal for the '<em><b>Local Part</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QNAME__LOCAL_PART = eINSTANCE.getQName_LocalPart();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.PrefixedNameImpl <em>Prefixed Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.PrefixedNameImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPrefixedName()
+     * @generated
+     */
+    EClass PREFIXED_NAME = eINSTANCE.getPrefixedName();
+
+    /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREFIXED_NAME__PREFIX = eINSTANCE.getPrefixedName_Prefix();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.UnprefixedNameImpl <em>Unprefixed Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.UnprefixedNameImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnprefixedName()
+     * @generated
+     */
+    EClass UNPREFIXED_NAME = eINSTANCE.getUnprefixedName();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.RelSingleImpl <em>Rel Single</em>}' class.

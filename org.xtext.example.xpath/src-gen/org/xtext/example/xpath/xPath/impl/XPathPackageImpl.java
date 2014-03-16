@@ -51,7 +51,9 @@ import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrefixedName;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
 import org.xtext.example.xpath.xPath.RelDouble;
@@ -70,6 +72,7 @@ import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
 import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
@@ -504,6 +507,27 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * @generated
    */
   private EClass ncNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass prefixedNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unprefixedNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1495,9 +1519,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNameTest_QName()
+  public EReference getNameTest_QName()
   {
-    return (EAttribute)nameTestEClass.getEStructuralFeatures().get(0);
+    return (EReference)nameTestEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1775,9 +1799,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVarName_QName()
+  public EReference getVarName_QName()
   {
-    return (EAttribute)varNameEClass.getEStructuralFeatures().get(0);
+    return (EReference)varNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1815,9 +1839,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionCall_QName()
+  public EReference getFunctionCall_QName()
   {
-    return (EAttribute)functionCallEClass.getEStructuralFeatures().get(0);
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2275,9 +2299,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeName_QName()
+  public EReference getAttributeName_QName()
   {
-    return (EAttribute)attributeNameEClass.getEStructuralFeatures().get(0);
+    return (EReference)attributeNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2295,9 +2319,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementName_QName()
+  public EReference getElementName_QName()
   {
-    return (EAttribute)elementNameEClass.getEStructuralFeatures().get(0);
+    return (EReference)elementNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2315,9 +2339,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTypeName_QName()
+  public EReference getTypeName_QName()
   {
-    return (EAttribute)typeNameEClass.getEStructuralFeatures().get(0);
+    return (EReference)typeNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2338,6 +2362,56 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
   public EAttribute getNCName_NcName()
   {
     return (EAttribute)ncNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQName()
+  {
+    return qNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getQName_LocalPart()
+  {
+    return (EReference)qNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPrefixedName()
+  {
+    return prefixedNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPrefixedName_Prefix()
+  {
+    return (EReference)prefixedNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnprefixedName()
+  {
+    return unprefixedNameEClass;
   }
 
   /**
@@ -2617,7 +2691,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEReference(nodeTestEClass, NODE_TEST__TEST);
 
     nameTestEClass = createEClass(NAME_TEST);
-    createEAttribute(nameTestEClass, NAME_TEST__QNAME);
+    createEReference(nameTestEClass, NAME_TEST__QNAME);
     createEReference(nameTestEClass, NAME_TEST__WILDCARD);
 
     wildcardEClass = createEClass(WILDCARD);
@@ -2654,13 +2728,13 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     varRefEClass = createEClass(VAR_REF);
 
     varNameEClass = createEClass(VAR_NAME);
-    createEAttribute(varNameEClass, VAR_NAME__QNAME);
+    createEReference(varNameEClass, VAR_NAME__QNAME);
 
     parenthesizedExprEClass = createEClass(PARENTHESIZED_EXPR);
     createEReference(parenthesizedExprEClass, PARENTHESIZED_EXPR__EXPR);
 
     functionCallEClass = createEClass(FUNCTION_CALL);
-    createEAttribute(functionCallEClass, FUNCTION_CALL__QNAME);
+    createEReference(functionCallEClass, FUNCTION_CALL__QNAME);
     createEReference(functionCallEClass, FUNCTION_CALL__EXPR);
     createEReference(functionCallEClass, FUNCTION_CALL__EXPRS);
 
@@ -2722,16 +2796,24 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     elementDeclarationEClass = createEClass(ELEMENT_DECLARATION);
 
     attributeNameEClass = createEClass(ATTRIBUTE_NAME);
-    createEAttribute(attributeNameEClass, ATTRIBUTE_NAME__QNAME);
+    createEReference(attributeNameEClass, ATTRIBUTE_NAME__QNAME);
 
     elementNameEClass = createEClass(ELEMENT_NAME);
-    createEAttribute(elementNameEClass, ELEMENT_NAME__QNAME);
+    createEReference(elementNameEClass, ELEMENT_NAME__QNAME);
 
     typeNameEClass = createEClass(TYPE_NAME);
-    createEAttribute(typeNameEClass, TYPE_NAME__QNAME);
+    createEReference(typeNameEClass, TYPE_NAME__QNAME);
 
     ncNameEClass = createEClass(NC_NAME);
     createEAttribute(ncNameEClass, NC_NAME__NC_NAME);
+
+    qNameEClass = createEClass(QNAME);
+    createEReference(qNameEClass, QNAME__LOCAL_PART);
+
+    prefixedNameEClass = createEClass(PREFIXED_NAME);
+    createEReference(prefixedNameEClass, PREFIXED_NAME__PREFIX);
+
+    unprefixedNameEClass = createEClass(UNPREFIXED_NAME);
 
     relSingleEClass = createEClass(REL_SINGLE);
     createEReference(relSingleEClass, REL_SINGLE__REL_PATH_EXPR);
@@ -2792,6 +2874,8 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     varNameEClass.getESuperTypes().add(this.getVarRef());
     atomicTypeEClass.getESuperTypes().add(this.getSingleType());
     elementNameEClass.getESuperTypes().add(this.getElementDeclaration());
+    prefixedNameEClass.getESuperTypes().add(this.getQName());
+    unprefixedNameEClass.getESuperTypes().add(this.getQName());
     relSingleEClass.getESuperTypes().add(this.getPathExpr());
     relDoubleEClass.getESuperTypes().add(this.getPathExpr());
     relNoSelectorEClass.getESuperTypes().add(this.getPathExpr());
@@ -2917,7 +3001,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getNodeTest_Test(), ecorePackage.getEObject(), null, "test", null, 0, 1, NodeTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameTestEClass, NameTest.class, "NameTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNameTest_QName(), ecorePackage.getEString(), "qName", null, 0, 1, NameTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameTest_QName(), this.getQName(), null, "qName", null, 0, 1, NameTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNameTest_Wildcard(), this.getWildcard(), null, "wildcard", null, 0, 1, NameTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wildcardEClass, Wildcard.class, "Wildcard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2954,13 +3038,13 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEClass(varRefEClass, VarRef.class, "VarRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(varNameEClass, VarName.class, "VarName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVarName_QName(), ecorePackage.getEString(), "qName", null, 0, 1, VarName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVarName_QName(), this.getQName(), null, "qName", null, 0, 1, VarName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parenthesizedExprEClass, ParenthesizedExpr.class, "ParenthesizedExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParenthesizedExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, ParenthesizedExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionCall_QName(), ecorePackage.getEString(), "qName", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCall_QName(), this.getQName(), null, "qName", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionCall_Expr(), this.getExprSingle(), null, "expr", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionCall_Exprs(), this.getExprSingle(), null, "exprs", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3022,16 +3106,24 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEClass(elementDeclarationEClass, ElementDeclaration.class, "ElementDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(attributeNameEClass, AttributeName.class, "AttributeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeName_QName(), ecorePackage.getEString(), "qName", null, 0, 1, AttributeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeName_QName(), this.getQName(), null, "qName", null, 0, 1, AttributeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementNameEClass, ElementName.class, "ElementName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementName_QName(), ecorePackage.getEString(), "qName", null, 0, 1, ElementName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElementName_QName(), this.getQName(), null, "qName", null, 0, 1, ElementName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeNameEClass, TypeName.class, "TypeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTypeName_QName(), ecorePackage.getEString(), "qName", null, 0, 1, TypeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeName_QName(), this.getQName(), null, "qName", null, 0, 1, TypeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ncNameEClass, NCName.class, "NCName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNCName_NcName(), ecorePackage.getEString(), "ncName", null, 0, 1, NCName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qNameEClass, QName.class, "QName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getQName_LocalPart(), this.getNCName(), null, "localPart", null, 0, 1, QName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(prefixedNameEClass, PrefixedName.class, "PrefixedName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrefixedName_Prefix(), this.getNCName(), null, "prefix", null, 0, 1, PrefixedName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unprefixedNameEClass, UnprefixedName.class, "UnprefixedName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(relSingleEClass, RelSingle.class, "RelSingle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelSingle_RelPathExpr(), this.getRelativePathExpr(), null, "relPathExpr", null, 0, 1, RelSingle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

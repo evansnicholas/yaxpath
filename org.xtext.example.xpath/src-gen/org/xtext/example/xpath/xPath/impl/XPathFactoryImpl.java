@@ -52,7 +52,9 @@ import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrefixedName;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
 import org.xtext.example.xpath.xPath.RelDouble;
@@ -71,6 +73,7 @@ import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
 import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
@@ -190,6 +193,9 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       case XPathPackage.ELEMENT_NAME: return createElementName();
       case XPathPackage.TYPE_NAME: return createTypeName();
       case XPathPackage.NC_NAME: return createNCName();
+      case XPathPackage.QNAME: return createQName();
+      case XPathPackage.PREFIXED_NAME: return createPrefixedName();
+      case XPathPackage.UNPREFIXED_NAME: return createUnprefixedName();
       case XPathPackage.REL_SINGLE: return createRelSingle();
       case XPathPackage.REL_DOUBLE: return createRelDouble();
       case XPathPackage.REL_NO_SELECTOR: return createRelNoSelector();
@@ -859,6 +865,39 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     NCNameImpl ncName = new NCNameImpl();
     return ncName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QName createQName()
+  {
+    QNameImpl qName = new QNameImpl();
+    return qName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrefixedName createPrefixedName()
+  {
+    PrefixedNameImpl prefixedName = new PrefixedNameImpl();
+    return prefixedName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnprefixedName createUnprefixedName()
+  {
+    UnprefixedNameImpl unprefixedName = new UnprefixedNameImpl();
+    return unprefixedName;
   }
 
   /**

@@ -3,12 +3,15 @@
 package org.xtext.example.xpath.xPath.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.xpath.xPath.ElementName;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.XPathPackage;
 
 /**
@@ -27,24 +30,14 @@ import org.xtext.example.xpath.xPath.XPathPackage;
 public class ElementNameImpl extends ElementDeclarationImpl implements ElementName
 {
   /**
-   * The default value of the '{@link #getQName() <em>QName</em>}' attribute.
+   * The cached value of the '{@link #getQName() <em>QName</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getQName()
    * @generated
    * @ordered
    */
-  protected static final String QNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQName() <em>QName</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQName()
-   * @generated
-   * @ordered
-   */
-  protected String qName = QNAME_EDEFAULT;
+  protected QName qName;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +65,7 @@ public class ElementNameImpl extends ElementDeclarationImpl implements ElementNa
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQName()
+  public QName getQName()
   {
     return qName;
   }
@@ -82,12 +75,53 @@ public class ElementNameImpl extends ElementDeclarationImpl implements ElementNa
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQName(String newQName)
+  public NotificationChain basicSetQName(QName newQName, NotificationChain msgs)
   {
-    String oldQName = qName;
+    QName oldQName = qName;
     qName = newQName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.ELEMENT_NAME__QNAME, oldQName, qName));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.ELEMENT_NAME__QNAME, oldQName, newQName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQName(QName newQName)
+  {
+    if (newQName != qName)
+    {
+      NotificationChain msgs = null;
+      if (qName != null)
+        msgs = ((InternalEObject)qName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.ELEMENT_NAME__QNAME, null, msgs);
+      if (newQName != null)
+        msgs = ((InternalEObject)newQName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.ELEMENT_NAME__QNAME, null, msgs);
+      msgs = basicSetQName(newQName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.ELEMENT_NAME__QNAME, newQName, newQName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case XPathPackage.ELEMENT_NAME__QNAME:
+        return basicSetQName(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,7 +151,7 @@ public class ElementNameImpl extends ElementDeclarationImpl implements ElementNa
     switch (featureID)
     {
       case XPathPackage.ELEMENT_NAME__QNAME:
-        setQName((String)newValue);
+        setQName((QName)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +168,7 @@ public class ElementNameImpl extends ElementDeclarationImpl implements ElementNa
     switch (featureID)
     {
       case XPathPackage.ELEMENT_NAME__QNAME:
-        setQName(QNAME_EDEFAULT);
+        setQName((QName)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +185,9 @@ public class ElementNameImpl extends ElementDeclarationImpl implements ElementNa
     switch (featureID)
     {
       case XPathPackage.ELEMENT_NAME__QNAME:
-        return QNAME_EDEFAULT == null ? qName != null : !QNAME_EDEFAULT.equals(qName);
+        return qName != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (qName: ");
-    result.append(qName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ElementNameImpl

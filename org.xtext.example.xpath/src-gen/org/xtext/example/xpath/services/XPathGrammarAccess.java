@@ -1218,22 +1218,22 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NameTest");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cQNameAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cQNameIDTerminalRuleCall_0_0 = (RuleCall)cQNameAssignment_0.eContents().get(0);
+		private final RuleCall cQNameQNameParserRuleCall_0_0 = (RuleCall)cQNameAssignment_0.eContents().get(0);
 		private final Assignment cWildcardAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cWildcardWildcardParserRuleCall_1_0 = (RuleCall)cWildcardAssignment_1.eContents().get(0);
 		
 		//NameTest:
-		//	qName=ID | wildcard=Wildcard;
+		//	qName=QName | wildcard=Wildcard;
 		public ParserRule getRule() { return rule; }
 
-		//qName=ID | wildcard=Wildcard
+		//qName=QName | wildcard=Wildcard
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//qName=ID
+		//qName=QName
 		public Assignment getQNameAssignment_0() { return cQNameAssignment_0; }
 
-		//ID
-		public RuleCall getQNameIDTerminalRuleCall_0_0() { return cQNameIDTerminalRuleCall_0_0; }
+		//QName
+		public RuleCall getQNameQNameParserRuleCall_0_0() { return cQNameQNameParserRuleCall_0_0; }
 
 		//wildcard=Wildcard
 		public Assignment getWildcardAssignment_1() { return cWildcardAssignment_1; }
@@ -1521,17 +1521,17 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	public class VarNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VarName");
 		private final Assignment cQNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cQNameIDTerminalRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
+		private final RuleCall cQNameQNameParserRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
 		
 		//VarName:
-		//	qName=ID;
+		//	qName=QName;
 		public ParserRule getRule() { return rule; }
 
-		//qName=ID
+		//qName=QName
 		public Assignment getQNameAssignment() { return cQNameAssignment; }
 
-		//ID
-		public RuleCall getQNameIDTerminalRuleCall_0() { return cQNameIDTerminalRuleCall_0; }
+		//QName
+		public RuleCall getQNameQNameParserRuleCall_0() { return cQNameQNameParserRuleCall_0; }
 	}
 
 	public class ParenthesizedExprElements extends AbstractParserRuleElementFinder {
@@ -1570,7 +1570,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cQNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cQNameIDTerminalRuleCall_0_0 = (RuleCall)cQNameAssignment_0.eContents().get(0);
+		private final RuleCall cQNameQNameParserRuleCall_0_0 = (RuleCall)cQNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cExprAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
@@ -1582,17 +1582,17 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//FunctionCall:
-		//	qName=ID "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")";
+		//	qName=QName "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//qName=ID "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")"
+		//qName=QName "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")"
 		public Group getGroup() { return cGroup; }
 
-		//qName=ID
+		//qName=QName
 		public Assignment getQNameAssignment_0() { return cQNameAssignment_0; }
 
-		//ID
-		public RuleCall getQNameIDTerminalRuleCall_0_0() { return cQNameIDTerminalRuleCall_0_0; }
+		//QName
+		public RuleCall getQNameQNameParserRuleCall_0_0() { return cQNameQNameParserRuleCall_0_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
@@ -2217,49 +2217,49 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	public class AttributeNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeName");
 		private final Assignment cQNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cQNameIDTerminalRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
+		private final RuleCall cQNameQNameParserRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
 		
 		//AttributeName:
-		//	qName=ID;
+		//	qName=QName;
 		public ParserRule getRule() { return rule; }
 
-		//qName=ID
+		//qName=QName
 		public Assignment getQNameAssignment() { return cQNameAssignment; }
 
-		//ID
-		public RuleCall getQNameIDTerminalRuleCall_0() { return cQNameIDTerminalRuleCall_0; }
+		//QName
+		public RuleCall getQNameQNameParserRuleCall_0() { return cQNameQNameParserRuleCall_0; }
 	}
 
 	public class ElementNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementName");
 		private final Assignment cQNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cQNameIDTerminalRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
+		private final RuleCall cQNameQNameParserRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
 		
 		//ElementName:
-		//	qName=ID;
+		//	qName=QName;
 		public ParserRule getRule() { return rule; }
 
-		//qName=ID
+		//qName=QName
 		public Assignment getQNameAssignment() { return cQNameAssignment; }
 
-		//ID
-		public RuleCall getQNameIDTerminalRuleCall_0() { return cQNameIDTerminalRuleCall_0; }
+		//QName
+		public RuleCall getQNameQNameParserRuleCall_0() { return cQNameQNameParserRuleCall_0; }
 	}
 
 	public class TypeNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeName");
 		private final Assignment cQNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cQNameIDTerminalRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
+		private final RuleCall cQNameQNameParserRuleCall_0 = (RuleCall)cQNameAssignment.eContents().get(0);
 		
 		//TypeName:
-		//	qName=ID;
+		//	qName=QName;
 		public ParserRule getRule() { return rule; }
 
-		//qName=ID
+		//qName=QName
 		public Assignment getQNameAssignment() { return cQNameAssignment; }
 
-		//ID
-		public RuleCall getQNameIDTerminalRuleCall_0() { return cQNameIDTerminalRuleCall_0; }
+		//QName
+		public RuleCall getQNameQNameParserRuleCall_0() { return cQNameQNameParserRuleCall_0; }
 	}
 
 	public class NCNameElements extends AbstractParserRuleElementFinder {
@@ -2276,6 +2276,74 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNcNameIDTerminalRuleCall_0() { return cNcNameIDTerminalRuleCall_0; }
+	}
+
+	public class QNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QName");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPrefixedNameParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cUnprefixedNameParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//QName:
+		//	PrefixedName | UnprefixedName;
+		public ParserRule getRule() { return rule; }
+
+		//PrefixedName | UnprefixedName
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//PrefixedName
+		public RuleCall getPrefixedNameParserRuleCall_0() { return cPrefixedNameParserRuleCall_0; }
+
+		//UnprefixedName
+		public RuleCall getUnprefixedNameParserRuleCall_1() { return cUnprefixedNameParserRuleCall_1; }
+	}
+
+	public class PrefixedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrefixedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPrefixAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPrefixNCNameParserRuleCall_0_0 = (RuleCall)cPrefixAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLocalPartAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLocalPartNCNameParserRuleCall_2_0 = (RuleCall)cLocalPartAssignment_2.eContents().get(0);
+		
+		//PrefixedName:
+		//	prefix=NCName ":" localPart=NCName;
+		public ParserRule getRule() { return rule; }
+
+		//prefix=NCName ":" localPart=NCName
+		public Group getGroup() { return cGroup; }
+
+		//prefix=NCName
+		public Assignment getPrefixAssignment_0() { return cPrefixAssignment_0; }
+
+		//NCName
+		public RuleCall getPrefixNCNameParserRuleCall_0_0() { return cPrefixNCNameParserRuleCall_0_0; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//localPart=NCName
+		public Assignment getLocalPartAssignment_2() { return cLocalPartAssignment_2; }
+
+		//NCName
+		public RuleCall getLocalPartNCNameParserRuleCall_2_0() { return cLocalPartNCNameParserRuleCall_2_0; }
+	}
+
+	public class UnprefixedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnprefixedName");
+		private final Assignment cLocalPartAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cLocalPartNCNameParserRuleCall_0 = (RuleCall)cLocalPartAssignment.eContents().get(0);
+		
+		//UnprefixedName:
+		//	localPart=NCName;
+		public ParserRule getRule() { return rule; }
+
+		//localPart=NCName
+		public Assignment getLocalPartAssignment() { return cLocalPartAssignment; }
+
+		//NCName
+		public RuleCall getLocalPartNCNameParserRuleCall_0() { return cLocalPartNCNameParserRuleCall_0; }
 	}
 	
 	
@@ -2341,6 +2409,9 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	private ElementNameElements pElementName;
 	private TypeNameElements pTypeName;
 	private NCNameElements pNCName;
+	private QNameElements pQName;
+	private PrefixedNameElements pPrefixedName;
+	private UnprefixedNameElements pUnprefixedName;
 	private TerminalRule tABBREVREVERSESTEP;
 	private TerminalRule tCONTEXTITEMEXPR;
 	private TerminalRule tANYKINDTEST;
@@ -2695,7 +2766,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NameTest:
-	//	qName=ID | wildcard=Wildcard;
+	//	qName=QName | wildcard=Wildcard;
 	public NameTestElements getNameTestAccess() {
 		return (pNameTest != null) ? pNameTest : (pNameTest = new NameTestElements());
 	}
@@ -2785,7 +2856,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VarName:
-	//	qName=ID;
+	//	qName=QName;
 	public VarNameElements getVarNameAccess() {
 		return (pVarName != null) ? pVarName : (pVarName = new VarNameElements());
 	}
@@ -2805,7 +2876,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionCall:
-	//	qName=ID "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")";
+	//	qName=QName "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")";
 	public FunctionCallElements getFunctionCallAccess() {
 		return (pFunctionCall != null) ? pFunctionCall : (pFunctionCall = new FunctionCallElements());
 	}
@@ -2977,7 +3048,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AttributeName:
-	//	qName=ID;
+	//	qName=QName;
 	public AttributeNameElements getAttributeNameAccess() {
 		return (pAttributeName != null) ? pAttributeName : (pAttributeName = new AttributeNameElements());
 	}
@@ -2987,7 +3058,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ElementName:
-	//	qName=ID;
+	//	qName=QName;
 	public ElementNameElements getElementNameAccess() {
 		return (pElementName != null) ? pElementName : (pElementName = new ElementNameElements());
 	}
@@ -2997,7 +3068,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypeName:
-	//	qName=ID;
+	//	qName=QName;
 	public TypeNameElements getTypeNameAccess() {
 		return (pTypeName != null) ? pTypeName : (pTypeName = new TypeNameElements());
 	}
@@ -3014,6 +3085,36 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getNCNameRule() {
 		return getNCNameAccess().getRule();
+	}
+
+	//QName:
+	//	PrefixedName | UnprefixedName;
+	public QNameElements getQNameAccess() {
+		return (pQName != null) ? pQName : (pQName = new QNameElements());
+	}
+	
+	public ParserRule getQNameRule() {
+		return getQNameAccess().getRule();
+	}
+
+	//PrefixedName:
+	//	prefix=NCName ":" localPart=NCName;
+	public PrefixedNameElements getPrefixedNameAccess() {
+		return (pPrefixedName != null) ? pPrefixedName : (pPrefixedName = new PrefixedNameElements());
+	}
+	
+	public ParserRule getPrefixedNameRule() {
+		return getPrefixedNameAccess().getRule();
+	}
+
+	//UnprefixedName:
+	//	localPart=NCName;
+	public UnprefixedNameElements getUnprefixedNameAccess() {
+		return (pUnprefixedName != null) ? pUnprefixedName : (pUnprefixedName = new UnprefixedNameElements());
+	}
+	
+	public ParserRule getUnprefixedNameRule() {
+		return getUnprefixedNameAccess().getRule();
 	}
 
 	//terminal ABBREVREVERSESTEP:

@@ -121,7 +121,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NodeTest/test"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//NameTest">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//NameTest/qName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NameTest/qName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NameTest/wildcard"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//Wildcard">
@@ -157,13 +157,13 @@
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//VarRef"/>
     <genClasses ecoreClass="XPath.ecore#//VarName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//VarName/qName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//VarName/qName"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ParenthesizedExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ParenthesizedExpr/expr"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//FunctionCall">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//FunctionCall/qName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//FunctionCall/qName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//FunctionCall/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//FunctionCall/exprs"/>
     </genClasses>
@@ -222,17 +222,24 @@
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ElementDeclaration"/>
     <genClasses ecoreClass="XPath.ecore#//AttributeName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//AttributeName/qName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AttributeName/qName"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ElementName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ElementName/qName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ElementName/qName"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//TypeName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//TypeName/qName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//TypeName/qName"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//NCName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//NCName/ncName"/>
     </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//QName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//QName/localPart"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//PrefixedName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrefixedName/prefix"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//UnprefixedName"/>
     <genClasses ecoreClass="XPath.ecore#//RelSingle">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RelSingle/relPathExpr"/>
     </genClasses>

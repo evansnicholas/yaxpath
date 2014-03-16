@@ -65,6 +65,7 @@ public class XPathParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPITestAccess().getAlternatives_3(), "rule__PITest__Alternatives_3");
 					put(grammarAccess.getAttribNameOrWildcardAccess().getAlternatives(), "rule__AttribNameOrWildcard__Alternatives");
 					put(grammarAccess.getElementNameOrWildcardAccess().getAlternatives(), "rule__ElementNameOrWildcard__Alternatives");
+					put(grammarAccess.getQNameAccess().getAlternatives(), "rule__QName__Alternatives");
 					put(grammarAccess.getExprAccess().getGroup(), "rule__Expr__Group__0");
 					put(grammarAccess.getExprAccess().getGroup_1(), "rule__Expr__Group_1__0");
 					put(grammarAccess.getForExprAccess().getGroup(), "rule__ForExpr__Group__0");
@@ -131,6 +132,7 @@ public class XPathParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementTestAccess().getGroup_3_1(), "rule__ElementTest__Group_3_1__0");
 					put(grammarAccess.getElementNameOrWildcardAccess().getGroup_1(), "rule__ElementNameOrWildcard__Group_1__0");
 					put(grammarAccess.getSchemaElementTestAccess().getGroup(), "rule__SchemaElementTest__Group__0");
+					put(grammarAccess.getPrefixedNameAccess().getGroup(), "rule__PrefixedName__Group__0");
 					put(grammarAccess.getExprAccess().getExprSingleAssignment_0(), "rule__Expr__ExprSingleAssignment_0");
 					put(grammarAccess.getExprAccess().getExprsSingleAssignment_1_1(), "rule__Expr__ExprsSingleAssignment_1_1");
 					put(grammarAccess.getForExprAccess().getForAssignment_0(), "rule__ForExpr__ForAssignment_0");
@@ -248,6 +250,9 @@ public class XPathParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementNameAccess().getQNameAssignment(), "rule__ElementName__QNameAssignment");
 					put(grammarAccess.getTypeNameAccess().getQNameAssignment(), "rule__TypeName__QNameAssignment");
 					put(grammarAccess.getNCNameAccess().getNcNameAssignment(), "rule__NCName__NcNameAssignment");
+					put(grammarAccess.getPrefixedNameAccess().getPrefixAssignment_0(), "rule__PrefixedName__PrefixAssignment_0");
+					put(grammarAccess.getPrefixedNameAccess().getLocalPartAssignment_2(), "rule__PrefixedName__LocalPartAssignment_2");
+					put(grammarAccess.getUnprefixedNameAccess().getLocalPartAssignment(), "rule__UnprefixedName__LocalPartAssignment");
 				}
 			};
 		}

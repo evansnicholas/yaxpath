@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.Wildcard;
 import org.xtext.example.xpath.xPath.XPathPackage;
 
@@ -32,24 +33,14 @@ import org.xtext.example.xpath.xPath.XPathPackage;
 public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTest
 {
   /**
-   * The default value of the '{@link #getQName() <em>QName</em>}' attribute.
+   * The cached value of the '{@link #getQName() <em>QName</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getQName()
    * @generated
    * @ordered
    */
-  protected static final String QNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQName() <em>QName</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQName()
-   * @generated
-   * @ordered
-   */
-  protected String qName = QNAME_EDEFAULT;
+  protected QName qName;
 
   /**
    * The cached value of the '{@link #getWildcard() <em>Wildcard</em>}' containment reference.
@@ -87,7 +78,7 @@ public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTe
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQName()
+  public QName getQName()
   {
     return qName;
   }
@@ -97,12 +88,37 @@ public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQName(String newQName)
+  public NotificationChain basicSetQName(QName newQName, NotificationChain msgs)
   {
-    String oldQName = qName;
+    QName oldQName = qName;
     qName = newQName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.NAME_TEST__QNAME, oldQName, qName));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.NAME_TEST__QNAME, oldQName, newQName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQName(QName newQName)
+  {
+    if (newQName != qName)
+    {
+      NotificationChain msgs = null;
+      if (qName != null)
+        msgs = ((InternalEObject)qName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NAME_TEST__QNAME, null, msgs);
+      if (newQName != null)
+        msgs = ((InternalEObject)newQName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NAME_TEST__QNAME, null, msgs);
+      msgs = basicSetQName(newQName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.NAME_TEST__QNAME, newQName, newQName));
   }
 
   /**
@@ -163,6 +179,8 @@ public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTe
   {
     switch (featureID)
     {
+      case XPathPackage.NAME_TEST__QNAME:
+        return basicSetQName(null, msgs);
       case XPathPackage.NAME_TEST__WILDCARD:
         return basicSetWildcard(null, msgs);
     }
@@ -198,7 +216,7 @@ public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTe
     switch (featureID)
     {
       case XPathPackage.NAME_TEST__QNAME:
-        setQName((String)newValue);
+        setQName((QName)newValue);
         return;
       case XPathPackage.NAME_TEST__WILDCARD:
         setWildcard((Wildcard)newValue);
@@ -218,7 +236,7 @@ public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTe
     switch (featureID)
     {
       case XPathPackage.NAME_TEST__QNAME:
-        setQName(QNAME_EDEFAULT);
+        setQName((QName)null);
         return;
       case XPathPackage.NAME_TEST__WILDCARD:
         setWildcard((Wildcard)null);
@@ -238,28 +256,11 @@ public class NameTestImpl extends MinimalEObjectImpl.Container implements NameTe
     switch (featureID)
     {
       case XPathPackage.NAME_TEST__QNAME:
-        return QNAME_EDEFAULT == null ? qName != null : !QNAME_EDEFAULT.equals(qName);
+        return qName != null;
       case XPathPackage.NAME_TEST__WILDCARD:
         return wildcard != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (qName: ");
-    result.append(qName);
-    result.append(')');
-    return result.toString();
   }
 
 } //NameTestImpl

@@ -134,7 +134,7 @@ NodeTest:
 ;
 
 NameTest:
-	qName=ID | wildcard=Wildcard
+	qName=QName | wildcard=Wildcard
 ;
 
 Wildcard:
@@ -178,7 +178,7 @@ VarRef:
 ;
 
 VarName:
-  qName=ID	
+  qName=QName
 ; 
 
 ParenthesizedExpr:
@@ -186,7 +186,7 @@ ParenthesizedExpr:
 ;
 
 FunctionCall:
-	qName=ID "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")"
+	qName=QName "(" (expr=ExprSingle ("," exprs+=ExprSingle)*)? ")"
 ;
 
 SingleType:
@@ -263,20 +263,33 @@ ElementDeclaration:
 ;
 
 AttributeName:
-	qName = ID
+	qName = QName
 ;
 
 ElementName:
-	qName=ID
+	qName=QName
 ;
 
 TypeName:
-	qName=ID
+	qName=QName
 ;
 
 NCName:
 	ncName=ID
 ;
+
+QName:
+  PrefixedName | UnprefixedName	
+;
+
+PrefixedName:
+	prefix=NCName ':' localPart=NCName
+;
+
+UnprefixedName:
+	localPart=NCName
+;
+
 	
 terminal ABBREVREVERSESTEP:
 	".."

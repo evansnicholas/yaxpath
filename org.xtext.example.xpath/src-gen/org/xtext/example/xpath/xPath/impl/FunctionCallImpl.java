@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.QName;
 import org.xtext.example.xpath.xPath.XPathPackage;
 
 /**
@@ -40,24 +41,14 @@ import org.xtext.example.xpath.xPath.XPathPackage;
 public class FunctionCallImpl extends MinimalEObjectImpl.Container implements FunctionCall
 {
   /**
-   * The default value of the '{@link #getQName() <em>QName</em>}' attribute.
+   * The cached value of the '{@link #getQName() <em>QName</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getQName()
    * @generated
    * @ordered
    */
-  protected static final String QNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQName() <em>QName</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQName()
-   * @generated
-   * @ordered
-   */
-  protected String qName = QNAME_EDEFAULT;
+  protected QName qName;
 
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -105,7 +96,7 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQName()
+  public QName getQName()
   {
     return qName;
   }
@@ -115,12 +106,37 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQName(String newQName)
+  public NotificationChain basicSetQName(QName newQName, NotificationChain msgs)
   {
-    String oldQName = qName;
+    QName oldQName = qName;
     qName = newQName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.FUNCTION_CALL__QNAME, oldQName, qName));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.FUNCTION_CALL__QNAME, oldQName, newQName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQName(QName newQName)
+  {
+    if (newQName != qName)
+    {
+      NotificationChain msgs = null;
+      if (qName != null)
+        msgs = ((InternalEObject)qName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FUNCTION_CALL__QNAME, null, msgs);
+      if (newQName != null)
+        msgs = ((InternalEObject)newQName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FUNCTION_CALL__QNAME, null, msgs);
+      msgs = basicSetQName(newQName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.FUNCTION_CALL__QNAME, newQName, newQName));
   }
 
   /**
@@ -195,6 +211,8 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
   {
     switch (featureID)
     {
+      case XPathPackage.FUNCTION_CALL__QNAME:
+        return basicSetQName(null, msgs);
       case XPathPackage.FUNCTION_CALL__EXPR:
         return basicSetExpr(null, msgs);
       case XPathPackage.FUNCTION_CALL__EXPRS:
@@ -235,7 +253,7 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
     switch (featureID)
     {
       case XPathPackage.FUNCTION_CALL__QNAME:
-        setQName((String)newValue);
+        setQName((QName)newValue);
         return;
       case XPathPackage.FUNCTION_CALL__EXPR:
         setExpr((ExprSingle)newValue);
@@ -259,7 +277,7 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
     switch (featureID)
     {
       case XPathPackage.FUNCTION_CALL__QNAME:
-        setQName(QNAME_EDEFAULT);
+        setQName((QName)null);
         return;
       case XPathPackage.FUNCTION_CALL__EXPR:
         setExpr((ExprSingle)null);
@@ -282,30 +300,13 @@ public class FunctionCallImpl extends MinimalEObjectImpl.Container implements Fu
     switch (featureID)
     {
       case XPathPackage.FUNCTION_CALL__QNAME:
-        return QNAME_EDEFAULT == null ? qName != null : !QNAME_EDEFAULT.equals(qName);
+        return qName != null;
       case XPathPackage.FUNCTION_CALL__EXPR:
         return expr != null;
       case XPathPackage.FUNCTION_CALL__EXPRS:
         return exprs != null && !exprs.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (qName: ");
-    result.append(qName);
-    result.append(')');
-    return result.toString();
   }
 
 } //FunctionCallImpl
