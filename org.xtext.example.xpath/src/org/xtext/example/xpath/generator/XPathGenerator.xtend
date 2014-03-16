@@ -47,8 +47,22 @@ class XPathGenerator implements IGenerator {
 		'''
 	}
 	
+	def dispatch compile(RelDouble rd) {
+		'''totalElem.filterElemsOrSelf(«rd.relPathExpr.step.compile»)
+		«IF rd.relPathExpr.extraSteps != null»
+		«FOR extra: rd.relPathExpr.extraSteps»
+		«extra.compile»
+		«ENDFOR»
+		«ENDIF»
+		'''
+	}
+	
 	def dispatch compile(Single s) {
 		'''.flatMap {  _.filterChildElems(«s.step.compile») }'''
+	}
+	
+	def dispatch compile(Double d) {
+		'''.flatMap { _.filterElemsOrSelf(«d.step.compile») }'''
 	}
 	
 	def dispatch compile(AxisStep axs) {

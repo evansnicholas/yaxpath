@@ -27,6 +27,7 @@ import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
 import org.xtext.example.xpath.xPath.QName;
+import org.xtext.example.xpath.xPath.RelDouble;
 import org.xtext.example.xpath.xPath.RelSingle;
 import org.xtext.example.xpath.xPath.RelativePathExpr;
 import org.xtext.example.xpath.xPath.Single;
@@ -110,10 +111,49 @@ public class XPathGenerator implements IGenerator {
     return _builder;
   }
   
+  protected CharSequence _compile(final RelDouble rd) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("totalElem.filterElemsOrSelf(");
+    RelativePathExpr _relPathExpr = rd.getRelPathExpr();
+    StepExpr _step = _relPathExpr.getStep();
+    Object _compile = this.compile(_step);
+    _builder.append(_compile, "");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    {
+      RelativePathExpr _relPathExpr_1 = rd.getRelPathExpr();
+      EList<StepExpr> _extraSteps = _relPathExpr_1.getExtraSteps();
+      boolean _notEquals = (!Objects.equal(_extraSteps, null));
+      if (_notEquals) {
+        {
+          RelativePathExpr _relPathExpr_2 = rd.getRelPathExpr();
+          EList<StepExpr> _extraSteps_1 = _relPathExpr_2.getExtraSteps();
+          for(final StepExpr extra : _extraSteps_1) {
+            _builder.append("\t\t");
+            Object _compile_1 = this.compile(extra);
+            _builder.append(_compile_1, "\t\t");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
   protected CharSequence _compile(final Single s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(".flatMap {  _.filterChildElems(");
     StepExpr _step = s.getStep();
+    Object _compile = this.compile(_step);
+    _builder.append(_compile, "");
+    _builder.append(") }");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final org.xtext.example.xpath.xPath.Double d) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".flatMap { _.filterElemsOrSelf(");
+    StepExpr _step = d.getStep();
     Object _compile = this.compile(_step);
     _builder.append(_compile, "");
     _builder.append(") }");
@@ -266,8 +306,12 @@ public class XPathGenerator implements IGenerator {
   public CharSequence compile(final EObject axs) {
     if (axs instanceof AxisStep) {
       return _compile((AxisStep)axs);
+    } else if (axs instanceof org.xtext.example.xpath.xPath.Double) {
+      return _compile((org.xtext.example.xpath.xPath.Double)axs);
     } else if (axs instanceof FilterExpr) {
       return _compile((FilterExpr)axs);
+    } else if (axs instanceof RelDouble) {
+      return _compile((RelDouble)axs);
     } else if (axs instanceof RelSingle) {
       return _compile((RelSingle)axs);
     } else if (axs instanceof Single) {
