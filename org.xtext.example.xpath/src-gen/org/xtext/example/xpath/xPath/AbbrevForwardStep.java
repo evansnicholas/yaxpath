@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.xtext.example.xpath.xPath.AbbrevForwardStep#getAttr <em>Attr</em>}</li>
  *   <li>{@link org.xtext.example.xpath.xPath.AbbrevForwardStep#getTest <em>Test</em>}</li>
  * </ul>
  * </p>
@@ -22,6 +23,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbbrevForwardStep extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Attr</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Attr</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Attr</em>' attribute.
+   * @see #setAttr(String)
+   * @see org.xtext.example.xpath.xPath.XPathPackage#getAbbrevForwardStep_Attr()
+   * @model
+   * @generated
+   */
+  String getAttr();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.xpath.xPath.AbbrevForwardStep#getAttr <em>Attr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Attr</em>' attribute.
+   * @see #getAttr()
+   * @generated
+   */
+  void setAttr(String value);
+
   /**
    * Returns the value of the '<em><b>Test</b></em>' containment reference.
    * <!-- begin-user-doc -->

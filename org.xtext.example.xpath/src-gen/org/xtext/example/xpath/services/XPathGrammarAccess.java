@@ -892,172 +892,190 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PathExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cPathExprAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Keyword cSolidusKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
-		private final Assignment cSinglePathAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
-		private final RuleCall cSinglePathRelativePathExprParserRuleCall_0_1_1_0 = (RuleCall)cSinglePathAssignment_0_1_1.eContents().get(0);
+		private final Keyword cSolidusKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cRelativePathExprParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Action cRelSingleRelPathExprAction_0_2 = (Action)cGroup_0.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cSolidusSolidusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cDoublePathAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cDoublePathRelativePathExprParserRuleCall_1_1_0 = (RuleCall)cDoublePathAssignment_1_1.eContents().get(0);
-		private final Assignment cPathAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cPathRelativePathExprParserRuleCall_2_0 = (RuleCall)cPathAssignment_2.eContents().get(0);
+		private final RuleCall cRelativePathExprParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Action cRelDoubleRelPathExprAction_1_2 = (Action)cGroup_1.eContents().get(2);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cRelativePathExprParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Action cRelNoSelectorRelPathExprAction_2_1 = (Action)cGroup_2.eContents().get(1);
 		
 		//PathExpr:
-		//	{PathExpr} ("/" singlePath=RelativePathExpr) | "//" doublePath=RelativePathExpr | path=RelativePathExpr;
+		//	"/" RelativePathExpr {RelSingle.relPathExpr=current} | "//" RelativePathExpr {RelDouble.relPathExpr=current} |
+		//	RelativePathExpr {RelNoSelector.relPathExpr=current};
 		public ParserRule getRule() { return rule; }
 
-		//{PathExpr} ("/" singlePath=RelativePathExpr) | "//" doublePath=RelativePathExpr | path=RelativePathExpr
+		//"/" RelativePathExpr {RelSingle.relPathExpr=current} | "//" RelativePathExpr {RelDouble.relPathExpr=current} |
+		//RelativePathExpr {RelNoSelector.relPathExpr=current}
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{PathExpr} ("/" singlePath=RelativePathExpr)
+		//"/" RelativePathExpr {RelSingle.relPathExpr=current}
 		public Group getGroup_0() { return cGroup_0; }
 
-		//{PathExpr}
-		public Action getPathExprAction_0_0() { return cPathExprAction_0_0; }
-
-		//"/" singlePath=RelativePathExpr
-		public Group getGroup_0_1() { return cGroup_0_1; }
-
 		//"/"
-		public Keyword getSolidusKeyword_0_1_0() { return cSolidusKeyword_0_1_0; }
-
-		//singlePath=RelativePathExpr
-		public Assignment getSinglePathAssignment_0_1_1() { return cSinglePathAssignment_0_1_1; }
+		public Keyword getSolidusKeyword_0_0() { return cSolidusKeyword_0_0; }
 
 		//RelativePathExpr
-		public RuleCall getSinglePathRelativePathExprParserRuleCall_0_1_1_0() { return cSinglePathRelativePathExprParserRuleCall_0_1_1_0; }
+		public RuleCall getRelativePathExprParserRuleCall_0_1() { return cRelativePathExprParserRuleCall_0_1; }
 
-		//"//" doublePath=RelativePathExpr
+		//{RelSingle.relPathExpr=current}
+		public Action getRelSingleRelPathExprAction_0_2() { return cRelSingleRelPathExprAction_0_2; }
+
+		//"//" RelativePathExpr {RelDouble.relPathExpr=current}
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"//"
 		public Keyword getSolidusSolidusKeyword_1_0() { return cSolidusSolidusKeyword_1_0; }
 
-		//doublePath=RelativePathExpr
-		public Assignment getDoublePathAssignment_1_1() { return cDoublePathAssignment_1_1; }
+		//RelativePathExpr
+		public RuleCall getRelativePathExprParserRuleCall_1_1() { return cRelativePathExprParserRuleCall_1_1; }
+
+		//{RelDouble.relPathExpr=current}
+		public Action getRelDoubleRelPathExprAction_1_2() { return cRelDoubleRelPathExprAction_1_2; }
+
+		//RelativePathExpr {RelNoSelector.relPathExpr=current}
+		public Group getGroup_2() { return cGroup_2; }
 
 		//RelativePathExpr
-		public RuleCall getDoublePathRelativePathExprParserRuleCall_1_1_0() { return cDoublePathRelativePathExprParserRuleCall_1_1_0; }
+		public RuleCall getRelativePathExprParserRuleCall_2_0() { return cRelativePathExprParserRuleCall_2_0; }
 
-		//path=RelativePathExpr
-		public Assignment getPathAssignment_2() { return cPathAssignment_2; }
-
-		//RelativePathExpr
-		public RuleCall getPathRelativePathExprParserRuleCall_2_0() { return cPathRelativePathExprParserRuleCall_2_0; }
+		//{RelNoSelector.relPathExpr=current}
+		public Action getRelNoSelectorRelPathExprAction_2_1() { return cRelNoSelectorRelPathExprAction_2_1; }
 	}
 
 	public class RelativePathExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RelativePathExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLeftAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLeftStepExprParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Keyword cSolidusKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
-		private final Keyword cSolidusSolidusKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
-		private final Assignment cRightsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightsStepExprParserRuleCall_1_1_0 = (RuleCall)cRightsAssignment_1_1.eContents().get(0);
+		private final Assignment cStepAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cStepStepExprParserRuleCall_0_0 = (RuleCall)cStepAssignment_0.eContents().get(0);
+		private final Assignment cExtraStepsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExtraStepsExtraStepExprParserRuleCall_1_0 = (RuleCall)cExtraStepsAssignment_1.eContents().get(0);
 		
 		//RelativePathExpr:
-		//	left=StepExpr (("/" | "//") rights+=StepExpr)*;
+		//	step=StepExpr extraSteps+=ExtraStepExpr*;
 		public ParserRule getRule() { return rule; }
 
-		//left=StepExpr (("/" | "//") rights+=StepExpr)*
+		//step=StepExpr extraSteps+=ExtraStepExpr*
 		public Group getGroup() { return cGroup; }
 
-		//left=StepExpr
-		public Assignment getLeftAssignment_0() { return cLeftAssignment_0; }
+		//step=StepExpr
+		public Assignment getStepAssignment_0() { return cStepAssignment_0; }
 
 		//StepExpr
-		public RuleCall getLeftStepExprParserRuleCall_0_0() { return cLeftStepExprParserRuleCall_0_0; }
+		public RuleCall getStepStepExprParserRuleCall_0_0() { return cStepStepExprParserRuleCall_0_0; }
 
-		//(("/" | "//") rights+=StepExpr)*
-		public Group getGroup_1() { return cGroup_1; }
+		//extraSteps+=ExtraStepExpr*
+		public Assignment getExtraStepsAssignment_1() { return cExtraStepsAssignment_1; }
 
-		//"/" | "//"
-		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		//ExtraStepExpr
+		public RuleCall getExtraStepsExtraStepExprParserRuleCall_1_0() { return cExtraStepsExtraStepExprParserRuleCall_1_0; }
+	}
+
+	public class ExtraStepExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExtraStepExpr");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cSolidusKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cStepExprParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Action cSingleStepAction_0_2 = (Action)cGroup_0.eContents().get(2);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cSolidusSolidusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cStepExprParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Action cDoubleStepAction_1_2 = (Action)cGroup_1.eContents().get(2);
+		
+		//ExtraStepExpr returns StepExpr:
+		//	"/" StepExpr {Single.step=current} | "//" StepExpr {Double.step=current};
+		public ParserRule getRule() { return rule; }
+
+		//"/" StepExpr {Single.step=current} | "//" StepExpr {Double.step=current}
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"/" StepExpr {Single.step=current}
+		public Group getGroup_0() { return cGroup_0; }
 
 		//"/"
-		public Keyword getSolidusKeyword_1_0_0() { return cSolidusKeyword_1_0_0; }
-
-		//"//"
-		public Keyword getSolidusSolidusKeyword_1_0_1() { return cSolidusSolidusKeyword_1_0_1; }
-
-		//rights+=StepExpr
-		public Assignment getRightsAssignment_1_1() { return cRightsAssignment_1_1; }
+		public Keyword getSolidusKeyword_0_0() { return cSolidusKeyword_0_0; }
 
 		//StepExpr
-		public RuleCall getRightsStepExprParserRuleCall_1_1_0() { return cRightsStepExprParserRuleCall_1_1_0; }
+		public RuleCall getStepExprParserRuleCall_0_1() { return cStepExprParserRuleCall_0_1; }
+
+		//{Single.step=current}
+		public Action getSingleStepAction_0_2() { return cSingleStepAction_0_2; }
+
+		//"//" StepExpr {Double.step=current}
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"//"
+		public Keyword getSolidusSolidusKeyword_1_0() { return cSolidusSolidusKeyword_1_0; }
+
+		//StepExpr
+		public RuleCall getStepExprParserRuleCall_1_1() { return cStepExprParserRuleCall_1_1; }
+
+		//{Double.step=current}
+		public Action getDoubleStepAction_1_2() { return cDoubleStepAction_1_2; }
 	}
 
 	public class StepExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StepExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cFilterAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cFilterFilterExprParserRuleCall_0_0 = (RuleCall)cFilterAssignment_0.eContents().get(0);
-		private final Assignment cStepAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cStepAxisStepParserRuleCall_1_0 = (RuleCall)cStepAssignment_1.eContents().get(0);
+		private final RuleCall cFilterExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAxisStepParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//StepExpr:
-		//	filter=FilterExpr | step=AxisStep;
+		//	FilterExpr | AxisStep;
 		public ParserRule getRule() { return rule; }
 
-		//filter=FilterExpr | step=AxisStep
+		//FilterExpr | AxisStep
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//filter=FilterExpr
-		public Assignment getFilterAssignment_0() { return cFilterAssignment_0; }
-
 		//FilterExpr
-		public RuleCall getFilterFilterExprParserRuleCall_0_0() { return cFilterFilterExprParserRuleCall_0_0; }
-
-		//step=AxisStep
-		public Assignment getStepAssignment_1() { return cStepAssignment_1; }
+		public RuleCall getFilterExprParserRuleCall_0() { return cFilterExprParserRuleCall_0; }
 
 		//AxisStep
-		public RuleCall getStepAxisStepParserRuleCall_1_0() { return cStepAxisStepParserRuleCall_1_0; }
+		public RuleCall getAxisStepParserRuleCall_1() { return cAxisStepParserRuleCall_1; }
 	}
 
 	public class AxisStepElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AxisStep");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Assignment cReverseAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final RuleCall cReverseReverseStepParserRuleCall_0_0_0 = (RuleCall)cReverseAssignment_0_0.eContents().get(0);
-		private final Assignment cForwardAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
-		private final RuleCall cForwardForwardStepParserRuleCall_0_1_0 = (RuleCall)cForwardAssignment_0_1.eContents().get(0);
-		private final Assignment cPredicateAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPredicatePredicateListParserRuleCall_1_0 = (RuleCall)cPredicateAssignment_1.eContents().get(0);
+		private final Assignment cStepAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final RuleCall cStepReverseStepParserRuleCall_0_0_0 = (RuleCall)cStepAssignment_0_0.eContents().get(0);
+		private final Assignment cStepAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final RuleCall cStepForwardStepParserRuleCall_0_1_0 = (RuleCall)cStepAssignment_0_1.eContents().get(0);
+		private final Assignment cPredicateListAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPredicateListPredicateListParserRuleCall_1_0 = (RuleCall)cPredicateListAssignment_1.eContents().get(0);
 		
 		//AxisStep:
-		//	(reverse=ReverseStep | forward=ForwardStep) predicate=PredicateList;
+		//	(step=ReverseStep | step=ForwardStep) predicateList=PredicateList;
 		public ParserRule getRule() { return rule; }
 
-		//(reverse=ReverseStep | forward=ForwardStep) predicate=PredicateList
+		//(step=ReverseStep | step=ForwardStep) predicateList=PredicateList
 		public Group getGroup() { return cGroup; }
 
-		//reverse=ReverseStep | forward=ForwardStep
+		//step=ReverseStep | step=ForwardStep
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//reverse=ReverseStep
-		public Assignment getReverseAssignment_0_0() { return cReverseAssignment_0_0; }
+		//step=ReverseStep
+		public Assignment getStepAssignment_0_0() { return cStepAssignment_0_0; }
 
 		//ReverseStep
-		public RuleCall getReverseReverseStepParserRuleCall_0_0_0() { return cReverseReverseStepParserRuleCall_0_0_0; }
+		public RuleCall getStepReverseStepParserRuleCall_0_0_0() { return cStepReverseStepParserRuleCall_0_0_0; }
 
-		//forward=ForwardStep
-		public Assignment getForwardAssignment_0_1() { return cForwardAssignment_0_1; }
+		//step=ForwardStep
+		public Assignment getStepAssignment_0_1() { return cStepAssignment_0_1; }
 
 		//ForwardStep
-		public RuleCall getForwardForwardStepParserRuleCall_0_1_0() { return cForwardForwardStepParserRuleCall_0_1_0; }
+		public RuleCall getStepForwardStepParserRuleCall_0_1_0() { return cStepForwardStepParserRuleCall_0_1_0; }
 
-		//predicate=PredicateList
-		public Assignment getPredicateAssignment_1() { return cPredicateAssignment_1; }
+		//predicateList=PredicateList
+		public Assignment getPredicateListAssignment_1() { return cPredicateListAssignment_1; }
 
 		//PredicateList
-		public RuleCall getPredicatePredicateListParserRuleCall_1_0() { return cPredicatePredicateListParserRuleCall_1_0; }
+		public RuleCall getPredicateListPredicateListParserRuleCall_1_0() { return cPredicateListPredicateListParserRuleCall_1_0; }
 	}
 
 	public class ForwardStepElements extends AbstractParserRuleElementFinder {
@@ -1103,19 +1121,23 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	public class AbbrevForwardStepElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbbrevForwardStep");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCommercialAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAttrAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cAttrCommercialAtKeyword_0_0 = (Keyword)cAttrAssignment_0.eContents().get(0);
 		private final Assignment cTestAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTestNodeTestParserRuleCall_1_0 = (RuleCall)cTestAssignment_1.eContents().get(0);
 		
 		//AbbrevForwardStep:
-		//	"@"? test=NodeTest;
+		//	attr="@"? test=NodeTest;
 		public ParserRule getRule() { return rule; }
 
-		//"@"? test=NodeTest
+		//attr="@"? test=NodeTest
 		public Group getGroup() { return cGroup; }
 
-		//"@"?
-		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
+		//attr="@"?
+		public Assignment getAttrAssignment_0() { return cAttrAssignment_0; }
+
+		//"@"
+		public Keyword getAttrCommercialAtKeyword_0_0() { return cAttrCommercialAtKeyword_0_0; }
 
 		//test=NodeTest
 		public Assignment getTestAssignment_1() { return cTestAssignment_1; }
@@ -1167,29 +1189,29 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	public class NodeTestElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeTest");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cKindTestAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cKindTestKindTestParserRuleCall_0_0 = (RuleCall)cKindTestAssignment_0.eContents().get(0);
-		private final Assignment cNodeTestAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cNodeTestNameTestParserRuleCall_1_0 = (RuleCall)cNodeTestAssignment_1.eContents().get(0);
+		private final Assignment cTestAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cTestKindTestParserRuleCall_0_0 = (RuleCall)cTestAssignment_0.eContents().get(0);
+		private final Assignment cTestAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cTestNameTestParserRuleCall_1_0 = (RuleCall)cTestAssignment_1.eContents().get(0);
 		
 		//NodeTest:
-		//	kindTest=KindTest | nodeTest=NameTest;
+		//	test=KindTest | test=NameTest;
 		public ParserRule getRule() { return rule; }
 
-		//kindTest=KindTest | nodeTest=NameTest
+		//test=KindTest | test=NameTest
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//kindTest=KindTest
-		public Assignment getKindTestAssignment_0() { return cKindTestAssignment_0; }
+		//test=KindTest
+		public Assignment getTestAssignment_0() { return cTestAssignment_0; }
 
 		//KindTest
-		public RuleCall getKindTestKindTestParserRuleCall_0_0() { return cKindTestKindTestParserRuleCall_0_0; }
+		public RuleCall getTestKindTestParserRuleCall_0_0() { return cTestKindTestParserRuleCall_0_0; }
 
-		//nodeTest=NameTest
-		public Assignment getNodeTestAssignment_1() { return cNodeTestAssignment_1; }
+		//test=NameTest
+		public Assignment getTestAssignment_1() { return cTestAssignment_1; }
 
 		//NameTest
-		public RuleCall getNodeTestNameTestParserRuleCall_1_0() { return cNodeTestNameTestParserRuleCall_1_0; }
+		public RuleCall getTestNameTestParserRuleCall_1_0() { return cTestNameTestParserRuleCall_1_0; }
 	}
 
 	public class NameTestElements extends AbstractParserRuleElementFinder {
@@ -1285,14 +1307,14 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPrimaryAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cPrimaryPrimaryExprParserRuleCall_0_0 = (RuleCall)cPrimaryAssignment_0.eContents().get(0);
-		private final Assignment cPredicateAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPredicatePredicateListParserRuleCall_1_0 = (RuleCall)cPredicateAssignment_1.eContents().get(0);
+		private final Assignment cPredicateListAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPredicateListPredicateListParserRuleCall_1_0 = (RuleCall)cPredicateListAssignment_1.eContents().get(0);
 		
 		//FilterExpr:
-		//	primary=PrimaryExpr predicate=PredicateList;
+		//	primary=PrimaryExpr predicateList=PredicateList;
 		public ParserRule getRule() { return rule; }
 
-		//primary=PrimaryExpr predicate=PredicateList
+		//primary=PrimaryExpr predicateList=PredicateList
 		public Group getGroup() { return cGroup; }
 
 		//primary=PrimaryExpr
@@ -1301,11 +1323,11 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		//PrimaryExpr
 		public RuleCall getPrimaryPrimaryExprParserRuleCall_0_0() { return cPrimaryPrimaryExprParserRuleCall_0_0; }
 
-		//predicate=PredicateList
-		public Assignment getPredicateAssignment_1() { return cPredicateAssignment_1; }
+		//predicateList=PredicateList
+		public Assignment getPredicateListAssignment_1() { return cPredicateListAssignment_1; }
 
 		//PredicateList
-		public RuleCall getPredicatePredicateListParserRuleCall_1_0() { return cPredicatePredicateListParserRuleCall_1_0; }
+		public RuleCall getPredicateListPredicateListParserRuleCall_1_0() { return cPredicateListPredicateListParserRuleCall_1_0; }
 	}
 
 	public class PredicateListElements extends AbstractParserRuleElementFinder {
@@ -2280,6 +2302,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	private ValueExprElements pValueExpr;
 	private PathExprElements pPathExpr;
 	private RelativePathExprElements pRelativePathExpr;
+	private ExtraStepExprElements pExtraStepExpr;
 	private StepExprElements pStepExpr;
 	private AxisStepElements pAxisStep;
 	private ForwardStepElements pForwardStep;
@@ -2581,7 +2604,8 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PathExpr:
-	//	{PathExpr} ("/" singlePath=RelativePathExpr) | "//" doublePath=RelativePathExpr | path=RelativePathExpr;
+	//	"/" RelativePathExpr {RelSingle.relPathExpr=current} | "//" RelativePathExpr {RelDouble.relPathExpr=current} |
+	//	RelativePathExpr {RelNoSelector.relPathExpr=current};
 	public PathExprElements getPathExprAccess() {
 		return (pPathExpr != null) ? pPathExpr : (pPathExpr = new PathExprElements());
 	}
@@ -2591,7 +2615,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RelativePathExpr:
-	//	left=StepExpr (("/" | "//") rights+=StepExpr)*;
+	//	step=StepExpr extraSteps+=ExtraStepExpr*;
 	public RelativePathExprElements getRelativePathExprAccess() {
 		return (pRelativePathExpr != null) ? pRelativePathExpr : (pRelativePathExpr = new RelativePathExprElements());
 	}
@@ -2600,8 +2624,18 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelativePathExprAccess().getRule();
 	}
 
+	//ExtraStepExpr returns StepExpr:
+	//	"/" StepExpr {Single.step=current} | "//" StepExpr {Double.step=current};
+	public ExtraStepExprElements getExtraStepExprAccess() {
+		return (pExtraStepExpr != null) ? pExtraStepExpr : (pExtraStepExpr = new ExtraStepExprElements());
+	}
+	
+	public ParserRule getExtraStepExprRule() {
+		return getExtraStepExprAccess().getRule();
+	}
+
 	//StepExpr:
-	//	filter=FilterExpr | step=AxisStep;
+	//	FilterExpr | AxisStep;
 	public StepExprElements getStepExprAccess() {
 		return (pStepExpr != null) ? pStepExpr : (pStepExpr = new StepExprElements());
 	}
@@ -2611,7 +2645,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AxisStep:
-	//	(reverse=ReverseStep | forward=ForwardStep) predicate=PredicateList;
+	//	(step=ReverseStep | step=ForwardStep) predicateList=PredicateList;
 	public AxisStepElements getAxisStepAccess() {
 		return (pAxisStep != null) ? pAxisStep : (pAxisStep = new AxisStepElements());
 	}
@@ -2631,7 +2665,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AbbrevForwardStep:
-	//	"@"? test=NodeTest;
+	//	attr="@"? test=NodeTest;
 	public AbbrevForwardStepElements getAbbrevForwardStepAccess() {
 		return (pAbbrevForwardStep != null) ? pAbbrevForwardStep : (pAbbrevForwardStep = new AbbrevForwardStepElements());
 	}
@@ -2651,7 +2685,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NodeTest:
-	//	kindTest=KindTest | nodeTest=NameTest;
+	//	test=KindTest | test=NameTest;
 	public NodeTestElements getNodeTestAccess() {
 		return (pNodeTest != null) ? pNodeTest : (pNodeTest = new NodeTestElements());
 	}
@@ -2681,7 +2715,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FilterExpr:
-	//	primary=PrimaryExpr predicate=PredicateList;
+	//	primary=PrimaryExpr predicateList=PredicateList;
 	public FilterExprElements getFilterExprAccess() {
 		return (pFilterExpr != null) ? pFilterExpr : (pFilterExpr = new FilterExprElements());
 	}

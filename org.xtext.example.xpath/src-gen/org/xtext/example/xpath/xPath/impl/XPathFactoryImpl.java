@@ -10,7 +10,73 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.xtext.example.xpath.xPath.*;
+import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.AdditionalIn;
+import org.xtext.example.xpath.xPath.AdditiveExpr;
+import org.xtext.example.xpath.xPath.AndExpr;
+import org.xtext.example.xpath.xPath.AtomicType;
+import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.AttributeDeclaration;
+import org.xtext.example.xpath.xPath.AttributeName;
+import org.xtext.example.xpath.xPath.AttributeTest;
+import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.CastableExpr;
+import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.ElementDeclaration;
+import org.xtext.example.xpath.xPath.ElementName;
+import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
+import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Expr;
+import org.xtext.example.xpath.xPath.ExprSingle;
+import org.xtext.example.xpath.xPath.FilterExpr;
+import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardStep;
+import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.IntersectExceptExpr;
+import org.xtext.example.xpath.xPath.ItemType;
+import org.xtext.example.xpath.xPath.KindTest;
+import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.MultiplicativeExpr;
+import org.xtext.example.xpath.xPath.NCName;
+import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeTest;
+import org.xtext.example.xpath.xPath.NumericLiteral;
+import org.xtext.example.xpath.xPath.OrExpr;
+import org.xtext.example.xpath.xPath.PITTest;
+import org.xtext.example.xpath.xPath.PITest;
+import org.xtext.example.xpath.xPath.ParenthesizedExpr;
+import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Predicate;
+import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QuantifiedExpr;
+import org.xtext.example.xpath.xPath.RangeExpr;
+import org.xtext.example.xpath.xPath.RelDouble;
+import org.xtext.example.xpath.xPath.RelNoSelector;
+import org.xtext.example.xpath.xPath.RelSingle;
+import org.xtext.example.xpath.xPath.RelativePathExpr;
+import org.xtext.example.xpath.xPath.ReverseStep;
+import org.xtext.example.xpath.xPath.SchemaAttributeTest;
+import org.xtext.example.xpath.xPath.SchemaElementTest;
+import org.xtext.example.xpath.xPath.SequenceType;
+import org.xtext.example.xpath.xPath.SimpleForClause;
+import org.xtext.example.xpath.xPath.Single;
+import org.xtext.example.xpath.xPath.SingleType;
+import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.TreatExpr;
+import org.xtext.example.xpath.xPath.TypeName;
+import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.ValueExpr;
+import org.xtext.example.xpath.xPath.VarName;
+import org.xtext.example.xpath.xPath.VarRef;
+import org.xtext.example.xpath.xPath.Wildcard;
+import org.xtext.example.xpath.xPath.XPathFactory;
+import org.xtext.example.xpath.xPath.XPathPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,6 +190,11 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       case XPathPackage.ELEMENT_NAME: return createElementName();
       case XPathPackage.TYPE_NAME: return createTypeName();
       case XPathPackage.NC_NAME: return createNCName();
+      case XPathPackage.REL_SINGLE: return createRelSingle();
+      case XPathPackage.REL_DOUBLE: return createRelDouble();
+      case XPathPackage.REL_NO_SELECTOR: return createRelNoSelector();
+      case XPathPackage.SINGLE: return createSingle();
+      case XPathPackage.DOUBLE: return createDouble();
       case XPathPackage.PIT_TEST: return createPITTest();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -788,6 +859,61 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     NCNameImpl ncName = new NCNameImpl();
     return ncName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelSingle createRelSingle()
+  {
+    RelSingleImpl relSingle = new RelSingleImpl();
+    return relSingle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelDouble createRelDouble()
+  {
+    RelDoubleImpl relDouble = new RelDoubleImpl();
+    return relDouble;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelNoSelector createRelNoSelector()
+  {
+    RelNoSelectorImpl relNoSelector = new RelNoSelectorImpl();
+    return relNoSelector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Single createSingle()
+  {
+    SingleImpl single = new SingleImpl();
+    return single;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public org.xtext.example.xpath.xPath.Double createDouble()
+  {
+    DoubleImpl double_ = new DoubleImpl();
+    return double_;
   }
 
   /**

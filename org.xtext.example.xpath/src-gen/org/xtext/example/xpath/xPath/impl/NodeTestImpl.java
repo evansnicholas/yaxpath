@@ -6,13 +6,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.xpath.xPath.KindTest;
-import org.xtext.example.xpath.xPath.NameTest;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.XPathPackage;
 
@@ -23,8 +22,7 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.NodeTestImpl#getKindTest <em>Kind Test</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.NodeTestImpl#getNodeTest <em>Node Test</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.NodeTestImpl#getTest <em>Test</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,24 +31,14 @@ import org.xtext.example.xpath.xPath.XPathPackage;
 public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTest
 {
   /**
-   * The cached value of the '{@link #getKindTest() <em>Kind Test</em>}' containment reference.
+   * The cached value of the '{@link #getTest() <em>Test</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKindTest()
+   * @see #getTest()
    * @generated
    * @ordered
    */
-  protected KindTest kindTest;
-
-  /**
-   * The cached value of the '{@link #getNodeTest() <em>Node Test</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNodeTest()
-   * @generated
-   * @ordered
-   */
-  protected NameTest nodeTest;
+  protected EObject test;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,9 +66,9 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
    * <!-- end-user-doc -->
    * @generated
    */
-  public KindTest getKindTest()
+  public EObject getTest()
   {
-    return kindTest;
+    return test;
   }
 
   /**
@@ -88,13 +76,13 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetKindTest(KindTest newKindTest, NotificationChain msgs)
+  public NotificationChain basicSetTest(EObject newTest, NotificationChain msgs)
   {
-    KindTest oldKindTest = kindTest;
-    kindTest = newKindTest;
+    EObject oldTest = test;
+    test = newTest;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.NODE_TEST__KIND_TEST, oldKindTest, newKindTest);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.NODE_TEST__TEST, oldTest, newTest);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -105,68 +93,20 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setKindTest(KindTest newKindTest)
+  public void setTest(EObject newTest)
   {
-    if (newKindTest != kindTest)
+    if (newTest != test)
     {
       NotificationChain msgs = null;
-      if (kindTest != null)
-        msgs = ((InternalEObject)kindTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NODE_TEST__KIND_TEST, null, msgs);
-      if (newKindTest != null)
-        msgs = ((InternalEObject)newKindTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NODE_TEST__KIND_TEST, null, msgs);
-      msgs = basicSetKindTest(newKindTest, msgs);
+      if (test != null)
+        msgs = ((InternalEObject)test).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NODE_TEST__TEST, null, msgs);
+      if (newTest != null)
+        msgs = ((InternalEObject)newTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NODE_TEST__TEST, null, msgs);
+      msgs = basicSetTest(newTest, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.NODE_TEST__KIND_TEST, newKindTest, newKindTest));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NameTest getNodeTest()
-  {
-    return nodeTest;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetNodeTest(NameTest newNodeTest, NotificationChain msgs)
-  {
-    NameTest oldNodeTest = nodeTest;
-    nodeTest = newNodeTest;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.NODE_TEST__NODE_TEST, oldNodeTest, newNodeTest);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNodeTest(NameTest newNodeTest)
-  {
-    if (newNodeTest != nodeTest)
-    {
-      NotificationChain msgs = null;
-      if (nodeTest != null)
-        msgs = ((InternalEObject)nodeTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NODE_TEST__NODE_TEST, null, msgs);
-      if (newNodeTest != null)
-        msgs = ((InternalEObject)newNodeTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.NODE_TEST__NODE_TEST, null, msgs);
-      msgs = basicSetNodeTest(newNodeTest, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.NODE_TEST__NODE_TEST, newNodeTest, newNodeTest));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.NODE_TEST__TEST, newTest, newTest));
   }
 
   /**
@@ -179,10 +119,8 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
   {
     switch (featureID)
     {
-      case XPathPackage.NODE_TEST__KIND_TEST:
-        return basicSetKindTest(null, msgs);
-      case XPathPackage.NODE_TEST__NODE_TEST:
-        return basicSetNodeTest(null, msgs);
+      case XPathPackage.NODE_TEST__TEST:
+        return basicSetTest(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,10 +135,8 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
   {
     switch (featureID)
     {
-      case XPathPackage.NODE_TEST__KIND_TEST:
-        return getKindTest();
-      case XPathPackage.NODE_TEST__NODE_TEST:
-        return getNodeTest();
+      case XPathPackage.NODE_TEST__TEST:
+        return getTest();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,11 +151,8 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
   {
     switch (featureID)
     {
-      case XPathPackage.NODE_TEST__KIND_TEST:
-        setKindTest((KindTest)newValue);
-        return;
-      case XPathPackage.NODE_TEST__NODE_TEST:
-        setNodeTest((NameTest)newValue);
+      case XPathPackage.NODE_TEST__TEST:
+        setTest((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +168,8 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
   {
     switch (featureID)
     {
-      case XPathPackage.NODE_TEST__KIND_TEST:
-        setKindTest((KindTest)null);
-        return;
-      case XPathPackage.NODE_TEST__NODE_TEST:
-        setNodeTest((NameTest)null);
+      case XPathPackage.NODE_TEST__TEST:
+        setTest((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -255,10 +185,8 @@ public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTe
   {
     switch (featureID)
     {
-      case XPathPackage.NODE_TEST__KIND_TEST:
-        return kindTest != null;
-      case XPathPackage.NODE_TEST__NODE_TEST:
-        return nodeTest != null;
+      case XPathPackage.NODE_TEST__TEST:
+        return test != null;
     }
     return super.eIsSet(featureID);
   }

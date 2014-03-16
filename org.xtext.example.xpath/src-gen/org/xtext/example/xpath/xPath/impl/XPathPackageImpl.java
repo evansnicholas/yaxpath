@@ -54,12 +54,16 @@ import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
+import org.xtext.example.xpath.xPath.RelDouble;
+import org.xtext.example.xpath.xPath.RelNoSelector;
+import org.xtext.example.xpath.xPath.RelSingle;
 import org.xtext.example.xpath.xPath.RelativePathExpr;
 import org.xtext.example.xpath.xPath.ReverseStep;
 import org.xtext.example.xpath.xPath.SchemaAttributeTest;
 import org.xtext.example.xpath.xPath.SchemaElementTest;
 import org.xtext.example.xpath.xPath.SequenceType;
 import org.xtext.example.xpath.xPath.SimpleForClause;
+import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.SingleType;
 import org.xtext.example.xpath.xPath.StepExpr;
 import org.xtext.example.xpath.xPath.TreatExpr;
@@ -500,6 +504,41 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * @generated
    */
   private EClass ncNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relSingleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relDoubleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relNoSelectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass singleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doubleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1246,36 +1285,6 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPathExpr_SinglePath()
-  {
-    return (EReference)pathExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPathExpr_DoublePath()
-  {
-    return (EReference)pathExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPathExpr_Path()
-  {
-    return (EReference)pathExprEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getRelativePathExpr()
   {
     return relativePathExprEClass;
@@ -1286,7 +1295,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelativePathExpr_Left()
+  public EReference getRelativePathExpr_Step()
   {
     return (EReference)relativePathExprEClass.getEStructuralFeatures().get(0);
   }
@@ -1296,7 +1305,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelativePathExpr_Rights()
+  public EReference getRelativePathExpr_ExtraSteps()
   {
     return (EReference)relativePathExprEClass.getEStructuralFeatures().get(1);
   }
@@ -1316,26 +1325,6 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStepExpr_Filter()
-  {
-    return (EReference)stepExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStepExpr_Step()
-  {
-    return (EReference)stepExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getAxisStep()
   {
     return axisStepEClass;
@@ -1346,7 +1335,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAxisStep_Reverse()
+  public EReference getAxisStep_Step()
   {
     return (EReference)axisStepEClass.getEStructuralFeatures().get(0);
   }
@@ -1356,19 +1345,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAxisStep_Forward()
+  public EReference getAxisStep_PredicateList()
   {
     return (EReference)axisStepEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAxisStep_Predicate()
-  {
-    return (EReference)axisStepEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1426,9 +1405,19 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAbbrevForwardStep_Attr()
+  {
+    return (EAttribute)abbrevForwardStepEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getAbbrevForwardStep_Test()
   {
-    return (EReference)abbrevForwardStepEClass.getEStructuralFeatures().get(0);
+    return (EReference)abbrevForwardStepEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1486,19 +1475,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNodeTest_KindTest()
+  public EReference getNodeTest_Test()
   {
     return (EReference)nodeTestEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getNodeTest_NodeTest()
-  {
-    return (EReference)nodeTestEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1596,7 +1575,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFilterExpr_Predicate()
+  public EReference getFilterExpr_PredicateList()
   {
     return (EReference)filterExprEClass.getEStructuralFeatures().get(1);
   }
@@ -2366,6 +2345,106 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRelSingle()
+  {
+    return relSingleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelSingle_RelPathExpr()
+  {
+    return (EReference)relSingleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelDouble()
+  {
+    return relDoubleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelDouble_RelPathExpr()
+  {
+    return (EReference)relDoubleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelNoSelector()
+  {
+    return relNoSelectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelNoSelector_RelPathExpr()
+  {
+    return (EReference)relNoSelectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSingle()
+  {
+    return singleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingle_Step()
+  {
+    return (EReference)singleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDouble()
+  {
+    return doubleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDouble_Step()
+  {
+    return (EReference)doubleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPITTest()
   {
     return pitTestEClass;
@@ -2509,22 +2588,16 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEReference(valueExprEClass, VALUE_EXPR__VALUE);
 
     pathExprEClass = createEClass(PATH_EXPR);
-    createEReference(pathExprEClass, PATH_EXPR__SINGLE_PATH);
-    createEReference(pathExprEClass, PATH_EXPR__DOUBLE_PATH);
-    createEReference(pathExprEClass, PATH_EXPR__PATH);
 
     relativePathExprEClass = createEClass(RELATIVE_PATH_EXPR);
-    createEReference(relativePathExprEClass, RELATIVE_PATH_EXPR__LEFT);
-    createEReference(relativePathExprEClass, RELATIVE_PATH_EXPR__RIGHTS);
+    createEReference(relativePathExprEClass, RELATIVE_PATH_EXPR__STEP);
+    createEReference(relativePathExprEClass, RELATIVE_PATH_EXPR__EXTRA_STEPS);
 
     stepExprEClass = createEClass(STEP_EXPR);
-    createEReference(stepExprEClass, STEP_EXPR__FILTER);
-    createEReference(stepExprEClass, STEP_EXPR__STEP);
 
     axisStepEClass = createEClass(AXIS_STEP);
-    createEReference(axisStepEClass, AXIS_STEP__REVERSE);
-    createEReference(axisStepEClass, AXIS_STEP__FORWARD);
-    createEReference(axisStepEClass, AXIS_STEP__PREDICATE);
+    createEReference(axisStepEClass, AXIS_STEP__STEP);
+    createEReference(axisStepEClass, AXIS_STEP__PREDICATE_LIST);
 
     forwardStepEClass = createEClass(FORWARD_STEP);
     createEAttribute(forwardStepEClass, FORWARD_STEP__FORWARD);
@@ -2532,6 +2605,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEReference(forwardStepEClass, FORWARD_STEP__ABBR_FORWARD);
 
     abbrevForwardStepEClass = createEClass(ABBREV_FORWARD_STEP);
+    createEAttribute(abbrevForwardStepEClass, ABBREV_FORWARD_STEP__ATTR);
     createEReference(abbrevForwardStepEClass, ABBREV_FORWARD_STEP__TEST);
 
     reverseStepEClass = createEClass(REVERSE_STEP);
@@ -2540,8 +2614,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEAttribute(reverseStepEClass, REVERSE_STEP__ABBR_REV_SET);
 
     nodeTestEClass = createEClass(NODE_TEST);
-    createEReference(nodeTestEClass, NODE_TEST__KIND_TEST);
-    createEReference(nodeTestEClass, NODE_TEST__NODE_TEST);
+    createEReference(nodeTestEClass, NODE_TEST__TEST);
 
     nameTestEClass = createEClass(NAME_TEST);
     createEAttribute(nameTestEClass, NAME_TEST__QNAME);
@@ -2554,7 +2627,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
 
     filterExprEClass = createEClass(FILTER_EXPR);
     createEReference(filterExprEClass, FILTER_EXPR__PRIMARY);
-    createEReference(filterExprEClass, FILTER_EXPR__PREDICATE);
+    createEReference(filterExprEClass, FILTER_EXPR__PREDICATE_LIST);
 
     predicateListEClass = createEClass(PREDICATE_LIST);
     createEReference(predicateListEClass, PREDICATE_LIST__PREDICATES);
@@ -2660,6 +2733,21 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     ncNameEClass = createEClass(NC_NAME);
     createEAttribute(ncNameEClass, NC_NAME__NC_NAME);
 
+    relSingleEClass = createEClass(REL_SINGLE);
+    createEReference(relSingleEClass, REL_SINGLE__REL_PATH_EXPR);
+
+    relDoubleEClass = createEClass(REL_DOUBLE);
+    createEReference(relDoubleEClass, REL_DOUBLE__REL_PATH_EXPR);
+
+    relNoSelectorEClass = createEClass(REL_NO_SELECTOR);
+    createEReference(relNoSelectorEClass, REL_NO_SELECTOR__REL_PATH_EXPR);
+
+    singleEClass = createEClass(SINGLE);
+    createEReference(singleEClass, SINGLE__STEP);
+
+    doubleEClass = createEClass(DOUBLE);
+    createEReference(doubleEClass, DOUBLE__STEP);
+
     pitTestEClass = createEClass(PIT_TEST);
     createEReference(pitTestEClass, PIT_TEST__NC_NAME);
     createEAttribute(pitTestEClass, PIT_TEST__STRING);
@@ -2698,9 +2786,17 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     quantifiedExprEClass.getESuperTypes().add(this.getExprSingle());
     ifExprEClass.getESuperTypes().add(this.getExprSingle());
     orExprEClass.getESuperTypes().add(this.getExprSingle());
+    relativePathExprEClass.getESuperTypes().add(this.getPathExpr());
+    axisStepEClass.getESuperTypes().add(this.getStepExpr());
+    filterExprEClass.getESuperTypes().add(this.getStepExpr());
     varNameEClass.getESuperTypes().add(this.getVarRef());
     atomicTypeEClass.getESuperTypes().add(this.getSingleType());
     elementNameEClass.getESuperTypes().add(this.getElementDeclaration());
+    relSingleEClass.getESuperTypes().add(this.getPathExpr());
+    relDoubleEClass.getESuperTypes().add(this.getPathExpr());
+    relNoSelectorEClass.getESuperTypes().add(this.getPathExpr());
+    singleEClass.getESuperTypes().add(this.getStepExpr());
+    doubleEClass.getESuperTypes().add(this.getStepExpr());
     pitTestEClass.getESuperTypes().add(this.getPITest());
 
     // Initialize classes and features; add operations and parameters
@@ -2792,22 +2888,16 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getValueExpr_Value(), this.getPathExpr(), null, "value", null, 0, 1, ValueExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pathExprEClass, PathExpr.class, "PathExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPathExpr_SinglePath(), this.getRelativePathExpr(), null, "singlePath", null, 0, 1, PathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPathExpr_DoublePath(), this.getRelativePathExpr(), null, "doublePath", null, 0, 1, PathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPathExpr_Path(), this.getRelativePathExpr(), null, "path", null, 0, 1, PathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relativePathExprEClass, RelativePathExpr.class, "RelativePathExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRelativePathExpr_Left(), this.getStepExpr(), null, "left", null, 0, 1, RelativePathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRelativePathExpr_Rights(), this.getStepExpr(), null, "rights", null, 0, -1, RelativePathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelativePathExpr_Step(), this.getStepExpr(), null, "step", null, 0, 1, RelativePathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelativePathExpr_ExtraSteps(), this.getStepExpr(), null, "extraSteps", null, 0, -1, RelativePathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepExprEClass, StepExpr.class, "StepExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStepExpr_Filter(), this.getFilterExpr(), null, "filter", null, 0, 1, StepExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStepExpr_Step(), this.getAxisStep(), null, "step", null, 0, 1, StepExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(axisStepEClass, AxisStep.class, "AxisStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAxisStep_Reverse(), this.getReverseStep(), null, "reverse", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAxisStep_Forward(), this.getForwardStep(), null, "forward", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAxisStep_Predicate(), this.getPredicateList(), null, "predicate", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAxisStep_Step(), ecorePackage.getEObject(), null, "step", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAxisStep_PredicateList(), this.getPredicateList(), null, "predicateList", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forwardStepEClass, ForwardStep.class, "ForwardStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getForwardStep_Forward(), ecorePackage.getEString(), "forward", null, 0, 1, ForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2815,6 +2905,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getForwardStep_AbbrForward(), this.getAbbrevForwardStep(), null, "abbrForward", null, 0, 1, ForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abbrevForwardStepEClass, AbbrevForwardStep.class, "AbbrevForwardStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbbrevForwardStep_Attr(), ecorePackage.getEString(), "attr", null, 0, 1, AbbrevForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbbrevForwardStep_Test(), this.getNodeTest(), null, "test", null, 0, 1, AbbrevForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reverseStepEClass, ReverseStep.class, "ReverseStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2823,8 +2914,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEAttribute(getReverseStep_AbbrRevSet(), ecorePackage.getEString(), "abbrRevSet", null, 0, 1, ReverseStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nodeTestEClass, NodeTest.class, "NodeTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNodeTest_KindTest(), this.getKindTest(), null, "kindTest", null, 0, 1, NodeTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNodeTest_NodeTest(), this.getNameTest(), null, "nodeTest", null, 0, 1, NodeTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNodeTest_Test(), ecorePackage.getEObject(), null, "test", null, 0, 1, NodeTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameTestEClass, NameTest.class, "NameTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNameTest_QName(), ecorePackage.getEString(), "qName", null, 0, 1, NameTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2837,7 +2927,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
 
     initEClass(filterExprEClass, FilterExpr.class, "FilterExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFilterExpr_Primary(), this.getPrimaryExpr(), null, "primary", null, 0, 1, FilterExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFilterExpr_Predicate(), this.getPredicateList(), null, "predicate", null, 0, 1, FilterExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFilterExpr_PredicateList(), this.getPredicateList(), null, "predicateList", null, 0, 1, FilterExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(predicateListEClass, PredicateList.class, "PredicateList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPredicateList_Predicates(), this.getPredicate(), null, "predicates", null, 0, -1, PredicateList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2942,6 +3032,21 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
 
     initEClass(ncNameEClass, NCName.class, "NCName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNCName_NcName(), ecorePackage.getEString(), "ncName", null, 0, 1, NCName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relSingleEClass, RelSingle.class, "RelSingle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelSingle_RelPathExpr(), this.getRelativePathExpr(), null, "relPathExpr", null, 0, 1, RelSingle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relDoubleEClass, RelDouble.class, "RelDouble", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelDouble_RelPathExpr(), this.getRelativePathExpr(), null, "relPathExpr", null, 0, 1, RelDouble.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relNoSelectorEClass, RelNoSelector.class, "RelNoSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelNoSelector_RelPathExpr(), this.getRelativePathExpr(), null, "relPathExpr", null, 0, 1, RelNoSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(singleEClass, Single.class, "Single", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSingle_Step(), this.getStepExpr(), null, "step", null, 0, 1, Single.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(doubleEClass, org.xtext.example.xpath.xPath.Double.class, "Double", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDouble_Step(), this.getStepExpr(), null, "step", null, 0, 1, org.xtext.example.xpath.xPath.Double.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pitTestEClass, PITTest.class, "PITTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPITTest_NcName(), this.getNCName(), null, "ncName", null, 0, 1, PITTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

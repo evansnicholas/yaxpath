@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,34 +28,34 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.RelativePathExprImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.RelativePathExprImpl#getRights <em>Rights</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.RelativePathExprImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.RelativePathExprImpl#getExtraSteps <em>Extra Steps</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RelativePathExprImpl extends MinimalEObjectImpl.Container implements RelativePathExpr
+public class RelativePathExprImpl extends PathExprImpl implements RelativePathExpr
 {
   /**
-   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
+   * The cached value of the '{@link #getStep() <em>Step</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLeft()
+   * @see #getStep()
    * @generated
    * @ordered
    */
-  protected StepExpr left;
+  protected StepExpr step;
 
   /**
-   * The cached value of the '{@link #getRights() <em>Rights</em>}' containment reference list.
+   * The cached value of the '{@link #getExtraSteps() <em>Extra Steps</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRights()
+   * @see #getExtraSteps()
    * @generated
    * @ordered
    */
-  protected EList<StepExpr> rights;
+  protected EList<StepExpr> extraSteps;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,9 +83,9 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public StepExpr getLeft()
+  public StepExpr getStep()
   {
-    return left;
+    return step;
   }
 
   /**
@@ -94,13 +93,13 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(StepExpr newLeft, NotificationChain msgs)
+  public NotificationChain basicSetStep(StepExpr newStep, NotificationChain msgs)
   {
-    StepExpr oldLeft = left;
-    left = newLeft;
+    StepExpr oldStep = step;
+    step = newStep;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.RELATIVE_PATH_EXPR__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.RELATIVE_PATH_EXPR__STEP, oldStep, newStep);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -111,20 +110,20 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(StepExpr newLeft)
+  public void setStep(StepExpr newStep)
   {
-    if (newLeft != left)
+    if (newStep != step)
     {
       NotificationChain msgs = null;
-      if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.RELATIVE_PATH_EXPR__LEFT, null, msgs);
-      if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.RELATIVE_PATH_EXPR__LEFT, null, msgs);
-      msgs = basicSetLeft(newLeft, msgs);
+      if (step != null)
+        msgs = ((InternalEObject)step).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.RELATIVE_PATH_EXPR__STEP, null, msgs);
+      if (newStep != null)
+        msgs = ((InternalEObject)newStep).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.RELATIVE_PATH_EXPR__STEP, null, msgs);
+      msgs = basicSetStep(newStep, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.RELATIVE_PATH_EXPR__LEFT, newLeft, newLeft));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.RELATIVE_PATH_EXPR__STEP, newStep, newStep));
   }
 
   /**
@@ -132,13 +131,13 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StepExpr> getRights()
+  public EList<StepExpr> getExtraSteps()
   {
-    if (rights == null)
+    if (extraSteps == null)
     {
-      rights = new EObjectContainmentEList<StepExpr>(StepExpr.class, this, XPathPackage.RELATIVE_PATH_EXPR__RIGHTS);
+      extraSteps = new EObjectContainmentEList<StepExpr>(StepExpr.class, this, XPathPackage.RELATIVE_PATH_EXPR__EXTRA_STEPS);
     }
-    return rights;
+    return extraSteps;
   }
 
   /**
@@ -151,10 +150,10 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XPathPackage.RELATIVE_PATH_EXPR__LEFT:
-        return basicSetLeft(null, msgs);
-      case XPathPackage.RELATIVE_PATH_EXPR__RIGHTS:
-        return ((InternalEList<?>)getRights()).basicRemove(otherEnd, msgs);
+      case XPathPackage.RELATIVE_PATH_EXPR__STEP:
+        return basicSetStep(null, msgs);
+      case XPathPackage.RELATIVE_PATH_EXPR__EXTRA_STEPS:
+        return ((InternalEList<?>)getExtraSteps()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -169,10 +168,10 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XPathPackage.RELATIVE_PATH_EXPR__LEFT:
-        return getLeft();
-      case XPathPackage.RELATIVE_PATH_EXPR__RIGHTS:
-        return getRights();
+      case XPathPackage.RELATIVE_PATH_EXPR__STEP:
+        return getStep();
+      case XPathPackage.RELATIVE_PATH_EXPR__EXTRA_STEPS:
+        return getExtraSteps();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -188,12 +187,12 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XPathPackage.RELATIVE_PATH_EXPR__LEFT:
-        setLeft((StepExpr)newValue);
+      case XPathPackage.RELATIVE_PATH_EXPR__STEP:
+        setStep((StepExpr)newValue);
         return;
-      case XPathPackage.RELATIVE_PATH_EXPR__RIGHTS:
-        getRights().clear();
-        getRights().addAll((Collection<? extends StepExpr>)newValue);
+      case XPathPackage.RELATIVE_PATH_EXPR__EXTRA_STEPS:
+        getExtraSteps().clear();
+        getExtraSteps().addAll((Collection<? extends StepExpr>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -209,11 +208,11 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XPathPackage.RELATIVE_PATH_EXPR__LEFT:
-        setLeft((StepExpr)null);
+      case XPathPackage.RELATIVE_PATH_EXPR__STEP:
+        setStep((StepExpr)null);
         return;
-      case XPathPackage.RELATIVE_PATH_EXPR__RIGHTS:
-        getRights().clear();
+      case XPathPackage.RELATIVE_PATH_EXPR__EXTRA_STEPS:
+        getExtraSteps().clear();
         return;
     }
     super.eUnset(featureID);
@@ -229,10 +228,10 @@ public class RelativePathExprImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case XPathPackage.RELATIVE_PATH_EXPR__LEFT:
-        return left != null;
-      case XPathPackage.RELATIVE_PATH_EXPR__RIGHTS:
-        return rights != null && !rights.isEmpty();
+      case XPathPackage.RELATIVE_PATH_EXPR__STEP:
+        return step != null;
+      case XPathPackage.RELATIVE_PATH_EXPR__EXTRA_STEPS:
+        return extraSteps != null && !extraSteps.isEmpty();
     }
     return super.eIsSet(featureID);
   }

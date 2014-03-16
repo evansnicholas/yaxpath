@@ -2,7 +2,6 @@
  */
 package org.xtext.example.xpath.xPath;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.example.xpath.xPath.FilterExpr#getPrimary <em>Primary</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.FilterExpr#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.FilterExpr#getPredicateList <em>Predicate List</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface FilterExpr extends EObject
+public interface FilterExpr extends StepExpr
 {
   /**
    * Returns the value of the '<em><b>Primary</b></em>' containment reference.
@@ -50,29 +49,29 @@ public interface FilterExpr extends EObject
   void setPrimary(PrimaryExpr value);
 
   /**
-   * Returns the value of the '<em><b>Predicate</b></em>' containment reference.
+   * Returns the value of the '<em><b>Predicate List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Predicate</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Predicate List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Predicate</em>' containment reference.
-   * @see #setPredicate(PredicateList)
-   * @see org.xtext.example.xpath.xPath.XPathPackage#getFilterExpr_Predicate()
+   * @return the value of the '<em>Predicate List</em>' containment reference.
+   * @see #setPredicateList(PredicateList)
+   * @see org.xtext.example.xpath.xPath.XPathPackage#getFilterExpr_PredicateList()
    * @model containment="true"
    * @generated
    */
-  PredicateList getPredicate();
+  PredicateList getPredicateList();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.FilterExpr#getPredicate <em>Predicate</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.xpath.xPath.FilterExpr#getPredicateList <em>Predicate List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Predicate</em>' containment reference.
-   * @see #getPredicate()
+   * @param value the new value of the '<em>Predicate List</em>' containment reference.
+   * @see #getPredicateList()
    * @generated
    */
-  void setPredicate(PredicateList value);
+  void setPredicateList(PredicateList value);
 
 } // FilterExpr

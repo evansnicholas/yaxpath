@@ -4026,26 +4026,26 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePathExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1540:1: rulePathExpr returns [EObject current=null] : ( ( () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) ) ) | (otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) ) ) | ( (lv_path_5_0= ruleRelativePathExpr ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1540:1: rulePathExpr returns [EObject current=null] : ( (otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr () ) | (otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr () ) | (this_RelativePathExpr_6= ruleRelativePathExpr () ) ) ;
     public final EObject rulePathExpr() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
+        Token otherlv_0=null;
         Token otherlv_3=null;
-        EObject lv_singlePath_2_0 = null;
+        EObject this_RelativePathExpr_1 = null;
 
-        EObject lv_doublePath_4_0 = null;
+        EObject this_RelativePathExpr_4 = null;
 
-        EObject lv_path_5_0 = null;
+        EObject this_RelativePathExpr_6 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1543:28: ( ( ( () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) ) ) | (otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) ) ) | ( (lv_path_5_0= ruleRelativePathExpr ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:1: ( ( () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) ) ) | (otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) ) ) | ( (lv_path_5_0= ruleRelativePathExpr ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1543:28: ( ( (otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr () ) | (otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr () ) | (this_RelativePathExpr_6= ruleRelativePathExpr () ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:1: ( (otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr () ) | (otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr () ) | (this_RelativePathExpr_6= ruleRelativePathExpr () ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:1: ( ( () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) ) ) | (otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) ) ) | ( (lv_path_5_0= ruleRelativePathExpr ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:1: ( (otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr () ) | (otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr () ) | (this_RelativePathExpr_6= ruleRelativePathExpr () ) )
             int alt24=3;
             switch ( input.LA(1) ) {
             case 54:
@@ -4093,60 +4093,35 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt24) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:2: ( () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:2: (otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr () )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:2: ( () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:3: () (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:2: (otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr () )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:4: otherlv_0= '/' this_RelativePathExpr_1= ruleRelativePathExpr ()
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1544:3: ()
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1545:5: 
-                    {
+                    otherlv_0=(Token)match(input,54,FOLLOW_54_in_rulePathExpr3270); 
 
-                            current = forceCreateModelElement(
-                                grammarAccess.getPathExprAccess().getPathExprAction_0_0(),
-                                current);
+                        	newLeafNode(otherlv_0, grammarAccess.getPathExprAccess().getSolidusKeyword_0_0());
                         
-
-                    }
-
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1550:2: (otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1550:4: otherlv_1= '/' ( (lv_singlePath_2_0= ruleRelativePathExpr ) )
-                    {
-                    otherlv_1=(Token)match(input,54,FOLLOW_54_in_rulePathExpr3280); 
-
-                        	newLeafNode(otherlv_1, grammarAccess.getPathExprAccess().getSolidusKeyword_0_1_0());
-                        
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1554:1: ( (lv_singlePath_2_0= ruleRelativePathExpr ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1555:1: (lv_singlePath_2_0= ruleRelativePathExpr )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1555:1: (lv_singlePath_2_0= ruleRelativePathExpr )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1556:3: lv_singlePath_2_0= ruleRelativePathExpr
-                    {
                      
-                    	        newCompositeNode(grammarAccess.getPathExprAccess().getSinglePathRelativePathExprParserRuleCall_0_1_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleRelativePathExpr_in_rulePathExpr3301);
-                    lv_singlePath_2_0=ruleRelativePathExpr();
+                            newCompositeNode(grammarAccess.getPathExprAccess().getRelativePathExprParserRuleCall_0_1()); 
+                        
+                    pushFollow(FOLLOW_ruleRelativePathExpr_in_rulePathExpr3292);
+                    this_RelativePathExpr_1=ruleRelativePathExpr();
 
                     state._fsp--;
 
+                     
+                            current = this_RelativePathExpr_1; 
+                            afterParserOrEnumRuleCall();
+                        
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1557:1: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1558:5: 
+                    {
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getPathExprRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"singlePath",
-                            		lv_singlePath_2_0, 
-                            		"RelativePathExpr");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getPathExprAccess().getRelSingleRelPathExprAction_0_2(),
+                                current);
+                        
 
                     }
 
@@ -4157,43 +4132,35 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1573:6: (otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1564:6: (otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr () )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1573:6: (otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1573:8: otherlv_3= '//' ( (lv_doublePath_4_0= ruleRelativePathExpr ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1564:6: (otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr () )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1564:8: otherlv_3= '//' this_RelativePathExpr_4= ruleRelativePathExpr ()
                     {
-                    otherlv_3=(Token)match(input,55,FOLLOW_55_in_rulePathExpr3322); 
+                    otherlv_3=(Token)match(input,55,FOLLOW_55_in_rulePathExpr3320); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getPathExprAccess().getSolidusSolidusKeyword_1_0());
                         
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1577:1: ( (lv_doublePath_4_0= ruleRelativePathExpr ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1578:1: (lv_doublePath_4_0= ruleRelativePathExpr )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1578:1: (lv_doublePath_4_0= ruleRelativePathExpr )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1579:3: lv_doublePath_4_0= ruleRelativePathExpr
-                    {
                      
-                    	        newCompositeNode(grammarAccess.getPathExprAccess().getDoublePathRelativePathExprParserRuleCall_1_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleRelativePathExpr_in_rulePathExpr3343);
-                    lv_doublePath_4_0=ruleRelativePathExpr();
+                            newCompositeNode(grammarAccess.getPathExprAccess().getRelativePathExprParserRuleCall_1_1()); 
+                        
+                    pushFollow(FOLLOW_ruleRelativePathExpr_in_rulePathExpr3342);
+                    this_RelativePathExpr_4=ruleRelativePathExpr();
 
                     state._fsp--;
 
+                     
+                            current = this_RelativePathExpr_4; 
+                            afterParserOrEnumRuleCall();
+                        
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1577:1: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1578:5: 
+                    {
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getPathExprRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"doublePath",
-                            		lv_doublePath_4_0, 
-                            		"RelativePathExpr");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getPathExprAccess().getRelDoubleRelPathExprAction_1_2(),
+                                current);
+                        
 
                     }
 
@@ -4204,33 +4171,31 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1596:6: ( (lv_path_5_0= ruleRelativePathExpr ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1584:6: (this_RelativePathExpr_6= ruleRelativePathExpr () )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1596:6: ( (lv_path_5_0= ruleRelativePathExpr ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1597:1: (lv_path_5_0= ruleRelativePathExpr )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1597:1: (lv_path_5_0= ruleRelativePathExpr )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1598:3: lv_path_5_0= ruleRelativePathExpr
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1584:6: (this_RelativePathExpr_6= ruleRelativePathExpr () )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1585:5: this_RelativePathExpr_6= ruleRelativePathExpr ()
                     {
                      
-                    	        newCompositeNode(grammarAccess.getPathExprAccess().getPathRelativePathExprParserRuleCall_2_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleRelativePathExpr_in_rulePathExpr3371);
-                    lv_path_5_0=ruleRelativePathExpr();
+                            newCompositeNode(grammarAccess.getPathExprAccess().getRelativePathExprParserRuleCall_2_0()); 
+                        
+                    pushFollow(FOLLOW_ruleRelativePathExpr_in_rulePathExpr3380);
+                    this_RelativePathExpr_6=ruleRelativePathExpr();
 
                     state._fsp--;
 
+                     
+                            current = this_RelativePathExpr_6; 
+                            afterParserOrEnumRuleCall();
+                        
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1593:1: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1594:5: 
+                    {
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getPathExprRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"path",
-                            		lv_path_5_0, 
-                            		"RelativePathExpr");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getPathExprAccess().getRelNoSelectorRelPathExprAction_2_1(),
+                                current);
+                        
 
                     }
 
@@ -4261,7 +4226,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelativePathExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1622:1: entryRuleRelativePathExpr returns [EObject current=null] : iv_ruleRelativePathExpr= ruleRelativePathExpr EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1607:1: entryRuleRelativePathExpr returns [EObject current=null] : iv_ruleRelativePathExpr= ruleRelativePathExpr EOF ;
     public final EObject entryRuleRelativePathExpr() throws RecognitionException {
         EObject current = null;
 
@@ -4269,17 +4234,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1623:2: (iv_ruleRelativePathExpr= ruleRelativePathExpr EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1624:2: iv_ruleRelativePathExpr= ruleRelativePathExpr EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1608:2: (iv_ruleRelativePathExpr= ruleRelativePathExpr EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1609:2: iv_ruleRelativePathExpr= ruleRelativePathExpr EOF
             {
              newCompositeNode(grammarAccess.getRelativePathExprRule()); 
-            pushFollow(FOLLOW_ruleRelativePathExpr_in_entryRuleRelativePathExpr3407);
+            pushFollow(FOLLOW_ruleRelativePathExpr_in_entryRuleRelativePathExpr3425);
             iv_ruleRelativePathExpr=ruleRelativePathExpr();
 
             state._fsp--;
 
              current =iv_ruleRelativePathExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRelativePathExpr3417); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRelativePathExpr3435); 
 
             }
 
@@ -4297,37 +4262,35 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelativePathExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1631:1: ruleRelativePathExpr returns [EObject current=null] : ( ( (lv_left_0_0= ruleStepExpr ) ) ( (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) ) )* ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1616:1: ruleRelativePathExpr returns [EObject current=null] : ( ( (lv_step_0_0= ruleStepExpr ) ) ( (lv_extraSteps_1_0= ruleExtraStepExpr ) )* ) ;
     public final EObject ruleRelativePathExpr() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        EObject lv_left_0_0 = null;
+        EObject lv_step_0_0 = null;
 
-        EObject lv_rights_3_0 = null;
+        EObject lv_extraSteps_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1634:28: ( ( ( (lv_left_0_0= ruleStepExpr ) ) ( (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) ) )* ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1635:1: ( ( (lv_left_0_0= ruleStepExpr ) ) ( (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) ) )* )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1619:28: ( ( ( (lv_step_0_0= ruleStepExpr ) ) ( (lv_extraSteps_1_0= ruleExtraStepExpr ) )* ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1620:1: ( ( (lv_step_0_0= ruleStepExpr ) ) ( (lv_extraSteps_1_0= ruleExtraStepExpr ) )* )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1635:1: ( ( (lv_left_0_0= ruleStepExpr ) ) ( (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) ) )* )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1635:2: ( (lv_left_0_0= ruleStepExpr ) ) ( (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) ) )*
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1620:1: ( ( (lv_step_0_0= ruleStepExpr ) ) ( (lv_extraSteps_1_0= ruleExtraStepExpr ) )* )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1620:2: ( (lv_step_0_0= ruleStepExpr ) ) ( (lv_extraSteps_1_0= ruleExtraStepExpr ) )*
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1635:2: ( (lv_left_0_0= ruleStepExpr ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1636:1: (lv_left_0_0= ruleStepExpr )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1620:2: ( (lv_step_0_0= ruleStepExpr ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1621:1: (lv_step_0_0= ruleStepExpr )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1636:1: (lv_left_0_0= ruleStepExpr )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1637:3: lv_left_0_0= ruleStepExpr
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1621:1: (lv_step_0_0= ruleStepExpr )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1622:3: lv_step_0_0= ruleStepExpr
             {
              
-            	        newCompositeNode(grammarAccess.getRelativePathExprAccess().getLeftStepExprParserRuleCall_0_0()); 
+            	        newCompositeNode(grammarAccess.getRelativePathExprAccess().getStepStepExprParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleStepExpr_in_ruleRelativePathExpr3463);
-            lv_left_0_0=ruleStepExpr();
+            pushFollow(FOLLOW_ruleStepExpr_in_ruleRelativePathExpr3481);
+            lv_step_0_0=ruleStepExpr();
 
             state._fsp--;
 
@@ -4337,8 +4300,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"left",
-                    		lv_left_0_0, 
+                   			"step",
+                    		lv_step_0_0, 
                     		"StepExpr");
             	        afterParserOrEnumRuleCall();
             	    
@@ -4348,72 +4311,29 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1653:2: ( (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) ) )*
-            loop26:
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1638:2: ( (lv_extraSteps_1_0= ruleExtraStepExpr ) )*
+            loop25:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( ((LA26_0>=54 && LA26_0<=55)) ) {
-                    alt26=1;
+                if ( ((LA25_0>=54 && LA25_0<=55)) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt25) {
             	case 1 :
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1653:3: (otherlv_1= '/' | otherlv_2= '//' ) ( (lv_rights_3_0= ruleStepExpr ) )
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1639:1: (lv_extraSteps_1_0= ruleExtraStepExpr )
             	    {
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1653:3: (otherlv_1= '/' | otherlv_2= '//' )
-            	    int alt25=2;
-            	    int LA25_0 = input.LA(1);
-
-            	    if ( (LA25_0==54) ) {
-            	        alt25=1;
-            	    }
-            	    else if ( (LA25_0==55) ) {
-            	        alt25=2;
-            	    }
-            	    else {
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 25, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt25) {
-            	        case 1 :
-            	            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1653:5: otherlv_1= '/'
-            	            {
-            	            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleRelativePathExpr3477); 
-
-            	                	newLeafNode(otherlv_1, grammarAccess.getRelativePathExprAccess().getSolidusKeyword_1_0_0());
-            	                
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1658:7: otherlv_2= '//'
-            	            {
-            	            otherlv_2=(Token)match(input,55,FOLLOW_55_in_ruleRelativePathExpr3495); 
-
-            	                	newLeafNode(otherlv_2, grammarAccess.getRelativePathExprAccess().getSolidusSolidusKeyword_1_0_1());
-            	                
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1662:2: ( (lv_rights_3_0= ruleStepExpr ) )
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1663:1: (lv_rights_3_0= ruleStepExpr )
-            	    {
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1663:1: (lv_rights_3_0= ruleStepExpr )
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1664:3: lv_rights_3_0= ruleStepExpr
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1639:1: (lv_extraSteps_1_0= ruleExtraStepExpr )
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1640:3: lv_extraSteps_1_0= ruleExtraStepExpr
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getRelativePathExprAccess().getRightsStepExprParserRuleCall_1_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getRelativePathExprAccess().getExtraStepsExtraStepExprParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStepExpr_in_ruleRelativePathExpr3517);
-            	    lv_rights_3_0=ruleStepExpr();
+            	    pushFollow(FOLLOW_ruleExtraStepExpr_in_ruleRelativePathExpr3502);
+            	    lv_extraSteps_1_0=ruleExtraStepExpr();
 
             	    state._fsp--;
 
@@ -4423,14 +4343,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"rights",
-            	            		lv_rights_3_0, 
-            	            		"StepExpr");
+            	           			"extraSteps",
+            	            		lv_extraSteps_1_0, 
+            	            		"ExtraStepExpr");
             	    	        afterParserOrEnumRuleCall();
             	    	    
-
-            	    }
-
 
             	    }
 
@@ -4439,7 +4356,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop25;
                 }
             } while (true);
 
@@ -4463,8 +4380,177 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleRelativePathExpr"
 
 
+    // $ANTLR start "entryRuleExtraStepExpr"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1664:1: entryRuleExtraStepExpr returns [EObject current=null] : iv_ruleExtraStepExpr= ruleExtraStepExpr EOF ;
+    public final EObject entryRuleExtraStepExpr() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleExtraStepExpr = null;
+
+
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1665:2: (iv_ruleExtraStepExpr= ruleExtraStepExpr EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1666:2: iv_ruleExtraStepExpr= ruleExtraStepExpr EOF
+            {
+             newCompositeNode(grammarAccess.getExtraStepExprRule()); 
+            pushFollow(FOLLOW_ruleExtraStepExpr_in_entryRuleExtraStepExpr3539);
+            iv_ruleExtraStepExpr=ruleExtraStepExpr();
+
+            state._fsp--;
+
+             current =iv_ruleExtraStepExpr; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExtraStepExpr3549); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleExtraStepExpr"
+
+
+    // $ANTLR start "ruleExtraStepExpr"
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1673:1: ruleExtraStepExpr returns [EObject current=null] : ( (otherlv_0= '/' this_StepExpr_1= ruleStepExpr () ) | (otherlv_3= '//' this_StepExpr_4= ruleStepExpr () ) ) ;
+    public final EObject ruleExtraStepExpr() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_3=null;
+        EObject this_StepExpr_1 = null;
+
+        EObject this_StepExpr_4 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1676:28: ( ( (otherlv_0= '/' this_StepExpr_1= ruleStepExpr () ) | (otherlv_3= '//' this_StepExpr_4= ruleStepExpr () ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1677:1: ( (otherlv_0= '/' this_StepExpr_1= ruleStepExpr () ) | (otherlv_3= '//' this_StepExpr_4= ruleStepExpr () ) )
+            {
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1677:1: ( (otherlv_0= '/' this_StepExpr_1= ruleStepExpr () ) | (otherlv_3= '//' this_StepExpr_4= ruleStepExpr () ) )
+            int alt26=2;
+            int LA26_0 = input.LA(1);
+
+            if ( (LA26_0==54) ) {
+                alt26=1;
+            }
+            else if ( (LA26_0==55) ) {
+                alt26=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 26, 0, input);
+
+                throw nvae;
+            }
+            switch (alt26) {
+                case 1 :
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1677:2: (otherlv_0= '/' this_StepExpr_1= ruleStepExpr () )
+                    {
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1677:2: (otherlv_0= '/' this_StepExpr_1= ruleStepExpr () )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1677:4: otherlv_0= '/' this_StepExpr_1= ruleStepExpr ()
+                    {
+                    otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleExtraStepExpr3587); 
+
+                        	newLeafNode(otherlv_0, grammarAccess.getExtraStepExprAccess().getSolidusKeyword_0_0());
+                        
+                     
+                            newCompositeNode(grammarAccess.getExtraStepExprAccess().getStepExprParserRuleCall_0_1()); 
+                        
+                    pushFollow(FOLLOW_ruleStepExpr_in_ruleExtraStepExpr3609);
+                    this_StepExpr_1=ruleStepExpr();
+
+                    state._fsp--;
+
+                     
+                            current = this_StepExpr_1; 
+                            afterParserOrEnumRuleCall();
+                        
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1690:1: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1691:5: 
+                    {
+
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2(),
+                                current);
+                        
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1697:6: (otherlv_3= '//' this_StepExpr_4= ruleStepExpr () )
+                    {
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1697:6: (otherlv_3= '//' this_StepExpr_4= ruleStepExpr () )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1697:8: otherlv_3= '//' this_StepExpr_4= ruleStepExpr ()
+                    {
+                    otherlv_3=(Token)match(input,55,FOLLOW_55_in_ruleExtraStepExpr3637); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getExtraStepExprAccess().getSolidusSolidusKeyword_1_0());
+                        
+                     
+                            newCompositeNode(grammarAccess.getExtraStepExprAccess().getStepExprParserRuleCall_1_1()); 
+                        
+                    pushFollow(FOLLOW_ruleStepExpr_in_ruleExtraStepExpr3659);
+                    this_StepExpr_4=ruleStepExpr();
+
+                    state._fsp--;
+
+                     
+                            current = this_StepExpr_4; 
+                            afterParserOrEnumRuleCall();
+                        
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1710:1: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1711:5: 
+                    {
+
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2(),
+                                current);
+                        
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleExtraStepExpr"
+
+
     // $ANTLR start "entryRuleStepExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1688:1: entryRuleStepExpr returns [EObject current=null] : iv_ruleStepExpr= ruleStepExpr EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1724:1: entryRuleStepExpr returns [EObject current=null] : iv_ruleStepExpr= ruleStepExpr EOF ;
     public final EObject entryRuleStepExpr() throws RecognitionException {
         EObject current = null;
 
@@ -4472,17 +4558,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1689:2: (iv_ruleStepExpr= ruleStepExpr EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1690:2: iv_ruleStepExpr= ruleStepExpr EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1725:2: (iv_ruleStepExpr= ruleStepExpr EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1726:2: iv_ruleStepExpr= ruleStepExpr EOF
             {
              newCompositeNode(grammarAccess.getStepExprRule()); 
-            pushFollow(FOLLOW_ruleStepExpr_in_entryRuleStepExpr3555);
+            pushFollow(FOLLOW_ruleStepExpr_in_entryRuleStepExpr3704);
             iv_ruleStepExpr=ruleStepExpr();
 
             state._fsp--;
 
              current =iv_ruleStepExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStepExpr3565); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStepExpr3714); 
 
             }
 
@@ -4500,22 +4586,22 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStepExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1697:1: ruleStepExpr returns [EObject current=null] : ( ( (lv_filter_0_0= ruleFilterExpr ) ) | ( (lv_step_1_0= ruleAxisStep ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1733:1: ruleStepExpr returns [EObject current=null] : (this_FilterExpr_0= ruleFilterExpr | this_AxisStep_1= ruleAxisStep ) ;
     public final EObject ruleStepExpr() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_filter_0_0 = null;
+        EObject this_FilterExpr_0 = null;
 
-        EObject lv_step_1_0 = null;
+        EObject this_AxisStep_1 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1700:28: ( ( ( (lv_filter_0_0= ruleFilterExpr ) ) | ( (lv_step_1_0= ruleAxisStep ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1701:1: ( ( (lv_filter_0_0= ruleFilterExpr ) ) | ( (lv_step_1_0= ruleAxisStep ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1736:28: ( (this_FilterExpr_0= ruleFilterExpr | this_AxisStep_1= ruleAxisStep ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1737:1: (this_FilterExpr_0= ruleFilterExpr | this_AxisStep_1= ruleAxisStep )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1701:1: ( ( (lv_filter_0_0= ruleFilterExpr ) ) | ( (lv_step_1_0= ruleAxisStep ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1737:1: (this_FilterExpr_0= ruleFilterExpr | this_AxisStep_1= ruleAxisStep )
             int alt27=2;
             switch ( input.LA(1) ) {
             case RULE_CONTEXTITEMEXPR:
@@ -4574,76 +4660,38 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt27) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1701:2: ( (lv_filter_0_0= ruleFilterExpr ) )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1701:2: ( (lv_filter_0_0= ruleFilterExpr ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1702:1: (lv_filter_0_0= ruleFilterExpr )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1702:1: (lv_filter_0_0= ruleFilterExpr )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1703:3: lv_filter_0_0= ruleFilterExpr
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1738:5: this_FilterExpr_0= ruleFilterExpr
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStepExprAccess().getFilterFilterExprParserRuleCall_0_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleFilterExpr_in_ruleStepExpr3611);
-                    lv_filter_0_0=ruleFilterExpr();
+                            newCompositeNode(grammarAccess.getStepExprAccess().getFilterExprParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleFilterExpr_in_ruleStepExpr3761);
+                    this_FilterExpr_0=ruleFilterExpr();
 
                     state._fsp--;
 
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStepExprRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"filter",
-                            		lv_filter_0_0, 
-                            		"FilterExpr");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
+                     
+                            current = this_FilterExpr_0; 
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1720:6: ( (lv_step_1_0= ruleAxisStep ) )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1720:6: ( (lv_step_1_0= ruleAxisStep ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1721:1: (lv_step_1_0= ruleAxisStep )
-                    {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1721:1: (lv_step_1_0= ruleAxisStep )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1722:3: lv_step_1_0= ruleAxisStep
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1748:5: this_AxisStep_1= ruleAxisStep
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStepExprAccess().getStepAxisStepParserRuleCall_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleAxisStep_in_ruleStepExpr3638);
-                    lv_step_1_0=ruleAxisStep();
+                            newCompositeNode(grammarAccess.getStepExprAccess().getAxisStepParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleAxisStep_in_ruleStepExpr3788);
+                    this_AxisStep_1=ruleAxisStep();
 
                     state._fsp--;
 
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStepExprRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"step",
-                            		lv_step_1_0, 
-                            		"AxisStep");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
+                     
+                            current = this_AxisStep_1; 
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
@@ -4668,7 +4716,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAxisStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1746:1: entryRuleAxisStep returns [EObject current=null] : iv_ruleAxisStep= ruleAxisStep EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1764:1: entryRuleAxisStep returns [EObject current=null] : iv_ruleAxisStep= ruleAxisStep EOF ;
     public final EObject entryRuleAxisStep() throws RecognitionException {
         EObject current = null;
 
@@ -4676,17 +4724,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1747:2: (iv_ruleAxisStep= ruleAxisStep EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1748:2: iv_ruleAxisStep= ruleAxisStep EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1765:2: (iv_ruleAxisStep= ruleAxisStep EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1766:2: iv_ruleAxisStep= ruleAxisStep EOF
             {
              newCompositeNode(grammarAccess.getAxisStepRule()); 
-            pushFollow(FOLLOW_ruleAxisStep_in_entryRuleAxisStep3674);
+            pushFollow(FOLLOW_ruleAxisStep_in_entryRuleAxisStep3823);
             iv_ruleAxisStep=ruleAxisStep();
 
             state._fsp--;
 
              current =iv_ruleAxisStep; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAxisStep3684); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAxisStep3833); 
 
             }
 
@@ -4704,27 +4752,27 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAxisStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1755:1: ruleAxisStep returns [EObject current=null] : ( ( ( (lv_reverse_0_0= ruleReverseStep ) ) | ( (lv_forward_1_0= ruleForwardStep ) ) ) ( (lv_predicate_2_0= rulePredicateList ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1773:1: ruleAxisStep returns [EObject current=null] : ( ( ( (lv_step_0_0= ruleReverseStep ) ) | ( (lv_step_1_0= ruleForwardStep ) ) ) ( (lv_predicateList_2_0= rulePredicateList ) ) ) ;
     public final EObject ruleAxisStep() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_reverse_0_0 = null;
+        EObject lv_step_0_0 = null;
 
-        EObject lv_forward_1_0 = null;
+        EObject lv_step_1_0 = null;
 
-        EObject lv_predicate_2_0 = null;
+        EObject lv_predicateList_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1758:28: ( ( ( ( (lv_reverse_0_0= ruleReverseStep ) ) | ( (lv_forward_1_0= ruleForwardStep ) ) ) ( (lv_predicate_2_0= rulePredicateList ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1759:1: ( ( ( (lv_reverse_0_0= ruleReverseStep ) ) | ( (lv_forward_1_0= ruleForwardStep ) ) ) ( (lv_predicate_2_0= rulePredicateList ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1776:28: ( ( ( ( (lv_step_0_0= ruleReverseStep ) ) | ( (lv_step_1_0= ruleForwardStep ) ) ) ( (lv_predicateList_2_0= rulePredicateList ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1777:1: ( ( ( (lv_step_0_0= ruleReverseStep ) ) | ( (lv_step_1_0= ruleForwardStep ) ) ) ( (lv_predicateList_2_0= rulePredicateList ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1759:1: ( ( ( (lv_reverse_0_0= ruleReverseStep ) ) | ( (lv_forward_1_0= ruleForwardStep ) ) ) ( (lv_predicate_2_0= rulePredicateList ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1759:2: ( ( (lv_reverse_0_0= ruleReverseStep ) ) | ( (lv_forward_1_0= ruleForwardStep ) ) ) ( (lv_predicate_2_0= rulePredicateList ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1777:1: ( ( ( (lv_step_0_0= ruleReverseStep ) ) | ( (lv_step_1_0= ruleForwardStep ) ) ) ( (lv_predicateList_2_0= rulePredicateList ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1777:2: ( ( (lv_step_0_0= ruleReverseStep ) ) | ( (lv_step_1_0= ruleForwardStep ) ) ) ( (lv_predicateList_2_0= rulePredicateList ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1759:2: ( ( (lv_reverse_0_0= ruleReverseStep ) ) | ( (lv_forward_1_0= ruleForwardStep ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1777:2: ( ( (lv_step_0_0= ruleReverseStep ) ) | ( (lv_step_1_0= ruleForwardStep ) ) )
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -4742,19 +4790,19 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt28) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1759:3: ( (lv_reverse_0_0= ruleReverseStep ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1777:3: ( (lv_step_0_0= ruleReverseStep ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1759:3: ( (lv_reverse_0_0= ruleReverseStep ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1760:1: (lv_reverse_0_0= ruleReverseStep )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1777:3: ( (lv_step_0_0= ruleReverseStep ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1778:1: (lv_step_0_0= ruleReverseStep )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1760:1: (lv_reverse_0_0= ruleReverseStep )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1761:3: lv_reverse_0_0= ruleReverseStep
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1778:1: (lv_step_0_0= ruleReverseStep )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1779:3: lv_step_0_0= ruleReverseStep
                     {
                      
-                    	        newCompositeNode(grammarAccess.getAxisStepAccess().getReverseReverseStepParserRuleCall_0_0_0()); 
+                    	        newCompositeNode(grammarAccess.getAxisStepAccess().getStepReverseStepParserRuleCall_0_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleReverseStep_in_ruleAxisStep3731);
-                    lv_reverse_0_0=ruleReverseStep();
+                    pushFollow(FOLLOW_ruleReverseStep_in_ruleAxisStep3880);
+                    lv_step_0_0=ruleReverseStep();
 
                     state._fsp--;
 
@@ -4764,8 +4812,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     	        }
                            		set(
                            			current, 
-                           			"reverse",
-                            		lv_reverse_0_0, 
+                           			"step",
+                            		lv_step_0_0, 
                             		"ReverseStep");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -4779,19 +4827,19 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1778:6: ( (lv_forward_1_0= ruleForwardStep ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1796:6: ( (lv_step_1_0= ruleForwardStep ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1778:6: ( (lv_forward_1_0= ruleForwardStep ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1779:1: (lv_forward_1_0= ruleForwardStep )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1796:6: ( (lv_step_1_0= ruleForwardStep ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1797:1: (lv_step_1_0= ruleForwardStep )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1779:1: (lv_forward_1_0= ruleForwardStep )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1780:3: lv_forward_1_0= ruleForwardStep
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1797:1: (lv_step_1_0= ruleForwardStep )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1798:3: lv_step_1_0= ruleForwardStep
                     {
                      
-                    	        newCompositeNode(grammarAccess.getAxisStepAccess().getForwardForwardStepParserRuleCall_0_1_0()); 
+                    	        newCompositeNode(grammarAccess.getAxisStepAccess().getStepForwardStepParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleForwardStep_in_ruleAxisStep3758);
-                    lv_forward_1_0=ruleForwardStep();
+                    pushFollow(FOLLOW_ruleForwardStep_in_ruleAxisStep3907);
+                    lv_step_1_0=ruleForwardStep();
 
                     state._fsp--;
 
@@ -4801,8 +4849,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     	        }
                            		set(
                            			current, 
-                           			"forward",
-                            		lv_forward_1_0, 
+                           			"step",
+                            		lv_step_1_0, 
                             		"ForwardStep");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -4818,17 +4866,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1796:3: ( (lv_predicate_2_0= rulePredicateList ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1797:1: (lv_predicate_2_0= rulePredicateList )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1814:3: ( (lv_predicateList_2_0= rulePredicateList ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1815:1: (lv_predicateList_2_0= rulePredicateList )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1797:1: (lv_predicate_2_0= rulePredicateList )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1798:3: lv_predicate_2_0= rulePredicateList
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1815:1: (lv_predicateList_2_0= rulePredicateList )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1816:3: lv_predicateList_2_0= rulePredicateList
             {
              
-            	        newCompositeNode(grammarAccess.getAxisStepAccess().getPredicatePredicateListParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getAxisStepAccess().getPredicateListPredicateListParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_rulePredicateList_in_ruleAxisStep3780);
-            lv_predicate_2_0=rulePredicateList();
+            pushFollow(FOLLOW_rulePredicateList_in_ruleAxisStep3929);
+            lv_predicateList_2_0=rulePredicateList();
 
             state._fsp--;
 
@@ -4838,8 +4886,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"predicate",
-                    		lv_predicate_2_0, 
+                   			"predicateList",
+                    		lv_predicateList_2_0, 
                     		"PredicateList");
             	        afterParserOrEnumRuleCall();
             	    
@@ -4870,7 +4918,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleForwardStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1822:1: entryRuleForwardStep returns [EObject current=null] : iv_ruleForwardStep= ruleForwardStep EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1840:1: entryRuleForwardStep returns [EObject current=null] : iv_ruleForwardStep= ruleForwardStep EOF ;
     public final EObject entryRuleForwardStep() throws RecognitionException {
         EObject current = null;
 
@@ -4878,17 +4926,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1823:2: (iv_ruleForwardStep= ruleForwardStep EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1824:2: iv_ruleForwardStep= ruleForwardStep EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1841:2: (iv_ruleForwardStep= ruleForwardStep EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1842:2: iv_ruleForwardStep= ruleForwardStep EOF
             {
              newCompositeNode(grammarAccess.getForwardStepRule()); 
-            pushFollow(FOLLOW_ruleForwardStep_in_entryRuleForwardStep3816);
+            pushFollow(FOLLOW_ruleForwardStep_in_entryRuleForwardStep3965);
             iv_ruleForwardStep=ruleForwardStep();
 
             state._fsp--;
 
              current =iv_ruleForwardStep; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleForwardStep3826); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleForwardStep3975); 
 
             }
 
@@ -4906,7 +4954,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForwardStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1831:1: ruleForwardStep returns [EObject current=null] : ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1849:1: ruleForwardStep returns [EObject current=null] : ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) ) ;
     public final EObject ruleForwardStep() throws RecognitionException {
         EObject current = null;
 
@@ -4919,10 +4967,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1834:28: ( ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1835:1: ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1852:28: ( ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:1: ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1835:1: ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:1: ( ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) ) )
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -4940,18 +4988,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt29) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1835:2: ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:2: ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1835:2: ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1835:3: ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:2: ( ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:3: ( (lv_forward_0_0= RULE_FORWARDAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1835:3: ( (lv_forward_0_0= RULE_FORWARDAXIS ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1836:1: (lv_forward_0_0= RULE_FORWARDAXIS )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:3: ( (lv_forward_0_0= RULE_FORWARDAXIS ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1854:1: (lv_forward_0_0= RULE_FORWARDAXIS )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1836:1: (lv_forward_0_0= RULE_FORWARDAXIS )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1837:3: lv_forward_0_0= RULE_FORWARDAXIS
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1854:1: (lv_forward_0_0= RULE_FORWARDAXIS )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1855:3: lv_forward_0_0= RULE_FORWARDAXIS
                     {
-                    lv_forward_0_0=(Token)match(input,RULE_FORWARDAXIS,FOLLOW_RULE_FORWARDAXIS_in_ruleForwardStep3869); 
+                    lv_forward_0_0=(Token)match(input,RULE_FORWARDAXIS,FOLLOW_RULE_FORWARDAXIS_in_ruleForwardStep4018); 
 
                     			newLeafNode(lv_forward_0_0, grammarAccess.getForwardStepAccess().getForwardFORWARDAXISTerminalRuleCall_0_0_0()); 
                     		
@@ -4971,16 +5019,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1853:2: ( (lv_test_1_0= ruleNodeTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1854:1: (lv_test_1_0= ruleNodeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1871:2: ( (lv_test_1_0= ruleNodeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1872:1: (lv_test_1_0= ruleNodeTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1854:1: (lv_test_1_0= ruleNodeTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1855:3: lv_test_1_0= ruleNodeTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1872:1: (lv_test_1_0= ruleNodeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1873:3: lv_test_1_0= ruleNodeTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getForwardStepAccess().getTestNodeTestParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNodeTest_in_ruleForwardStep3895);
+                    pushFollow(FOLLOW_ruleNodeTest_in_ruleForwardStep4044);
                     lv_test_1_0=ruleNodeTest();
 
                     state._fsp--;
@@ -5009,18 +5057,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1872:6: ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1890:6: ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1872:6: ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1873:1: (lv_abbrForward_2_0= ruleAbbrevForwardStep )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1890:6: ( (lv_abbrForward_2_0= ruleAbbrevForwardStep ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1891:1: (lv_abbrForward_2_0= ruleAbbrevForwardStep )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1873:1: (lv_abbrForward_2_0= ruleAbbrevForwardStep )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1874:3: lv_abbrForward_2_0= ruleAbbrevForwardStep
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1891:1: (lv_abbrForward_2_0= ruleAbbrevForwardStep )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1892:3: lv_abbrForward_2_0= ruleAbbrevForwardStep
                     {
                      
                     	        newCompositeNode(grammarAccess.getForwardStepAccess().getAbbrForwardAbbrevForwardStepParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAbbrevForwardStep_in_ruleForwardStep3923);
+                    pushFollow(FOLLOW_ruleAbbrevForwardStep_in_ruleForwardStep4072);
                     lv_abbrForward_2_0=ruleAbbrevForwardStep();
 
                     state._fsp--;
@@ -5066,7 +5114,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbbrevForwardStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1898:1: entryRuleAbbrevForwardStep returns [EObject current=null] : iv_ruleAbbrevForwardStep= ruleAbbrevForwardStep EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1916:1: entryRuleAbbrevForwardStep returns [EObject current=null] : iv_ruleAbbrevForwardStep= ruleAbbrevForwardStep EOF ;
     public final EObject entryRuleAbbrevForwardStep() throws RecognitionException {
         EObject current = null;
 
@@ -5074,17 +5122,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1899:2: (iv_ruleAbbrevForwardStep= ruleAbbrevForwardStep EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1900:2: iv_ruleAbbrevForwardStep= ruleAbbrevForwardStep EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1917:2: (iv_ruleAbbrevForwardStep= ruleAbbrevForwardStep EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1918:2: iv_ruleAbbrevForwardStep= ruleAbbrevForwardStep EOF
             {
              newCompositeNode(grammarAccess.getAbbrevForwardStepRule()); 
-            pushFollow(FOLLOW_ruleAbbrevForwardStep_in_entryRuleAbbrevForwardStep3959);
+            pushFollow(FOLLOW_ruleAbbrevForwardStep_in_entryRuleAbbrevForwardStep4108);
             iv_ruleAbbrevForwardStep=ruleAbbrevForwardStep();
 
             state._fsp--;
 
              current =iv_ruleAbbrevForwardStep; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbbrevForwardStep3969); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbbrevForwardStep4118); 
 
             }
 
@@ -5102,24 +5150,24 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbbrevForwardStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1907:1: ruleAbbrevForwardStep returns [EObject current=null] : ( (otherlv_0= '@' )? ( (lv_test_1_0= ruleNodeTest ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1925:1: ruleAbbrevForwardStep returns [EObject current=null] : ( ( (lv_attr_0_0= '@' ) )? ( (lv_test_1_0= ruleNodeTest ) ) ) ;
     public final EObject ruleAbbrevForwardStep() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_attr_0_0=null;
         EObject lv_test_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1910:28: ( ( (otherlv_0= '@' )? ( (lv_test_1_0= ruleNodeTest ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1911:1: ( (otherlv_0= '@' )? ( (lv_test_1_0= ruleNodeTest ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1928:28: ( ( ( (lv_attr_0_0= '@' ) )? ( (lv_test_1_0= ruleNodeTest ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1929:1: ( ( (lv_attr_0_0= '@' ) )? ( (lv_test_1_0= ruleNodeTest ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1911:1: ( (otherlv_0= '@' )? ( (lv_test_1_0= ruleNodeTest ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1911:2: (otherlv_0= '@' )? ( (lv_test_1_0= ruleNodeTest ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1929:1: ( ( (lv_attr_0_0= '@' ) )? ( (lv_test_1_0= ruleNodeTest ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1929:2: ( (lv_attr_0_0= '@' ) )? ( (lv_test_1_0= ruleNodeTest ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1911:2: (otherlv_0= '@' )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1929:2: ( (lv_attr_0_0= '@' ) )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -5128,28 +5176,40 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt30) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1911:4: otherlv_0= '@'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1930:1: (lv_attr_0_0= '@' )
                     {
-                    otherlv_0=(Token)match(input,56,FOLLOW_56_in_ruleAbbrevForwardStep4007); 
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1930:1: (lv_attr_0_0= '@' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1931:3: lv_attr_0_0= '@'
+                    {
+                    lv_attr_0_0=(Token)match(input,56,FOLLOW_56_in_ruleAbbrevForwardStep4161); 
 
-                        	newLeafNode(otherlv_0, grammarAccess.getAbbrevForwardStepAccess().getCommercialAtKeyword_0());
+                            newLeafNode(lv_attr_0_0, grammarAccess.getAbbrevForwardStepAccess().getAttrCommercialAtKeyword_0_0());
                         
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getAbbrevForwardStepRule());
+                    	        }
+                           		setWithLastConsumed(current, "attr", lv_attr_0_0, "@");
+                    	    
+
+                    }
+
 
                     }
                     break;
 
             }
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1915:3: ( (lv_test_1_0= ruleNodeTest ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1916:1: (lv_test_1_0= ruleNodeTest )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1944:3: ( (lv_test_1_0= ruleNodeTest ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1945:1: (lv_test_1_0= ruleNodeTest )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1916:1: (lv_test_1_0= ruleNodeTest )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1917:3: lv_test_1_0= ruleNodeTest
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1945:1: (lv_test_1_0= ruleNodeTest )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1946:3: lv_test_1_0= ruleNodeTest
             {
              
             	        newCompositeNode(grammarAccess.getAbbrevForwardStepAccess().getTestNodeTestParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleNodeTest_in_ruleAbbrevForwardStep4030);
+            pushFollow(FOLLOW_ruleNodeTest_in_ruleAbbrevForwardStep4196);
             lv_test_1_0=ruleNodeTest();
 
             state._fsp--;
@@ -5192,7 +5252,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReverseStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1941:1: entryRuleReverseStep returns [EObject current=null] : iv_ruleReverseStep= ruleReverseStep EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1970:1: entryRuleReverseStep returns [EObject current=null] : iv_ruleReverseStep= ruleReverseStep EOF ;
     public final EObject entryRuleReverseStep() throws RecognitionException {
         EObject current = null;
 
@@ -5200,17 +5260,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1942:2: (iv_ruleReverseStep= ruleReverseStep EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1943:2: iv_ruleReverseStep= ruleReverseStep EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1971:2: (iv_ruleReverseStep= ruleReverseStep EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1972:2: iv_ruleReverseStep= ruleReverseStep EOF
             {
              newCompositeNode(grammarAccess.getReverseStepRule()); 
-            pushFollow(FOLLOW_ruleReverseStep_in_entryRuleReverseStep4066);
+            pushFollow(FOLLOW_ruleReverseStep_in_entryRuleReverseStep4232);
             iv_ruleReverseStep=ruleReverseStep();
 
             state._fsp--;
 
              current =iv_ruleReverseStep; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReverseStep4076); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReverseStep4242); 
 
             }
 
@@ -5228,7 +5288,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReverseStep"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1950:1: ruleReverseStep returns [EObject current=null] : ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1979:1: ruleReverseStep returns [EObject current=null] : ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) ) ;
     public final EObject ruleReverseStep() throws RecognitionException {
         EObject current = null;
 
@@ -5240,10 +5300,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1953:28: ( ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1954:1: ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1982:28: ( ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1983:1: ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1954:1: ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1983:1: ( ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) ) | ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) ) )
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -5261,18 +5321,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt31) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1954:2: ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1983:2: ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1954:2: ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1954:3: ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1983:2: ( ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1983:3: ( (lv_reverse_0_0= RULE_REVERSEAXIS ) ) ( (lv_test_1_0= ruleNodeTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1954:3: ( (lv_reverse_0_0= RULE_REVERSEAXIS ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1955:1: (lv_reverse_0_0= RULE_REVERSEAXIS )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1983:3: ( (lv_reverse_0_0= RULE_REVERSEAXIS ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1984:1: (lv_reverse_0_0= RULE_REVERSEAXIS )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1955:1: (lv_reverse_0_0= RULE_REVERSEAXIS )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1956:3: lv_reverse_0_0= RULE_REVERSEAXIS
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1984:1: (lv_reverse_0_0= RULE_REVERSEAXIS )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1985:3: lv_reverse_0_0= RULE_REVERSEAXIS
                     {
-                    lv_reverse_0_0=(Token)match(input,RULE_REVERSEAXIS,FOLLOW_RULE_REVERSEAXIS_in_ruleReverseStep4119); 
+                    lv_reverse_0_0=(Token)match(input,RULE_REVERSEAXIS,FOLLOW_RULE_REVERSEAXIS_in_ruleReverseStep4285); 
 
                     			newLeafNode(lv_reverse_0_0, grammarAccess.getReverseStepAccess().getReverseREVERSEAXISTerminalRuleCall_0_0_0()); 
                     		
@@ -5292,16 +5352,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1972:2: ( (lv_test_1_0= ruleNodeTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1973:1: (lv_test_1_0= ruleNodeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2001:2: ( (lv_test_1_0= ruleNodeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2002:1: (lv_test_1_0= ruleNodeTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1973:1: (lv_test_1_0= ruleNodeTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1974:3: lv_test_1_0= ruleNodeTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2002:1: (lv_test_1_0= ruleNodeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2003:3: lv_test_1_0= ruleNodeTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getReverseStepAccess().getTestNodeTestParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNodeTest_in_ruleReverseStep4145);
+                    pushFollow(FOLLOW_ruleNodeTest_in_ruleReverseStep4311);
                     lv_test_1_0=ruleNodeTest();
 
                     state._fsp--;
@@ -5330,15 +5390,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1991:6: ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2020:6: ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1991:6: ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1992:1: (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2020:6: ( (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2021:1: (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1992:1: (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:1993:3: lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2021:1: (lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2022:3: lv_abbrRevSet_2_0= RULE_ABBREVREVERSESTEP
                     {
-                    lv_abbrRevSet_2_0=(Token)match(input,RULE_ABBREVREVERSESTEP,FOLLOW_RULE_ABBREVREVERSESTEP_in_ruleReverseStep4169); 
+                    lv_abbrRevSet_2_0=(Token)match(input,RULE_ABBREVREVERSESTEP,FOLLOW_RULE_ABBREVREVERSESTEP_in_ruleReverseStep4335); 
 
                     			newLeafNode(lv_abbrRevSet_2_0, grammarAccess.getReverseStepAccess().getAbbrRevSetABBREVREVERSESTEPTerminalRuleCall_1_0()); 
                     		
@@ -5382,7 +5442,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNodeTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2017:1: entryRuleNodeTest returns [EObject current=null] : iv_ruleNodeTest= ruleNodeTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2046:1: entryRuleNodeTest returns [EObject current=null] : iv_ruleNodeTest= ruleNodeTest EOF ;
     public final EObject entryRuleNodeTest() throws RecognitionException {
         EObject current = null;
 
@@ -5390,17 +5450,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2018:2: (iv_ruleNodeTest= ruleNodeTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2019:2: iv_ruleNodeTest= ruleNodeTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2047:2: (iv_ruleNodeTest= ruleNodeTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2048:2: iv_ruleNodeTest= ruleNodeTest EOF
             {
              newCompositeNode(grammarAccess.getNodeTestRule()); 
-            pushFollow(FOLLOW_ruleNodeTest_in_entryRuleNodeTest4210);
+            pushFollow(FOLLOW_ruleNodeTest_in_entryRuleNodeTest4376);
             iv_ruleNodeTest=ruleNodeTest();
 
             state._fsp--;
 
              current =iv_ruleNodeTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeTest4220); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeTest4386); 
 
             }
 
@@ -5418,22 +5478,22 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNodeTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2026:1: ruleNodeTest returns [EObject current=null] : ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_nodeTest_1_0= ruleNameTest ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2055:1: ruleNodeTest returns [EObject current=null] : ( ( (lv_test_0_0= ruleKindTest ) ) | ( (lv_test_1_0= ruleNameTest ) ) ) ;
     public final EObject ruleNodeTest() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_kindTest_0_0 = null;
+        EObject lv_test_0_0 = null;
 
-        EObject lv_nodeTest_1_0 = null;
+        EObject lv_test_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2029:28: ( ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_nodeTest_1_0= ruleNameTest ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2030:1: ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_nodeTest_1_0= ruleNameTest ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2058:28: ( ( ( (lv_test_0_0= ruleKindTest ) ) | ( (lv_test_1_0= ruleNameTest ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2059:1: ( ( (lv_test_0_0= ruleKindTest ) ) | ( (lv_test_1_0= ruleNameTest ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2030:1: ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_nodeTest_1_0= ruleNameTest ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2059:1: ( ( (lv_test_0_0= ruleKindTest ) ) | ( (lv_test_1_0= ruleNameTest ) ) )
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -5451,19 +5511,19 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt32) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2030:2: ( (lv_kindTest_0_0= ruleKindTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2059:2: ( (lv_test_0_0= ruleKindTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2030:2: ( (lv_kindTest_0_0= ruleKindTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2031:1: (lv_kindTest_0_0= ruleKindTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2059:2: ( (lv_test_0_0= ruleKindTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2060:1: (lv_test_0_0= ruleKindTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2031:1: (lv_kindTest_0_0= ruleKindTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2032:3: lv_kindTest_0_0= ruleKindTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2060:1: (lv_test_0_0= ruleKindTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2061:3: lv_test_0_0= ruleKindTest
                     {
                      
-                    	        newCompositeNode(grammarAccess.getNodeTestAccess().getKindTestKindTestParserRuleCall_0_0()); 
+                    	        newCompositeNode(grammarAccess.getNodeTestAccess().getTestKindTestParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleKindTest_in_ruleNodeTest4266);
-                    lv_kindTest_0_0=ruleKindTest();
+                    pushFollow(FOLLOW_ruleKindTest_in_ruleNodeTest4432);
+                    lv_test_0_0=ruleKindTest();
 
                     state._fsp--;
 
@@ -5473,8 +5533,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     	        }
                            		set(
                            			current, 
-                           			"kindTest",
-                            		lv_kindTest_0_0, 
+                           			"test",
+                            		lv_test_0_0, 
                             		"KindTest");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -5488,19 +5548,19 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2049:6: ( (lv_nodeTest_1_0= ruleNameTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2078:6: ( (lv_test_1_0= ruleNameTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2049:6: ( (lv_nodeTest_1_0= ruleNameTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2050:1: (lv_nodeTest_1_0= ruleNameTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2078:6: ( (lv_test_1_0= ruleNameTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2079:1: (lv_test_1_0= ruleNameTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2050:1: (lv_nodeTest_1_0= ruleNameTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2051:3: lv_nodeTest_1_0= ruleNameTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2079:1: (lv_test_1_0= ruleNameTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2080:3: lv_test_1_0= ruleNameTest
                     {
                      
-                    	        newCompositeNode(grammarAccess.getNodeTestAccess().getNodeTestNameTestParserRuleCall_1_0()); 
+                    	        newCompositeNode(grammarAccess.getNodeTestAccess().getTestNameTestParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNameTest_in_ruleNodeTest4293);
-                    lv_nodeTest_1_0=ruleNameTest();
+                    pushFollow(FOLLOW_ruleNameTest_in_ruleNodeTest4459);
+                    lv_test_1_0=ruleNameTest();
 
                     state._fsp--;
 
@@ -5510,8 +5570,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     	        }
                            		set(
                            			current, 
-                           			"nodeTest",
-                            		lv_nodeTest_1_0, 
+                           			"test",
+                            		lv_test_1_0, 
                             		"NameTest");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -5545,7 +5605,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNameTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2075:1: entryRuleNameTest returns [EObject current=null] : iv_ruleNameTest= ruleNameTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2104:1: entryRuleNameTest returns [EObject current=null] : iv_ruleNameTest= ruleNameTest EOF ;
     public final EObject entryRuleNameTest() throws RecognitionException {
         EObject current = null;
 
@@ -5553,17 +5613,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2076:2: (iv_ruleNameTest= ruleNameTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2077:2: iv_ruleNameTest= ruleNameTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2105:2: (iv_ruleNameTest= ruleNameTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2106:2: iv_ruleNameTest= ruleNameTest EOF
             {
              newCompositeNode(grammarAccess.getNameTestRule()); 
-            pushFollow(FOLLOW_ruleNameTest_in_entryRuleNameTest4329);
+            pushFollow(FOLLOW_ruleNameTest_in_entryRuleNameTest4495);
             iv_ruleNameTest=ruleNameTest();
 
             state._fsp--;
 
              current =iv_ruleNameTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNameTest4339); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNameTest4505); 
 
             }
 
@@ -5581,7 +5641,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2084:1: ruleNameTest returns [EObject current=null] : ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2113:1: ruleNameTest returns [EObject current=null] : ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) ;
     public final EObject ruleNameTest() throws RecognitionException {
         EObject current = null;
 
@@ -5592,10 +5652,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2087:28: ( ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2088:1: ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2116:28: ( ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:1: ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2088:1: ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:1: ( ( (lv_qName_0_0= RULE_ID ) ) | ( (lv_wildcard_1_0= ruleWildcard ) ) )
             int alt33=2;
             int LA33_0 = input.LA(1);
 
@@ -5626,15 +5686,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt33) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2088:2: ( (lv_qName_0_0= RULE_ID ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:2: ( (lv_qName_0_0= RULE_ID ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2088:2: ( (lv_qName_0_0= RULE_ID ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2089:1: (lv_qName_0_0= RULE_ID )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2117:2: ( (lv_qName_0_0= RULE_ID ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2118:1: (lv_qName_0_0= RULE_ID )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2089:1: (lv_qName_0_0= RULE_ID )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2090:3: lv_qName_0_0= RULE_ID
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2118:1: (lv_qName_0_0= RULE_ID )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2119:3: lv_qName_0_0= RULE_ID
                     {
-                    lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNameTest4381); 
+                    lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNameTest4547); 
 
                     			newLeafNode(lv_qName_0_0, grammarAccess.getNameTestAccess().getQNameIDTerminalRuleCall_0_0()); 
                     		
@@ -5658,18 +5718,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2107:6: ( (lv_wildcard_1_0= ruleWildcard ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2136:6: ( (lv_wildcard_1_0= ruleWildcard ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2107:6: ( (lv_wildcard_1_0= ruleWildcard ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2108:1: (lv_wildcard_1_0= ruleWildcard )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2136:6: ( (lv_wildcard_1_0= ruleWildcard ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2137:1: (lv_wildcard_1_0= ruleWildcard )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2108:1: (lv_wildcard_1_0= ruleWildcard )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2109:3: lv_wildcard_1_0= ruleWildcard
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2137:1: (lv_wildcard_1_0= ruleWildcard )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2138:3: lv_wildcard_1_0= ruleWildcard
                     {
                      
                     	        newCompositeNode(grammarAccess.getNameTestAccess().getWildcardWildcardParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleWildcard_in_ruleNameTest4413);
+                    pushFollow(FOLLOW_ruleWildcard_in_ruleNameTest4579);
                     lv_wildcard_1_0=ruleWildcard();
 
                     state._fsp--;
@@ -5715,7 +5775,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWildcard"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2133:1: entryRuleWildcard returns [EObject current=null] : iv_ruleWildcard= ruleWildcard EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2162:1: entryRuleWildcard returns [EObject current=null] : iv_ruleWildcard= ruleWildcard EOF ;
     public final EObject entryRuleWildcard() throws RecognitionException {
         EObject current = null;
 
@@ -5723,17 +5783,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2134:2: (iv_ruleWildcard= ruleWildcard EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2135:2: iv_ruleWildcard= ruleWildcard EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2163:2: (iv_ruleWildcard= ruleWildcard EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2164:2: iv_ruleWildcard= ruleWildcard EOF
             {
              newCompositeNode(grammarAccess.getWildcardRule()); 
-            pushFollow(FOLLOW_ruleWildcard_in_entryRuleWildcard4449);
+            pushFollow(FOLLOW_ruleWildcard_in_entryRuleWildcard4615);
             iv_ruleWildcard=ruleWildcard();
 
             state._fsp--;
 
              current =iv_ruleWildcard; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWildcard4459); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWildcard4625); 
 
             }
 
@@ -5751,7 +5811,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWildcard"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2142:1: ruleWildcard returns [EObject current=null] : ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2171:1: ruleWildcard returns [EObject current=null] : ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) ) ;
     public final EObject ruleWildcard() throws RecognitionException {
         EObject current = null;
 
@@ -5768,10 +5828,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2145:28: ( ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2146:1: ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2174:28: ( ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2175:1: ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2146:1: ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2175:1: ( ( (lv_wild_0_0= '*' ) ) | ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' ) | (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) ) )
             int alt34=3;
             int LA34_0 = input.LA(1);
 
@@ -5802,15 +5862,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt34) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2146:2: ( (lv_wild_0_0= '*' ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2175:2: ( (lv_wild_0_0= '*' ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2146:2: ( (lv_wild_0_0= '*' ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2147:1: (lv_wild_0_0= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2175:2: ( (lv_wild_0_0= '*' ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2176:1: (lv_wild_0_0= '*' )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2147:1: (lv_wild_0_0= '*' )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2148:3: lv_wild_0_0= '*'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2176:1: (lv_wild_0_0= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2177:3: lv_wild_0_0= '*'
                     {
-                    lv_wild_0_0=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4502); 
+                    lv_wild_0_0=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4668); 
 
                             newLeafNode(lv_wild_0_0, grammarAccess.getWildcardAccess().getWildAsteriskKeyword_0_0());
                         
@@ -5830,21 +5890,21 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2162:6: ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2191:6: ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2162:6: ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2162:7: ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2191:6: ( ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2191:7: ( (lv_left_1_0= ruleNCName ) ) otherlv_2= ':' otherlv_3= '*'
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2162:7: ( (lv_left_1_0= ruleNCName ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2163:1: (lv_left_1_0= ruleNCName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2191:7: ( (lv_left_1_0= ruleNCName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2192:1: (lv_left_1_0= ruleNCName )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2163:1: (lv_left_1_0= ruleNCName )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2164:3: lv_left_1_0= ruleNCName
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2192:1: (lv_left_1_0= ruleNCName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2193:3: lv_left_1_0= ruleNCName
                     {
                      
                     	        newCompositeNode(grammarAccess.getWildcardAccess().getLeftNCNameParserRuleCall_1_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4543);
+                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4709);
                     lv_left_1_0=ruleNCName();
 
                     state._fsp--;
@@ -5866,11 +5926,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4555); 
+                    otherlv_2=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4721); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getWildcardAccess().getColonKeyword_1_1());
                         
-                    otherlv_3=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4567); 
+                    otherlv_3=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4733); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getWildcardAccess().getAsteriskKeyword_1_2());
                         
@@ -5881,29 +5941,29 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2189:6: (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2218:6: (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2189:6: (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2189:8: otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2218:6: (otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2218:8: otherlv_4= '*' otherlv_5= ':' ( (lv_right_6_0= ruleNCName ) )
                     {
-                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4587); 
+                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_ruleWildcard4753); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getWildcardAccess().getAsteriskKeyword_2_0());
                         
-                    otherlv_5=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4599); 
+                    otherlv_5=(Token)match(input,57,FOLLOW_57_in_ruleWildcard4765); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getWildcardAccess().getColonKeyword_2_1());
                         
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2197:1: ( (lv_right_6_0= ruleNCName ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2198:1: (lv_right_6_0= ruleNCName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2226:1: ( (lv_right_6_0= ruleNCName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2227:1: (lv_right_6_0= ruleNCName )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2198:1: (lv_right_6_0= ruleNCName )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2199:3: lv_right_6_0= ruleNCName
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2227:1: (lv_right_6_0= ruleNCName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2228:3: lv_right_6_0= ruleNCName
                     {
                      
                     	        newCompositeNode(grammarAccess.getWildcardAccess().getRightNCNameParserRuleCall_2_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4620);
+                    pushFollow(FOLLOW_ruleNCName_in_ruleWildcard4786);
                     lv_right_6_0=ruleNCName();
 
                     state._fsp--;
@@ -5952,7 +6012,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFilterExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2223:1: entryRuleFilterExpr returns [EObject current=null] : iv_ruleFilterExpr= ruleFilterExpr EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2252:1: entryRuleFilterExpr returns [EObject current=null] : iv_ruleFilterExpr= ruleFilterExpr EOF ;
     public final EObject entryRuleFilterExpr() throws RecognitionException {
         EObject current = null;
 
@@ -5960,17 +6020,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2224:2: (iv_ruleFilterExpr= ruleFilterExpr EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2225:2: iv_ruleFilterExpr= ruleFilterExpr EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2253:2: (iv_ruleFilterExpr= ruleFilterExpr EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2254:2: iv_ruleFilterExpr= ruleFilterExpr EOF
             {
              newCompositeNode(grammarAccess.getFilterExprRule()); 
-            pushFollow(FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4657);
+            pushFollow(FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4823);
             iv_ruleFilterExpr=ruleFilterExpr();
 
             state._fsp--;
 
              current =iv_ruleFilterExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFilterExpr4667); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFilterExpr4833); 
 
             }
 
@@ -5988,34 +6048,34 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFilterExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2232:1: ruleFilterExpr returns [EObject current=null] : ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicate_1_0= rulePredicateList ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2261:1: ruleFilterExpr returns [EObject current=null] : ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicateList_1_0= rulePredicateList ) ) ) ;
     public final EObject ruleFilterExpr() throws RecognitionException {
         EObject current = null;
 
         EObject lv_primary_0_0 = null;
 
-        EObject lv_predicate_1_0 = null;
+        EObject lv_predicateList_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2235:28: ( ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicate_1_0= rulePredicateList ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2236:1: ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicate_1_0= rulePredicateList ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2264:28: ( ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicateList_1_0= rulePredicateList ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2265:1: ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicateList_1_0= rulePredicateList ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2236:1: ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicate_1_0= rulePredicateList ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2236:2: ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicate_1_0= rulePredicateList ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2265:1: ( ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicateList_1_0= rulePredicateList ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2265:2: ( (lv_primary_0_0= rulePrimaryExpr ) ) ( (lv_predicateList_1_0= rulePredicateList ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2236:2: ( (lv_primary_0_0= rulePrimaryExpr ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2237:1: (lv_primary_0_0= rulePrimaryExpr )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2265:2: ( (lv_primary_0_0= rulePrimaryExpr ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2266:1: (lv_primary_0_0= rulePrimaryExpr )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2237:1: (lv_primary_0_0= rulePrimaryExpr )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2238:3: lv_primary_0_0= rulePrimaryExpr
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2266:1: (lv_primary_0_0= rulePrimaryExpr )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2267:3: lv_primary_0_0= rulePrimaryExpr
             {
              
             	        newCompositeNode(grammarAccess.getFilterExprAccess().getPrimaryPrimaryExprParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4713);
+            pushFollow(FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4879);
             lv_primary_0_0=rulePrimaryExpr();
 
             state._fsp--;
@@ -6037,17 +6097,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2254:2: ( (lv_predicate_1_0= rulePredicateList ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2255:1: (lv_predicate_1_0= rulePredicateList )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2283:2: ( (lv_predicateList_1_0= rulePredicateList ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2284:1: (lv_predicateList_1_0= rulePredicateList )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2255:1: (lv_predicate_1_0= rulePredicateList )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2256:3: lv_predicate_1_0= rulePredicateList
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2284:1: (lv_predicateList_1_0= rulePredicateList )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2285:3: lv_predicateList_1_0= rulePredicateList
             {
              
-            	        newCompositeNode(grammarAccess.getFilterExprAccess().getPredicatePredicateListParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getFilterExprAccess().getPredicateListPredicateListParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_rulePredicateList_in_ruleFilterExpr4734);
-            lv_predicate_1_0=rulePredicateList();
+            pushFollow(FOLLOW_rulePredicateList_in_ruleFilterExpr4900);
+            lv_predicateList_1_0=rulePredicateList();
 
             state._fsp--;
 
@@ -6057,8 +6117,8 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"predicate",
-                    		lv_predicate_1_0, 
+                   			"predicateList",
+                    		lv_predicateList_1_0, 
                     		"PredicateList");
             	        afterParserOrEnumRuleCall();
             	    
@@ -6089,7 +6149,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePredicateList"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2280:1: entryRulePredicateList returns [EObject current=null] : iv_rulePredicateList= rulePredicateList EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2309:1: entryRulePredicateList returns [EObject current=null] : iv_rulePredicateList= rulePredicateList EOF ;
     public final EObject entryRulePredicateList() throws RecognitionException {
         EObject current = null;
 
@@ -6097,17 +6157,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2281:2: (iv_rulePredicateList= rulePredicateList EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2282:2: iv_rulePredicateList= rulePredicateList EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2310:2: (iv_rulePredicateList= rulePredicateList EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2311:2: iv_rulePredicateList= rulePredicateList EOF
             {
              newCompositeNode(grammarAccess.getPredicateListRule()); 
-            pushFollow(FOLLOW_rulePredicateList_in_entryRulePredicateList4770);
+            pushFollow(FOLLOW_rulePredicateList_in_entryRulePredicateList4936);
             iv_rulePredicateList=rulePredicateList();
 
             state._fsp--;
 
              current =iv_rulePredicateList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateList4780); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateList4946); 
 
             }
 
@@ -6125,7 +6185,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredicateList"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2289:1: rulePredicateList returns [EObject current=null] : ( () ( (lv_predicates_1_0= rulePredicate ) )* ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2318:1: rulePredicateList returns [EObject current=null] : ( () ( (lv_predicates_1_0= rulePredicate ) )* ) ;
     public final EObject rulePredicateList() throws RecognitionException {
         EObject current = null;
 
@@ -6135,14 +6195,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2292:28: ( ( () ( (lv_predicates_1_0= rulePredicate ) )* ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2293:1: ( () ( (lv_predicates_1_0= rulePredicate ) )* )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2321:28: ( ( () ( (lv_predicates_1_0= rulePredicate ) )* ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2322:1: ( () ( (lv_predicates_1_0= rulePredicate ) )* )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2293:1: ( () ( (lv_predicates_1_0= rulePredicate ) )* )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2293:2: () ( (lv_predicates_1_0= rulePredicate ) )*
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2322:1: ( () ( (lv_predicates_1_0= rulePredicate ) )* )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2322:2: () ( (lv_predicates_1_0= rulePredicate ) )*
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2293:2: ()
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2294:5: 
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2322:2: ()
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2323:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6152,7 +6212,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2299:2: ( (lv_predicates_1_0= rulePredicate ) )*
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2328:2: ( (lv_predicates_1_0= rulePredicate ) )*
             loop35:
             do {
                 int alt35=2;
@@ -6165,15 +6225,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2300:1: (lv_predicates_1_0= rulePredicate )
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2329:1: (lv_predicates_1_0= rulePredicate )
             	    {
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2300:1: (lv_predicates_1_0= rulePredicate )
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2301:3: lv_predicates_1_0= rulePredicate
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2329:1: (lv_predicates_1_0= rulePredicate )
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2330:3: lv_predicates_1_0= rulePredicate
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getPredicateListAccess().getPredicatesPredicateParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePredicate_in_rulePredicateList4835);
+            	    pushFollow(FOLLOW_rulePredicate_in_rulePredicateList5001);
             	    lv_predicates_1_0=rulePredicate();
 
             	    state._fsp--;
@@ -6222,7 +6282,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePredicate"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2325:1: entryRulePredicate returns [EObject current=null] : iv_rulePredicate= rulePredicate EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2354:1: entryRulePredicate returns [EObject current=null] : iv_rulePredicate= rulePredicate EOF ;
     public final EObject entryRulePredicate() throws RecognitionException {
         EObject current = null;
 
@@ -6230,17 +6290,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2326:2: (iv_rulePredicate= rulePredicate EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2327:2: iv_rulePredicate= rulePredicate EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2355:2: (iv_rulePredicate= rulePredicate EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2356:2: iv_rulePredicate= rulePredicate EOF
             {
              newCompositeNode(grammarAccess.getPredicateRule()); 
-            pushFollow(FOLLOW_rulePredicate_in_entryRulePredicate4872);
+            pushFollow(FOLLOW_rulePredicate_in_entryRulePredicate5038);
             iv_rulePredicate=rulePredicate();
 
             state._fsp--;
 
              current =iv_rulePredicate; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicate4882); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicate5048); 
 
             }
 
@@ -6258,7 +6318,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredicate"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2334:1: rulePredicate returns [EObject current=null] : (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2363:1: rulePredicate returns [EObject current=null] : (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' ) ;
     public final EObject rulePredicate() throws RecognitionException {
         EObject current = null;
 
@@ -6270,26 +6330,26 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2337:28: ( (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2338:1: (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2366:28: ( (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2367:1: (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2338:1: (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2338:3: otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2367:1: (otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2367:3: otherlv_0= '[' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ']'
             {
-            otherlv_0=(Token)match(input,58,FOLLOW_58_in_rulePredicate4919); 
+            otherlv_0=(Token)match(input,58,FOLLOW_58_in_rulePredicate5085); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPredicateAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2342:1: ( (lv_expr_1_0= ruleExpr ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2343:1: (lv_expr_1_0= ruleExpr )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2371:1: ( (lv_expr_1_0= ruleExpr ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2372:1: (lv_expr_1_0= ruleExpr )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2343:1: (lv_expr_1_0= ruleExpr )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2344:3: lv_expr_1_0= ruleExpr
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2372:1: (lv_expr_1_0= ruleExpr )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2373:3: lv_expr_1_0= ruleExpr
             {
              
             	        newCompositeNode(grammarAccess.getPredicateAccess().getExprExprParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpr_in_rulePredicate4940);
+            pushFollow(FOLLOW_ruleExpr_in_rulePredicate5106);
             lv_expr_1_0=ruleExpr();
 
             state._fsp--;
@@ -6311,7 +6371,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,59,FOLLOW_59_in_rulePredicate4952); 
+            otherlv_2=(Token)match(input,59,FOLLOW_59_in_rulePredicate5118); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getPredicateAccess().getRightSquareBracketKeyword_2());
                 
@@ -6336,7 +6396,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrimaryExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2372:1: entryRulePrimaryExpr returns [EObject current=null] : iv_rulePrimaryExpr= rulePrimaryExpr EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2401:1: entryRulePrimaryExpr returns [EObject current=null] : iv_rulePrimaryExpr= rulePrimaryExpr EOF ;
     public final EObject entryRulePrimaryExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6344,17 +6404,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2373:2: (iv_rulePrimaryExpr= rulePrimaryExpr EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2374:2: iv_rulePrimaryExpr= rulePrimaryExpr EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2402:2: (iv_rulePrimaryExpr= rulePrimaryExpr EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2403:2: iv_rulePrimaryExpr= rulePrimaryExpr EOF
             {
              newCompositeNode(grammarAccess.getPrimaryExprRule()); 
-            pushFollow(FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr4988);
+            pushFollow(FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr5154);
             iv_rulePrimaryExpr=rulePrimaryExpr();
 
             state._fsp--;
 
              current =iv_rulePrimaryExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpr4998); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpr5164); 
 
             }
 
@@ -6372,7 +6432,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimaryExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2381:1: rulePrimaryExpr returns [EObject current=null] : ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2410:1: rulePrimaryExpr returns [EObject current=null] : ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) ) ;
     public final EObject rulePrimaryExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6389,10 +6449,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2384:28: ( ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2385:1: ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2413:28: ( ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2414:1: ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2385:1: ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2414:1: ( ( (lv_literal_0_0= ruleLiteral ) ) | ( (lv_varRef_1_0= ruleVarRef ) ) | ( (lv_parExpr_2_0= ruleParenthesizedExpr ) ) | ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) ) | ( (lv_functionCall_4_0= ruleFunctionCall ) ) )
             int alt36=5;
             switch ( input.LA(1) ) {
             case RULE_STRINGLITERAL:
@@ -6432,18 +6492,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt36) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2385:2: ( (lv_literal_0_0= ruleLiteral ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2414:2: ( (lv_literal_0_0= ruleLiteral ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2385:2: ( (lv_literal_0_0= ruleLiteral ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2386:1: (lv_literal_0_0= ruleLiteral )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2414:2: ( (lv_literal_0_0= ruleLiteral ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2415:1: (lv_literal_0_0= ruleLiteral )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2386:1: (lv_literal_0_0= ruleLiteral )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2387:3: lv_literal_0_0= ruleLiteral
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2415:1: (lv_literal_0_0= ruleLiteral )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2416:3: lv_literal_0_0= ruleLiteral
                     {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getLiteralLiteralParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLiteral_in_rulePrimaryExpr5044);
+                    pushFollow(FOLLOW_ruleLiteral_in_rulePrimaryExpr5210);
                     lv_literal_0_0=ruleLiteral();
 
                     state._fsp--;
@@ -6469,18 +6529,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2404:6: ( (lv_varRef_1_0= ruleVarRef ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2433:6: ( (lv_varRef_1_0= ruleVarRef ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2404:6: ( (lv_varRef_1_0= ruleVarRef ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2405:1: (lv_varRef_1_0= ruleVarRef )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2433:6: ( (lv_varRef_1_0= ruleVarRef ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2434:1: (lv_varRef_1_0= ruleVarRef )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2405:1: (lv_varRef_1_0= ruleVarRef )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2406:3: lv_varRef_1_0= ruleVarRef
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2434:1: (lv_varRef_1_0= ruleVarRef )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2435:3: lv_varRef_1_0= ruleVarRef
                     {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getVarRefVarRefParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleVarRef_in_rulePrimaryExpr5071);
+                    pushFollow(FOLLOW_ruleVarRef_in_rulePrimaryExpr5237);
                     lv_varRef_1_0=ruleVarRef();
 
                     state._fsp--;
@@ -6506,18 +6566,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2423:6: ( (lv_parExpr_2_0= ruleParenthesizedExpr ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2452:6: ( (lv_parExpr_2_0= ruleParenthesizedExpr ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2423:6: ( (lv_parExpr_2_0= ruleParenthesizedExpr ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2424:1: (lv_parExpr_2_0= ruleParenthesizedExpr )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2452:6: ( (lv_parExpr_2_0= ruleParenthesizedExpr ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2453:1: (lv_parExpr_2_0= ruleParenthesizedExpr )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2424:1: (lv_parExpr_2_0= ruleParenthesizedExpr )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2425:3: lv_parExpr_2_0= ruleParenthesizedExpr
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2453:1: (lv_parExpr_2_0= ruleParenthesizedExpr )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2454:3: lv_parExpr_2_0= ruleParenthesizedExpr
                     {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getParExprParenthesizedExprParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5098);
+                    pushFollow(FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5264);
                     lv_parExpr_2_0=ruleParenthesizedExpr();
 
                     state._fsp--;
@@ -6543,15 +6603,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2442:6: ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2471:6: ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2442:6: ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2443:1: (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2471:6: ( (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2472:1: (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2443:1: (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2444:3: lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2472:1: (lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2473:3: lv_conItemExpr_3_0= RULE_CONTEXTITEMEXPR
                     {
-                    lv_conItemExpr_3_0=(Token)match(input,RULE_CONTEXTITEMEXPR,FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5121); 
+                    lv_conItemExpr_3_0=(Token)match(input,RULE_CONTEXTITEMEXPR,FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5287); 
 
                     			newLeafNode(lv_conItemExpr_3_0, grammarAccess.getPrimaryExprAccess().getConItemExprCONTEXTITEMEXPRTerminalRuleCall_3_0()); 
                     		
@@ -6575,18 +6635,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2461:6: ( (lv_functionCall_4_0= ruleFunctionCall ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2490:6: ( (lv_functionCall_4_0= ruleFunctionCall ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2461:6: ( (lv_functionCall_4_0= ruleFunctionCall ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2462:1: (lv_functionCall_4_0= ruleFunctionCall )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2490:6: ( (lv_functionCall_4_0= ruleFunctionCall ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2491:1: (lv_functionCall_4_0= ruleFunctionCall )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2462:1: (lv_functionCall_4_0= ruleFunctionCall )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2463:3: lv_functionCall_4_0= ruleFunctionCall
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2491:1: (lv_functionCall_4_0= ruleFunctionCall )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2492:3: lv_functionCall_4_0= ruleFunctionCall
                     {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExprAccess().getFunctionCallFunctionCallParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5153);
+                    pushFollow(FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5319);
                     lv_functionCall_4_0=ruleFunctionCall();
 
                     state._fsp--;
@@ -6632,7 +6692,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteral"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2487:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2516:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
     public final EObject entryRuleLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6640,17 +6700,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2488:2: (iv_ruleLiteral= ruleLiteral EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2489:2: iv_ruleLiteral= ruleLiteral EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2517:2: (iv_ruleLiteral= ruleLiteral EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2518:2: iv_ruleLiteral= ruleLiteral EOF
             {
              newCompositeNode(grammarAccess.getLiteralRule()); 
-            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral5189);
+            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral5355);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
 
              current =iv_ruleLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral5199); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral5365); 
 
             }
 
@@ -6668,7 +6728,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteral"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2496:1: ruleLiteral returns [EObject current=null] : ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2525:1: ruleLiteral returns [EObject current=null] : ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) ) ;
     public final EObject ruleLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6679,10 +6739,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2499:28: ( ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2500:1: ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2528:28: ( ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2529:1: ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2500:1: ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2529:1: ( ( (lv_num_0_0= ruleNumericLiteral ) ) | ( (lv_string_1_0= RULE_STRINGLITERAL ) ) )
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -6700,18 +6760,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt37) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2500:2: ( (lv_num_0_0= ruleNumericLiteral ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2529:2: ( (lv_num_0_0= ruleNumericLiteral ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2500:2: ( (lv_num_0_0= ruleNumericLiteral ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2501:1: (lv_num_0_0= ruleNumericLiteral )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2529:2: ( (lv_num_0_0= ruleNumericLiteral ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2530:1: (lv_num_0_0= ruleNumericLiteral )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2501:1: (lv_num_0_0= ruleNumericLiteral )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2502:3: lv_num_0_0= ruleNumericLiteral
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2530:1: (lv_num_0_0= ruleNumericLiteral )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2531:3: lv_num_0_0= ruleNumericLiteral
                     {
                      
                     	        newCompositeNode(grammarAccess.getLiteralAccess().getNumNumericLiteralParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumericLiteral_in_ruleLiteral5245);
+                    pushFollow(FOLLOW_ruleNumericLiteral_in_ruleLiteral5411);
                     lv_num_0_0=ruleNumericLiteral();
 
                     state._fsp--;
@@ -6737,15 +6797,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2519:6: ( (lv_string_1_0= RULE_STRINGLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2548:6: ( (lv_string_1_0= RULE_STRINGLITERAL ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2519:6: ( (lv_string_1_0= RULE_STRINGLITERAL ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2520:1: (lv_string_1_0= RULE_STRINGLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2548:6: ( (lv_string_1_0= RULE_STRINGLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2549:1: (lv_string_1_0= RULE_STRINGLITERAL )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2520:1: (lv_string_1_0= RULE_STRINGLITERAL )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2521:3: lv_string_1_0= RULE_STRINGLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2549:1: (lv_string_1_0= RULE_STRINGLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2550:3: lv_string_1_0= RULE_STRINGLITERAL
                     {
-                    lv_string_1_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5268); 
+                    lv_string_1_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5434); 
 
                     			newLeafNode(lv_string_1_0, grammarAccess.getLiteralAccess().getStringSTRINGLITERALTerminalRuleCall_1_0()); 
                     		
@@ -6789,7 +6849,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumericLiteral"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2545:1: entryRuleNumericLiteral returns [EObject current=null] : iv_ruleNumericLiteral= ruleNumericLiteral EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2574:1: entryRuleNumericLiteral returns [EObject current=null] : iv_ruleNumericLiteral= ruleNumericLiteral EOF ;
     public final EObject entryRuleNumericLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6797,17 +6857,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2546:2: (iv_ruleNumericLiteral= ruleNumericLiteral EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2547:2: iv_ruleNumericLiteral= ruleNumericLiteral EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2575:2: (iv_ruleNumericLiteral= ruleNumericLiteral EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2576:2: iv_ruleNumericLiteral= ruleNumericLiteral EOF
             {
              newCompositeNode(grammarAccess.getNumericLiteralRule()); 
-            pushFollow(FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5309);
+            pushFollow(FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5475);
             iv_ruleNumericLiteral=ruleNumericLiteral();
 
             state._fsp--;
 
              current =iv_ruleNumericLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericLiteral5319); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericLiteral5485); 
 
             }
 
@@ -6825,7 +6885,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericLiteral"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2554:1: ruleNumericLiteral returns [EObject current=null] : ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2583:1: ruleNumericLiteral returns [EObject current=null] : ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) ) ;
     public final EObject ruleNumericLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6836,10 +6896,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2557:28: ( ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2558:1: ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2586:28: ( ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2587:1: ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2558:1: ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2587:1: ( ( (lv_intLit_0_0= RULE_INTLITERAL ) ) | ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) ) | ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) ) )
             int alt38=3;
             switch ( input.LA(1) ) {
             case RULE_INTLITERAL:
@@ -6866,15 +6926,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt38) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2558:2: ( (lv_intLit_0_0= RULE_INTLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2587:2: ( (lv_intLit_0_0= RULE_INTLITERAL ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2558:2: ( (lv_intLit_0_0= RULE_INTLITERAL ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2559:1: (lv_intLit_0_0= RULE_INTLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2587:2: ( (lv_intLit_0_0= RULE_INTLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2588:1: (lv_intLit_0_0= RULE_INTLITERAL )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2559:1: (lv_intLit_0_0= RULE_INTLITERAL )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2560:3: lv_intLit_0_0= RULE_INTLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2588:1: (lv_intLit_0_0= RULE_INTLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2589:3: lv_intLit_0_0= RULE_INTLITERAL
                     {
-                    lv_intLit_0_0=(Token)match(input,RULE_INTLITERAL,FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5361); 
+                    lv_intLit_0_0=(Token)match(input,RULE_INTLITERAL,FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5527); 
 
                     			newLeafNode(lv_intLit_0_0, grammarAccess.getNumericLiteralAccess().getIntLitINTLITERALTerminalRuleCall_0_0()); 
                     		
@@ -6898,15 +6958,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2577:6: ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2606:6: ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2577:6: ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2578:1: (lv_decLit_1_0= RULE_DECIMALLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2606:6: ( (lv_decLit_1_0= RULE_DECIMALLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2607:1: (lv_decLit_1_0= RULE_DECIMALLITERAL )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2578:1: (lv_decLit_1_0= RULE_DECIMALLITERAL )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2579:3: lv_decLit_1_0= RULE_DECIMALLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2607:1: (lv_decLit_1_0= RULE_DECIMALLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2608:3: lv_decLit_1_0= RULE_DECIMALLITERAL
                     {
-                    lv_decLit_1_0=(Token)match(input,RULE_DECIMALLITERAL,FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5389); 
+                    lv_decLit_1_0=(Token)match(input,RULE_DECIMALLITERAL,FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5555); 
 
                     			newLeafNode(lv_decLit_1_0, grammarAccess.getNumericLiteralAccess().getDecLitDECIMALLITERALTerminalRuleCall_1_0()); 
                     		
@@ -6930,15 +6990,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2596:6: ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2625:6: ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2596:6: ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2597:1: (lv_doubleLit_2_0= RULE_DOUBLELITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2625:6: ( (lv_doubleLit_2_0= RULE_DOUBLELITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2626:1: (lv_doubleLit_2_0= RULE_DOUBLELITERAL )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2597:1: (lv_doubleLit_2_0= RULE_DOUBLELITERAL )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2598:3: lv_doubleLit_2_0= RULE_DOUBLELITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2626:1: (lv_doubleLit_2_0= RULE_DOUBLELITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2627:3: lv_doubleLit_2_0= RULE_DOUBLELITERAL
                     {
-                    lv_doubleLit_2_0=(Token)match(input,RULE_DOUBLELITERAL,FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5417); 
+                    lv_doubleLit_2_0=(Token)match(input,RULE_DOUBLELITERAL,FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5583); 
 
                     			newLeafNode(lv_doubleLit_2_0, grammarAccess.getNumericLiteralAccess().getDoubleLitDOUBLELITERALTerminalRuleCall_2_0()); 
                     		
@@ -6982,7 +7042,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVarRef"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2622:1: entryRuleVarRef returns [EObject current=null] : iv_ruleVarRef= ruleVarRef EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2651:1: entryRuleVarRef returns [EObject current=null] : iv_ruleVarRef= ruleVarRef EOF ;
     public final EObject entryRuleVarRef() throws RecognitionException {
         EObject current = null;
 
@@ -6990,17 +7050,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2623:2: (iv_ruleVarRef= ruleVarRef EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2624:2: iv_ruleVarRef= ruleVarRef EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2652:2: (iv_ruleVarRef= ruleVarRef EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2653:2: iv_ruleVarRef= ruleVarRef EOF
             {
              newCompositeNode(grammarAccess.getVarRefRule()); 
-            pushFollow(FOLLOW_ruleVarRef_in_entryRuleVarRef5458);
+            pushFollow(FOLLOW_ruleVarRef_in_entryRuleVarRef5624);
             iv_ruleVarRef=ruleVarRef();
 
             state._fsp--;
 
              current =iv_ruleVarRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVarRef5468); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVarRef5634); 
 
             }
 
@@ -7018,7 +7078,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVarRef"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2631:1: ruleVarRef returns [EObject current=null] : (otherlv_0= '$' this_VarName_1= ruleVarName ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2660:1: ruleVarRef returns [EObject current=null] : (otherlv_0= '$' this_VarName_1= ruleVarName ) ;
     public final EObject ruleVarRef() throws RecognitionException {
         EObject current = null;
 
@@ -7029,20 +7089,20 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2634:28: ( (otherlv_0= '$' this_VarName_1= ruleVarName ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2635:1: (otherlv_0= '$' this_VarName_1= ruleVarName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2663:28: ( (otherlv_0= '$' this_VarName_1= ruleVarName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2664:1: (otherlv_0= '$' this_VarName_1= ruleVarName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2635:1: (otherlv_0= '$' this_VarName_1= ruleVarName )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2635:3: otherlv_0= '$' this_VarName_1= ruleVarName
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2664:1: (otherlv_0= '$' this_VarName_1= ruleVarName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2664:3: otherlv_0= '$' this_VarName_1= ruleVarName
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleVarRef5505); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleVarRef5671); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getVarRefAccess().getDollarSignKeyword_0());
                 
              
                     newCompositeNode(grammarAccess.getVarRefAccess().getVarNameParserRuleCall_1()); 
                 
-            pushFollow(FOLLOW_ruleVarName_in_ruleVarRef5527);
+            pushFollow(FOLLOW_ruleVarName_in_ruleVarRef5693);
             this_VarName_1=ruleVarName();
 
             state._fsp--;
@@ -7072,7 +7132,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVarName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2656:1: entryRuleVarName returns [EObject current=null] : iv_ruleVarName= ruleVarName EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2685:1: entryRuleVarName returns [EObject current=null] : iv_ruleVarName= ruleVarName EOF ;
     public final EObject entryRuleVarName() throws RecognitionException {
         EObject current = null;
 
@@ -7080,17 +7140,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2657:2: (iv_ruleVarName= ruleVarName EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2658:2: iv_ruleVarName= ruleVarName EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2686:2: (iv_ruleVarName= ruleVarName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2687:2: iv_ruleVarName= ruleVarName EOF
             {
              newCompositeNode(grammarAccess.getVarNameRule()); 
-            pushFollow(FOLLOW_ruleVarName_in_entryRuleVarName5562);
+            pushFollow(FOLLOW_ruleVarName_in_entryRuleVarName5728);
             iv_ruleVarName=ruleVarName();
 
             state._fsp--;
 
              current =iv_ruleVarName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVarName5572); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVarName5738); 
 
             }
 
@@ -7108,7 +7168,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVarName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2665:1: ruleVarName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2694:1: ruleVarName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
     public final EObject ruleVarName() throws RecognitionException {
         EObject current = null;
 
@@ -7117,16 +7177,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2668:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2669:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2697:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2698:1: ( (lv_qName_0_0= RULE_ID ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2669:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2670:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2698:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2699:1: (lv_qName_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2670:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2671:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2699:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2700:3: lv_qName_0_0= RULE_ID
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVarName5613); 
+            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVarName5779); 
 
             			newLeafNode(lv_qName_0_0, grammarAccess.getVarNameAccess().getQNameIDTerminalRuleCall_0()); 
             		
@@ -7164,7 +7224,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParenthesizedExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2695:1: entryRuleParenthesizedExpr returns [EObject current=null] : iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2724:1: entryRuleParenthesizedExpr returns [EObject current=null] : iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF ;
     public final EObject entryRuleParenthesizedExpr() throws RecognitionException {
         EObject current = null;
 
@@ -7172,17 +7232,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2696:2: (iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2697:2: iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2725:2: (iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2726:2: iv_ruleParenthesizedExpr= ruleParenthesizedExpr EOF
             {
              newCompositeNode(grammarAccess.getParenthesizedExprRule()); 
-            pushFollow(FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5653);
+            pushFollow(FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5819);
             iv_ruleParenthesizedExpr=ruleParenthesizedExpr();
 
             state._fsp--;
 
              current =iv_ruleParenthesizedExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParenthesizedExpr5663); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParenthesizedExpr5829); 
 
             }
 
@@ -7200,7 +7260,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParenthesizedExpr"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2704:1: ruleParenthesizedExpr returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2733:1: ruleParenthesizedExpr returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' ) ;
     public final EObject ruleParenthesizedExpr() throws RecognitionException {
         EObject current = null;
 
@@ -7212,14 +7272,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2707:28: ( ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2708:1: ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2736:28: ( ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2737:1: ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2708:1: ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2708:2: () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2737:1: ( () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2737:2: () otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) )? otherlv_3= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2708:2: ()
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2709:5: 
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2737:2: ()
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2738:5: 
             {
 
                     current = forceCreateModelElement(
@@ -7229,11 +7289,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleParenthesizedExpr5709); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleParenthesizedExpr5875); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getParenthesizedExprAccess().getLeftParenthesisKeyword_1());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2718:1: ( (lv_expr_2_0= ruleExpr ) )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2747:1: ( (lv_expr_2_0= ruleExpr ) )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -7242,15 +7302,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt39) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2719:1: (lv_expr_2_0= ruleExpr )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2748:1: (lv_expr_2_0= ruleExpr )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2719:1: (lv_expr_2_0= ruleExpr )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2720:3: lv_expr_2_0= ruleExpr
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2748:1: (lv_expr_2_0= ruleExpr )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2749:3: lv_expr_2_0= ruleExpr
                     {
                      
                     	        newCompositeNode(grammarAccess.getParenthesizedExprAccess().getExprExprParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpr_in_ruleParenthesizedExpr5730);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleParenthesizedExpr5896);
                     lv_expr_2_0=ruleExpr();
 
                     state._fsp--;
@@ -7275,7 +7335,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleParenthesizedExpr5743); 
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleParenthesizedExpr5909); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getParenthesizedExprAccess().getRightParenthesisKeyword_3());
                 
@@ -7300,7 +7360,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionCall"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2748:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2777:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
     public final EObject entryRuleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -7308,17 +7368,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2749:2: (iv_ruleFunctionCall= ruleFunctionCall EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2750:2: iv_ruleFunctionCall= ruleFunctionCall EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2778:2: (iv_ruleFunctionCall= ruleFunctionCall EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2779:2: iv_ruleFunctionCall= ruleFunctionCall EOF
             {
              newCompositeNode(grammarAccess.getFunctionCallRule()); 
-            pushFollow(FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5779);
+            pushFollow(FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5945);
             iv_ruleFunctionCall=ruleFunctionCall();
 
             state._fsp--;
 
              current =iv_ruleFunctionCall; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionCall5789); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionCall5955); 
 
             }
 
@@ -7336,7 +7396,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2757:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2786:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -7352,19 +7412,19 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2760:28: ( ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2761:1: ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2789:28: ( ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:1: ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2761:1: ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2761:2: ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:1: ( ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:2: ( (lv_qName_0_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )? otherlv_5= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2761:2: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2762:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2790:2: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2791:1: (lv_qName_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2762:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2763:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2791:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2792:3: lv_qName_0_0= RULE_ID
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunctionCall5831); 
+            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunctionCall5997); 
 
             			newLeafNode(lv_qName_0_0, grammarAccess.getFunctionCallAccess().getQNameIDTerminalRuleCall_0_0()); 
             		
@@ -7384,11 +7444,11 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleFunctionCall5848); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleFunctionCall6014); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2783:1: ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2812:1: ( ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )* )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -7397,18 +7457,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt41) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2783:2: ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )*
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2812:2: ( (lv_expr_2_0= ruleExprSingle ) ) (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )*
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2783:2: ( (lv_expr_2_0= ruleExprSingle ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2784:1: (lv_expr_2_0= ruleExprSingle )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2812:2: ( (lv_expr_2_0= ruleExprSingle ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2813:1: (lv_expr_2_0= ruleExprSingle )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2784:1: (lv_expr_2_0= ruleExprSingle )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2785:3: lv_expr_2_0= ruleExprSingle
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2813:1: (lv_expr_2_0= ruleExprSingle )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2814:3: lv_expr_2_0= ruleExprSingle
                     {
                      
                     	        newCompositeNode(grammarAccess.getFunctionCallAccess().getExprExprSingleParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall5870);
+                    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall6036);
                     lv_expr_2_0=ruleExprSingle();
 
                     state._fsp--;
@@ -7430,7 +7490,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2801:2: (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )*
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2830:2: (otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) ) )*
                     loop40:
                     do {
                         int alt40=2;
@@ -7443,22 +7503,22 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                         switch (alt40) {
                     	case 1 :
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2801:4: otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2830:4: otherlv_3= ',' ( (lv_exprs_4_0= ruleExprSingle ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleFunctionCall5883); 
+                    	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleFunctionCall6049); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getFunctionCallAccess().getCommaKeyword_2_1_0());
                     	        
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2805:1: ( (lv_exprs_4_0= ruleExprSingle ) )
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2806:1: (lv_exprs_4_0= ruleExprSingle )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2834:1: ( (lv_exprs_4_0= ruleExprSingle ) )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2835:1: (lv_exprs_4_0= ruleExprSingle )
                     	    {
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2806:1: (lv_exprs_4_0= ruleExprSingle )
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2807:3: lv_exprs_4_0= ruleExprSingle
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2835:1: (lv_exprs_4_0= ruleExprSingle )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2836:3: lv_exprs_4_0= ruleExprSingle
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getFunctionCallAccess().getExprsExprSingleParserRuleCall_2_1_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall5904);
+                    	    pushFollow(FOLLOW_ruleExprSingle_in_ruleFunctionCall6070);
                     	    lv_exprs_4_0=ruleExprSingle();
 
                     	    state._fsp--;
@@ -7495,7 +7555,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleFunctionCall5920); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleFunctionCall6086); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_3());
                 
@@ -7520,7 +7580,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2835:1: entryRuleSingleType returns [EObject current=null] : iv_ruleSingleType= ruleSingleType EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2864:1: entryRuleSingleType returns [EObject current=null] : iv_ruleSingleType= ruleSingleType EOF ;
     public final EObject entryRuleSingleType() throws RecognitionException {
         EObject current = null;
 
@@ -7528,17 +7588,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2836:2: (iv_ruleSingleType= ruleSingleType EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2837:2: iv_ruleSingleType= ruleSingleType EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2865:2: (iv_ruleSingleType= ruleSingleType EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2866:2: iv_ruleSingleType= ruleSingleType EOF
             {
              newCompositeNode(grammarAccess.getSingleTypeRule()); 
-            pushFollow(FOLLOW_ruleSingleType_in_entryRuleSingleType5956);
+            pushFollow(FOLLOW_ruleSingleType_in_entryRuleSingleType6122);
             iv_ruleSingleType=ruleSingleType();
 
             state._fsp--;
 
              current =iv_ruleSingleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSingleType5966); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSingleType6132); 
 
             }
 
@@ -7556,7 +7616,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2844:1: ruleSingleType returns [EObject current=null] : (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2873:1: ruleSingleType returns [EObject current=null] : (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? ) ;
     public final EObject ruleSingleType() throws RecognitionException {
         EObject current = null;
 
@@ -7567,16 +7627,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2847:28: ( (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2848:1: (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2876:28: ( (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2877:1: (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2848:1: (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2849:5: this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2877:1: (this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )? )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2878:5: this_AtomicType_0= ruleAtomicType (otherlv_1= '?' )?
             {
              
                     newCompositeNode(grammarAccess.getSingleTypeAccess().getAtomicTypeParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAtomicType_in_ruleSingleType6013);
+            pushFollow(FOLLOW_ruleAtomicType_in_ruleSingleType6179);
             this_AtomicType_0=ruleAtomicType();
 
             state._fsp--;
@@ -7585,7 +7645,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     current = this_AtomicType_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2857:1: (otherlv_1= '?' )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2886:1: (otherlv_1= '?' )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -7594,9 +7654,9 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt42) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2857:3: otherlv_1= '?'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2886:3: otherlv_1= '?'
                     {
-                    otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleSingleType6025); 
+                    otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleSingleType6191); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getSingleTypeAccess().getQuestionMarkKeyword_1());
                         
@@ -7627,7 +7687,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSequenceType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2869:1: entryRuleSequenceType returns [EObject current=null] : iv_ruleSequenceType= ruleSequenceType EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2898:1: entryRuleSequenceType returns [EObject current=null] : iv_ruleSequenceType= ruleSequenceType EOF ;
     public final EObject entryRuleSequenceType() throws RecognitionException {
         EObject current = null;
 
@@ -7635,17 +7695,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2870:2: (iv_ruleSequenceType= ruleSequenceType EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2871:2: iv_ruleSequenceType= ruleSequenceType EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2899:2: (iv_ruleSequenceType= ruleSequenceType EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2900:2: iv_ruleSequenceType= ruleSequenceType EOF
             {
              newCompositeNode(grammarAccess.getSequenceTypeRule()); 
-            pushFollow(FOLLOW_ruleSequenceType_in_entryRuleSequenceType6063);
+            pushFollow(FOLLOW_ruleSequenceType_in_entryRuleSequenceType6229);
             iv_ruleSequenceType=ruleSequenceType();
 
             state._fsp--;
 
              current =iv_ruleSequenceType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSequenceType6073); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSequenceType6239); 
 
             }
 
@@ -7663,7 +7723,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSequenceType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2878:1: ruleSequenceType returns [EObject current=null] : ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2907:1: ruleSequenceType returns [EObject current=null] : ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) ) ;
     public final EObject ruleSequenceType() throws RecognitionException {
         EObject current = null;
 
@@ -7676,10 +7736,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2881:28: ( ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2882:1: ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2910:28: ( ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2911:1: ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2882:1: ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2911:1: ( ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) ) | ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) ) )
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -7697,15 +7757,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt43) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2882:2: ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2911:2: ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2882:2: ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2883:1: (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2911:2: ( (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2912:1: (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2883:1: (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2884:3: lv_empty_0_0= RULE_EMPTYSEQUENCETYPE
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2912:1: (lv_empty_0_0= RULE_EMPTYSEQUENCETYPE )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2913:3: lv_empty_0_0= RULE_EMPTYSEQUENCETYPE
                     {
-                    lv_empty_0_0=(Token)match(input,RULE_EMPTYSEQUENCETYPE,FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6115); 
+                    lv_empty_0_0=(Token)match(input,RULE_EMPTYSEQUENCETYPE,FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6281); 
 
                     			newLeafNode(lv_empty_0_0, grammarAccess.getSequenceTypeAccess().getEmptyEMPTYSEQUENCETYPETerminalRuleCall_0_0()); 
                     		
@@ -7729,21 +7789,21 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2901:6: ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2930:6: ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2901:6: ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2901:7: ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2930:6: ( ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2930:7: ( (lv_itemType_1_0= ruleItemType ) ) ( (lv_occInd_2_0= ruleOccurenceIndicator ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2901:7: ( (lv_itemType_1_0= ruleItemType ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2902:1: (lv_itemType_1_0= ruleItemType )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2930:7: ( (lv_itemType_1_0= ruleItemType ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2931:1: (lv_itemType_1_0= ruleItemType )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2902:1: (lv_itemType_1_0= ruleItemType )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2903:3: lv_itemType_1_0= ruleItemType
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2931:1: (lv_itemType_1_0= ruleItemType )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2932:3: lv_itemType_1_0= ruleItemType
                     {
                      
                     	        newCompositeNode(grammarAccess.getSequenceTypeAccess().getItemTypeItemTypeParserRuleCall_1_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleItemType_in_ruleSequenceType6148);
+                    pushFollow(FOLLOW_ruleItemType_in_ruleSequenceType6314);
                     lv_itemType_1_0=ruleItemType();
 
                     state._fsp--;
@@ -7765,16 +7825,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2919:2: ( (lv_occInd_2_0= ruleOccurenceIndicator ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2920:1: (lv_occInd_2_0= ruleOccurenceIndicator )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2948:2: ( (lv_occInd_2_0= ruleOccurenceIndicator ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2949:1: (lv_occInd_2_0= ruleOccurenceIndicator )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2920:1: (lv_occInd_2_0= ruleOccurenceIndicator )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2921:3: lv_occInd_2_0= ruleOccurenceIndicator
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2949:1: (lv_occInd_2_0= ruleOccurenceIndicator )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2950:3: lv_occInd_2_0= ruleOccurenceIndicator
                     {
                      
                     	        newCompositeNode(grammarAccess.getSequenceTypeAccess().getOccIndOccurenceIndicatorParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6169);
+                    pushFollow(FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6335);
                     lv_occInd_2_0=ruleOccurenceIndicator();
 
                     state._fsp--;
@@ -7823,7 +7883,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOccurenceIndicator"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2945:1: entryRuleOccurenceIndicator returns [String current=null] : iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2974:1: entryRuleOccurenceIndicator returns [String current=null] : iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF ;
     public final String entryRuleOccurenceIndicator() throws RecognitionException {
         String current = null;
 
@@ -7831,17 +7891,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2946:2: (iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2947:2: iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2975:2: (iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2976:2: iv_ruleOccurenceIndicator= ruleOccurenceIndicator EOF
             {
              newCompositeNode(grammarAccess.getOccurenceIndicatorRule()); 
-            pushFollow(FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6207);
+            pushFollow(FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6373);
             iv_ruleOccurenceIndicator=ruleOccurenceIndicator();
 
             state._fsp--;
 
              current =iv_ruleOccurenceIndicator.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOccurenceIndicator6218); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOccurenceIndicator6384); 
 
             }
 
@@ -7859,7 +7919,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOccurenceIndicator"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2954:1: ruleOccurenceIndicator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '?' | kw= '*' | kw= '+' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2983:1: ruleOccurenceIndicator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '?' | kw= '*' | kw= '+' ) ;
     public final AntlrDatatypeRuleToken ruleOccurenceIndicator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7868,10 +7928,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2957:28: ( (kw= '?' | kw= '*' | kw= '+' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2958:1: (kw= '?' | kw= '*' | kw= '+' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2986:28: ( (kw= '?' | kw= '*' | kw= '+' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2987:1: (kw= '?' | kw= '*' | kw= '+' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2958:1: (kw= '?' | kw= '*' | kw= '+' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2987:1: (kw= '?' | kw= '*' | kw= '+' )
             int alt44=3;
             switch ( input.LA(1) ) {
             case 60:
@@ -7898,9 +7958,9 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt44) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2959:2: kw= '?'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2988:2: kw= '?'
                     {
-                    kw=(Token)match(input,60,FOLLOW_60_in_ruleOccurenceIndicator6256); 
+                    kw=(Token)match(input,60,FOLLOW_60_in_ruleOccurenceIndicator6422); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOccurenceIndicatorAccess().getQuestionMarkKeyword_0()); 
@@ -7909,9 +7969,9 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2966:2: kw= '*'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2995:2: kw= '*'
                     {
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOccurenceIndicator6275); 
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOccurenceIndicator6441); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOccurenceIndicatorAccess().getAsteriskKeyword_1()); 
@@ -7920,9 +7980,9 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2973:2: kw= '+'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3002:2: kw= '+'
                     {
-                    kw=(Token)match(input,38,FOLLOW_38_in_ruleOccurenceIndicator6294); 
+                    kw=(Token)match(input,38,FOLLOW_38_in_ruleOccurenceIndicator6460); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOccurenceIndicatorAccess().getPlusSignKeyword_2()); 
@@ -7951,7 +8011,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleItemType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2986:1: entryRuleItemType returns [EObject current=null] : iv_ruleItemType= ruleItemType EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3015:1: entryRuleItemType returns [EObject current=null] : iv_ruleItemType= ruleItemType EOF ;
     public final EObject entryRuleItemType() throws RecognitionException {
         EObject current = null;
 
@@ -7959,17 +8019,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2987:2: (iv_ruleItemType= ruleItemType EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2988:2: iv_ruleItemType= ruleItemType EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3016:2: (iv_ruleItemType= ruleItemType EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3017:2: iv_ruleItemType= ruleItemType EOF
             {
              newCompositeNode(grammarAccess.getItemTypeRule()); 
-            pushFollow(FOLLOW_ruleItemType_in_entryRuleItemType6334);
+            pushFollow(FOLLOW_ruleItemType_in_entryRuleItemType6500);
             iv_ruleItemType=ruleItemType();
 
             state._fsp--;
 
              current =iv_ruleItemType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleItemType6344); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleItemType6510); 
 
             }
 
@@ -7987,7 +8047,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleItemType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2995:1: ruleItemType returns [EObject current=null] : ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3024:1: ruleItemType returns [EObject current=null] : ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) ) ;
     public final EObject ruleItemType() throws RecognitionException {
         EObject current = null;
 
@@ -8000,10 +8060,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2998:28: ( ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2999:1: ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3027:28: ( ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3028:1: ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2999:1: ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3028:1: ( ( (lv_kindTest_0_0= ruleKindTest ) ) | ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) ) | ( (lv_atomicType_2_0= ruleAtomicType ) ) )
             int alt45=3;
             switch ( input.LA(1) ) {
             case RULE_COMMENTTEST:
@@ -8038,18 +8098,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt45) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2999:2: ( (lv_kindTest_0_0= ruleKindTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3028:2: ( (lv_kindTest_0_0= ruleKindTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:2999:2: ( (lv_kindTest_0_0= ruleKindTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3000:1: (lv_kindTest_0_0= ruleKindTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3028:2: ( (lv_kindTest_0_0= ruleKindTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3029:1: (lv_kindTest_0_0= ruleKindTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3000:1: (lv_kindTest_0_0= ruleKindTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3001:3: lv_kindTest_0_0= ruleKindTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3029:1: (lv_kindTest_0_0= ruleKindTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3030:3: lv_kindTest_0_0= ruleKindTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getItemTypeAccess().getKindTestKindTestParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleKindTest_in_ruleItemType6390);
+                    pushFollow(FOLLOW_ruleKindTest_in_ruleItemType6556);
                     lv_kindTest_0_0=ruleKindTest();
 
                     state._fsp--;
@@ -8075,15 +8135,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3018:6: ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3047:6: ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3018:6: ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3019:1: (lv_empty_1_0= RULE_EMPTYITEMTYPE )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3047:6: ( (lv_empty_1_0= RULE_EMPTYITEMTYPE ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3048:1: (lv_empty_1_0= RULE_EMPTYITEMTYPE )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3019:1: (lv_empty_1_0= RULE_EMPTYITEMTYPE )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3020:3: lv_empty_1_0= RULE_EMPTYITEMTYPE
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3048:1: (lv_empty_1_0= RULE_EMPTYITEMTYPE )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3049:3: lv_empty_1_0= RULE_EMPTYITEMTYPE
                     {
-                    lv_empty_1_0=(Token)match(input,RULE_EMPTYITEMTYPE,FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6413); 
+                    lv_empty_1_0=(Token)match(input,RULE_EMPTYITEMTYPE,FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6579); 
 
                     			newLeafNode(lv_empty_1_0, grammarAccess.getItemTypeAccess().getEmptyEMPTYITEMTYPETerminalRuleCall_1_0()); 
                     		
@@ -8107,18 +8167,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3037:6: ( (lv_atomicType_2_0= ruleAtomicType ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3066:6: ( (lv_atomicType_2_0= ruleAtomicType ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3037:6: ( (lv_atomicType_2_0= ruleAtomicType ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3038:1: (lv_atomicType_2_0= ruleAtomicType )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3066:6: ( (lv_atomicType_2_0= ruleAtomicType ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3067:1: (lv_atomicType_2_0= ruleAtomicType )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3038:1: (lv_atomicType_2_0= ruleAtomicType )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3039:3: lv_atomicType_2_0= ruleAtomicType
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3067:1: (lv_atomicType_2_0= ruleAtomicType )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3068:3: lv_atomicType_2_0= ruleAtomicType
                     {
                      
                     	        newCompositeNode(grammarAccess.getItemTypeAccess().getAtomicTypeAtomicTypeParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAtomicType_in_ruleItemType6445);
+                    pushFollow(FOLLOW_ruleAtomicType_in_ruleItemType6611);
                     lv_atomicType_2_0=ruleAtomicType();
 
                     state._fsp--;
@@ -8164,7 +8224,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomicType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3063:1: entryRuleAtomicType returns [EObject current=null] : iv_ruleAtomicType= ruleAtomicType EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3092:1: entryRuleAtomicType returns [EObject current=null] : iv_ruleAtomicType= ruleAtomicType EOF ;
     public final EObject entryRuleAtomicType() throws RecognitionException {
         EObject current = null;
 
@@ -8172,17 +8232,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3064:2: (iv_ruleAtomicType= ruleAtomicType EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3065:2: iv_ruleAtomicType= ruleAtomicType EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3093:2: (iv_ruleAtomicType= ruleAtomicType EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3094:2: iv_ruleAtomicType= ruleAtomicType EOF
             {
              newCompositeNode(grammarAccess.getAtomicTypeRule()); 
-            pushFollow(FOLLOW_ruleAtomicType_in_entryRuleAtomicType6481);
+            pushFollow(FOLLOW_ruleAtomicType_in_entryRuleAtomicType6647);
             iv_ruleAtomicType=ruleAtomicType();
 
             state._fsp--;
 
              current =iv_ruleAtomicType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicType6491); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicType6657); 
 
             }
 
@@ -8200,7 +8260,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomicType"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3072:1: ruleAtomicType returns [EObject current=null] : ( (lv_type_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3101:1: ruleAtomicType returns [EObject current=null] : ( (lv_type_0_0= RULE_ID ) ) ;
     public final EObject ruleAtomicType() throws RecognitionException {
         EObject current = null;
 
@@ -8209,16 +8269,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3075:28: ( ( (lv_type_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3076:1: ( (lv_type_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3104:28: ( ( (lv_type_0_0= RULE_ID ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3105:1: ( (lv_type_0_0= RULE_ID ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3076:1: ( (lv_type_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3077:1: (lv_type_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3105:1: ( (lv_type_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3106:1: (lv_type_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3077:1: (lv_type_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3078:3: lv_type_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3106:1: (lv_type_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3107:3: lv_type_0_0= RULE_ID
             {
-            lv_type_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicType6532); 
+            lv_type_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAtomicType6698); 
 
             			newLeafNode(lv_type_0_0, grammarAccess.getAtomicTypeAccess().getTypeIDTerminalRuleCall_0()); 
             		
@@ -8256,7 +8316,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKindTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3102:1: entryRuleKindTest returns [EObject current=null] : iv_ruleKindTest= ruleKindTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3131:1: entryRuleKindTest returns [EObject current=null] : iv_ruleKindTest= ruleKindTest EOF ;
     public final EObject entryRuleKindTest() throws RecognitionException {
         EObject current = null;
 
@@ -8264,17 +8324,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3103:2: (iv_ruleKindTest= ruleKindTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3104:2: iv_ruleKindTest= ruleKindTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3132:2: (iv_ruleKindTest= ruleKindTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3133:2: iv_ruleKindTest= ruleKindTest EOF
             {
              newCompositeNode(grammarAccess.getKindTestRule()); 
-            pushFollow(FOLLOW_ruleKindTest_in_entryRuleKindTest6572);
+            pushFollow(FOLLOW_ruleKindTest_in_entryRuleKindTest6738);
             iv_ruleKindTest=ruleKindTest();
 
             state._fsp--;
 
              current =iv_ruleKindTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleKindTest6582); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleKindTest6748); 
 
             }
 
@@ -8292,7 +8352,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKindTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3111:1: ruleKindTest returns [EObject current=null] : ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3140:1: ruleKindTest returns [EObject current=null] : ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) ) ;
     public final EObject ruleKindTest() throws RecognitionException {
         EObject current = null;
 
@@ -8315,10 +8375,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3114:28: ( ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3115:1: ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3143:28: ( ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3144:1: ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3115:1: ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3144:1: ( ( (lv_docTest_0_0= ruleDocumentTest ) ) | ( (lv_elemTest_1_0= ruleElementTest ) ) | ( (lv_attributeTest_2_0= ruleAttributeTest ) ) | ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) ) | ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) ) | ( (lv_pitTest_5_0= rulePITest ) ) | ( (lv_commentTest_6_0= RULE_COMMENTTEST ) ) | ( (lv_textTest_7_0= RULE_TEXTTEST ) ) | ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) ) )
             int alt46=9;
             switch ( input.LA(1) ) {
             case 61:
@@ -8375,18 +8435,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             switch (alt46) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3115:2: ( (lv_docTest_0_0= ruleDocumentTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3144:2: ( (lv_docTest_0_0= ruleDocumentTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3115:2: ( (lv_docTest_0_0= ruleDocumentTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3116:1: (lv_docTest_0_0= ruleDocumentTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3144:2: ( (lv_docTest_0_0= ruleDocumentTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3145:1: (lv_docTest_0_0= ruleDocumentTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3116:1: (lv_docTest_0_0= ruleDocumentTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3117:3: lv_docTest_0_0= ruleDocumentTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3145:1: (lv_docTest_0_0= ruleDocumentTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3146:3: lv_docTest_0_0= ruleDocumentTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getDocTestDocumentTestParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDocumentTest_in_ruleKindTest6628);
+                    pushFollow(FOLLOW_ruleDocumentTest_in_ruleKindTest6794);
                     lv_docTest_0_0=ruleDocumentTest();
 
                     state._fsp--;
@@ -8412,18 +8472,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3134:6: ( (lv_elemTest_1_0= ruleElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3163:6: ( (lv_elemTest_1_0= ruleElementTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3134:6: ( (lv_elemTest_1_0= ruleElementTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3135:1: (lv_elemTest_1_0= ruleElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3163:6: ( (lv_elemTest_1_0= ruleElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3164:1: (lv_elemTest_1_0= ruleElementTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3135:1: (lv_elemTest_1_0= ruleElementTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3136:3: lv_elemTest_1_0= ruleElementTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3164:1: (lv_elemTest_1_0= ruleElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3165:3: lv_elemTest_1_0= ruleElementTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getElemTestElementTestParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementTest_in_ruleKindTest6655);
+                    pushFollow(FOLLOW_ruleElementTest_in_ruleKindTest6821);
                     lv_elemTest_1_0=ruleElementTest();
 
                     state._fsp--;
@@ -8449,18 +8509,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3153:6: ( (lv_attributeTest_2_0= ruleAttributeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3182:6: ( (lv_attributeTest_2_0= ruleAttributeTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3153:6: ( (lv_attributeTest_2_0= ruleAttributeTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3154:1: (lv_attributeTest_2_0= ruleAttributeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3182:6: ( (lv_attributeTest_2_0= ruleAttributeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3183:1: (lv_attributeTest_2_0= ruleAttributeTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3154:1: (lv_attributeTest_2_0= ruleAttributeTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3155:3: lv_attributeTest_2_0= ruleAttributeTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3183:1: (lv_attributeTest_2_0= ruleAttributeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3184:3: lv_attributeTest_2_0= ruleAttributeTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getAttributeTestAttributeTestParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAttributeTest_in_ruleKindTest6682);
+                    pushFollow(FOLLOW_ruleAttributeTest_in_ruleKindTest6848);
                     lv_attributeTest_2_0=ruleAttributeTest();
 
                     state._fsp--;
@@ -8486,18 +8546,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3172:6: ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3201:6: ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3172:6: ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3173:1: (lv_schemaElemTest_3_0= ruleSchemaElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3201:6: ( (lv_schemaElemTest_3_0= ruleSchemaElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3202:1: (lv_schemaElemTest_3_0= ruleSchemaElementTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3173:1: (lv_schemaElemTest_3_0= ruleSchemaElementTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3174:3: lv_schemaElemTest_3_0= ruleSchemaElementTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3202:1: (lv_schemaElemTest_3_0= ruleSchemaElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3203:3: lv_schemaElemTest_3_0= ruleSchemaElementTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getSchemaElemTestSchemaElementTestParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleKindTest6709);
+                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleKindTest6875);
                     lv_schemaElemTest_3_0=ruleSchemaElementTest();
 
                     state._fsp--;
@@ -8523,18 +8583,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3191:6: ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3220:6: ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3191:6: ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3192:1: (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3220:6: ( (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3221:1: (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3192:1: (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3193:3: lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3221:1: (lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3222:3: lv_schemaAttributeTest_4_0= ruleSchemaAttributeTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getSchemaAttributeTestSchemaAttributeTestParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6736);
+                    pushFollow(FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6902);
                     lv_schemaAttributeTest_4_0=ruleSchemaAttributeTest();
 
                     state._fsp--;
@@ -8560,18 +8620,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3210:6: ( (lv_pitTest_5_0= rulePITest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3239:6: ( (lv_pitTest_5_0= rulePITest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3210:6: ( (lv_pitTest_5_0= rulePITest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3211:1: (lv_pitTest_5_0= rulePITest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3239:6: ( (lv_pitTest_5_0= rulePITest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3240:1: (lv_pitTest_5_0= rulePITest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3211:1: (lv_pitTest_5_0= rulePITest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3212:3: lv_pitTest_5_0= rulePITest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3240:1: (lv_pitTest_5_0= rulePITest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3241:3: lv_pitTest_5_0= rulePITest
                     {
                      
                     	        newCompositeNode(grammarAccess.getKindTestAccess().getPitTestPITestParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePITest_in_ruleKindTest6763);
+                    pushFollow(FOLLOW_rulePITest_in_ruleKindTest6929);
                     lv_pitTest_5_0=rulePITest();
 
                     state._fsp--;
@@ -8597,15 +8657,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3229:6: ( (lv_commentTest_6_0= RULE_COMMENTTEST ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3258:6: ( (lv_commentTest_6_0= RULE_COMMENTTEST ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3229:6: ( (lv_commentTest_6_0= RULE_COMMENTTEST ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3230:1: (lv_commentTest_6_0= RULE_COMMENTTEST )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3258:6: ( (lv_commentTest_6_0= RULE_COMMENTTEST ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3259:1: (lv_commentTest_6_0= RULE_COMMENTTEST )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3230:1: (lv_commentTest_6_0= RULE_COMMENTTEST )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3231:3: lv_commentTest_6_0= RULE_COMMENTTEST
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3259:1: (lv_commentTest_6_0= RULE_COMMENTTEST )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3260:3: lv_commentTest_6_0= RULE_COMMENTTEST
                     {
-                    lv_commentTest_6_0=(Token)match(input,RULE_COMMENTTEST,FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6786); 
+                    lv_commentTest_6_0=(Token)match(input,RULE_COMMENTTEST,FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6952); 
 
                     			newLeafNode(lv_commentTest_6_0, grammarAccess.getKindTestAccess().getCommentTestCOMMENTTESTTerminalRuleCall_6_0()); 
                     		
@@ -8629,15 +8689,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3248:6: ( (lv_textTest_7_0= RULE_TEXTTEST ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3277:6: ( (lv_textTest_7_0= RULE_TEXTTEST ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3248:6: ( (lv_textTest_7_0= RULE_TEXTTEST ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3249:1: (lv_textTest_7_0= RULE_TEXTTEST )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3277:6: ( (lv_textTest_7_0= RULE_TEXTTEST ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3278:1: (lv_textTest_7_0= RULE_TEXTTEST )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3249:1: (lv_textTest_7_0= RULE_TEXTTEST )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3250:3: lv_textTest_7_0= RULE_TEXTTEST
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3278:1: (lv_textTest_7_0= RULE_TEXTTEST )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3279:3: lv_textTest_7_0= RULE_TEXTTEST
                     {
-                    lv_textTest_7_0=(Token)match(input,RULE_TEXTTEST,FOLLOW_RULE_TEXTTEST_in_ruleKindTest6814); 
+                    lv_textTest_7_0=(Token)match(input,RULE_TEXTTEST,FOLLOW_RULE_TEXTTEST_in_ruleKindTest6980); 
 
                     			newLeafNode(lv_textTest_7_0, grammarAccess.getKindTestAccess().getTextTestTEXTTESTTerminalRuleCall_7_0()); 
                     		
@@ -8661,15 +8721,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3267:6: ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3296:6: ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3267:6: ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3268:1: (lv_anyKindTest_8_0= RULE_ANYKINDTEST )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3296:6: ( (lv_anyKindTest_8_0= RULE_ANYKINDTEST ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3297:1: (lv_anyKindTest_8_0= RULE_ANYKINDTEST )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3268:1: (lv_anyKindTest_8_0= RULE_ANYKINDTEST )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3269:3: lv_anyKindTest_8_0= RULE_ANYKINDTEST
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3297:1: (lv_anyKindTest_8_0= RULE_ANYKINDTEST )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3298:3: lv_anyKindTest_8_0= RULE_ANYKINDTEST
                     {
-                    lv_anyKindTest_8_0=(Token)match(input,RULE_ANYKINDTEST,FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest6842); 
+                    lv_anyKindTest_8_0=(Token)match(input,RULE_ANYKINDTEST,FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest7008); 
 
                     			newLeafNode(lv_anyKindTest_8_0, grammarAccess.getKindTestAccess().getAnyKindTestANYKINDTESTTerminalRuleCall_8_0()); 
                     		
@@ -8713,7 +8773,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDocumentTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3293:1: entryRuleDocumentTest returns [EObject current=null] : iv_ruleDocumentTest= ruleDocumentTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3322:1: entryRuleDocumentTest returns [EObject current=null] : iv_ruleDocumentTest= ruleDocumentTest EOF ;
     public final EObject entryRuleDocumentTest() throws RecognitionException {
         EObject current = null;
 
@@ -8721,17 +8781,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3294:2: (iv_ruleDocumentTest= ruleDocumentTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3295:2: iv_ruleDocumentTest= ruleDocumentTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3323:2: (iv_ruleDocumentTest= ruleDocumentTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3324:2: iv_ruleDocumentTest= ruleDocumentTest EOF
             {
              newCompositeNode(grammarAccess.getDocumentTestRule()); 
-            pushFollow(FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest6883);
+            pushFollow(FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest7049);
             iv_ruleDocumentTest=ruleDocumentTest();
 
             state._fsp--;
 
              current =iv_ruleDocumentTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDocumentTest6893); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDocumentTest7059); 
 
             }
 
@@ -8749,7 +8809,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDocumentTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3302:1: ruleDocumentTest returns [EObject current=null] : ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3331:1: ruleDocumentTest returns [EObject current=null] : ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' ) ;
     public final EObject ruleDocumentTest() throws RecognitionException {
         EObject current = null;
 
@@ -8764,14 +8824,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3305:28: ( ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3306:1: ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3334:28: ( ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3335:1: ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3306:1: ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3306:2: () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3335:1: ( () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3335:2: () otherlv_1= 'document-node' otherlv_2= '(' ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )? otherlv_5= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3306:2: ()
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3307:5: 
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3335:2: ()
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3336:5: 
             {
 
                     current = forceCreateModelElement(
@@ -8781,15 +8841,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleDocumentTest6939); 
+            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleDocumentTest7105); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDocumentTestAccess().getDocumentNodeKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleDocumentTest6951); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleDocumentTest7117); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDocumentTestAccess().getLeftParenthesisKeyword_2());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3320:1: ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3349:1: ( ( (lv_elemTest_3_0= ruleElementTest ) ) | ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) ) )?
             int alt47=3;
             int LA47_0 = input.LA(1);
 
@@ -8801,18 +8861,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt47) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3320:2: ( (lv_elemTest_3_0= ruleElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3349:2: ( (lv_elemTest_3_0= ruleElementTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3320:2: ( (lv_elemTest_3_0= ruleElementTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3321:1: (lv_elemTest_3_0= ruleElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3349:2: ( (lv_elemTest_3_0= ruleElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3350:1: (lv_elemTest_3_0= ruleElementTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3321:1: (lv_elemTest_3_0= ruleElementTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3322:3: lv_elemTest_3_0= ruleElementTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3350:1: (lv_elemTest_3_0= ruleElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3351:3: lv_elemTest_3_0= ruleElementTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getDocumentTestAccess().getElemTestElementTestParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementTest_in_ruleDocumentTest6973);
+                    pushFollow(FOLLOW_ruleElementTest_in_ruleDocumentTest7139);
                     lv_elemTest_3_0=ruleElementTest();
 
                     state._fsp--;
@@ -8838,18 +8898,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3339:6: ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3368:6: ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3339:6: ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3340:1: (lv_schemaElemTest_4_0= ruleSchemaElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3368:6: ( (lv_schemaElemTest_4_0= ruleSchemaElementTest ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3369:1: (lv_schemaElemTest_4_0= ruleSchemaElementTest )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3340:1: (lv_schemaElemTest_4_0= ruleSchemaElementTest )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3341:3: lv_schemaElemTest_4_0= ruleSchemaElementTest
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3369:1: (lv_schemaElemTest_4_0= ruleSchemaElementTest )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3370:3: lv_schemaElemTest_4_0= ruleSchemaElementTest
                     {
                      
                     	        newCompositeNode(grammarAccess.getDocumentTestAccess().getSchemaElemTestSchemaElementTestParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7000);
+                    pushFollow(FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7166);
                     lv_schemaElemTest_4_0=ruleSchemaElementTest();
 
                     state._fsp--;
@@ -8877,7 +8937,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleDocumentTest7014); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleDocumentTest7180); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getDocumentTestAccess().getRightParenthesisKeyword_4());
                 
@@ -8902,7 +8962,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePITest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3369:1: entryRulePITest returns [EObject current=null] : iv_rulePITest= rulePITest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3398:1: entryRulePITest returns [EObject current=null] : iv_rulePITest= rulePITest EOF ;
     public final EObject entryRulePITest() throws RecognitionException {
         EObject current = null;
 
@@ -8910,17 +8970,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3370:2: (iv_rulePITest= rulePITest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3371:2: iv_rulePITest= rulePITest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3399:2: (iv_rulePITest= rulePITest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3400:2: iv_rulePITest= rulePITest EOF
             {
              newCompositeNode(grammarAccess.getPITestRule()); 
-            pushFollow(FOLLOW_rulePITest_in_entryRulePITest7050);
+            pushFollow(FOLLOW_rulePITest_in_entryRulePITest7216);
             iv_rulePITest=rulePITest();
 
             state._fsp--;
 
              current =iv_rulePITest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePITest7060); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePITest7226); 
 
             }
 
@@ -8938,7 +8998,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePITest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3378:1: rulePITest returns [EObject current=null] : ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3407:1: rulePITest returns [EObject current=null] : ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' ) ;
     public final EObject rulePITest() throws RecognitionException {
         EObject current = null;
 
@@ -8952,14 +9012,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3381:28: ( ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3382:1: ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3410:28: ( ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3411:1: ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3382:1: ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3382:2: () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3411:1: ( () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3411:2: () otherlv_1= 'processing-instruction' otherlv_2= '(' ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )? otherlv_5= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3382:2: ()
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3383:5: 
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3411:2: ()
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3412:5: 
             {
 
                     current = forceCreateModelElement(
@@ -8969,15 +9029,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,62,FOLLOW_62_in_rulePITest7106); 
+            otherlv_1=(Token)match(input,62,FOLLOW_62_in_rulePITest7272); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPITestAccess().getProcessingInstructionKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_rulePITest7118); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_rulePITest7284); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getPITestAccess().getLeftParenthesisKeyword_2());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3396:1: ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3425:1: ( ( (lv_ncName_3_0= ruleNCName ) ) | ( (lv_string_4_0= RULE_STRINGLITERAL ) ) )?
             int alt48=3;
             int LA48_0 = input.LA(1);
 
@@ -8989,18 +9049,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt48) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3396:2: ( (lv_ncName_3_0= ruleNCName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3425:2: ( (lv_ncName_3_0= ruleNCName ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3396:2: ( (lv_ncName_3_0= ruleNCName ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3397:1: (lv_ncName_3_0= ruleNCName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3425:2: ( (lv_ncName_3_0= ruleNCName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3426:1: (lv_ncName_3_0= ruleNCName )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3397:1: (lv_ncName_3_0= ruleNCName )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3398:3: lv_ncName_3_0= ruleNCName
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3426:1: (lv_ncName_3_0= ruleNCName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3427:3: lv_ncName_3_0= ruleNCName
                     {
                      
                     	        newCompositeNode(grammarAccess.getPITestAccess().getNcNameNCNameParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNCName_in_rulePITest7140);
+                    pushFollow(FOLLOW_ruleNCName_in_rulePITest7306);
                     lv_ncName_3_0=ruleNCName();
 
                     state._fsp--;
@@ -9026,15 +9086,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3415:6: ( (lv_string_4_0= RULE_STRINGLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3444:6: ( (lv_string_4_0= RULE_STRINGLITERAL ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3415:6: ( (lv_string_4_0= RULE_STRINGLITERAL ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3416:1: (lv_string_4_0= RULE_STRINGLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3444:6: ( (lv_string_4_0= RULE_STRINGLITERAL ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3445:1: (lv_string_4_0= RULE_STRINGLITERAL )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3416:1: (lv_string_4_0= RULE_STRINGLITERAL )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3417:3: lv_string_4_0= RULE_STRINGLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3445:1: (lv_string_4_0= RULE_STRINGLITERAL )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3446:3: lv_string_4_0= RULE_STRINGLITERAL
                     {
-                    lv_string_4_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_rulePITest7163); 
+                    lv_string_4_0=(Token)match(input,RULE_STRINGLITERAL,FOLLOW_RULE_STRINGLITERAL_in_rulePITest7329); 
 
                     			newLeafNode(lv_string_4_0, grammarAccess.getPITestAccess().getStringSTRINGLITERALTerminalRuleCall_3_1_0()); 
                     		
@@ -9060,7 +9120,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,32,FOLLOW_32_in_rulePITest7182); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_rulePITest7348); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getPITestAccess().getRightParenthesisKeyword_4());
                 
@@ -9085,7 +9145,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3445:1: entryRuleAttributeTest returns [EObject current=null] : iv_ruleAttributeTest= ruleAttributeTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3474:1: entryRuleAttributeTest returns [EObject current=null] : iv_ruleAttributeTest= ruleAttributeTest EOF ;
     public final EObject entryRuleAttributeTest() throws RecognitionException {
         EObject current = null;
 
@@ -9093,17 +9153,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3446:2: (iv_ruleAttributeTest= ruleAttributeTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3447:2: iv_ruleAttributeTest= ruleAttributeTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3475:2: (iv_ruleAttributeTest= ruleAttributeTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3476:2: iv_ruleAttributeTest= ruleAttributeTest EOF
             {
              newCompositeNode(grammarAccess.getAttributeTestRule()); 
-            pushFollow(FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7218);
+            pushFollow(FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7384);
             iv_ruleAttributeTest=ruleAttributeTest();
 
             state._fsp--;
 
              current =iv_ruleAttributeTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeTest7228); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeTest7394); 
 
             }
 
@@ -9121,7 +9181,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3454:1: ruleAttributeTest returns [EObject current=null] : ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3483:1: ruleAttributeTest returns [EObject current=null] : ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' ) ;
     public final EObject ruleAttributeTest() throws RecognitionException {
         EObject current = null;
 
@@ -9137,14 +9197,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3457:28: ( ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3458:1: ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3486:28: ( ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3487:1: ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3458:1: ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3458:2: () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3487:1: ( () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3487:2: () otherlv_1= 'attribute' otherlv_2= '(' ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )? otherlv_6= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3458:2: ()
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3459:5: 
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3487:2: ()
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3488:5: 
             {
 
                     current = forceCreateModelElement(
@@ -9154,15 +9214,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,63,FOLLOW_63_in_ruleAttributeTest7274); 
+            otherlv_1=(Token)match(input,63,FOLLOW_63_in_ruleAttributeTest7440); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAttributeTestAccess().getAttributeKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleAttributeTest7286); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleAttributeTest7452); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAttributeTestAccess().getLeftParenthesisKeyword_2());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3472:1: ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3501:1: ( ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )? )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -9171,18 +9231,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt50) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3472:2: ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )?
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3501:2: ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )?
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3472:2: ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3473:1: (lv_attrOrWild_3_0= ruleAttribNameOrWildcard )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3501:2: ( (lv_attrOrWild_3_0= ruleAttribNameOrWildcard ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3502:1: (lv_attrOrWild_3_0= ruleAttribNameOrWildcard )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3473:1: (lv_attrOrWild_3_0= ruleAttribNameOrWildcard )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3474:3: lv_attrOrWild_3_0= ruleAttribNameOrWildcard
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3502:1: (lv_attrOrWild_3_0= ruleAttribNameOrWildcard )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3503:3: lv_attrOrWild_3_0= ruleAttribNameOrWildcard
                     {
                      
                     	        newCompositeNode(grammarAccess.getAttributeTestAccess().getAttrOrWildAttribNameOrWildcardParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7308);
+                    pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7474);
                     lv_attrOrWild_3_0=ruleAttribNameOrWildcard();
 
                     state._fsp--;
@@ -9204,7 +9264,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3490:2: (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )?
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3519:2: (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) )?
                     int alt49=2;
                     int LA49_0 = input.LA(1);
 
@@ -9213,22 +9273,22 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt49) {
                         case 1 :
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3490:4: otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3519:4: otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) )
                             {
-                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleAttributeTest7321); 
+                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleAttributeTest7487); 
 
                                 	newLeafNode(otherlv_4, grammarAccess.getAttributeTestAccess().getCommaKeyword_3_1_0());
                                 
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3494:1: ( (lv_typeName_5_0= ruleTypeName ) )
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3495:1: (lv_typeName_5_0= ruleTypeName )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3523:1: ( (lv_typeName_5_0= ruleTypeName ) )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3524:1: (lv_typeName_5_0= ruleTypeName )
                             {
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3495:1: (lv_typeName_5_0= ruleTypeName )
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3496:3: lv_typeName_5_0= ruleTypeName
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3524:1: (lv_typeName_5_0= ruleTypeName )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3525:3: lv_typeName_5_0= ruleTypeName
                             {
                              
                             	        newCompositeNode(grammarAccess.getAttributeTestAccess().getTypeNameTypeNameParserRuleCall_3_1_1_0()); 
                             	    
-                            pushFollow(FOLLOW_ruleTypeName_in_ruleAttributeTest7342);
+                            pushFollow(FOLLOW_ruleTypeName_in_ruleAttributeTest7508);
                             lv_typeName_5_0=ruleTypeName();
 
                             state._fsp--;
@@ -9262,7 +9322,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,32,FOLLOW_32_in_ruleAttributeTest7358); 
+            otherlv_6=(Token)match(input,32,FOLLOW_32_in_ruleAttributeTest7524); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getAttributeTestAccess().getRightParenthesisKeyword_4());
                 
@@ -9287,7 +9347,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribNameOrWildcard"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3524:1: entryRuleAttribNameOrWildcard returns [EObject current=null] : iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3553:1: entryRuleAttribNameOrWildcard returns [EObject current=null] : iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF ;
     public final EObject entryRuleAttribNameOrWildcard() throws RecognitionException {
         EObject current = null;
 
@@ -9295,17 +9355,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3525:2: (iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3526:2: iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3554:2: (iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3555:2: iv_ruleAttribNameOrWildcard= ruleAttribNameOrWildcard EOF
             {
              newCompositeNode(grammarAccess.getAttribNameOrWildcardRule()); 
-            pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7394);
+            pushFollow(FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7560);
             iv_ruleAttribNameOrWildcard=ruleAttribNameOrWildcard();
 
             state._fsp--;
 
              current =iv_ruleAttribNameOrWildcard; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7404); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7570); 
 
             }
 
@@ -9323,7 +9383,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribNameOrWildcard"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3533:1: ruleAttribNameOrWildcard returns [EObject current=null] : ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3562:1: ruleAttribNameOrWildcard returns [EObject current=null] : ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) ) ;
     public final EObject ruleAttribNameOrWildcard() throws RecognitionException {
         EObject current = null;
 
@@ -9334,10 +9394,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3536:28: ( ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3537:1: ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3565:28: ( ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3566:1: ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3537:1: ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3566:1: ( ( (lv_attName_0_0= ruleAttributeName ) ) | ( () otherlv_2= '*' ) )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -9355,18 +9415,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt51) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3537:2: ( (lv_attName_0_0= ruleAttributeName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3566:2: ( (lv_attName_0_0= ruleAttributeName ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3537:2: ( (lv_attName_0_0= ruleAttributeName ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3538:1: (lv_attName_0_0= ruleAttributeName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3566:2: ( (lv_attName_0_0= ruleAttributeName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3567:1: (lv_attName_0_0= ruleAttributeName )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3538:1: (lv_attName_0_0= ruleAttributeName )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3539:3: lv_attName_0_0= ruleAttributeName
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3567:1: (lv_attName_0_0= ruleAttributeName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3568:3: lv_attName_0_0= ruleAttributeName
                     {
                      
                     	        newCompositeNode(grammarAccess.getAttribNameOrWildcardAccess().getAttNameAttributeNameParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7450);
+                    pushFollow(FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7616);
                     lv_attName_0_0=ruleAttributeName();
 
                     state._fsp--;
@@ -9392,13 +9452,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3556:6: ( () otherlv_2= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3585:6: ( () otherlv_2= '*' )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3556:6: ( () otherlv_2= '*' )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3556:7: () otherlv_2= '*'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3585:6: ( () otherlv_2= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3585:7: () otherlv_2= '*'
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3556:7: ()
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3557:5: 
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3585:7: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3586:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -9408,7 +9468,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleAttribNameOrWildcard7478); 
+                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleAttribNameOrWildcard7644); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getAttribNameOrWildcardAccess().getAsteriskKeyword_1_1());
                         
@@ -9439,7 +9499,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSchemaAttributeTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3574:1: entryRuleSchemaAttributeTest returns [EObject current=null] : iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3603:1: entryRuleSchemaAttributeTest returns [EObject current=null] : iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF ;
     public final EObject entryRuleSchemaAttributeTest() throws RecognitionException {
         EObject current = null;
 
@@ -9447,17 +9507,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3575:2: (iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3576:2: iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3604:2: (iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3605:2: iv_ruleSchemaAttributeTest= ruleSchemaAttributeTest EOF
             {
              newCompositeNode(grammarAccess.getSchemaAttributeTestRule()); 
-            pushFollow(FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7515);
+            pushFollow(FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7681);
             iv_ruleSchemaAttributeTest=ruleSchemaAttributeTest();
 
             state._fsp--;
 
              current =iv_ruleSchemaAttributeTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaAttributeTest7525); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaAttributeTest7691); 
 
             }
 
@@ -9475,7 +9535,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSchemaAttributeTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3583:1: ruleSchemaAttributeTest returns [EObject current=null] : (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3612:1: ruleSchemaAttributeTest returns [EObject current=null] : (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' ) ;
     public final EObject ruleSchemaAttributeTest() throws RecognitionException {
         EObject current = null;
 
@@ -9488,30 +9548,30 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3586:28: ( (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3587:1: (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3615:28: ( (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3616:1: (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3587:1: (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3587:3: otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3616:1: (otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3616:3: otherlv_0= 'schema-attribute' otherlv_1= '(' ( (lv_attDec_2_0= ruleAttributeDeclaration ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,64,FOLLOW_64_in_ruleSchemaAttributeTest7562); 
+            otherlv_0=(Token)match(input,64,FOLLOW_64_in_ruleSchemaAttributeTest7728); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSchemaAttributeTestAccess().getSchemaAttributeKeyword_0());
                 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaAttributeTest7574); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaAttributeTest7740); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSchemaAttributeTestAccess().getLeftParenthesisKeyword_1());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3595:1: ( (lv_attDec_2_0= ruleAttributeDeclaration ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3596:1: (lv_attDec_2_0= ruleAttributeDeclaration )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3624:1: ( (lv_attDec_2_0= ruleAttributeDeclaration ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3625:1: (lv_attDec_2_0= ruleAttributeDeclaration )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3596:1: (lv_attDec_2_0= ruleAttributeDeclaration )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3597:3: lv_attDec_2_0= ruleAttributeDeclaration
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3625:1: (lv_attDec_2_0= ruleAttributeDeclaration )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3626:3: lv_attDec_2_0= ruleAttributeDeclaration
             {
              
             	        newCompositeNode(grammarAccess.getSchemaAttributeTestAccess().getAttDecAttributeDeclarationParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7595);
+            pushFollow(FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7761);
             lv_attDec_2_0=ruleAttributeDeclaration();
 
             state._fsp--;
@@ -9533,7 +9593,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaAttributeTest7607); 
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaAttributeTest7773); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSchemaAttributeTestAccess().getRightParenthesisKeyword_3());
                 
@@ -9558,7 +9618,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeDeclaration"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3625:1: entryRuleAttributeDeclaration returns [EObject current=null] : iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3654:1: entryRuleAttributeDeclaration returns [EObject current=null] : iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF ;
     public final EObject entryRuleAttributeDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9566,17 +9626,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3626:2: (iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3627:2: iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3655:2: (iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3656:2: iv_ruleAttributeDeclaration= ruleAttributeDeclaration EOF
             {
              newCompositeNode(grammarAccess.getAttributeDeclarationRule()); 
-            pushFollow(FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7643);
+            pushFollow(FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7809);
             iv_ruleAttributeDeclaration=ruleAttributeDeclaration();
 
             state._fsp--;
 
              current =iv_ruleAttributeDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeDeclaration7653); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeDeclaration7819); 
 
             }
 
@@ -9594,7 +9654,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeDeclaration"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3634:1: ruleAttributeDeclaration returns [EObject current=null] : ( (lv_attName_0_0= ruleAttributeName ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3663:1: ruleAttributeDeclaration returns [EObject current=null] : ( (lv_attName_0_0= ruleAttributeName ) ) ;
     public final EObject ruleAttributeDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9604,19 +9664,19 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3637:28: ( ( (lv_attName_0_0= ruleAttributeName ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3638:1: ( (lv_attName_0_0= ruleAttributeName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3666:28: ( ( (lv_attName_0_0= ruleAttributeName ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3667:1: ( (lv_attName_0_0= ruleAttributeName ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3638:1: ( (lv_attName_0_0= ruleAttributeName ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3639:1: (lv_attName_0_0= ruleAttributeName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3667:1: ( (lv_attName_0_0= ruleAttributeName ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3668:1: (lv_attName_0_0= ruleAttributeName )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3639:1: (lv_attName_0_0= ruleAttributeName )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3640:3: lv_attName_0_0= ruleAttributeName
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3668:1: (lv_attName_0_0= ruleAttributeName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3669:3: lv_attName_0_0= ruleAttributeName
             {
              
             	        newCompositeNode(grammarAccess.getAttributeDeclarationAccess().getAttNameAttributeNameParserRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7698);
+            pushFollow(FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7864);
             lv_attName_0_0=ruleAttributeName();
 
             state._fsp--;
@@ -9656,7 +9716,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElementTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3664:1: entryRuleElementTest returns [EObject current=null] : iv_ruleElementTest= ruleElementTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3693:1: entryRuleElementTest returns [EObject current=null] : iv_ruleElementTest= ruleElementTest EOF ;
     public final EObject entryRuleElementTest() throws RecognitionException {
         EObject current = null;
 
@@ -9664,17 +9724,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3665:2: (iv_ruleElementTest= ruleElementTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3666:2: iv_ruleElementTest= ruleElementTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3694:2: (iv_ruleElementTest= ruleElementTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3695:2: iv_ruleElementTest= ruleElementTest EOF
             {
              newCompositeNode(grammarAccess.getElementTestRule()); 
-            pushFollow(FOLLOW_ruleElementTest_in_entryRuleElementTest7733);
+            pushFollow(FOLLOW_ruleElementTest_in_entryRuleElementTest7899);
             iv_ruleElementTest=ruleElementTest();
 
             state._fsp--;
 
              current =iv_ruleElementTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementTest7743); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementTest7909); 
 
             }
 
@@ -9692,7 +9752,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3673:1: ruleElementTest returns [EObject current=null] : ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3702:1: ruleElementTest returns [EObject current=null] : ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' ) ;
     public final EObject ruleElementTest() throws RecognitionException {
         EObject current = null;
 
@@ -9709,14 +9769,14 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3676:28: ( ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3677:1: ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3705:28: ( ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3706:1: ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3677:1: ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3677:2: () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3706:1: ( () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3706:2: () otherlv_1= 'element' otherlv_2= '(' ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )? otherlv_7= ')'
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3677:2: ()
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3678:5: 
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3706:2: ()
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3707:5: 
             {
 
                     current = forceCreateModelElement(
@@ -9726,15 +9786,15 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleElementTest7789); 
+            otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleElementTest7955); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getElementTestAccess().getElementKeyword_1());
                 
-            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleElementTest7801); 
+            otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleElementTest7967); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getElementTestAccess().getLeftParenthesisKeyword_2());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3691:1: ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3720:1: ( ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )? )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -9743,18 +9803,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt54) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3691:2: ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )?
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3720:2: ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) ) (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )?
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3691:2: ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3692:1: (lv_elemOrWild_3_0= ruleElementNameOrWildcard )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3720:2: ( (lv_elemOrWild_3_0= ruleElementNameOrWildcard ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3721:1: (lv_elemOrWild_3_0= ruleElementNameOrWildcard )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3692:1: (lv_elemOrWild_3_0= ruleElementNameOrWildcard )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3693:3: lv_elemOrWild_3_0= ruleElementNameOrWildcard
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3721:1: (lv_elemOrWild_3_0= ruleElementNameOrWildcard )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3722:3: lv_elemOrWild_3_0= ruleElementNameOrWildcard
                     {
                      
                     	        newCompositeNode(grammarAccess.getElementTestAccess().getElemOrWildElementNameOrWildcardParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7823);
+                    pushFollow(FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7989);
                     lv_elemOrWild_3_0=ruleElementNameOrWildcard();
 
                     state._fsp--;
@@ -9776,7 +9836,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3709:2: (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )?
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3738:2: (otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )? )?
                     int alt53=2;
                     int LA53_0 = input.LA(1);
 
@@ -9785,22 +9845,22 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt53) {
                         case 1 :
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3709:4: otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )?
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3738:4: otherlv_4= ',' ( (lv_typeName_5_0= ruleTypeName ) ) (otherlv_6= '?' )?
                             {
-                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleElementTest7836); 
+                            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleElementTest8002); 
 
                                 	newLeafNode(otherlv_4, grammarAccess.getElementTestAccess().getCommaKeyword_3_1_0());
                                 
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3713:1: ( (lv_typeName_5_0= ruleTypeName ) )
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3714:1: (lv_typeName_5_0= ruleTypeName )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3742:1: ( (lv_typeName_5_0= ruleTypeName ) )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3743:1: (lv_typeName_5_0= ruleTypeName )
                             {
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3714:1: (lv_typeName_5_0= ruleTypeName )
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3715:3: lv_typeName_5_0= ruleTypeName
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3743:1: (lv_typeName_5_0= ruleTypeName )
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3744:3: lv_typeName_5_0= ruleTypeName
                             {
                              
                             	        newCompositeNode(grammarAccess.getElementTestAccess().getTypeNameTypeNameParserRuleCall_3_1_1_0()); 
                             	    
-                            pushFollow(FOLLOW_ruleTypeName_in_ruleElementTest7857);
+                            pushFollow(FOLLOW_ruleTypeName_in_ruleElementTest8023);
                             lv_typeName_5_0=ruleTypeName();
 
                             state._fsp--;
@@ -9822,7 +9882,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3731:2: (otherlv_6= '?' )?
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:2: (otherlv_6= '?' )?
                             int alt52=2;
                             int LA52_0 = input.LA(1);
 
@@ -9831,9 +9891,9 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                             }
                             switch (alt52) {
                                 case 1 :
-                                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3731:4: otherlv_6= '?'
+                                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:4: otherlv_6= '?'
                                     {
-                                    otherlv_6=(Token)match(input,60,FOLLOW_60_in_ruleElementTest7870); 
+                                    otherlv_6=(Token)match(input,60,FOLLOW_60_in_ruleElementTest8036); 
 
                                         	newLeafNode(otherlv_6, grammarAccess.getElementTestAccess().getQuestionMarkKeyword_3_1_2());
                                         
@@ -9855,7 +9915,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleElementTest7888); 
+            otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleElementTest8054); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getElementTestAccess().getRightParenthesisKeyword_4());
                 
@@ -9880,7 +9940,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElementNameOrWildcard"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3747:1: entryRuleElementNameOrWildcard returns [EObject current=null] : iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3776:1: entryRuleElementNameOrWildcard returns [EObject current=null] : iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF ;
     public final EObject entryRuleElementNameOrWildcard() throws RecognitionException {
         EObject current = null;
 
@@ -9888,17 +9948,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3748:2: (iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3749:2: iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3777:2: (iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3778:2: iv_ruleElementNameOrWildcard= ruleElementNameOrWildcard EOF
             {
              newCompositeNode(grammarAccess.getElementNameOrWildcardRule()); 
-            pushFollow(FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard7924);
+            pushFollow(FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard8090);
             iv_ruleElementNameOrWildcard=ruleElementNameOrWildcard();
 
             state._fsp--;
 
              current =iv_ruleElementNameOrWildcard; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementNameOrWildcard7934); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementNameOrWildcard8100); 
 
             }
 
@@ -9916,7 +9976,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementNameOrWildcard"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3756:1: ruleElementNameOrWildcard returns [EObject current=null] : ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3785:1: ruleElementNameOrWildcard returns [EObject current=null] : ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) ) ;
     public final EObject ruleElementNameOrWildcard() throws RecognitionException {
         EObject current = null;
 
@@ -9927,10 +9987,10 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3759:28: ( ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:1: ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3788:28: ( ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3789:1: ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:1: ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3789:1: ( ( (lv_elemName_0_0= ruleElementName ) ) | ( () otherlv_2= '*' ) )
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -9948,18 +10008,18 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
             }
             switch (alt55) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:2: ( (lv_elemName_0_0= ruleElementName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3789:2: ( (lv_elemName_0_0= ruleElementName ) )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3760:2: ( (lv_elemName_0_0= ruleElementName ) )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3761:1: (lv_elemName_0_0= ruleElementName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3789:2: ( (lv_elemName_0_0= ruleElementName ) )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3790:1: (lv_elemName_0_0= ruleElementName )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3761:1: (lv_elemName_0_0= ruleElementName )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3762:3: lv_elemName_0_0= ruleElementName
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3790:1: (lv_elemName_0_0= ruleElementName )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3791:3: lv_elemName_0_0= ruleElementName
                     {
                      
                     	        newCompositeNode(grammarAccess.getElementNameOrWildcardAccess().getElemNameElementNameParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElementName_in_ruleElementNameOrWildcard7980);
+                    pushFollow(FOLLOW_ruleElementName_in_ruleElementNameOrWildcard8146);
                     lv_elemName_0_0=ruleElementName();
 
                     state._fsp--;
@@ -9985,13 +10045,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3779:6: ( () otherlv_2= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3808:6: ( () otherlv_2= '*' )
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3779:6: ( () otherlv_2= '*' )
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3779:7: () otherlv_2= '*'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3808:6: ( () otherlv_2= '*' )
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3808:7: () otherlv_2= '*'
                     {
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3779:7: ()
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3780:5: 
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3808:7: ()
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3809:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -10001,7 +10061,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleElementNameOrWildcard8008); 
+                    otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleElementNameOrWildcard8174); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getElementNameOrWildcardAccess().getAsteriskKeyword_1_1());
                         
@@ -10032,7 +10092,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSchemaElementTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3797:1: entryRuleSchemaElementTest returns [EObject current=null] : iv_ruleSchemaElementTest= ruleSchemaElementTest EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3826:1: entryRuleSchemaElementTest returns [EObject current=null] : iv_ruleSchemaElementTest= ruleSchemaElementTest EOF ;
     public final EObject entryRuleSchemaElementTest() throws RecognitionException {
         EObject current = null;
 
@@ -10040,17 +10100,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3798:2: (iv_ruleSchemaElementTest= ruleSchemaElementTest EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3799:2: iv_ruleSchemaElementTest= ruleSchemaElementTest EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3827:2: (iv_ruleSchemaElementTest= ruleSchemaElementTest EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3828:2: iv_ruleSchemaElementTest= ruleSchemaElementTest EOF
             {
              newCompositeNode(grammarAccess.getSchemaElementTestRule()); 
-            pushFollow(FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8045);
+            pushFollow(FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8211);
             iv_ruleSchemaElementTest=ruleSchemaElementTest();
 
             state._fsp--;
 
              current =iv_ruleSchemaElementTest; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaElementTest8055); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSchemaElementTest8221); 
 
             }
 
@@ -10068,7 +10128,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSchemaElementTest"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3806:1: ruleSchemaElementTest returns [EObject current=null] : (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3835:1: ruleSchemaElementTest returns [EObject current=null] : (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' ) ;
     public final EObject ruleSchemaElementTest() throws RecognitionException {
         EObject current = null;
 
@@ -10081,30 +10141,30 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3809:28: ( (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3810:1: (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3838:28: ( (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3839:1: (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3810:1: (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3810:3: otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3839:1: (otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3839:3: otherlv_0= 'schema-element' otherlv_1= '(' ( (lv_elemDec_2_0= ruleElementDeclaration ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,66,FOLLOW_66_in_ruleSchemaElementTest8092); 
+            otherlv_0=(Token)match(input,66,FOLLOW_66_in_ruleSchemaElementTest8258); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSchemaElementTestAccess().getSchemaElementKeyword_0());
                 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaElementTest8104); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSchemaElementTest8270); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSchemaElementTestAccess().getLeftParenthesisKeyword_1());
                 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3818:1: ( (lv_elemDec_2_0= ruleElementDeclaration ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3819:1: (lv_elemDec_2_0= ruleElementDeclaration )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3847:1: ( (lv_elemDec_2_0= ruleElementDeclaration ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3848:1: (lv_elemDec_2_0= ruleElementDeclaration )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3819:1: (lv_elemDec_2_0= ruleElementDeclaration )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3820:3: lv_elemDec_2_0= ruleElementDeclaration
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3848:1: (lv_elemDec_2_0= ruleElementDeclaration )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3849:3: lv_elemDec_2_0= ruleElementDeclaration
             {
              
             	        newCompositeNode(grammarAccess.getSchemaElementTestAccess().getElemDecElementDeclarationParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8125);
+            pushFollow(FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8291);
             lv_elemDec_2_0=ruleElementDeclaration();
 
             state._fsp--;
@@ -10126,7 +10186,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaElementTest8137); 
+            otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleSchemaElementTest8303); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSchemaElementTestAccess().getRightParenthesisKeyword_3());
                 
@@ -10151,7 +10211,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElementDeclaration"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3848:1: entryRuleElementDeclaration returns [EObject current=null] : iv_ruleElementDeclaration= ruleElementDeclaration EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3877:1: entryRuleElementDeclaration returns [EObject current=null] : iv_ruleElementDeclaration= ruleElementDeclaration EOF ;
     public final EObject entryRuleElementDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -10159,17 +10219,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3849:2: (iv_ruleElementDeclaration= ruleElementDeclaration EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3850:2: iv_ruleElementDeclaration= ruleElementDeclaration EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3878:2: (iv_ruleElementDeclaration= ruleElementDeclaration EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3879:2: iv_ruleElementDeclaration= ruleElementDeclaration EOF
             {
              newCompositeNode(grammarAccess.getElementDeclarationRule()); 
-            pushFollow(FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8173);
+            pushFollow(FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8339);
             iv_ruleElementDeclaration=ruleElementDeclaration();
 
             state._fsp--;
 
              current =iv_ruleElementDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementDeclaration8183); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementDeclaration8349); 
 
             }
 
@@ -10187,7 +10247,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementDeclaration"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3857:1: ruleElementDeclaration returns [EObject current=null] : this_ElementName_0= ruleElementName ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3886:1: ruleElementDeclaration returns [EObject current=null] : this_ElementName_0= ruleElementName ;
     public final EObject ruleElementDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -10197,13 +10257,13 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3860:28: (this_ElementName_0= ruleElementName )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3862:5: this_ElementName_0= ruleElementName
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3889:28: (this_ElementName_0= ruleElementName )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3891:5: this_ElementName_0= ruleElementName
             {
              
                     newCompositeNode(grammarAccess.getElementDeclarationAccess().getElementNameParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleElementName_in_ruleElementDeclaration8229);
+            pushFollow(FOLLOW_ruleElementName_in_ruleElementDeclaration8395);
             this_ElementName_0=ruleElementName();
 
             state._fsp--;
@@ -10230,7 +10290,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3878:1: entryRuleAttributeName returns [EObject current=null] : iv_ruleAttributeName= ruleAttributeName EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3907:1: entryRuleAttributeName returns [EObject current=null] : iv_ruleAttributeName= ruleAttributeName EOF ;
     public final EObject entryRuleAttributeName() throws RecognitionException {
         EObject current = null;
 
@@ -10238,17 +10298,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3879:2: (iv_ruleAttributeName= ruleAttributeName EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3880:2: iv_ruleAttributeName= ruleAttributeName EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3908:2: (iv_ruleAttributeName= ruleAttributeName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3909:2: iv_ruleAttributeName= ruleAttributeName EOF
             {
              newCompositeNode(grammarAccess.getAttributeNameRule()); 
-            pushFollow(FOLLOW_ruleAttributeName_in_entryRuleAttributeName8263);
+            pushFollow(FOLLOW_ruleAttributeName_in_entryRuleAttributeName8429);
             iv_ruleAttributeName=ruleAttributeName();
 
             state._fsp--;
 
              current =iv_ruleAttributeName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeName8273); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeName8439); 
 
             }
 
@@ -10266,7 +10326,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3887:1: ruleAttributeName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3916:1: ruleAttributeName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
     public final EObject ruleAttributeName() throws RecognitionException {
         EObject current = null;
 
@@ -10275,16 +10335,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3890:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3891:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3919:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3920:1: ( (lv_qName_0_0= RULE_ID ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3891:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3892:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3920:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3921:1: (lv_qName_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3892:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3893:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3921:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3922:3: lv_qName_0_0= RULE_ID
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttributeName8314); 
+            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttributeName8480); 
 
             			newLeafNode(lv_qName_0_0, grammarAccess.getAttributeNameAccess().getQNameIDTerminalRuleCall_0()); 
             		
@@ -10322,7 +10382,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElementName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3917:1: entryRuleElementName returns [EObject current=null] : iv_ruleElementName= ruleElementName EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3946:1: entryRuleElementName returns [EObject current=null] : iv_ruleElementName= ruleElementName EOF ;
     public final EObject entryRuleElementName() throws RecognitionException {
         EObject current = null;
 
@@ -10330,17 +10390,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3918:2: (iv_ruleElementName= ruleElementName EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3919:2: iv_ruleElementName= ruleElementName EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3947:2: (iv_ruleElementName= ruleElementName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3948:2: iv_ruleElementName= ruleElementName EOF
             {
              newCompositeNode(grammarAccess.getElementNameRule()); 
-            pushFollow(FOLLOW_ruleElementName_in_entryRuleElementName8354);
+            pushFollow(FOLLOW_ruleElementName_in_entryRuleElementName8520);
             iv_ruleElementName=ruleElementName();
 
             state._fsp--;
 
              current =iv_ruleElementName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementName8364); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementName8530); 
 
             }
 
@@ -10358,7 +10418,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3926:1: ruleElementName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3955:1: ruleElementName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
     public final EObject ruleElementName() throws RecognitionException {
         EObject current = null;
 
@@ -10367,16 +10427,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3929:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3930:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3958:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3959:1: ( (lv_qName_0_0= RULE_ID ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3930:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3931:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3959:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3960:1: (lv_qName_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3931:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3932:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3960:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3961:3: lv_qName_0_0= RULE_ID
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementName8405); 
+            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementName8571); 
 
             			newLeafNode(lv_qName_0_0, grammarAccess.getElementNameAccess().getQNameIDTerminalRuleCall_0()); 
             		
@@ -10414,7 +10474,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3956:1: entryRuleTypeName returns [EObject current=null] : iv_ruleTypeName= ruleTypeName EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3985:1: entryRuleTypeName returns [EObject current=null] : iv_ruleTypeName= ruleTypeName EOF ;
     public final EObject entryRuleTypeName() throws RecognitionException {
         EObject current = null;
 
@@ -10422,17 +10482,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3957:2: (iv_ruleTypeName= ruleTypeName EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3958:2: iv_ruleTypeName= ruleTypeName EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3986:2: (iv_ruleTypeName= ruleTypeName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3987:2: iv_ruleTypeName= ruleTypeName EOF
             {
              newCompositeNode(grammarAccess.getTypeNameRule()); 
-            pushFollow(FOLLOW_ruleTypeName_in_entryRuleTypeName8445);
+            pushFollow(FOLLOW_ruleTypeName_in_entryRuleTypeName8611);
             iv_ruleTypeName=ruleTypeName();
 
             state._fsp--;
 
              current =iv_ruleTypeName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeName8455); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeName8621); 
 
             }
 
@@ -10450,7 +10510,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3965:1: ruleTypeName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3994:1: ruleTypeName returns [EObject current=null] : ( (lv_qName_0_0= RULE_ID ) ) ;
     public final EObject ruleTypeName() throws RecognitionException {
         EObject current = null;
 
@@ -10459,16 +10519,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3968:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3969:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3997:28: ( ( (lv_qName_0_0= RULE_ID ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3998:1: ( (lv_qName_0_0= RULE_ID ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3969:1: ( (lv_qName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3970:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3998:1: ( (lv_qName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3999:1: (lv_qName_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3970:1: (lv_qName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3971:3: lv_qName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3999:1: (lv_qName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4000:3: lv_qName_0_0= RULE_ID
             {
-            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeName8496); 
+            lv_qName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeName8662); 
 
             			newLeafNode(lv_qName_0_0, grammarAccess.getTypeNameAccess().getQNameIDTerminalRuleCall_0()); 
             		
@@ -10506,7 +10566,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNCName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3995:1: entryRuleNCName returns [EObject current=null] : iv_ruleNCName= ruleNCName EOF ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4024:1: entryRuleNCName returns [EObject current=null] : iv_ruleNCName= ruleNCName EOF ;
     public final EObject entryRuleNCName() throws RecognitionException {
         EObject current = null;
 
@@ -10514,17 +10574,17 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3996:2: (iv_ruleNCName= ruleNCName EOF )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:3997:2: iv_ruleNCName= ruleNCName EOF
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4025:2: (iv_ruleNCName= ruleNCName EOF )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4026:2: iv_ruleNCName= ruleNCName EOF
             {
              newCompositeNode(grammarAccess.getNCNameRule()); 
-            pushFollow(FOLLOW_ruleNCName_in_entryRuleNCName8536);
+            pushFollow(FOLLOW_ruleNCName_in_entryRuleNCName8702);
             iv_ruleNCName=ruleNCName();
 
             state._fsp--;
 
              current =iv_ruleNCName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNCName8546); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNCName8712); 
 
             }
 
@@ -10542,7 +10602,7 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNCName"
-    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4004:1: ruleNCName returns [EObject current=null] : ( (lv_ncName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4033:1: ruleNCName returns [EObject current=null] : ( (lv_ncName_0_0= RULE_ID ) ) ;
     public final EObject ruleNCName() throws RecognitionException {
         EObject current = null;
 
@@ -10551,16 +10611,16 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4007:28: ( ( (lv_ncName_0_0= RULE_ID ) ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4008:1: ( (lv_ncName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4036:28: ( ( (lv_ncName_0_0= RULE_ID ) ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4037:1: ( (lv_ncName_0_0= RULE_ID ) )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4008:1: ( (lv_ncName_0_0= RULE_ID ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4009:1: (lv_ncName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4037:1: ( (lv_ncName_0_0= RULE_ID ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4038:1: (lv_ncName_0_0= RULE_ID )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4009:1: (lv_ncName_0_0= RULE_ID )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4010:3: lv_ncName_0_0= RULE_ID
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4038:1: (lv_ncName_0_0= RULE_ID )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4039:3: lv_ncName_0_0= RULE_ID
             {
-            lv_ncName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNCName8587); 
+            lv_ncName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNCName8753); 
 
             			newLeafNode(lv_ncName_0_0, grammarAccess.getNCNameAccess().getNcNameIDTerminalRuleCall_0()); 
             		
@@ -10735,206 +10795,210 @@ public class InternalXPathParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_rulePathExpr_in_ruleValueExpr3187 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePathExpr_in_entryRulePathExpr3222 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePathExpr3232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rulePathExpr3280 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rulePathExpr3322 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelativePathExpr_in_entryRuleRelativePathExpr3407 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRelativePathExpr3417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStepExpr_in_ruleRelativePathExpr3463 = new BitSet(new long[]{0x00C0000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleRelativePathExpr3477 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_55_in_ruleRelativePathExpr3495 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleStepExpr_in_ruleRelativePathExpr3517 = new BitSet(new long[]{0x00C0000000000002L});
-    public static final BitSet FOLLOW_ruleStepExpr_in_entryRuleStepExpr3555 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStepExpr3565 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFilterExpr_in_ruleStepExpr3611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAxisStep_in_ruleStepExpr3638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAxisStep_in_entryRuleAxisStep3674 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAxisStep3684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReverseStep_in_ruleAxisStep3731 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_ruleForwardStep_in_ruleAxisStep3758 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_rulePredicateList_in_ruleAxisStep3780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForwardStep_in_entryRuleForwardStep3816 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleForwardStep3826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FORWARDAXIS_in_ruleForwardStep3869 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleNodeTest_in_ruleForwardStep3895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbbrevForwardStep_in_ruleForwardStep3923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbbrevForwardStep_in_entryRuleAbbrevForwardStep3959 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbbrevForwardStep3969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleAbbrevForwardStep4007 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleNodeTest_in_ruleAbbrevForwardStep4030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReverseStep_in_entryRuleReverseStep4066 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReverseStep4076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_REVERSEAXIS_in_ruleReverseStep4119 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleNodeTest_in_ruleReverseStep4145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ABBREVREVERSESTEP_in_ruleReverseStep4169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeTest_in_entryRuleNodeTest4210 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNodeTest4220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKindTest_in_ruleNodeTest4266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameTest_in_ruleNodeTest4293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNameTest_in_entryRuleNameTest4329 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNameTest4339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNameTest4381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWildcard_in_ruleNameTest4413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWildcard_in_entryRuleWildcard4449 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWildcard4459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleWildcard4502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4543 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleWildcard4555 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleWildcard4567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleWildcard4587 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleWildcard4599 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4657 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFilterExpr4667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4713 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_rulePredicateList_in_ruleFilterExpr4734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateList_in_entryRulePredicateList4770 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateList4780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicate_in_rulePredicateList4835 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate4872 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicate4882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_rulePredicate4919 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExpr_in_rulePredicate4940 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_59_in_rulePredicate4952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr4988 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpr4998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_rulePrimaryExpr5044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarRef_in_rulePrimaryExpr5071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral5189 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral5199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericLiteral_in_ruleLiteral5245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5309 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumericLiteral5319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarRef_in_entryRuleVarRef5458 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVarRef5468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleVarRef5505 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleVarName_in_ruleVarRef5527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVarName_in_entryRuleVarName5562 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVarName5572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVarName5613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5653 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParenthesizedExpr5663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleParenthesizedExpr5709 = new BitSet(new long[]{0xE1C001C1DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleParenthesizedExpr5730 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleParenthesizedExpr5743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5779 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall5789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionCall5831 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleFunctionCall5848 = new BitSet(new long[]{0xE1C001C1DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall5870 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_22_in_ruleFunctionCall5883 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
-    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall5904 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_32_in_ruleFunctionCall5920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSingleType_in_entryRuleSingleType5956 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSingleType5966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicType_in_ruleSingleType6013 = new BitSet(new long[]{0x1000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleSingleType6025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequenceType_in_entryRuleSequenceType6063 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSequenceType6073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemType_in_ruleSequenceType6148 = new BitSet(new long[]{0x1000014000000000L});
-    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6207 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOccurenceIndicator6218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleOccurenceIndicator6256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleOccurenceIndicator6275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleOccurenceIndicator6294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleItemType_in_entryRuleItemType6334 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleItemType6344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKindTest_in_ruleItemType6390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicType_in_ruleItemType6445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicType_in_entryRuleAtomicType6481 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicType6491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicType6532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKindTest_in_entryRuleKindTest6572 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleKindTest6582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocumentTest_in_ruleKindTest6628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementTest_in_ruleKindTest6655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeTest_in_ruleKindTest6682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleKindTest6709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePITest_in_ruleKindTest6763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TEXTTEST_in_ruleKindTest6814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest6842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest6883 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDocumentTest6893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleDocumentTest6939 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleDocumentTest6951 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_ruleElementTest_in_ruleDocumentTest6973 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7000 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleDocumentTest7014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePITest_in_entryRulePITest7050 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePITest7060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_rulePITest7106 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_rulePITest7118 = new BitSet(new long[]{0x0000000100001400L});
-    public static final BitSet FOLLOW_ruleNCName_in_rulePITest7140 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_rulePITest7163 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_rulePITest7182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7218 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeTest7228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleAttributeTest7274 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleAttributeTest7286 = new BitSet(new long[]{0x0000010100000400L});
-    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7308 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_22_in_ruleAttributeTest7321 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleTypeName_in_ruleAttributeTest7342 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleAttributeTest7358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7394 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleAttribNameOrWildcard7478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7515 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaAttributeTest7525 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleSchemaAttributeTest7562 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleSchemaAttributeTest7574 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7595 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleSchemaAttributeTest7607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7643 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeDeclaration7653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementTest_in_entryRuleElementTest7733 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementTest7743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleElementTest7789 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleElementTest7801 = new BitSet(new long[]{0x0000010100000400L});
-    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7823 = new BitSet(new long[]{0x0000000100400000L});
-    public static final BitSet FOLLOW_22_in_ruleElementTest7836 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleTypeName_in_ruleElementTest7857 = new BitSet(new long[]{0x1000000100000000L});
-    public static final BitSet FOLLOW_60_in_ruleElementTest7870 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleElementTest7888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard7924 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementNameOrWildcard7934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementName_in_ruleElementNameOrWildcard7980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleElementNameOrWildcard8008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8045 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaElementTest8055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleSchemaElementTest8092 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleSchemaElementTest8104 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8125 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleSchemaElementTest8137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8173 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementDeclaration8183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementName_in_ruleElementDeclaration8229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeName_in_entryRuleAttributeName8263 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeName8273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeName8314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementName_in_entryRuleElementName8354 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementName8364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElementName8405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeName_in_entryRuleTypeName8445 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeName8455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeName8496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNCName_in_entryRuleNCName8536 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNCName8546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNCName8587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rulePathExpr3270 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rulePathExpr3320 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelativePathExpr_in_rulePathExpr3380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelativePathExpr_in_entryRuleRelativePathExpr3425 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRelativePathExpr3435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStepExpr_in_ruleRelativePathExpr3481 = new BitSet(new long[]{0x00C0000000000002L});
+    public static final BitSet FOLLOW_ruleExtraStepExpr_in_ruleRelativePathExpr3502 = new BitSet(new long[]{0x00C0000000000002L});
+    public static final BitSet FOLLOW_ruleExtraStepExpr_in_entryRuleExtraStepExpr3539 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExtraStepExpr3549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleExtraStepExpr3587 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleStepExpr_in_ruleExtraStepExpr3609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleExtraStepExpr3637 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleStepExpr_in_ruleExtraStepExpr3659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStepExpr_in_entryRuleStepExpr3704 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStepExpr3714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFilterExpr_in_ruleStepExpr3761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAxisStep_in_ruleStepExpr3788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAxisStep_in_entryRuleAxisStep3823 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAxisStep3833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReverseStep_in_ruleAxisStep3880 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_ruleForwardStep_in_ruleAxisStep3907 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_rulePredicateList_in_ruleAxisStep3929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForwardStep_in_entryRuleForwardStep3965 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleForwardStep3975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FORWARDAXIS_in_ruleForwardStep4018 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleNodeTest_in_ruleForwardStep4044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbbrevForwardStep_in_ruleForwardStep4072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbbrevForwardStep_in_entryRuleAbbrevForwardStep4108 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbbrevForwardStep4118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleAbbrevForwardStep4161 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleNodeTest_in_ruleAbbrevForwardStep4196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReverseStep_in_entryRuleReverseStep4232 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReverseStep4242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_REVERSEAXIS_in_ruleReverseStep4285 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleNodeTest_in_ruleReverseStep4311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ABBREVREVERSESTEP_in_ruleReverseStep4335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeTest_in_entryRuleNodeTest4376 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNodeTest4386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKindTest_in_ruleNodeTest4432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameTest_in_ruleNodeTest4459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNameTest_in_entryRuleNameTest4495 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNameTest4505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNameTest4547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWildcard_in_ruleNameTest4579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWildcard_in_entryRuleWildcard4615 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWildcard4625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleWildcard4668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4709 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_ruleWildcard4721 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleWildcard4733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleWildcard4753 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_57_in_ruleWildcard4765 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleNCName_in_ruleWildcard4786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFilterExpr_in_entryRuleFilterExpr4823 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFilterExpr4833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpr_in_ruleFilterExpr4879 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_rulePredicateList_in_ruleFilterExpr4900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateList_in_entryRulePredicateList4936 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateList4946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicate_in_rulePredicateList5001 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate5038 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicate5048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_rulePredicate5085 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExpr_in_rulePredicate5106 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_59_in_rulePredicate5118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpr_in_entryRulePrimaryExpr5154 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpr5164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rulePrimaryExpr5210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarRef_in_rulePrimaryExpr5237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_rulePrimaryExpr5264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CONTEXTITEMEXPR_in_rulePrimaryExpr5287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_rulePrimaryExpr5319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral5355 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral5365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericLiteral_in_ruleLiteral5411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_ruleLiteral5434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumericLiteral_in_entryRuleNumericLiteral5475 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumericLiteral5485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INTLITERAL_in_ruleNumericLiteral5527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMALLITERAL_in_ruleNumericLiteral5555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOUBLELITERAL_in_ruleNumericLiteral5583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarRef_in_entryRuleVarRef5624 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVarRef5634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleVarRef5671 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleVarName_in_ruleVarRef5693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVarName_in_entryRuleVarName5728 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVarName5738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVarName5779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParenthesizedExpr_in_entryRuleParenthesizedExpr5819 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParenthesizedExpr5829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleParenthesizedExpr5875 = new BitSet(new long[]{0xE1C001C1DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleParenthesizedExpr5896 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleParenthesizedExpr5909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall5945 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall5955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionCall5997 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleFunctionCall6014 = new BitSet(new long[]{0xE1C001C1DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall6036 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_22_in_ruleFunctionCall6049 = new BitSet(new long[]{0xE1C001C0DB1CFF80L,0x0000000000000007L});
+    public static final BitSet FOLLOW_ruleExprSingle_in_ruleFunctionCall6070 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_32_in_ruleFunctionCall6086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSingleType_in_entryRuleSingleType6122 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSingleType6132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicType_in_ruleSingleType6179 = new BitSet(new long[]{0x1000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleSingleType6191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSequenceType_in_entryRuleSequenceType6229 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSequenceType6239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTYSEQUENCETYPE_in_ruleSequenceType6281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemType_in_ruleSequenceType6314 = new BitSet(new long[]{0x1000014000000000L});
+    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_ruleSequenceType6335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOccurenceIndicator_in_entryRuleOccurenceIndicator6373 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOccurenceIndicator6384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleOccurenceIndicator6422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleOccurenceIndicator6441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleOccurenceIndicator6460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleItemType_in_entryRuleItemType6500 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleItemType6510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKindTest_in_ruleItemType6556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EMPTYITEMTYPE_in_ruleItemType6579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicType_in_ruleItemType6611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicType_in_entryRuleAtomicType6647 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicType6657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAtomicType6698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKindTest_in_entryRuleKindTest6738 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleKindTest6748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocumentTest_in_ruleKindTest6794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementTest_in_ruleKindTest6821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeTest_in_ruleKindTest6848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleKindTest6875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_ruleKindTest6902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePITest_in_ruleKindTest6929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMENTTEST_in_ruleKindTest6952 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TEXTTEST_in_ruleKindTest6980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANYKINDTEST_in_ruleKindTest7008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocumentTest_in_entryRuleDocumentTest7049 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDocumentTest7059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleDocumentTest7105 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleDocumentTest7117 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_ruleElementTest_in_ruleDocumentTest7139 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_ruleSchemaElementTest_in_ruleDocumentTest7166 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleDocumentTest7180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePITest_in_entryRulePITest7216 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePITest7226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_rulePITest7272 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_rulePITest7284 = new BitSet(new long[]{0x0000000100001400L});
+    public static final BitSet FOLLOW_ruleNCName_in_rulePITest7306 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_RULE_STRINGLITERAL_in_rulePITest7329 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_rulePITest7348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeTest_in_entryRuleAttributeTest7384 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeTest7394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleAttributeTest7440 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleAttributeTest7452 = new BitSet(new long[]{0x0000010100000400L});
+    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_ruleAttributeTest7474 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_22_in_ruleAttributeTest7487 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleTypeName_in_ruleAttributeTest7508 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleAttributeTest7524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribNameOrWildcard_in_entryRuleAttribNameOrWildcard7560 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttribNameOrWildcard7570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttribNameOrWildcard7616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleAttribNameOrWildcard7644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaAttributeTest_in_entryRuleSchemaAttributeTest7681 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaAttributeTest7691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ruleSchemaAttributeTest7728 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleSchemaAttributeTest7740 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_ruleSchemaAttributeTest7761 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleSchemaAttributeTest7773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeDeclaration_in_entryRuleAttributeDeclaration7809 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeDeclaration7819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeName_in_ruleAttributeDeclaration7864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementTest_in_entryRuleElementTest7899 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementTest7909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleElementTest7955 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleElementTest7967 = new BitSet(new long[]{0x0000010100000400L});
+    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_ruleElementTest7989 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_22_in_ruleElementTest8002 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleTypeName_in_ruleElementTest8023 = new BitSet(new long[]{0x1000000100000000L});
+    public static final BitSet FOLLOW_60_in_ruleElementTest8036 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleElementTest8054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementNameOrWildcard_in_entryRuleElementNameOrWildcard8090 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementNameOrWildcard8100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementName_in_ruleElementNameOrWildcard8146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleElementNameOrWildcard8174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemaElementTest_in_entryRuleSchemaElementTest8211 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSchemaElementTest8221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleSchemaElementTest8258 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleSchemaElementTest8270 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleElementDeclaration_in_ruleSchemaElementTest8291 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleSchemaElementTest8303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementDeclaration_in_entryRuleElementDeclaration8339 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementDeclaration8349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementName_in_ruleElementDeclaration8395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeName_in_entryRuleAttributeName8429 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeName8439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeName8480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementName_in_entryRuleElementName8520 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementName8530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleElementName8571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeName_in_entryRuleTypeName8611 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeName8621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeName8662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNCName_in_entryRuleNCName8702 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNCName8712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNCName8753 = new BitSet(new long[]{0x0000000000000002L});
 
 }

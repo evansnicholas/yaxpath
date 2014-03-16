@@ -563,6 +563,51 @@ public interface XPathFactory extends EFactory
   NCName createNCName();
 
   /**
+   * Returns a new object of class '<em>Rel Single</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rel Single</em>'.
+   * @generated
+   */
+  RelSingle createRelSingle();
+
+  /**
+   * Returns a new object of class '<em>Rel Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rel Double</em>'.
+   * @generated
+   */
+  RelDouble createRelDouble();
+
+  /**
+   * Returns a new object of class '<em>Rel No Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rel No Selector</em>'.
+   * @generated
+   */
+  RelNoSelector createRelNoSelector();
+
+  /**
+   * Returns a new object of class '<em>Single</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single</em>'.
+   * @generated
+   */
+  Single createSingle();
+
+  /**
+   * Returns a new object of class '<em>Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double</em>'.
+   * @generated
+   */
+  Double createDouble();
+
+  /**
    * Returns a new object of class '<em>PIT Test</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

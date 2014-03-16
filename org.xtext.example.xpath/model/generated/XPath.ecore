@@ -128,32 +128,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//PathExpr"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PathExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="singlePath" eType="#//RelativePathExpr"
+  <eClassifiers xsi:type="ecore:EClass" name="PathExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelativePathExpr" eSuperTypes="#//PathExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//StepExpr"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="doublePath" eType="#//RelativePathExpr"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="#//RelativePathExpr"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelativePathExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//StepExpr"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rights" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extraSteps" upperBound="-1"
         eType="#//StepExpr" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StepExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//FilterExpr"
+  <eClassifiers xsi:type="ecore:EClass" name="StepExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AxisStep" eSuperTypes="#//StepExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//AxisStep"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AxisStep">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reverse" eType="#//ReverseStep"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="forward" eType="#//ForwardStep"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//PredicateList"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicateList" eType="#//PredicateList"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForwardStep">
@@ -164,6 +150,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbbrevForwardStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="test" eType="#//NodeTest"
         containment="true"/>
   </eClassifiers>
@@ -174,9 +161,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abbrRevSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeTest">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="kindTest" eType="#//KindTest"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeTest" eType="#//NameTest"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="test" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameTest">
@@ -191,10 +176,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//NCName"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FilterExpr">
+  <eClassifiers xsi:type="ecore:EClass" name="FilterExpr" eSuperTypes="#//StepExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="primary" eType="#//PrimaryExpr"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//PredicateList"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicateList" eType="#//PredicateList"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredicateList">
@@ -324,6 +309,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NCName">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ncName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelSingle" eSuperTypes="#//PathExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relPathExpr" eType="#//RelativePathExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelDouble" eSuperTypes="#//PathExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relPathExpr" eType="#//RelativePathExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelNoSelector" eSuperTypes="#//PathExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relPathExpr" eType="#//RelativePathExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Single" eSuperTypes="#//StepExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//StepExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Double" eSuperTypes="#//StepExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//StepExpr"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PITTest" eSuperTypes="#//PITest">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ncName" eType="#//NCName"

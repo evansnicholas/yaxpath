@@ -94,20 +94,27 @@ ValueExpr:
 ;
 
 PathExpr:
-	{PathExpr} ("/" singlePath=RelativePathExpr) | ("//" doublePath=RelativePathExpr) | path=RelativePathExpr 
+	"/" RelativePathExpr {RelSingle.relPathExpr=current}
+	| "//" RelativePathExpr {RelDouble.relPathExpr=current} 
+    | RelativePathExpr {RelNoSelector.relPathExpr=current}
 ;
 
 
 RelativePathExpr:
-	left=StepExpr (("/" | "//") rights+=StepExpr)*
+	step=StepExpr (extraSteps+=ExtraStepExpr)*
+;
+
+ExtraStepExpr returns StepExpr:
+	"/" StepExpr {Single.step=current}
+	| "//" StepExpr {Double.step=current}
 ;
 
 StepExpr:
-	filter=FilterExpr | step=AxisStep
+	FilterExpr | AxisStep 
 ;
 
 AxisStep:
-	(reverse=ReverseStep | forward=ForwardStep) predicate=PredicateList
+	(step=ReverseStep | step=ForwardStep) predicateList=PredicateList
 ;
 
 ForwardStep:
@@ -115,7 +122,7 @@ ForwardStep:
 ;
 
 AbbrevForwardStep:
-	"@"? test=NodeTest
+	attr="@"? test=NodeTest
 ;
 
 ReverseStep:
@@ -123,7 +130,7 @@ ReverseStep:
 ;
 
 NodeTest:
-	kindTest=KindTest | nodeTest=NameTest
+	test=KindTest | test=NameTest
 ;
 
 NameTest:
@@ -137,7 +144,7 @@ Wildcard:
 ;
 
 FilterExpr:
-	primary=PrimaryExpr predicate=PredicateList
+	primary=PrimaryExpr predicateList=PredicateList
 ;
 
 PredicateList:

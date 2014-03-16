@@ -3,6 +3,8 @@
  */
 package org.xtext.example.xpath.generator;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -12,9 +14,23 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.FilterExpr;
+import org.xtext.example.xpath.xPath.ForwardStep;
+import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeTest;
+import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.RelSingle;
 import org.xtext.example.xpath.xPath.RelativePathExpr;
+import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.ValueExpr;
+import org.xtext.example.xpath.xPath.Wildcard;
 
 /**
  * Generates code from your model files on save.
@@ -28,82 +44,233 @@ public class XPathGenerator implements IGenerator {
     final StringBuilder sb = _stringBuilder;
     TreeIterator<EObject> _allContents = resource.getAllContents();
     Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-    for (final EObject e : _iterable) {
-      CharSequence _compile = this.compile(e);
-      sb.append(_compile);
+    Iterable<ValueExpr> _filter = Iterables.<ValueExpr>filter(_iterable, ValueExpr.class);
+    for (final ValueExpr e : _filter) {
+      {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("def xpath(elem: Elem): Elem = {");
+        _builder.newLine();
+        _builder.append("\t\t\t      ");
+        CharSequence _compile = this.compile(e);
+        _builder.append(_compile, "\t\t\t      ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t   ");
+        _builder.append("}");
+        _builder.newLine();
+        final String compiled = _builder.toString();
+        sb.append(compiled);
+      }
     }
-    fsa.generateFile("generation.x", sb);
+    fsa.generateFile("generation.scala", sb);
   }
   
-  protected CharSequence _compile(final PathExpr pathExpr) {
+  protected CharSequence _compile(final ValueExpr ve) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Found path expression with: ");
-    _builder.newLine();
-    _builder.append("\t\t   ");
-    _builder.append("single expression = ");
-    RelativePathExpr _singlePath = pathExpr.getSinglePath();
-    _builder.append(_singlePath, "\t\t   ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t   ");
-    _builder.append("double = ");
-    RelativePathExpr _doublePath = pathExpr.getDoublePath();
-    _builder.append(_doublePath, "\t\t   ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t   ");
-    _builder.append("path = ");
-    RelativePathExpr _path = pathExpr.getPath();
-    _builder.append(_path, "\t\t   ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t   ");
-    _builder.newLine();
+    PathExpr _value = ve.getValue();
+    Object _compile = this.compile(_value);
+    _builder.append(_compile, "");
     return _builder;
   }
   
-  protected CharSequence _compile(final RelativePathExpr relPathExpr) {
+  protected CharSequence _compile(final RelSingle rs) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Found RelativePathExpr: ");
-    _builder.newLine();
-    _builder.append("\t\t   ");
-    _builder.append("left expression = ");
-    StepExpr _left = relPathExpr.getLeft();
-    Class<? extends StepExpr> _class = _left.getClass();
-    String _name = _class.getName();
-    _builder.append(_name, "\t\t   ");
-    _builder.append("\t\t   ");
+    _builder.append("elem.filterChildElems(");
+    RelativePathExpr _relPathExpr = rs.getRelPathExpr();
+    StepExpr _step = _relPathExpr.getStep();
+    Object _compile = this.compile(_step);
+    _builder.append(_compile, "");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
     {
-      EList<StepExpr> _rights = relPathExpr.getRights();
-      for(final StepExpr f : _rights) {
-        _builder.append("\t\t   ");
-        _builder.append("Right expression:");
-        Class<? extends StepExpr> _class_1 = f.getClass();
-        String _name_1 = _class_1.getName();
-        _builder.append(_name_1, "\t\t   ");
-        _builder.newLineIfNotEmpty();
+      RelativePathExpr _relPathExpr_1 = rs.getRelPathExpr();
+      EList<StepExpr> _extraSteps = _relPathExpr_1.getExtraSteps();
+      boolean _notEquals = (!Objects.equal(_extraSteps, null));
+      if (_notEquals) {
+        {
+          RelativePathExpr _relPathExpr_2 = rs.getRelPathExpr();
+          EList<StepExpr> _extraSteps_1 = _relPathExpr_2.getExtraSteps();
+          for(final StepExpr extra : _extraSteps_1) {
+            _builder.append("\t\t");
+            Object _compile_1 = this.compile(extra);
+            _builder.append(_compile_1, "\t\t");
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
-    _builder.append("\t\t   ");
-    _builder.append("End of RelativePathExpression");
-    _builder.newLine();
-    _builder.append("\t\t   ");
-    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Single s) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".filterChildElems(");
+    StepExpr _step = s.getStep();
+    Object _compile = this.compile(_step);
+    _builder.append(_compile, "");
+    _builder.append(")");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final AxisStep axs) {
+    StringConcatenation _builder = new StringConcatenation();
+    EObject _step = axs.getStep();
+    Object _compile = this.compile(_step);
+    _builder.append(_compile, "");
+    PredicateList _predicateList = axs.getPredicateList();
+    Object _compile_1 = this.compile(_predicateList);
+    _builder.append(_compile_1, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ForwardStep fs) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _forward = fs.getForward();
+      boolean _notEquals = (!Objects.equal(_forward, null));
+      if (_notEquals) {
+        String _forward_1 = fs.getForward();
+        _builder.append(_forward_1, "");
+        NodeTest _test = fs.getTest();
+        Object _compile = this.compile(_test);
+        _builder.append(_compile, "");
+      }
+    }
+    {
+      AbbrevForwardStep _abbrForward = fs.getAbbrForward();
+      boolean _notEquals_1 = (!Objects.equal(_abbrForward, null));
+      if (_notEquals_1) {
+        AbbrevForwardStep _abbrForward_1 = fs.getAbbrForward();
+        Object _compile_1 = this.compile(_abbrForward_1);
+        _builder.append(_compile_1, "");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final AbbrevForwardStep afs) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _attr = afs.getAttr();
+      boolean _notEquals = (!Objects.equal(_attr, null));
+      if (_notEquals) {
+        String _attr_1 = afs.getAttr();
+        _builder.append(_attr_1, "");
+      }
+    }
+    NodeTest _test = afs.getTest();
+    Object _compile = this.compile(_test);
+    _builder.append(_compile, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final NodeTest not) {
+    StringConcatenation _builder = new StringConcatenation();
+    EObject _test = not.getTest();
+    Object _compile = this.compile(_test);
+    _builder.append(_compile, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final NameTest nat) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _qName = nat.getQName();
+      boolean _notEquals = (!Objects.equal(_qName, null));
+      if (_notEquals) {
+        String _qName_1 = nat.getQName();
+        _builder.append(_qName_1, "");
+      }
+    }
+    {
+      Wildcard _wildcard = nat.getWildcard();
+      boolean _notEquals_1 = (!Objects.equal(_wildcard, null));
+      if (_notEquals_1) {
+        Wildcard _wildcard_1 = nat.getWildcard();
+        Object _compile = this.compile(_wildcard_1);
+        _builder.append(_compile, "");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final FilterExpr f) {
+    StringConcatenation _builder = new StringConcatenation();
+    PrimaryExpr _primary = f.getPrimary();
+    Object _compile = this.compile(_primary);
+    _builder.append(_compile, "");
+    PredicateList _predicateList = f.getPredicateList();
+    Object _compile_1 = this.compile(_predicateList);
+    _builder.append(_compile_1, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final PrimaryExpr pe) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Literal _literal = pe.getLiteral();
+      boolean _notEquals = (!Objects.equal(_literal, null));
+      if (_notEquals) {
+        Literal _literal_1 = pe.getLiteral();
+        Object _compile = this.compile(_literal_1);
+        _builder.append(_compile, "");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Literal l) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      NumericLiteral _num = l.getNum();
+      boolean _notEquals = (!Objects.equal(_num, null));
+      if (_notEquals) {
+        NumericLiteral _num_1 = l.getNum();
+        _builder.append(_num_1, "");
+      }
+    }
+    {
+      String _string = l.getString();
+      boolean _notEquals_1 = (!Objects.equal(_string, null));
+      if (_notEquals_1) {
+        String _string_1 = l.getString();
+        _builder.append(_string_1, "");
+      }
+    }
     return _builder;
   }
   
   protected CharSequence _compile(final EObject o) {
-    return "";
+    return null;
   }
   
-  public CharSequence compile(final EObject pathExpr) {
-    if (pathExpr instanceof PathExpr) {
-      return _compile((PathExpr)pathExpr);
-    } else if (pathExpr instanceof RelativePathExpr) {
-      return _compile((RelativePathExpr)pathExpr);
-    } else if (pathExpr != null) {
-      return _compile(pathExpr);
+  public CharSequence compile(final EObject axs) {
+    if (axs instanceof AxisStep) {
+      return _compile((AxisStep)axs);
+    } else if (axs instanceof FilterExpr) {
+      return _compile((FilterExpr)axs);
+    } else if (axs instanceof RelSingle) {
+      return _compile((RelSingle)axs);
+    } else if (axs instanceof Single) {
+      return _compile((Single)axs);
+    } else if (axs instanceof AbbrevForwardStep) {
+      return _compile((AbbrevForwardStep)axs);
+    } else if (axs instanceof ForwardStep) {
+      return _compile((ForwardStep)axs);
+    } else if (axs instanceof Literal) {
+      return _compile((Literal)axs);
+    } else if (axs instanceof NameTest) {
+      return _compile((NameTest)axs);
+    } else if (axs instanceof NodeTest) {
+      return _compile((NodeTest)axs);
+    } else if (axs instanceof PrimaryExpr) {
+      return _compile((PrimaryExpr)axs);
+    } else if (axs instanceof ValueExpr) {
+      return _compile((ValueExpr)axs);
+    } else if (axs != null) {
+      return _compile(axs);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(pathExpr).toString());
+        Arrays.<Object>asList(axs).toString());
     }
   }
 }

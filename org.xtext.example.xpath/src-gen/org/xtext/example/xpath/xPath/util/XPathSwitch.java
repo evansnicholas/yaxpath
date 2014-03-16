@@ -7,7 +7,72 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.xtext.example.xpath.xPath.*;
+import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.AdditionalIn;
+import org.xtext.example.xpath.xPath.AdditiveExpr;
+import org.xtext.example.xpath.xPath.AndExpr;
+import org.xtext.example.xpath.xPath.AtomicType;
+import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.AttributeDeclaration;
+import org.xtext.example.xpath.xPath.AttributeName;
+import org.xtext.example.xpath.xPath.AttributeTest;
+import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.CastableExpr;
+import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.ElementDeclaration;
+import org.xtext.example.xpath.xPath.ElementName;
+import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
+import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Expr;
+import org.xtext.example.xpath.xPath.ExprSingle;
+import org.xtext.example.xpath.xPath.FilterExpr;
+import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardStep;
+import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.IntersectExceptExpr;
+import org.xtext.example.xpath.xPath.ItemType;
+import org.xtext.example.xpath.xPath.KindTest;
+import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.MultiplicativeExpr;
+import org.xtext.example.xpath.xPath.NCName;
+import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeTest;
+import org.xtext.example.xpath.xPath.NumericLiteral;
+import org.xtext.example.xpath.xPath.OrExpr;
+import org.xtext.example.xpath.xPath.PITTest;
+import org.xtext.example.xpath.xPath.PITest;
+import org.xtext.example.xpath.xPath.ParenthesizedExpr;
+import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Predicate;
+import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QuantifiedExpr;
+import org.xtext.example.xpath.xPath.RangeExpr;
+import org.xtext.example.xpath.xPath.RelDouble;
+import org.xtext.example.xpath.xPath.RelNoSelector;
+import org.xtext.example.xpath.xPath.RelSingle;
+import org.xtext.example.xpath.xPath.RelativePathExpr;
+import org.xtext.example.xpath.xPath.ReverseStep;
+import org.xtext.example.xpath.xPath.SchemaAttributeTest;
+import org.xtext.example.xpath.xPath.SchemaElementTest;
+import org.xtext.example.xpath.xPath.SequenceType;
+import org.xtext.example.xpath.xPath.SimpleForClause;
+import org.xtext.example.xpath.xPath.Single;
+import org.xtext.example.xpath.xPath.SingleType;
+import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.TreatExpr;
+import org.xtext.example.xpath.xPath.TypeName;
+import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.ValueExpr;
+import org.xtext.example.xpath.xPath.VarName;
+import org.xtext.example.xpath.xPath.VarRef;
+import org.xtext.example.xpath.xPath.Wildcard;
+import org.xtext.example.xpath.xPath.XPathPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -234,6 +299,7 @@ public class XPathSwitch<T> extends Switch<T>
       {
         RelativePathExpr relativePathExpr = (RelativePathExpr)theEObject;
         T result = caseRelativePathExpr(relativePathExpr);
+        if (result == null) result = casePathExpr(relativePathExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -248,6 +314,7 @@ public class XPathSwitch<T> extends Switch<T>
       {
         AxisStep axisStep = (AxisStep)theEObject;
         T result = caseAxisStep(axisStep);
+        if (result == null) result = caseStepExpr(axisStep);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -297,6 +364,7 @@ public class XPathSwitch<T> extends Switch<T>
       {
         FilterExpr filterExpr = (FilterExpr)theEObject;
         T result = caseFilterExpr(filterExpr);
+        if (result == null) result = caseStepExpr(filterExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -496,6 +564,46 @@ public class XPathSwitch<T> extends Switch<T>
       {
         NCName ncName = (NCName)theEObject;
         T result = caseNCName(ncName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.REL_SINGLE:
+      {
+        RelSingle relSingle = (RelSingle)theEObject;
+        T result = caseRelSingle(relSingle);
+        if (result == null) result = casePathExpr(relSingle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.REL_DOUBLE:
+      {
+        RelDouble relDouble = (RelDouble)theEObject;
+        T result = caseRelDouble(relDouble);
+        if (result == null) result = casePathExpr(relDouble);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.REL_NO_SELECTOR:
+      {
+        RelNoSelector relNoSelector = (RelNoSelector)theEObject;
+        T result = caseRelNoSelector(relNoSelector);
+        if (result == null) result = casePathExpr(relNoSelector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.SINGLE:
+      {
+        Single single = (Single)theEObject;
+        T result = caseSingle(single);
+        if (result == null) result = caseStepExpr(single);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.DOUBLE:
+      {
+        org.xtext.example.xpath.xPath.Double double_ = (org.xtext.example.xpath.xPath.Double)theEObject;
+        T result = caseDouble(double_);
+        if (result == null) result = caseStepExpr(double_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1467,6 +1575,86 @@ public class XPathSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNCName(NCName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rel Single</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rel Single</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelSingle(RelSingle object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rel Double</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rel Double</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelDouble(RelDouble object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rel No Selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rel No Selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelNoSelector(RelNoSelector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Single</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Single</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSingle(Single object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Double</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDouble(org.xtext.example.xpath.xPath.Double object)
   {
     return null;
   }

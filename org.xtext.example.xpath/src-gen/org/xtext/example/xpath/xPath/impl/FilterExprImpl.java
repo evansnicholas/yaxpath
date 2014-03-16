@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.PredicateList;
@@ -24,13 +23,13 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.example.xpath.xPath.impl.FilterExprImpl#getPrimary <em>Primary</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.FilterExprImpl#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.FilterExprImpl#getPredicateList <em>Predicate List</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FilterExprImpl extends MinimalEObjectImpl.Container implements FilterExpr
+public class FilterExprImpl extends StepExprImpl implements FilterExpr
 {
   /**
    * The cached value of the '{@link #getPrimary() <em>Primary</em>}' containment reference.
@@ -43,14 +42,14 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
   protected PrimaryExpr primary;
 
   /**
-   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' containment reference.
+   * The cached value of the '{@link #getPredicateList() <em>Predicate List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPredicate()
+   * @see #getPredicateList()
    * @generated
    * @ordered
    */
-  protected PredicateList predicate;
+  protected PredicateList predicateList;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,9 +125,9 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
    * <!-- end-user-doc -->
    * @generated
    */
-  public PredicateList getPredicate()
+  public PredicateList getPredicateList()
   {
-    return predicate;
+    return predicateList;
   }
 
   /**
@@ -136,13 +135,13 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPredicate(PredicateList newPredicate, NotificationChain msgs)
+  public NotificationChain basicSetPredicateList(PredicateList newPredicateList, NotificationChain msgs)
   {
-    PredicateList oldPredicate = predicate;
-    predicate = newPredicate;
+    PredicateList oldPredicateList = predicateList;
+    predicateList = newPredicateList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.FILTER_EXPR__PREDICATE, oldPredicate, newPredicate);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.FILTER_EXPR__PREDICATE_LIST, oldPredicateList, newPredicateList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -153,20 +152,20 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPredicate(PredicateList newPredicate)
+  public void setPredicateList(PredicateList newPredicateList)
   {
-    if (newPredicate != predicate)
+    if (newPredicateList != predicateList)
     {
       NotificationChain msgs = null;
-      if (predicate != null)
-        msgs = ((InternalEObject)predicate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FILTER_EXPR__PREDICATE, null, msgs);
-      if (newPredicate != null)
-        msgs = ((InternalEObject)newPredicate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FILTER_EXPR__PREDICATE, null, msgs);
-      msgs = basicSetPredicate(newPredicate, msgs);
+      if (predicateList != null)
+        msgs = ((InternalEObject)predicateList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FILTER_EXPR__PREDICATE_LIST, null, msgs);
+      if (newPredicateList != null)
+        msgs = ((InternalEObject)newPredicateList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FILTER_EXPR__PREDICATE_LIST, null, msgs);
+      msgs = basicSetPredicateList(newPredicateList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.FILTER_EXPR__PREDICATE, newPredicate, newPredicate));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.FILTER_EXPR__PREDICATE_LIST, newPredicateList, newPredicateList));
   }
 
   /**
@@ -181,8 +180,8 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
     {
       case XPathPackage.FILTER_EXPR__PRIMARY:
         return basicSetPrimary(null, msgs);
-      case XPathPackage.FILTER_EXPR__PREDICATE:
-        return basicSetPredicate(null, msgs);
+      case XPathPackage.FILTER_EXPR__PREDICATE_LIST:
+        return basicSetPredicateList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -199,8 +198,8 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
     {
       case XPathPackage.FILTER_EXPR__PRIMARY:
         return getPrimary();
-      case XPathPackage.FILTER_EXPR__PREDICATE:
-        return getPredicate();
+      case XPathPackage.FILTER_EXPR__PREDICATE_LIST:
+        return getPredicateList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -218,8 +217,8 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
       case XPathPackage.FILTER_EXPR__PRIMARY:
         setPrimary((PrimaryExpr)newValue);
         return;
-      case XPathPackage.FILTER_EXPR__PREDICATE:
-        setPredicate((PredicateList)newValue);
+      case XPathPackage.FILTER_EXPR__PREDICATE_LIST:
+        setPredicateList((PredicateList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,8 +237,8 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
       case XPathPackage.FILTER_EXPR__PRIMARY:
         setPrimary((PrimaryExpr)null);
         return;
-      case XPathPackage.FILTER_EXPR__PREDICATE:
-        setPredicate((PredicateList)null);
+      case XPathPackage.FILTER_EXPR__PREDICATE_LIST:
+        setPredicateList((PredicateList)null);
         return;
     }
     super.eUnset(featureID);
@@ -257,8 +256,8 @@ public class FilterExprImpl extends MinimalEObjectImpl.Container implements Filt
     {
       case XPathPackage.FILTER_EXPR__PRIMARY:
         return primary != null;
-      case XPathPackage.FILTER_EXPR__PREDICATE:
-        return predicate != null;
+      case XPathPackage.FILTER_EXPR__PREDICATE_LIST:
+        return predicateList != null;
     }
     return super.eIsSet(featureID);
   }

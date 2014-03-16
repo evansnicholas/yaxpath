@@ -1026,8 +1026,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_ABBREVREVERSESTEP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4033:24: ( '..' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4033:26: '..'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4062:24: ( '..' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4062:26: '..'
             {
             match(".."); 
 
@@ -1047,8 +1047,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_CONTEXTITEMEXPR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4035:22: ( '.' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4035:24: '.'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4064:22: ( '.' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4064:24: '.'
             {
             match('.'); 
 
@@ -1067,8 +1067,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_ANYKINDTEST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4037:18: ( 'node' '(' ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4037:20: 'node' '(' ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4066:18: ( 'node' '(' ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4066:20: 'node' '(' ')'
             {
             match("node"); 
 
@@ -1090,8 +1090,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_TEXTTEST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4039:15: ( 'text' '(' ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4039:17: 'text' '(' ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4068:15: ( 'text' '(' ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4068:17: 'text' '(' ')'
             {
             match("text"); 
 
@@ -1113,8 +1113,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_COMMENTTEST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4041:18: ( 'comment' '(' ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4041:20: 'comment' '(' ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4070:18: ( 'comment' '(' ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4070:20: 'comment' '(' ')'
             {
             match("comment"); 
 
@@ -1136,8 +1136,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_EMPTYITEMTYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4043:20: ( 'item' '(' ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4043:22: 'item' '(' ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4072:20: ( 'item' '(' ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4072:22: 'item' '(' ')'
             {
             match("item"); 
 
@@ -1159,8 +1159,8 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_EMPTYSEQUENCETYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4045:24: ( 'empty-sequence' '(' ')' )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4045:26: 'empty-sequence' '(' ')'
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4074:24: ( 'empty-sequence' '(' ')' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4074:26: 'empty-sequence' '(' ')'
             {
             match("empty-sequence"); 
 
@@ -1182,15 +1182,15 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_REVERSEAXIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:18: ( ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:20: ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:18: ( ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:20: ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:20: ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:20: ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' )
             int alt1=5;
             alt1 = dfa1.predict(input);
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:21: 'parent' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:21: 'parent' '::'
                     {
                     match("parent"); 
 
@@ -1200,7 +1200,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:35: 'ancestor' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:35: 'ancestor' '::'
                     {
                     match("ancestor"); 
 
@@ -1210,7 +1210,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:51: 'preceding-sibling' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:51: 'preceding-sibling' '::'
                     {
                     match("preceding-sibling"); 
 
@@ -1220,7 +1220,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:76: 'preceding' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:76: 'preceding' '::'
                     {
                     match("preceding"); 
 
@@ -1230,7 +1230,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4047:93: 'ancestor-or-self' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4076:93: 'ancestor-or-self' '::'
                     {
                     match("ancestor-or-self"); 
 
@@ -1258,15 +1258,15 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_FORWARDAXIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:18: ( ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:20: ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:18: ( ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:20: ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:20: ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:20: ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' )
             int alt2=8;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:21: 'child' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:21: 'child' '::'
                     {
                     match("child"); 
 
@@ -1276,7 +1276,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:34: 'descendant' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:34: 'descendant' '::'
                     {
                     match("descendant"); 
 
@@ -1286,7 +1286,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:52: 'attribute' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:52: 'attribute' '::'
                     {
                     match("attribute"); 
 
@@ -1296,7 +1296,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:69: 'self' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:69: 'self' '::'
                     {
                     match("self"); 
 
@@ -1306,7 +1306,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:81: 'descendant-or-self' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:81: 'descendant-or-self' '::'
                     {
                     match("descendant-or-self"); 
 
@@ -1316,7 +1316,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:107: 'following-sibling' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:107: 'following-sibling' '::'
                     {
                     match("following-sibling"); 
 
@@ -1326,7 +1326,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:132: 'following' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:132: 'following' '::'
                     {
                     match("following"); 
 
@@ -1336,7 +1336,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4049:149: 'namespace' '::'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4078:149: 'namespace' '::'
                     {
                     match("namespace"); 
 
@@ -1364,10 +1364,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_NODECOMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4051:15: ( ( 'is' | '<<' | '>>' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4051:17: ( 'is' | '<<' | '>>' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4080:15: ( ( 'is' | '<<' | '>>' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4080:17: ( 'is' | '<<' | '>>' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4051:17: ( 'is' | '<<' | '>>' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4080:17: ( 'is' | '<<' | '>>' )
             int alt3=3;
             switch ( input.LA(1) ) {
             case 'i':
@@ -1394,7 +1394,7 @@ public class InternalXPathLexer extends Lexer {
 
             switch (alt3) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4051:18: 'is'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4080:18: 'is'
                     {
                     match("is"); 
 
@@ -1402,7 +1402,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4051:23: '<<'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4080:23: '<<'
                     {
                     match("<<"); 
 
@@ -1410,7 +1410,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4051:28: '>>'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4080:28: '>>'
                     {
                     match(">>"); 
 
@@ -1436,10 +1436,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_VALUECOMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:16: ( ( 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:18: ( 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:16: ( ( 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:18: ( 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:18: ( 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:18: ( 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge' )
             int alt4=6;
             switch ( input.LA(1) ) {
             case 'e':
@@ -1497,7 +1497,7 @@ public class InternalXPathLexer extends Lexer {
 
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:19: 'eq'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:19: 'eq'
                     {
                     match("eq"); 
 
@@ -1505,7 +1505,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:24: 'ne'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:24: 'ne'
                     {
                     match("ne"); 
 
@@ -1513,7 +1513,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:29: 'lt'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:29: 'lt'
                     {
                     match("lt"); 
 
@@ -1521,7 +1521,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:34: 'le'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:34: 'le'
                     {
                     match("le"); 
 
@@ -1529,7 +1529,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:39: 'gt'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:39: 'gt'
                     {
                     match("gt"); 
 
@@ -1537,7 +1537,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4053:44: 'ge'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4082:44: 'ge'
                     {
                     match("ge"); 
 
@@ -1563,10 +1563,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_GENERALCOMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:18: ( ( '=' | '!=' | '<' | '<=' | '>' | '>=' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:20: ( '=' | '!=' | '<' | '<=' | '>' | '>=' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:18: ( ( '=' | '!=' | '<' | '<=' | '>' | '>=' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:20: ( '=' | '!=' | '<' | '<=' | '>' | '>=' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:20: ( '=' | '!=' | '<' | '<=' | '>' | '>=' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:20: ( '=' | '!=' | '<' | '<=' | '>' | '>=' )
             int alt5=6;
             switch ( input.LA(1) ) {
             case '=':
@@ -1610,14 +1610,14 @@ public class InternalXPathLexer extends Lexer {
 
             switch (alt5) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:21: '='
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:21: '='
                     {
                     match('='); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:25: '!='
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:25: '!='
                     {
                     match("!="); 
 
@@ -1625,14 +1625,14 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:30: '<'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:30: '<'
                     {
                     match('<'); 
 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:34: '<='
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:34: '<='
                     {
                     match("<="); 
 
@@ -1640,14 +1640,14 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:39: '>'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:39: '>'
                     {
                     match('>'); 
 
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4055:43: '>='
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4084:43: '>='
                     {
                     match(">="); 
 
@@ -1673,10 +1673,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4057:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4057:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4086:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4086:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4057:11: ( '^' )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4086:11: ( '^' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1685,7 +1685,7 @@ public class InternalXPathLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4057:11: '^'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4086:11: '^'
                     {
                     match('^'); 
 
@@ -1703,7 +1703,7 @@ public class InternalXPathLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4057:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4086:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop7:
             do {
                 int alt7=2;
@@ -1752,10 +1752,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_INTLITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4059:17: ( ( '0' .. '9' )+ )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4059:19: ( '0' .. '9' )+
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4088:17: ( ( '0' .. '9' )+ )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4088:19: ( '0' .. '9' )+
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4059:19: ( '0' .. '9' )+
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4088:19: ( '0' .. '9' )+
             int cnt8=0;
             loop8:
             do {
@@ -1769,7 +1769,7 @@ public class InternalXPathLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4059:20: '0' .. '9'
+            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4088:20: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1801,10 +1801,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_DECIMALLITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4061:21: ( ( '.' RULE_INTLITERAL | RULE_INTLITERAL '.' RULE_INTLITERAL ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4061:23: ( '.' RULE_INTLITERAL | RULE_INTLITERAL '.' RULE_INTLITERAL )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4090:21: ( ( '.' RULE_INTLITERAL | RULE_INTLITERAL '.' RULE_INTLITERAL ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4090:23: ( '.' RULE_INTLITERAL | RULE_INTLITERAL '.' RULE_INTLITERAL )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4061:23: ( '.' RULE_INTLITERAL | RULE_INTLITERAL '.' RULE_INTLITERAL )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4090:23: ( '.' RULE_INTLITERAL | RULE_INTLITERAL '.' RULE_INTLITERAL )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1822,7 +1822,7 @@ public class InternalXPathLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4061:24: '.' RULE_INTLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4090:24: '.' RULE_INTLITERAL
                     {
                     match('.'); 
                     mRULE_INTLITERAL(); 
@@ -1830,7 +1830,7 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4061:44: RULE_INTLITERAL '.' RULE_INTLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4090:44: RULE_INTLITERAL '.' RULE_INTLITERAL
                     {
                     mRULE_INTLITERAL(); 
                     match('.'); 
@@ -1857,10 +1857,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_DOUBLELITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:20: ( ( '.' RULE_INTLITERAL | RULE_INTLITERAL ( '.' ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( '+' | '-' )? RULE_INTLITERAL )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:22: ( '.' RULE_INTLITERAL | RULE_INTLITERAL ( '.' ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( '+' | '-' )? RULE_INTLITERAL
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:20: ( ( '.' RULE_INTLITERAL | RULE_INTLITERAL ( '.' ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( '+' | '-' )? RULE_INTLITERAL )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:22: ( '.' RULE_INTLITERAL | RULE_INTLITERAL ( '.' ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( '+' | '-' )? RULE_INTLITERAL
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:22: ( '.' RULE_INTLITERAL | RULE_INTLITERAL ( '.' ( '0' .. '9' )* )? )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:22: ( '.' RULE_INTLITERAL | RULE_INTLITERAL ( '.' ( '0' .. '9' )* )? )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1878,7 +1878,7 @@ public class InternalXPathLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:23: '.' RULE_INTLITERAL
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:23: '.' RULE_INTLITERAL
                     {
                     match('.'); 
                     mRULE_INTLITERAL(); 
@@ -1886,10 +1886,10 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:43: RULE_INTLITERAL ( '.' ( '0' .. '9' )* )?
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:43: RULE_INTLITERAL ( '.' ( '0' .. '9' )* )?
                     {
                     mRULE_INTLITERAL(); 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:59: ( '.' ( '0' .. '9' )* )?
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:59: ( '.' ( '0' .. '9' )* )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1898,10 +1898,10 @@ public class InternalXPathLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:60: '.' ( '0' .. '9' )*
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:60: '.' ( '0' .. '9' )*
                             {
                             match('.'); 
-                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:64: ( '0' .. '9' )*
+                            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:64: ( '0' .. '9' )*
                             loop10:
                             do {
                                 int alt10=2;
@@ -1914,7 +1914,7 @@ public class InternalXPathLexer extends Lexer {
 
                                 switch (alt10) {
                             	case 1 :
-                            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:65: '0' .. '9'
+                            	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:65: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -1947,7 +1947,7 @@ public class InternalXPathLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4063:89: ( '+' | '-' )?
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4092:89: ( '+' | '-' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1990,10 +1990,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_STRINGLITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:20: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:22: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:20: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:22: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:22: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:22: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2011,10 +2011,10 @@ public class InternalXPathLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:23: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:23: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:27: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:27: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -2030,7 +2030,7 @@ public class InternalXPathLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:28: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:28: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2046,7 +2046,7 @@ public class InternalXPathLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:73: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:73: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2071,10 +2071,10 @@ public class InternalXPathLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:93: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:93: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:98: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:98: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop15:
                     do {
                         int alt15=3;
@@ -2090,7 +2090,7 @@ public class InternalXPathLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:99: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:99: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2106,7 +2106,7 @@ public class InternalXPathLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4065:144: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4094:144: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2149,10 +2149,10 @@ public class InternalXPathLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4067:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4067:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4096:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4096:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4067:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.xpath/src-gen/org/xtext/example/xpath/parser/antlr/internal/InternalXPath.g:4096:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -2726,7 +2726,7 @@ public class InternalXPathLexer extends Lexer {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "4047:20: ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' )";
+            return "4076:20: ( 'parent' '::' | 'ancestor' '::' | 'preceding-sibling' '::' | 'preceding' '::' | 'ancestor-or-self' '::' )";
         }
     }
     static final String DFA2_eotS =
@@ -2807,7 +2807,7 @@ public class InternalXPathLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "4049:20: ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' )";
+            return "4078:20: ( 'child' '::' | 'descendant' '::' | 'attribute' '::' | 'self' '::' | 'descendant-or-self' '::' | 'following-sibling' '::' | 'following' '::' | 'namespace' '::' )";
         }
     }
     static final String DFA18_eotS =

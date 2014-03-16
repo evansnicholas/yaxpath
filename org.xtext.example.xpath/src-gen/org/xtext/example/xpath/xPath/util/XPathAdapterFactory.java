@@ -9,7 +9,72 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.xtext.example.xpath.xPath.*;
+import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.AdditionalIn;
+import org.xtext.example.xpath.xPath.AdditiveExpr;
+import org.xtext.example.xpath.xPath.AndExpr;
+import org.xtext.example.xpath.xPath.AtomicType;
+import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.AttributeDeclaration;
+import org.xtext.example.xpath.xPath.AttributeName;
+import org.xtext.example.xpath.xPath.AttributeTest;
+import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.CastableExpr;
+import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.ElementDeclaration;
+import org.xtext.example.xpath.xPath.ElementName;
+import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
+import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Expr;
+import org.xtext.example.xpath.xPath.ExprSingle;
+import org.xtext.example.xpath.xPath.FilterExpr;
+import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardStep;
+import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.IntersectExceptExpr;
+import org.xtext.example.xpath.xPath.ItemType;
+import org.xtext.example.xpath.xPath.KindTest;
+import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.MultiplicativeExpr;
+import org.xtext.example.xpath.xPath.NCName;
+import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeTest;
+import org.xtext.example.xpath.xPath.NumericLiteral;
+import org.xtext.example.xpath.xPath.OrExpr;
+import org.xtext.example.xpath.xPath.PITTest;
+import org.xtext.example.xpath.xPath.PITest;
+import org.xtext.example.xpath.xPath.ParenthesizedExpr;
+import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Predicate;
+import org.xtext.example.xpath.xPath.PredicateList;
+import org.xtext.example.xpath.xPath.PrimaryExpr;
+import org.xtext.example.xpath.xPath.QuantifiedExpr;
+import org.xtext.example.xpath.xPath.RangeExpr;
+import org.xtext.example.xpath.xPath.RelDouble;
+import org.xtext.example.xpath.xPath.RelNoSelector;
+import org.xtext.example.xpath.xPath.RelSingle;
+import org.xtext.example.xpath.xPath.RelativePathExpr;
+import org.xtext.example.xpath.xPath.ReverseStep;
+import org.xtext.example.xpath.xPath.SchemaAttributeTest;
+import org.xtext.example.xpath.xPath.SchemaElementTest;
+import org.xtext.example.xpath.xPath.SequenceType;
+import org.xtext.example.xpath.xPath.SimpleForClause;
+import org.xtext.example.xpath.xPath.Single;
+import org.xtext.example.xpath.xPath.SingleType;
+import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.TreatExpr;
+import org.xtext.example.xpath.xPath.TypeName;
+import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.ValueExpr;
+import org.xtext.example.xpath.xPath.VarName;
+import org.xtext.example.xpath.xPath.VarRef;
+import org.xtext.example.xpath.xPath.Wildcard;
+import org.xtext.example.xpath.xPath.XPathPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -373,6 +438,31 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNCName(NCName object)
       {
         return createNCNameAdapter();
+      }
+      @Override
+      public Adapter caseRelSingle(RelSingle object)
+      {
+        return createRelSingleAdapter();
+      }
+      @Override
+      public Adapter caseRelDouble(RelDouble object)
+      {
+        return createRelDoubleAdapter();
+      }
+      @Override
+      public Adapter caseRelNoSelector(RelNoSelector object)
+      {
+        return createRelNoSelectorAdapter();
+      }
+      @Override
+      public Adapter caseSingle(Single object)
+      {
+        return createSingleAdapter();
+      }
+      @Override
+      public Adapter caseDouble(org.xtext.example.xpath.xPath.Double object)
+      {
+        return createDoubleAdapter();
       }
       @Override
       public Adapter casePITTest(PITTest object)
@@ -1297,6 +1387,81 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNCNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.RelSingle <em>Rel Single</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.RelSingle
+   * @generated
+   */
+  public Adapter createRelSingleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.RelDouble <em>Rel Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.RelDouble
+   * @generated
+   */
+  public Adapter createRelDoubleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.RelNoSelector <em>Rel No Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.RelNoSelector
+   * @generated
+   */
+  public Adapter createRelNoSelectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Single <em>Single</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Single
+   * @generated
+   */
+  public Adapter createSingleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Double <em>Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Double
+   * @generated
+   */
+  public Adapter createDoubleAdapter()
   {
     return null;
   }

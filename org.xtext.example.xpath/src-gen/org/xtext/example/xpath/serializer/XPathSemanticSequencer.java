@@ -50,19 +50,21 @@ import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.OrExpr;
 import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
-import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
 import org.xtext.example.xpath.xPath.QuantifiedExpr;
 import org.xtext.example.xpath.xPath.RangeExpr;
+import org.xtext.example.xpath.xPath.RelDouble;
+import org.xtext.example.xpath.xPath.RelNoSelector;
+import org.xtext.example.xpath.xPath.RelSingle;
 import org.xtext.example.xpath.xPath.RelativePathExpr;
 import org.xtext.example.xpath.xPath.ReverseStep;
 import org.xtext.example.xpath.xPath.SchemaAttributeTest;
 import org.xtext.example.xpath.xPath.SchemaElementTest;
 import org.xtext.example.xpath.xPath.SequenceType;
 import org.xtext.example.xpath.xPath.SimpleForClause;
-import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
@@ -136,7 +138,10 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case XPathPackage.AXIS_STEP:
-				if(context == grammarAccess.getAxisStepRule()) {
+				if(context == grammarAccess.getAxisStepRule() ||
+				   context == grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2() ||
+				   context == grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2() ||
+				   context == grammarAccess.getStepExprRule()) {
 					sequence_AxisStep(context, (AxisStep) semanticObject); 
 					return; 
 				}
@@ -162,6 +167,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case XPathPackage.DOCUMENT_TEST:
 				if(context == grammarAccess.getDocumentTestRule()) {
 					sequence_DocumentTest(context, (DocumentTest) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.DOUBLE:
+				if(context == grammarAccess.getExtraStepExprRule()) {
+					sequence_ExtraStepExpr(context, (org.xtext.example.xpath.xPath.Double) semanticObject); 
 					return; 
 				}
 				else break;
@@ -191,7 +202,10 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case XPathPackage.FILTER_EXPR:
-				if(context == grammarAccess.getFilterExprRule()) {
+				if(context == grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2() ||
+				   context == grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2() ||
+				   context == grammarAccess.getFilterExprRule() ||
+				   context == grammarAccess.getStepExprRule()) {
 					sequence_FilterExpr(context, (FilterExpr) semanticObject); 
 					return; 
 				}
@@ -301,12 +315,6 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case XPathPackage.PATH_EXPR:
-				if(context == grammarAccess.getPathExprRule()) {
-					sequence_PathExpr(context, (PathExpr) semanticObject); 
-					return; 
-				}
-				else break;
 			case XPathPackage.PREDICATE:
 				if(context == grammarAccess.getPredicateRule()) {
 					sequence_Predicate(context, (Predicate) semanticObject); 
@@ -338,8 +346,29 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.REL_DOUBLE:
+				if(context == grammarAccess.getPathExprRule()) {
+					sequence_PathExpr(context, (RelDouble) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.REL_NO_SELECTOR:
+				if(context == grammarAccess.getPathExprRule()) {
+					sequence_PathExpr(context, (RelNoSelector) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.REL_SINGLE:
+				if(context == grammarAccess.getPathExprRule()) {
+					sequence_PathExpr(context, (RelSingle) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.RELATIVE_PATH_EXPR:
-				if(context == grammarAccess.getRelativePathExprRule()) {
+				if(context == grammarAccess.getPathExprAccess().getRelDoubleRelPathExprAction_1_2() ||
+				   context == grammarAccess.getPathExprAccess().getRelNoSelectorRelPathExprAction_2_1() ||
+				   context == grammarAccess.getPathExprAccess().getRelSingleRelPathExprAction_0_2() ||
+				   context == grammarAccess.getRelativePathExprRule()) {
 					sequence_RelativePathExpr(context, (RelativePathExpr) semanticObject); 
 					return; 
 				}
@@ -374,9 +403,9 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case XPathPackage.STEP_EXPR:
-				if(context == grammarAccess.getStepExprRule()) {
-					sequence_StepExpr(context, (StepExpr) semanticObject); 
+			case XPathPackage.SINGLE:
+				if(context == grammarAccess.getExtraStepExprRule()) {
+					sequence_ExtraStepExpr(context, (Single) semanticObject); 
 					return; 
 				}
 				else break;
@@ -429,17 +458,10 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     test=NodeTest
+	 *     (attr='@'? test=NodeTest)
 	 */
 	protected void sequence_AbbrevForwardStep(EObject context, AbbrevForwardStep semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.ABBREV_FORWARD_STEP__TEST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.ABBREV_FORWARD_STEP__TEST));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAbbrevForwardStepAccess().getTestNodeTestParserRuleCall_1_0(), semanticObject.getTest());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -548,7 +570,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ((reverse=ReverseStep | forward=ForwardStep) predicate=PredicateList)
+	 *     ((step=ReverseStep | step=ForwardStep) predicateList=PredicateList)
 	 */
 	protected void sequence_AxisStep(EObject context, AxisStep semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -636,19 +658,51 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (primary=PrimaryExpr predicate=PredicateList)
+	 *     step=ExtraStepExpr_Double_1_2
+	 */
+	protected void sequence_ExtraStepExpr(EObject context, org.xtext.example.xpath.xPath.Double semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.DOUBLE__STEP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.DOUBLE__STEP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2(), semanticObject.getStep());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     step=ExtraStepExpr_Single_0_2
+	 */
+	protected void sequence_ExtraStepExpr(EObject context, Single semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.SINGLE__STEP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.SINGLE__STEP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2(), semanticObject.getStep());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (primary=PrimaryExpr predicateList=PredicateList)
 	 */
 	protected void sequence_FilterExpr(EObject context, FilterExpr semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.FILTER_EXPR__PRIMARY) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.FILTER_EXPR__PRIMARY));
-			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.FILTER_EXPR__PREDICATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.FILTER_EXPR__PREDICATE));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.FILTER_EXPR__PREDICATE_LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.FILTER_EXPR__PREDICATE_LIST));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getFilterExprAccess().getPrimaryPrimaryExprParserRuleCall_0_0(), semanticObject.getPrimary());
-		feeder.accept(grammarAccess.getFilterExprAccess().getPredicatePredicateListParserRuleCall_1_0(), semanticObject.getPredicate());
+		feeder.accept(grammarAccess.getFilterExprAccess().getPredicateListPredicateListParserRuleCall_1_0(), semanticObject.getPredicateList());
 		feeder.finish();
 	}
 	
@@ -803,7 +857,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (kindTest=KindTest | nodeTest=NameTest)
+	 *     (test=KindTest | test=NameTest)
 	 */
 	protected void sequence_NodeTest(EObject context, NodeTest semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -848,10 +902,49 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     singlePath=RelativePathExpr
+	 *     relPathExpr=PathExpr_RelDouble_1_2
 	 */
-	protected void sequence_PathExpr(EObject context, PathExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_PathExpr(EObject context, RelDouble semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.REL_DOUBLE__REL_PATH_EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.REL_DOUBLE__REL_PATH_EXPR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPathExprAccess().getRelDoubleRelPathExprAction_1_2(), semanticObject.getRelPathExpr());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     relPathExpr=PathExpr_RelNoSelector_2_1
+	 */
+	protected void sequence_PathExpr(EObject context, RelNoSelector semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.REL_NO_SELECTOR__REL_PATH_EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.REL_NO_SELECTOR__REL_PATH_EXPR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPathExprAccess().getRelNoSelectorRelPathExprAction_2_1(), semanticObject.getRelPathExpr());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     relPathExpr=PathExpr_RelSingle_0_2
+	 */
+	protected void sequence_PathExpr(EObject context, RelSingle semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.REL_SINGLE__REL_PATH_EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.REL_SINGLE__REL_PATH_EXPR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPathExprAccess().getRelSingleRelPathExprAction_0_2(), semanticObject.getRelPathExpr());
+		feeder.finish();
 	}
 	
 	
@@ -909,7 +1002,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=StepExpr rights+=StepExpr*)
+	 *     (step=StepExpr extraSteps+=ExtraStepExpr*)
 	 */
 	protected void sequence_RelativePathExpr(EObject context, RelativePathExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -971,15 +1064,6 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (forVar=VarName in=ExprSingle additionalIn+=AdditionalIn*)
 	 */
 	protected void sequence_SimpleForClause(EObject context, SimpleForClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (filter=FilterExpr | step=AxisStep)
-	 */
-	protected void sequence_StepExpr(EObject context, StepExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

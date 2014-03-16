@@ -22,6 +22,7 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.AbbrevForwardStepImpl#getAttr <em>Attr</em>}</li>
  *   <li>{@link org.xtext.example.xpath.xPath.impl.AbbrevForwardStepImpl#getTest <em>Test</em>}</li>
  * </ul>
  * </p>
@@ -30,6 +31,26 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  */
 public class AbbrevForwardStepImpl extends MinimalEObjectImpl.Container implements AbbrevForwardStep
 {
+  /**
+   * The default value of the '{@link #getAttr() <em>Attr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttr()
+   * @generated
+   * @ordered
+   */
+  protected static final String ATTR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAttr() <em>Attr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttr()
+   * @generated
+   * @ordered
+   */
+  protected String attr = ATTR_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getTest() <em>Test</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +80,29 @@ public class AbbrevForwardStepImpl extends MinimalEObjectImpl.Container implemen
   protected EClass eStaticClass()
   {
     return XPathPackage.Literals.ABBREV_FORWARD_STEP;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getAttr()
+  {
+    return attr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAttr(String newAttr)
+  {
+    String oldAttr = attr;
+    attr = newAttr;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.ABBREV_FORWARD_STEP__ATTR, oldAttr, attr));
   }
 
   /**
@@ -135,6 +179,8 @@ public class AbbrevForwardStepImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case XPathPackage.ABBREV_FORWARD_STEP__ATTR:
+        return getAttr();
       case XPathPackage.ABBREV_FORWARD_STEP__TEST:
         return getTest();
     }
@@ -151,6 +197,9 @@ public class AbbrevForwardStepImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case XPathPackage.ABBREV_FORWARD_STEP__ATTR:
+        setAttr((String)newValue);
+        return;
       case XPathPackage.ABBREV_FORWARD_STEP__TEST:
         setTest((NodeTest)newValue);
         return;
@@ -168,6 +217,9 @@ public class AbbrevForwardStepImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case XPathPackage.ABBREV_FORWARD_STEP__ATTR:
+        setAttr(ATTR_EDEFAULT);
+        return;
       case XPathPackage.ABBREV_FORWARD_STEP__TEST:
         setTest((NodeTest)null);
         return;
@@ -185,10 +237,29 @@ public class AbbrevForwardStepImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case XPathPackage.ABBREV_FORWARD_STEP__ATTR:
+        return ATTR_EDEFAULT == null ? attr != null : !ATTR_EDEFAULT.equals(attr);
       case XPathPackage.ABBREV_FORWARD_STEP__TEST:
         return test != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (attr: ");
+    result.append(attr);
+    result.append(')');
+    return result.toString();
   }
 
 } //AbbrevForwardStepImpl

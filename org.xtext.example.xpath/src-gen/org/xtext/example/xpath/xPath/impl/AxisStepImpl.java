@@ -6,15 +6,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.AxisStep;
-import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.PredicateList;
-import org.xtext.example.xpath.xPath.ReverseStep;
 import org.xtext.example.xpath.xPath.XPathPackage;
 
 /**
@@ -24,45 +22,34 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl#getReverse <em>Reverse</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl#getForward <em>Forward</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl#getPredicateList <em>Predicate List</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisStep
+public class AxisStepImpl extends StepExprImpl implements AxisStep
 {
   /**
-   * The cached value of the '{@link #getReverse() <em>Reverse</em>}' containment reference.
+   * The cached value of the '{@link #getStep() <em>Step</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReverse()
+   * @see #getStep()
    * @generated
    * @ordered
    */
-  protected ReverseStep reverse;
+  protected EObject step;
 
   /**
-   * The cached value of the '{@link #getForward() <em>Forward</em>}' containment reference.
+   * The cached value of the '{@link #getPredicateList() <em>Predicate List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getForward()
+   * @see #getPredicateList()
    * @generated
    * @ordered
    */
-  protected ForwardStep forward;
-
-  /**
-   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPredicate()
-   * @generated
-   * @ordered
-   */
-  protected PredicateList predicate;
+  protected PredicateList predicateList;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,9 +77,9 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReverseStep getReverse()
+  public EObject getStep()
   {
-    return reverse;
+    return step;
   }
 
   /**
@@ -100,13 +87,13 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetReverse(ReverseStep newReverse, NotificationChain msgs)
+  public NotificationChain basicSetStep(EObject newStep, NotificationChain msgs)
   {
-    ReverseStep oldReverse = reverse;
-    reverse = newReverse;
+    EObject oldStep = step;
+    step = newStep;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__REVERSE, oldReverse, newReverse);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__STEP, oldStep, newStep);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,20 +104,20 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReverse(ReverseStep newReverse)
+  public void setStep(EObject newStep)
   {
-    if (newReverse != reverse)
+    if (newStep != step)
     {
       NotificationChain msgs = null;
-      if (reverse != null)
-        msgs = ((InternalEObject)reverse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__REVERSE, null, msgs);
-      if (newReverse != null)
-        msgs = ((InternalEObject)newReverse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__REVERSE, null, msgs);
-      msgs = basicSetReverse(newReverse, msgs);
+      if (step != null)
+        msgs = ((InternalEObject)step).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__STEP, null, msgs);
+      if (newStep != null)
+        msgs = ((InternalEObject)newStep).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__STEP, null, msgs);
+      msgs = basicSetStep(newStep, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__REVERSE, newReverse, newReverse));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__STEP, newStep, newStep));
   }
 
   /**
@@ -138,9 +125,9 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public ForwardStep getForward()
+  public PredicateList getPredicateList()
   {
-    return forward;
+    return predicateList;
   }
 
   /**
@@ -148,13 +135,13 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetForward(ForwardStep newForward, NotificationChain msgs)
+  public NotificationChain basicSetPredicateList(PredicateList newPredicateList, NotificationChain msgs)
   {
-    ForwardStep oldForward = forward;
-    forward = newForward;
+    PredicateList oldPredicateList = predicateList;
+    predicateList = newPredicateList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__FORWARD, oldForward, newForward);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__PREDICATE_LIST, oldPredicateList, newPredicateList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -165,68 +152,20 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForward(ForwardStep newForward)
+  public void setPredicateList(PredicateList newPredicateList)
   {
-    if (newForward != forward)
+    if (newPredicateList != predicateList)
     {
       NotificationChain msgs = null;
-      if (forward != null)
-        msgs = ((InternalEObject)forward).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__FORWARD, null, msgs);
-      if (newForward != null)
-        msgs = ((InternalEObject)newForward).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__FORWARD, null, msgs);
-      msgs = basicSetForward(newForward, msgs);
+      if (predicateList != null)
+        msgs = ((InternalEObject)predicateList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__PREDICATE_LIST, null, msgs);
+      if (newPredicateList != null)
+        msgs = ((InternalEObject)newPredicateList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__PREDICATE_LIST, null, msgs);
+      msgs = basicSetPredicateList(newPredicateList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__FORWARD, newForward, newForward));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PredicateList getPredicate()
-  {
-    return predicate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPredicate(PredicateList newPredicate, NotificationChain msgs)
-  {
-    PredicateList oldPredicate = predicate;
-    predicate = newPredicate;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__PREDICATE, oldPredicate, newPredicate);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPredicate(PredicateList newPredicate)
-  {
-    if (newPredicate != predicate)
-    {
-      NotificationChain msgs = null;
-      if (predicate != null)
-        msgs = ((InternalEObject)predicate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__PREDICATE, null, msgs);
-      if (newPredicate != null)
-        msgs = ((InternalEObject)newPredicate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.AXIS_STEP__PREDICATE, null, msgs);
-      msgs = basicSetPredicate(newPredicate, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__PREDICATE, newPredicate, newPredicate));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.AXIS_STEP__PREDICATE_LIST, newPredicateList, newPredicateList));
   }
 
   /**
@@ -239,12 +178,10 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
   {
     switch (featureID)
     {
-      case XPathPackage.AXIS_STEP__REVERSE:
-        return basicSetReverse(null, msgs);
-      case XPathPackage.AXIS_STEP__FORWARD:
-        return basicSetForward(null, msgs);
-      case XPathPackage.AXIS_STEP__PREDICATE:
-        return basicSetPredicate(null, msgs);
+      case XPathPackage.AXIS_STEP__STEP:
+        return basicSetStep(null, msgs);
+      case XPathPackage.AXIS_STEP__PREDICATE_LIST:
+        return basicSetPredicateList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -259,12 +196,10 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
   {
     switch (featureID)
     {
-      case XPathPackage.AXIS_STEP__REVERSE:
-        return getReverse();
-      case XPathPackage.AXIS_STEP__FORWARD:
-        return getForward();
-      case XPathPackage.AXIS_STEP__PREDICATE:
-        return getPredicate();
+      case XPathPackage.AXIS_STEP__STEP:
+        return getStep();
+      case XPathPackage.AXIS_STEP__PREDICATE_LIST:
+        return getPredicateList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -279,14 +214,11 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
   {
     switch (featureID)
     {
-      case XPathPackage.AXIS_STEP__REVERSE:
-        setReverse((ReverseStep)newValue);
+      case XPathPackage.AXIS_STEP__STEP:
+        setStep((EObject)newValue);
         return;
-      case XPathPackage.AXIS_STEP__FORWARD:
-        setForward((ForwardStep)newValue);
-        return;
-      case XPathPackage.AXIS_STEP__PREDICATE:
-        setPredicate((PredicateList)newValue);
+      case XPathPackage.AXIS_STEP__PREDICATE_LIST:
+        setPredicateList((PredicateList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -302,14 +234,11 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
   {
     switch (featureID)
     {
-      case XPathPackage.AXIS_STEP__REVERSE:
-        setReverse((ReverseStep)null);
+      case XPathPackage.AXIS_STEP__STEP:
+        setStep((EObject)null);
         return;
-      case XPathPackage.AXIS_STEP__FORWARD:
-        setForward((ForwardStep)null);
-        return;
-      case XPathPackage.AXIS_STEP__PREDICATE:
-        setPredicate((PredicateList)null);
+      case XPathPackage.AXIS_STEP__PREDICATE_LIST:
+        setPredicateList((PredicateList)null);
         return;
     }
     super.eUnset(featureID);
@@ -325,12 +254,10 @@ public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisSt
   {
     switch (featureID)
     {
-      case XPathPackage.AXIS_STEP__REVERSE:
-        return reverse != null;
-      case XPathPackage.AXIS_STEP__FORWARD:
-        return forward != null;
-      case XPathPackage.AXIS_STEP__PREDICATE:
-        return predicate != null;
+      case XPathPackage.AXIS_STEP__STEP:
+        return step != null;
+      case XPathPackage.AXIS_STEP__PREDICATE_LIST:
+        return predicateList != null;
     }
     return super.eIsSet(featureID);
   }

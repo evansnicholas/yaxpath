@@ -20,34 +20,68 @@ class XPathGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		val sb = new StringBuilder() 
-		for (e: resource.allContents.toIterable){
-			sb.append(e.compile)
+		for (e: resource.allContents.toIterable.filter(ValueExpr)){
+			val compiled = 
+			'''def xpath(elem: Elem): Elem = {
+			      «e.compile»
+			   }
+			'''
+			sb.append(compiled)
 		}
-		fsa.generateFile("generation.x", sb)
+		fsa.generateFile("generation.scala", sb)
 	}
 	
-	def dispatch compile(PathExpr pathExpr) {
-		'''Found path expression with: 
-		   single expression = «pathExpr.singlePath»
-		   double = «pathExpr.doublePath»
-		   path = «pathExpr.path»
-		   
+	def dispatch compile(ValueExpr ve) {
+		'''«ve.value.compile»'''
+	}
+	
+	def dispatch compile(RelSingle rs) {
+		'''elem.filterChildElems(«rs.relPathExpr.step.compile»)
+		«IF rs.relPathExpr.extraSteps != null»
+		«FOR extra: rs.relPathExpr.extraSteps»
+		«extra.compile»
+		«ENDFOR»
+		«ENDIF»
 		'''
 	}
 	
-	def dispatch compile(RelativePathExpr relPathExpr) {
-		'''Found RelativePathExpr: 
-		   left expression = «relPathExpr.left.class.name»		   
-		   «FOR f:relPathExpr.rights»
-		     Right expression:«f.class.name»
-		   «ENDFOR»
-		   End of RelativePathExpression
-		   
-		'''
+	def dispatch compile(Single s) {
+		'''.filterChildElems(«s.step.compile»)'''
+	}
+	
+	def dispatch compile(AxisStep axs) {
+		'''«axs.step.compile»«axs.predicateList.compile»'''
+	}
+	
+	def dispatch compile(ForwardStep fs) {
+		'''«IF fs.forward != null»«fs.forward»«fs.test.compile»«ENDIF»«IF fs.abbrForward != null»«fs.abbrForward.compile»«ENDIF»'''
+	}
+	
+	def dispatch compile(AbbrevForwardStep afs) {
+		'''«IF afs.attr != null»«afs.attr»«ENDIF»«afs.test.compile»'''
+	}
+	
+	def dispatch compile(NodeTest not) {
+		'''«not.test.compile»'''
+	}
+	
+	def dispatch compile(NameTest nat) {
+		'''«IF nat.QName != null»«nat.QName»«ENDIF»«IF nat.wildcard != null»«nat.wildcard.compile»«ENDIF»'''
+	}
+	
+	def dispatch compile(FilterExpr f) {
+		'''«f.primary.compile»«f.predicateList.compile»'''
+	}
+	
+	def dispatch compile(PrimaryExpr pe) {
+		'''«IF pe.literal != null»«pe.literal.compile»«ENDIF»'''
+	}
+	
+	def dispatch compile(Literal l) {
+		'''«IF l.num != null»«l.num»«ENDIF»«IF l.string != null»«l.string»«ENDIF»'''
 	}
 	
 	def dispatch compile(EObject o) {
-		""
 	}
 	
 }
