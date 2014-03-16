@@ -15,6 +15,7 @@ import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.AtomicType;
 import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
@@ -23,6 +24,7 @@ import org.xtext.example.xpath.xPath.CastExpr;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
 import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
@@ -31,6 +33,7 @@ import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
 import org.xtext.example.xpath.xPath.IfExpr;
@@ -269,6 +272,13 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * @generated
    */
   private EClass forwardStepEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forwardAxisEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -563,6 +573,20 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * @generated
    */
   private EClass doubleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1349,6 +1373,26 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStepExpr_StepExpr()
+  {
+    return (EReference)stepExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStepExpr_Step()
+  {
+    return (EReference)stepExprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAxisStep()
   {
     return axisStepEClass;
@@ -1389,9 +1433,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getForwardStep_Forward()
+  public EReference getForwardStep_Forward()
   {
-    return (EAttribute)forwardStepEClass.getEStructuralFeatures().get(0);
+    return (EReference)forwardStepEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1419,29 +1463,29 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getForwardAxis()
+  {
+    return forwardAxisEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getForwardAxis_Axis()
+  {
+    return (EAttribute)forwardAxisEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAbbrevForwardStep()
   {
     return abbrevForwardStepEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAbbrevForwardStep_Attr()
-  {
-    return (EAttribute)abbrevForwardStepEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAbbrevForwardStep_Test()
-  {
-    return (EReference)abbrevForwardStepEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2489,16 +2533,6 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSingle_Step()
-  {
-    return (EReference)singleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getDouble()
   {
     return doubleEClass;
@@ -2509,9 +2543,39 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDouble_Step()
+  public EClass getAttribute()
   {
-    return (EReference)doubleEClass.getEStructuralFeatures().get(0);
+    return attributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttribute_Test()
+  {
+    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElement()
+  {
+    return elementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getElement_Test()
+  {
+    return (EReference)elementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2668,19 +2732,22 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEReference(relativePathExprEClass, RELATIVE_PATH_EXPR__EXTRA_STEPS);
 
     stepExprEClass = createEClass(STEP_EXPR);
+    createEReference(stepExprEClass, STEP_EXPR__STEP_EXPR);
+    createEReference(stepExprEClass, STEP_EXPR__STEP);
 
     axisStepEClass = createEClass(AXIS_STEP);
     createEReference(axisStepEClass, AXIS_STEP__STEP);
     createEReference(axisStepEClass, AXIS_STEP__PREDICATE_LIST);
 
     forwardStepEClass = createEClass(FORWARD_STEP);
-    createEAttribute(forwardStepEClass, FORWARD_STEP__FORWARD);
+    createEReference(forwardStepEClass, FORWARD_STEP__FORWARD);
     createEReference(forwardStepEClass, FORWARD_STEP__TEST);
     createEReference(forwardStepEClass, FORWARD_STEP__ABBR_FORWARD);
 
+    forwardAxisEClass = createEClass(FORWARD_AXIS);
+    createEAttribute(forwardAxisEClass, FORWARD_AXIS__AXIS);
+
     abbrevForwardStepEClass = createEClass(ABBREV_FORWARD_STEP);
-    createEAttribute(abbrevForwardStepEClass, ABBREV_FORWARD_STEP__ATTR);
-    createEReference(abbrevForwardStepEClass, ABBREV_FORWARD_STEP__TEST);
 
     reverseStepEClass = createEClass(REVERSE_STEP);
     createEAttribute(reverseStepEClass, REVERSE_STEP__REVERSE);
@@ -2825,10 +2892,14 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEReference(relNoSelectorEClass, REL_NO_SELECTOR__REL_PATH_EXPR);
 
     singleEClass = createEClass(SINGLE);
-    createEReference(singleEClass, SINGLE__STEP);
 
     doubleEClass = createEClass(DOUBLE);
-    createEReference(doubleEClass, DOUBLE__STEP);
+
+    attributeEClass = createEClass(ATTRIBUTE);
+    createEReference(attributeEClass, ATTRIBUTE__TEST);
+
+    elementEClass = createEClass(ELEMENT);
+    createEReference(elementEClass, ELEMENT__TEST);
 
     pitTestEClass = createEClass(PIT_TEST);
     createEReference(pitTestEClass, PIT_TEST__NC_NAME);
@@ -2869,8 +2940,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     ifExprEClass.getESuperTypes().add(this.getExprSingle());
     orExprEClass.getESuperTypes().add(this.getExprSingle());
     relativePathExprEClass.getESuperTypes().add(this.getPathExpr());
-    axisStepEClass.getESuperTypes().add(this.getStepExpr());
-    filterExprEClass.getESuperTypes().add(this.getStepExpr());
+    nodeTestEClass.getESuperTypes().add(this.getAbbrevForwardStep());
     varNameEClass.getESuperTypes().add(this.getVarRef());
     atomicTypeEClass.getESuperTypes().add(this.getSingleType());
     elementNameEClass.getESuperTypes().add(this.getElementDeclaration());
@@ -2881,6 +2951,8 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     relNoSelectorEClass.getESuperTypes().add(this.getPathExpr());
     singleEClass.getESuperTypes().add(this.getStepExpr());
     doubleEClass.getESuperTypes().add(this.getStepExpr());
+    attributeEClass.getESuperTypes().add(this.getAbbrevForwardStep());
+    elementEClass.getESuperTypes().add(this.getAbbrevForwardStep());
     pitTestEClass.getESuperTypes().add(this.getPITest());
 
     // Initialize classes and features; add operations and parameters
@@ -2978,19 +3050,22 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getRelativePathExpr_ExtraSteps(), this.getStepExpr(), null, "extraSteps", null, 0, -1, RelativePathExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepExprEClass, StepExpr.class, "StepExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStepExpr_StepExpr(), ecorePackage.getEObject(), null, "stepExpr", null, 0, 1, StepExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStepExpr_Step(), this.getStepExpr(), null, "step", null, 0, 1, StepExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(axisStepEClass, AxisStep.class, "AxisStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAxisStep_Step(), ecorePackage.getEObject(), null, "step", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAxisStep_PredicateList(), this.getPredicateList(), null, "predicateList", null, 0, 1, AxisStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forwardStepEClass, ForwardStep.class, "ForwardStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getForwardStep_Forward(), ecorePackage.getEString(), "forward", null, 0, 1, ForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForwardStep_Forward(), this.getForwardAxis(), null, "forward", null, 0, 1, ForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForwardStep_Test(), this.getNodeTest(), null, "test", null, 0, 1, ForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForwardStep_AbbrForward(), this.getAbbrevForwardStep(), null, "abbrForward", null, 0, 1, ForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(forwardAxisEClass, ForwardAxis.class, "ForwardAxis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getForwardAxis_Axis(), ecorePackage.getEString(), "axis", null, 0, 1, ForwardAxis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(abbrevForwardStepEClass, AbbrevForwardStep.class, "AbbrevForwardStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAbbrevForwardStep_Attr(), ecorePackage.getEString(), "attr", null, 0, 1, AbbrevForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbbrevForwardStep_Test(), this.getNodeTest(), null, "test", null, 0, 1, AbbrevForwardStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reverseStepEClass, ReverseStep.class, "ReverseStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReverseStep_Reverse(), ecorePackage.getEString(), "reverse", null, 0, 1, ReverseStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3135,10 +3210,14 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getRelNoSelector_RelPathExpr(), this.getRelativePathExpr(), null, "relPathExpr", null, 0, 1, RelNoSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleEClass, Single.class, "Single", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSingle_Step(), this.getStepExpr(), null, "step", null, 0, 1, Single.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(doubleEClass, org.xtext.example.xpath.xPath.Double.class, "Double", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDouble_Step(), this.getStepExpr(), null, "step", null, 0, 1, org.xtext.example.xpath.xPath.Double.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAttribute_Test(), this.getNodeTest(), null, "test", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getElement_Test(), this.getNodeTest(), null, "test", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pitTestEClass, PITTest.class, "PITTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPITTest_NcName(), this.getNCName(), null, "ncName", null, 0, 1, PITTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

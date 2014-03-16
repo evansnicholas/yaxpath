@@ -13,6 +13,7 @@ import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.AtomicType;
 import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
@@ -21,6 +22,7 @@ import org.xtext.example.xpath.xPath.CastExpr;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
 import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
@@ -29,6 +31,7 @@ import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
 import org.xtext.example.xpath.xPath.IfExpr;
@@ -317,7 +320,6 @@ public class XPathSwitch<T> extends Switch<T>
       {
         AxisStep axisStep = (AxisStep)theEObject;
         T result = caseAxisStep(axisStep);
-        if (result == null) result = caseStepExpr(axisStep);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -325,6 +327,13 @@ public class XPathSwitch<T> extends Switch<T>
       {
         ForwardStep forwardStep = (ForwardStep)theEObject;
         T result = caseForwardStep(forwardStep);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.FORWARD_AXIS:
+      {
+        ForwardAxis forwardAxis = (ForwardAxis)theEObject;
+        T result = caseForwardAxis(forwardAxis);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -346,6 +355,7 @@ public class XPathSwitch<T> extends Switch<T>
       {
         NodeTest nodeTest = (NodeTest)theEObject;
         T result = caseNodeTest(nodeTest);
+        if (result == null) result = caseAbbrevForwardStep(nodeTest);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -367,7 +377,6 @@ public class XPathSwitch<T> extends Switch<T>
       {
         FilterExpr filterExpr = (FilterExpr)theEObject;
         T result = caseFilterExpr(filterExpr);
-        if (result == null) result = caseStepExpr(filterExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -630,6 +639,22 @@ public class XPathSwitch<T> extends Switch<T>
         org.xtext.example.xpath.xPath.Double double_ = (org.xtext.example.xpath.xPath.Double)theEObject;
         T result = caseDouble(double_);
         if (result == null) result = caseStepExpr(double_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.ATTRIBUTE:
+      {
+        Attribute attribute = (Attribute)theEObject;
+        T result = caseAttribute(attribute);
+        if (result == null) result = caseAbbrevForwardStep(attribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.ELEMENT:
+      {
+        Element element = (Element)theEObject;
+        T result = caseElement(element);
+        if (result == null) result = caseAbbrevForwardStep(element);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1057,6 +1082,22 @@ public class XPathSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseForwardStep(ForwardStep object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Forward Axis</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Forward Axis</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForwardAxis(ForwardAxis object)
   {
     return null;
   }
@@ -1729,6 +1770,38 @@ public class XPathSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDouble(org.xtext.example.xpath.xPath.Double object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttribute(Attribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElement(Element object)
   {
     return null;
   }

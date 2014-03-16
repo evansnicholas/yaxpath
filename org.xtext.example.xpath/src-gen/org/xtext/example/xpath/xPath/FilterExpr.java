@@ -2,6 +2,7 @@
  */
 package org.xtext.example.xpath.xPath;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package org.xtext.example.xpath.xPath;
  * @model
  * @generated
  */
-public interface FilterExpr extends StepExpr
+public interface FilterExpr extends EObject
 {
   /**
    * Returns the value of the '<em><b>Primary</b></em>' containment reference.

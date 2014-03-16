@@ -1021,21 +1021,29 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	public class StepExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StepExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cFilterExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAxisStepParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cStepExprAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cStepExprFilterExprParserRuleCall_0_0 = (RuleCall)cStepExprAssignment_0.eContents().get(0);
+		private final Assignment cStepExprAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cStepExprAxisStepParserRuleCall_1_0 = (RuleCall)cStepExprAssignment_1.eContents().get(0);
 		
 		//StepExpr:
-		//	FilterExpr | AxisStep;
+		//	stepExpr=FilterExpr | stepExpr=AxisStep;
 		public ParserRule getRule() { return rule; }
 
-		//FilterExpr | AxisStep
+		//stepExpr=FilterExpr | stepExpr=AxisStep
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//stepExpr=FilterExpr
+		public Assignment getStepExprAssignment_0() { return cStepExprAssignment_0; }
+
 		//FilterExpr
-		public RuleCall getFilterExprParserRuleCall_0() { return cFilterExprParserRuleCall_0; }
+		public RuleCall getStepExprFilterExprParserRuleCall_0_0() { return cStepExprFilterExprParserRuleCall_0_0; }
+
+		//stepExpr=AxisStep
+		public Assignment getStepExprAssignment_1() { return cStepExprAssignment_1; }
 
 		//AxisStep
-		public RuleCall getAxisStepParserRuleCall_1() { return cAxisStepParserRuleCall_1; }
+		public RuleCall getStepExprAxisStepParserRuleCall_1_0() { return cStepExprAxisStepParserRuleCall_1_0; }
 	}
 
 	public class AxisStepElements extends AbstractParserRuleElementFinder {
@@ -1083,27 +1091,27 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Assignment cForwardAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cForwardFORWARDAXISTerminalRuleCall_0_0_0 = (RuleCall)cForwardAssignment_0_0.eContents().get(0);
+		private final RuleCall cForwardForwardAxisParserRuleCall_0_0_0 = (RuleCall)cForwardAssignment_0_0.eContents().get(0);
 		private final Assignment cTestAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cTestNodeTestParserRuleCall_0_1_0 = (RuleCall)cTestAssignment_0_1.eContents().get(0);
 		private final Assignment cAbbrForwardAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cAbbrForwardAbbrevForwardStepParserRuleCall_1_0 = (RuleCall)cAbbrForwardAssignment_1.eContents().get(0);
 		
 		//ForwardStep:
-		//	forward=FORWARDAXIS test=NodeTest | abbrForward=AbbrevForwardStep;
+		//	forward=ForwardAxis test=NodeTest | abbrForward=AbbrevForwardStep;
 		public ParserRule getRule() { return rule; }
 
-		//forward=FORWARDAXIS test=NodeTest | abbrForward=AbbrevForwardStep
+		//forward=ForwardAxis test=NodeTest | abbrForward=AbbrevForwardStep
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//forward=FORWARDAXIS test=NodeTest
+		//forward=ForwardAxis test=NodeTest
 		public Group getGroup_0() { return cGroup_0; }
 
-		//forward=FORWARDAXIS
+		//forward=ForwardAxis
 		public Assignment getForwardAssignment_0_0() { return cForwardAssignment_0_0; }
 
-		//FORWARDAXIS
-		public RuleCall getForwardFORWARDAXISTerminalRuleCall_0_0_0() { return cForwardFORWARDAXISTerminalRuleCall_0_0_0; }
+		//ForwardAxis
+		public RuleCall getForwardForwardAxisParserRuleCall_0_0_0() { return cForwardForwardAxisParserRuleCall_0_0_0; }
 
 		//test=NodeTest
 		public Assignment getTestAssignment_0_1() { return cTestAssignment_0_1; }
@@ -1118,32 +1126,186 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getAbbrForwardAbbrevForwardStepParserRuleCall_1_0() { return cAbbrForwardAbbrevForwardStepParserRuleCall_1_0; }
 	}
 
-	public class AbbrevForwardStepElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbbrevForwardStep");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAttrAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cAttrCommercialAtKeyword_0_0 = (Keyword)cAttrAssignment_0.eContents().get(0);
-		private final Assignment cTestAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTestNodeTestParserRuleCall_1_0 = (RuleCall)cTestAssignment_1.eContents().get(0);
+	public class ForwardAxisElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForwardAxis");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cAxisAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final Keyword cAxisChildKeyword_0_0_0 = (Keyword)cAxisAssignment_0_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cAxisAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cAxisDescendantKeyword_1_0_0 = (Keyword)cAxisAssignment_1_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cAxisAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final Keyword cAxisAttributeKeyword_2_0_0 = (Keyword)cAxisAssignment_2_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Assignment cAxisAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final Keyword cAxisSelfKeyword_3_0_0 = (Keyword)cAxisAssignment_3_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Assignment cAxisAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final Keyword cAxisDescendantOrSelfKeyword_4_0_0 = (Keyword)cAxisAssignment_4_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Assignment cAxisAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final Keyword cAxisFollowingSiblingKeyword_5_0_0 = (Keyword)cAxisAssignment_5_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Assignment cAxisAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final Keyword cAxisFollowingKeyword_6_0_0 = (Keyword)cAxisAssignment_6_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Assignment cAxisAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
+		private final Keyword cAxisNamespaceKeyword_7_0_0 = (Keyword)cAxisAssignment_7_0.eContents().get(0);
+		private final Keyword cColonColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		
-		//AbbrevForwardStep:
-		//	attr="@"? test=NodeTest;
+		//ForwardAxis:
+		//	axis="child" "::" | axis="descendant" "::" | axis="attribute" "::" | axis="self" "::" | axis="descendant-or-self" "::"
+		//	| axis="following-sibling" "::" | axis="following" "::" | axis="namespace" "::";
 		public ParserRule getRule() { return rule; }
 
-		//attr="@"? test=NodeTest
-		public Group getGroup() { return cGroup; }
+		//axis="child" "::" | axis="descendant" "::" | axis="attribute" "::" | axis="self" "::" | axis="descendant-or-self" "::" |
+		//axis="following-sibling" "::" | axis="following" "::" | axis="namespace" "::"
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//attr="@"?
-		public Assignment getAttrAssignment_0() { return cAttrAssignment_0; }
+		//axis="child" "::"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//axis="child"
+		public Assignment getAxisAssignment_0_0() { return cAxisAssignment_0_0; }
+
+		//"child"
+		public Keyword getAxisChildKeyword_0_0_0() { return cAxisChildKeyword_0_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_0_1() { return cColonColonKeyword_0_1; }
+
+		//axis="descendant" "::"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//axis="descendant"
+		public Assignment getAxisAssignment_1_0() { return cAxisAssignment_1_0; }
+
+		//"descendant"
+		public Keyword getAxisDescendantKeyword_1_0_0() { return cAxisDescendantKeyword_1_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_1_1() { return cColonColonKeyword_1_1; }
+
+		//axis="attribute" "::"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//axis="attribute"
+		public Assignment getAxisAssignment_2_0() { return cAxisAssignment_2_0; }
+
+		//"attribute"
+		public Keyword getAxisAttributeKeyword_2_0_0() { return cAxisAttributeKeyword_2_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_2_1() { return cColonColonKeyword_2_1; }
+
+		//axis="self" "::"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//axis="self"
+		public Assignment getAxisAssignment_3_0() { return cAxisAssignment_3_0; }
+
+		//"self"
+		public Keyword getAxisSelfKeyword_3_0_0() { return cAxisSelfKeyword_3_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_3_1() { return cColonColonKeyword_3_1; }
+
+		//axis="descendant-or-self" "::"
+		public Group getGroup_4() { return cGroup_4; }
+
+		//axis="descendant-or-self"
+		public Assignment getAxisAssignment_4_0() { return cAxisAssignment_4_0; }
+
+		//"descendant-or-self"
+		public Keyword getAxisDescendantOrSelfKeyword_4_0_0() { return cAxisDescendantOrSelfKeyword_4_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_4_1() { return cColonColonKeyword_4_1; }
+
+		//axis="following-sibling" "::"
+		public Group getGroup_5() { return cGroup_5; }
+
+		//axis="following-sibling"
+		public Assignment getAxisAssignment_5_0() { return cAxisAssignment_5_0; }
+
+		//"following-sibling"
+		public Keyword getAxisFollowingSiblingKeyword_5_0_0() { return cAxisFollowingSiblingKeyword_5_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_5_1() { return cColonColonKeyword_5_1; }
+
+		//axis="following" "::"
+		public Group getGroup_6() { return cGroup_6; }
+
+		//axis="following"
+		public Assignment getAxisAssignment_6_0() { return cAxisAssignment_6_0; }
+
+		//"following"
+		public Keyword getAxisFollowingKeyword_6_0_0() { return cAxisFollowingKeyword_6_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_6_1() { return cColonColonKeyword_6_1; }
+
+		//axis="namespace" "::"
+		public Group getGroup_7() { return cGroup_7; }
+
+		//axis="namespace"
+		public Assignment getAxisAssignment_7_0() { return cAxisAssignment_7_0; }
+
+		//"namespace"
+		public Keyword getAxisNamespaceKeyword_7_0_0() { return cAxisNamespaceKeyword_7_0_0; }
+
+		//"::"
+		public Keyword getColonColonKeyword_7_1() { return cColonColonKeyword_7_1; }
+	}
+
+	public class AbbrevForwardStepElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbbrevForwardStep");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cCommercialAtKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cNodeTestParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Action cAttributeTestAction_0_2 = (Action)cGroup_0.eContents().get(2);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cNodeTestParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Action cElementTestAction_1_1 = (Action)cGroup_1.eContents().get(1);
+		
+		//AbbrevForwardStep:
+		//	"@" NodeTest {Attribute.test=current} | NodeTest {Element.test=current};
+		public ParserRule getRule() { return rule; }
+
+		//"@" NodeTest {Attribute.test=current} | NodeTest {Element.test=current}
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"@" NodeTest {Attribute.test=current}
+		public Group getGroup_0() { return cGroup_0; }
 
 		//"@"
-		public Keyword getAttrCommercialAtKeyword_0_0() { return cAttrCommercialAtKeyword_0_0; }
-
-		//test=NodeTest
-		public Assignment getTestAssignment_1() { return cTestAssignment_1; }
+		public Keyword getCommercialAtKeyword_0_0() { return cCommercialAtKeyword_0_0; }
 
 		//NodeTest
-		public RuleCall getTestNodeTestParserRuleCall_1_0() { return cTestNodeTestParserRuleCall_1_0; }
+		public RuleCall getNodeTestParserRuleCall_0_1() { return cNodeTestParserRuleCall_0_1; }
+
+		//{Attribute.test=current}
+		public Action getAttributeTestAction_0_2() { return cAttributeTestAction_0_2; }
+
+		//NodeTest {Element.test=current}
+		public Group getGroup_1() { return cGroup_1; }
+
+		//NodeTest
+		public RuleCall getNodeTestParserRuleCall_1_0() { return cNodeTestParserRuleCall_1_0; }
+
+		//{Element.test=current}
+		public Action getElementTestAction_1_1() { return cElementTestAction_1_1; }
 	}
 
 	public class ReverseStepElements extends AbstractParserRuleElementFinder {
@@ -2374,6 +2536,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	private StepExprElements pStepExpr;
 	private AxisStepElements pAxisStep;
 	private ForwardStepElements pForwardStep;
+	private ForwardAxisElements pForwardAxis;
 	private AbbrevForwardStepElements pAbbrevForwardStep;
 	private ReverseStepElements pReverseStep;
 	private NodeTestElements pNodeTest;
@@ -2420,7 +2583,6 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tEMPTYITEMTYPE;
 	private TerminalRule tEMPTYSEQUENCETYPE;
 	private TerminalRule tREVERSEAXIS;
-	private TerminalRule tFORWARDAXIS;
 	private TerminalRule tNODECOMP;
 	private TerminalRule tVALUECOMP;
 	private TerminalRule tGENERALCOMP;
@@ -2706,7 +2868,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StepExpr:
-	//	FilterExpr | AxisStep;
+	//	stepExpr=FilterExpr | stepExpr=AxisStep;
 	public StepExprElements getStepExprAccess() {
 		return (pStepExpr != null) ? pStepExpr : (pStepExpr = new StepExprElements());
 	}
@@ -2726,7 +2888,7 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForwardStep:
-	//	forward=FORWARDAXIS test=NodeTest | abbrForward=AbbrevForwardStep;
+	//	forward=ForwardAxis test=NodeTest | abbrForward=AbbrevForwardStep;
 	public ForwardStepElements getForwardStepAccess() {
 		return (pForwardStep != null) ? pForwardStep : (pForwardStep = new ForwardStepElements());
 	}
@@ -2735,8 +2897,19 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 		return getForwardStepAccess().getRule();
 	}
 
+	//ForwardAxis:
+	//	axis="child" "::" | axis="descendant" "::" | axis="attribute" "::" | axis="self" "::" | axis="descendant-or-self" "::"
+	//	| axis="following-sibling" "::" | axis="following" "::" | axis="namespace" "::";
+	public ForwardAxisElements getForwardAxisAccess() {
+		return (pForwardAxis != null) ? pForwardAxis : (pForwardAxis = new ForwardAxisElements());
+	}
+	
+	public ParserRule getForwardAxisRule() {
+		return getForwardAxisAccess().getRule();
+	}
+
 	//AbbrevForwardStep:
-	//	attr="@"? test=NodeTest;
+	//	"@" NodeTest {Attribute.test=current} | NodeTest {Element.test=current};
 	public AbbrevForwardStepElements getAbbrevForwardStepAccess() {
 		return (pAbbrevForwardStep != null) ? pAbbrevForwardStep : (pAbbrevForwardStep = new AbbrevForwardStepElements());
 	}
@@ -3163,13 +3336,6 @@ public class XPathGrammarAccess extends AbstractGrammarElementFinder {
 	//	"parent" "::" | "ancestor" "::" | "preceding-sibling" "::" | "preceding" "::" | "ancestor-or-self" "::";
 	public TerminalRule getREVERSEAXISRule() {
 		return (tREVERSEAXIS != null) ? tREVERSEAXIS : (tREVERSEAXIS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REVERSEAXIS"));
-	} 
-
-	//terminal FORWARDAXIS:
-	//	"child" "::" | "descendant" "::" | "attribute" "::" | "self" "::" | "descendant-or-self" "::" | "following-sibling"
-	//	"::" | "following" "::" | "namespace" "::";
-	public TerminalRule getFORWARDAXISRule() {
-		return (tFORWARDAXIS != null) ? tFORWARDAXIS : (tFORWARDAXIS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FORWARDAXIS"));
 	} 
 
 	//terminal NODECOMP:

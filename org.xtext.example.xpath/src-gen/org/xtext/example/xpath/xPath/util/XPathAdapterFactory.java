@@ -15,6 +15,7 @@ import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.AtomicType;
 import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
@@ -23,6 +24,7 @@ import org.xtext.example.xpath.xPath.CastExpr;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
 import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
@@ -31,6 +33,7 @@ import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
 import org.xtext.example.xpath.xPath.IfExpr;
@@ -273,6 +276,11 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
         return createForwardStepAdapter();
       }
       @Override
+      public Adapter caseForwardAxis(ForwardAxis object)
+      {
+        return createForwardAxisAdapter();
+      }
+      @Override
       public Adapter caseAbbrevForwardStep(AbbrevForwardStep object)
       {
         return createAbbrevForwardStepAdapter();
@@ -481,6 +489,16 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDouble(org.xtext.example.xpath.xPath.Double object)
       {
         return createDoubleAdapter();
+      }
+      @Override
+      public Adapter caseAttribute(Attribute object)
+      {
+        return createAttributeAdapter();
+      }
+      @Override
+      public Adapter caseElement(Element object)
+      {
+        return createElementAdapter();
       }
       @Override
       public Adapter casePITTest(PITTest object)
@@ -895,6 +913,21 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createForwardStepAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.ForwardAxis <em>Forward Axis</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.ForwardAxis
+   * @generated
+   */
+  public Adapter createForwardAxisAdapter()
   {
     return null;
   }
@@ -1525,6 +1558,36 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDoubleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Attribute
+   * @generated
+   */
+  public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Element
+   * @generated
+   */
+  public Adapter createElementAdapter()
   {
     return null;
   }

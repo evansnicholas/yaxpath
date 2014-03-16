@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AxisStep extends StepExpr
+public interface AxisStep extends EObject
 {
   /**
    * Returns the value of the '<em><b>Step</b></em>' containment reference.

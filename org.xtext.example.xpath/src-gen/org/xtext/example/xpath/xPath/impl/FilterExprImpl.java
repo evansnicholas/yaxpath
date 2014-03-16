@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.PredicateList;
@@ -29,7 +30,7 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  *
  * @generated
  */
-public class FilterExprImpl extends StepExprImpl implements FilterExpr
+public class FilterExprImpl extends MinimalEObjectImpl.Container implements FilterExpr
 {
   /**
    * The cached value of the '{@link #getPrimary() <em>Primary</em>}' containment reference.

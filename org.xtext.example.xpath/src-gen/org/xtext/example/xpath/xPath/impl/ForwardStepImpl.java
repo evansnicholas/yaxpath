@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.XPathPackage;
@@ -34,24 +35,14 @@ import org.xtext.example.xpath.xPath.XPathPackage;
 public class ForwardStepImpl extends MinimalEObjectImpl.Container implements ForwardStep
 {
   /**
-   * The default value of the '{@link #getForward() <em>Forward</em>}' attribute.
+   * The cached value of the '{@link #getForward() <em>Forward</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getForward()
    * @generated
    * @ordered
    */
-  protected static final String FORWARD_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getForward() <em>Forward</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getForward()
-   * @generated
-   * @ordered
-   */
-  protected String forward = FORWARD_EDEFAULT;
+  protected ForwardAxis forward;
 
   /**
    * The cached value of the '{@link #getTest() <em>Test</em>}' containment reference.
@@ -99,7 +90,7 @@ public class ForwardStepImpl extends MinimalEObjectImpl.Container implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getForward()
+  public ForwardAxis getForward()
   {
     return forward;
   }
@@ -109,12 +100,37 @@ public class ForwardStepImpl extends MinimalEObjectImpl.Container implements For
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForward(String newForward)
+  public NotificationChain basicSetForward(ForwardAxis newForward, NotificationChain msgs)
   {
-    String oldForward = forward;
+    ForwardAxis oldForward = forward;
     forward = newForward;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.FORWARD_STEP__FORWARD, oldForward, forward));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.FORWARD_STEP__FORWARD, oldForward, newForward);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setForward(ForwardAxis newForward)
+  {
+    if (newForward != forward)
+    {
+      NotificationChain msgs = null;
+      if (forward != null)
+        msgs = ((InternalEObject)forward).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FORWARD_STEP__FORWARD, null, msgs);
+      if (newForward != null)
+        msgs = ((InternalEObject)newForward).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.FORWARD_STEP__FORWARD, null, msgs);
+      msgs = basicSetForward(newForward, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.FORWARD_STEP__FORWARD, newForward, newForward));
   }
 
   /**
@@ -223,6 +239,8 @@ public class ForwardStepImpl extends MinimalEObjectImpl.Container implements For
   {
     switch (featureID)
     {
+      case XPathPackage.FORWARD_STEP__FORWARD:
+        return basicSetForward(null, msgs);
       case XPathPackage.FORWARD_STEP__TEST:
         return basicSetTest(null, msgs);
       case XPathPackage.FORWARD_STEP__ABBR_FORWARD:
@@ -262,7 +280,7 @@ public class ForwardStepImpl extends MinimalEObjectImpl.Container implements For
     switch (featureID)
     {
       case XPathPackage.FORWARD_STEP__FORWARD:
-        setForward((String)newValue);
+        setForward((ForwardAxis)newValue);
         return;
       case XPathPackage.FORWARD_STEP__TEST:
         setTest((NodeTest)newValue);
@@ -285,7 +303,7 @@ public class ForwardStepImpl extends MinimalEObjectImpl.Container implements For
     switch (featureID)
     {
       case XPathPackage.FORWARD_STEP__FORWARD:
-        setForward(FORWARD_EDEFAULT);
+        setForward((ForwardAxis)null);
         return;
       case XPathPackage.FORWARD_STEP__TEST:
         setTest((NodeTest)null);
@@ -308,30 +326,13 @@ public class ForwardStepImpl extends MinimalEObjectImpl.Container implements For
     switch (featureID)
     {
       case XPathPackage.FORWARD_STEP__FORWARD:
-        return FORWARD_EDEFAULT == null ? forward != null : !FORWARD_EDEFAULT.equals(forward);
+        return forward != null;
       case XPathPackage.FORWARD_STEP__TEST:
         return test != null;
       case XPathPackage.FORWARD_STEP__ABBR_FORWARD:
         return abbrForward != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (forward: ");
-    result.append(forward);
-    result.append(')');
-    return result.toString();
   }
 
 } //ForwardStepImpl

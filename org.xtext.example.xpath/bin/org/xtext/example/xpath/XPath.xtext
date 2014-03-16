@@ -110,7 +110,7 @@ ExtraStepExpr returns StepExpr:
 ;
 
 StepExpr:
-	FilterExpr | AxisStep 
+	stepExpr=FilterExpr | stepExpr=AxisStep 
 ;
 
 AxisStep:
@@ -118,11 +118,22 @@ AxisStep:
 ;
 
 ForwardStep:
-	(forward=FORWARDAXIS test=NodeTest) | abbrForward=AbbrevForwardStep
+	(forward=ForwardAxis test=NodeTest) | abbrForward=AbbrevForwardStep
+;
+
+ForwardAxis:
+	  axis="child" "::"
+	| axis="descendant" "::"
+	| axis="attribute" "::"
+	| axis="self" "::"
+	| axis="descendant-or-self" "::"
+	| axis="following-sibling" "::"
+	| axis="following" "::"
+	| axis="namespace" "::"	
 ;
 
 AbbrevForwardStep:
-	attr="@"? test=NodeTest
+	"@" NodeTest {Attribute.test=current} | NodeTest {Element.test=current}
 ;
 
 ReverseStep:
@@ -325,17 +336,6 @@ terminal REVERSEAXIS:
 	| ("preceding-sibling" "::")
 	| ("preceding" "::")
 	| ("ancestor-or-self" "::")
-;
-	
-terminal FORWARDAXIS:
-	("child" "::")
-	| ("descendant" "::")
-	| ("attribute" "::")
-	| ("self" "::")
-	| ("descendant-or-self" "::")
-	| ("following-sibling" "::")
-	| ("following" "::")
-	| ("namespace" "::")	
 ;
 	
 terminal NODECOMP:

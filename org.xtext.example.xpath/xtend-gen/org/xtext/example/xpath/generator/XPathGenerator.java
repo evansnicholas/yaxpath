@@ -14,9 +14,13 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.example.xpath.constants.StepChoice;
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.FilterExpr;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.Literal;
 import org.xtext.example.xpath.xPath.NCName;
@@ -52,7 +56,7 @@ public class XPathGenerator implements IGenerator {
     for (final ValueExpr e : _filter) {
       {
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("def xpath(elem: Elem): IndexedSeq[Elem] = {");
+        _builder.append("def xpath(elem: Elem): IndexedSeq[Any] = {");
         _builder.newLine();
         _builder.append("\t\t\t\t  ");
         _builder.append("val documentElem = Elem(QName(\"documentNode\"))");
@@ -84,12 +88,11 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final RelSingle rs) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("totalElem.filterChildElems(");
+    _builder.append("totalElem");
     RelativePathExpr _relPathExpr = rs.getRelPathExpr();
     StepExpr _step = _relPathExpr.getStep();
-    Object _compile = this.compile(_step);
+    CharSequence _compile = this.compile(_step, Boolean.valueOf(true), StepChoice.SINGLE);
     _builder.append(_compile, "");
-    _builder.append(")");
     _builder.newLineIfNotEmpty();
     {
       RelativePathExpr _relPathExpr_1 = rs.getRelPathExpr();
@@ -113,12 +116,11 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final RelDouble rd) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("totalElem.filterElemsOrSelf(");
+    _builder.append("totalElem");
     RelativePathExpr _relPathExpr = rd.getRelPathExpr();
     StepExpr _step = _relPathExpr.getStep();
-    Object _compile = this.compile(_step);
+    CharSequence _compile = this.compile(_step, Boolean.valueOf(true), StepChoice.DOUBLE);
     _builder.append(_compile, "");
-    _builder.append(")");
     _builder.newLineIfNotEmpty();
     {
       RelativePathExpr _relPathExpr_1 = rd.getRelPathExpr();
@@ -142,28 +144,32 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final Single s) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".flatMap {  _.filterChildElems(");
     StepExpr _step = s.getStep();
-    Object _compile = this.compile(_step);
+    CharSequence _compile = this.compile(_step, Boolean.valueOf(false), StepChoice.SINGLE);
     _builder.append(_compile, "");
-    _builder.append(") }");
     return _builder;
   }
   
   protected CharSequence _compile(final org.xtext.example.xpath.xPath.Double d) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".flatMap { _.filterElemsOrSelf(");
     StepExpr _step = d.getStep();
-    Object _compile = this.compile(_step);
+    CharSequence _compile = this.compile(_step, Boolean.valueOf(false), StepChoice.DOUBLE);
     _builder.append(_compile, "");
-    _builder.append(") }");
     return _builder;
   }
   
-  protected CharSequence _compile(final AxisStep axs) {
+  protected CharSequence _compile(final StepExpr se, final Boolean isFirstStep, final StepChoice stepChoice) {
+    StringConcatenation _builder = new StringConcatenation();
+    EObject _stepExpr = se.getStepExpr();
+    Object _compile = this.compile(_stepExpr, isFirstStep, stepChoice);
+    _builder.append(_compile, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final AxisStep axs, final Boolean isFirstStep, final StepChoice stepChoice) {
     StringConcatenation _builder = new StringConcatenation();
     EObject _step = axs.getStep();
-    Object _compile = this.compile(_step);
+    Object _compile = this.compile(_step, isFirstStep, stepChoice);
     _builder.append(_compile, "");
     PredicateList _predicateList = axs.getPredicateList();
     Object _compile_1 = this.compile(_predicateList);
@@ -171,13 +177,13 @@ public class XPathGenerator implements IGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final ForwardStep fs) {
+  protected CharSequence _compile(final ForwardStep fs, final Boolean isFirstStep, final StepChoice stepChoice) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      String _forward = fs.getForward();
+      ForwardAxis _forward = fs.getForward();
       boolean _notEquals = (!Objects.equal(_forward, null));
       if (_notEquals) {
-        String _forward_1 = fs.getForward();
+        ForwardAxis _forward_1 = fs.getForward();
         _builder.append(_forward_1, "");
         NodeTest _test = fs.getTest();
         Object _compile = this.compile(_test);
@@ -189,27 +195,184 @@ public class XPathGenerator implements IGenerator {
       boolean _notEquals_1 = (!Objects.equal(_abbrForward, null));
       if (_notEquals_1) {
         AbbrevForwardStep _abbrForward_1 = fs.getAbbrForward();
-        Object _compile_1 = this.compile(_abbrForward_1);
+        Object _compile_1 = this.compile(_abbrForward_1, isFirstStep, stepChoice);
         _builder.append(_compile_1, "");
       }
     }
     return _builder;
   }
   
-  protected CharSequence _compile(final AbbrevForwardStep afs) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      String _attr = afs.getAttr();
-      boolean _notEquals = (!Objects.equal(_attr, null));
-      if (_notEquals) {
-        String _attr_1 = afs.getAttr();
-        _builder.append(_attr_1, "");
+  protected CharSequence _compile(final Element e, final Boolean isFirstStep, final StepChoice stepChoice) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (isFirstStep instanceof Boolean) {
+        if (((isFirstStep).booleanValue() == true)) {
+          _matched=true;
+          CharSequence _switchResult_1 = null;
+          boolean _matched_1 = false;
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
+              _matched_1=true;
+              StringConcatenation _builder = new StringConcatenation();
+              _builder.append(".filterChildElems { ");
+              NodeTest _test = e.getTest();
+              Object _compile = this.compile(_test);
+              _builder.append(_compile, "");
+              _builder.append(" }");
+              _switchResult_1 = _builder;
+            }
+          }
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
+              _matched_1=true;
+              StringConcatenation _builder_1 = new StringConcatenation();
+              _builder_1.append(".filterElemsOrSelf { ");
+              NodeTest _test_1 = e.getTest();
+              Object _compile_1 = this.compile(_test_1);
+              _builder_1.append(_compile_1, "");
+              _builder_1.append(" }");
+              _switchResult_1 = _builder_1;
+            }
+          }
+          _switchResult = _switchResult_1;
+        }
       }
     }
-    NodeTest _test = afs.getTest();
-    Object _compile = this.compile(_test);
-    _builder.append(_compile, "");
-    return _builder;
+    if (!_matched) {
+      if (isFirstStep instanceof Boolean) {
+        if (((isFirstStep).booleanValue() == false)) {
+          _matched=true;
+          CharSequence _switchResult_1 = null;
+          boolean _matched_1 = false;
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
+              _matched_1=true;
+              StringConcatenation _builder = new StringConcatenation();
+              _builder.append(".flatMap {  _.filterChildElems(");
+              NodeTest _test = e.getTest();
+              Object _compile = this.compile(_test);
+              _builder.append(_compile, "");
+              _builder.append(") }");
+              _switchResult_1 = _builder;
+            }
+          }
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
+              _matched_1=true;
+              StringConcatenation _builder_1 = new StringConcatenation();
+              _builder_1.append(".flatMap { _.filterElemsOrSelf(");
+              NodeTest _test_1 = e.getTest();
+              Object _compile_1 = this.compile(_test_1);
+              _builder_1.append(_compile_1, "");
+              _builder_1.append(") }");
+              _switchResult_1 = _builder_1;
+            }
+          }
+          _switchResult = _switchResult_1;
+        }
+      }
+    }
+    return _switchResult;
+  }
+  
+  protected CharSequence _compile(final Attribute a, final Boolean isFirstStep, final StepChoice stepChoice) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (isFirstStep instanceof Boolean) {
+        if (((isFirstStep).booleanValue() == true)) {
+          _matched=true;
+          CharSequence _switchResult_1 = null;
+          boolean _matched_1 = false;
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
+              _matched_1=true;
+              StringConcatenation _builder = new StringConcatenation();
+              _builder.append(".filterChildElems { elem => elem.attributeOption(");
+              NodeTest _test = a.getTest();
+              Object _compile = this.compile(_test);
+              _builder.append(_compile, "");
+              _builder.append(").isDefined }");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t\t\t                     ");
+              _builder.append(".map { _.attribute(");
+              NodeTest _test_1 = a.getTest();
+              Object _compile_1 = this.compile(_test_1);
+              _builder.append(_compile_1, "\t\t\t                     ");
+              _builder.append(") }");
+              _switchResult_1 = _builder;
+            }
+          }
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
+              _matched_1=true;
+              StringConcatenation _builder_1 = new StringConcatenation();
+              _builder_1.append(".filterElemsOrSelf { elem => elem.attributeOption(");
+              NodeTest _test_2 = a.getTest();
+              Object _compile_2 = this.compile(_test_2);
+              _builder_1.append(_compile_2, "");
+              _builder_1.append(").isDefined }");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("\t\t\t                     ");
+              _builder_1.append(".map { _.attribute(");
+              NodeTest _test_3 = a.getTest();
+              Object _compile_3 = this.compile(_test_3);
+              _builder_1.append(_compile_3, "\t\t\t                     ");
+              _builder_1.append(") }");
+              _switchResult_1 = _builder_1;
+            }
+          }
+          _switchResult = _switchResult_1;
+        }
+      }
+    }
+    if (!_matched) {
+      if (isFirstStep instanceof Boolean) {
+        if (((isFirstStep).booleanValue() == false)) {
+          _matched=true;
+          CharSequence _switchResult_1 = null;
+          boolean _matched_1 = false;
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
+              _matched_1=true;
+              StringConcatenation _builder = new StringConcatenation();
+              _builder.append(".collect {  case elem if elem.attributeOption(");
+              NodeTest _test = a.getTest();
+              Object _compile = this.compile(_test);
+              _builder.append(_compile, "");
+              _builder.append(").isDefined =>  elem.attribute(");
+              NodeTest _test_1 = a.getTest();
+              Object _compile_1 = this.compile(_test_1);
+              _builder.append(_compile_1, "");
+              _builder.append(") }");
+              _switchResult_1 = _builder;
+            }
+          }
+          if (!_matched_1) {
+            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
+              _matched_1=true;
+              StringConcatenation _builder_1 = new StringConcatenation();
+              _builder_1.append(".flatMap { _.filterElemsOrSelf { elem => elem.attributeOption(");
+              NodeTest _test_2 = a.getTest();
+              Object _compile_2 = this.compile(_test_2);
+              _builder_1.append(_compile_2, "");
+              _builder_1.append(").isDefined }");
+              _builder_1.newLineIfNotEmpty();
+              _builder_1.append("\t\t\t                     ");
+              _builder_1.append(".map { _.attribute(");
+              NodeTest _test_3 = a.getTest();
+              Object _compile_3 = this.compile(_test_3);
+              _builder_1.append(_compile_3, "\t\t\t                     ");
+              _builder_1.append(") }");
+              _switchResult_1 = _builder_1;
+            }
+          }
+          _switchResult = _switchResult_1;
+        }
+      }
+    }
+    return _switchResult;
   }
   
   protected CharSequence _compile(final NodeTest not) {
@@ -303,40 +466,51 @@ public class XPathGenerator implements IGenerator {
     return null;
   }
   
-  public CharSequence compile(final EObject axs) {
-    if (axs instanceof AxisStep) {
-      return _compile((AxisStep)axs);
-    } else if (axs instanceof org.xtext.example.xpath.xPath.Double) {
-      return _compile((org.xtext.example.xpath.xPath.Double)axs);
-    } else if (axs instanceof FilterExpr) {
-      return _compile((FilterExpr)axs);
-    } else if (axs instanceof RelDouble) {
-      return _compile((RelDouble)axs);
-    } else if (axs instanceof RelSingle) {
-      return _compile((RelSingle)axs);
-    } else if (axs instanceof Single) {
-      return _compile((Single)axs);
-    } else if (axs instanceof UnprefixedName) {
-      return _compile((UnprefixedName)axs);
-    } else if (axs instanceof AbbrevForwardStep) {
-      return _compile((AbbrevForwardStep)axs);
-    } else if (axs instanceof ForwardStep) {
-      return _compile((ForwardStep)axs);
-    } else if (axs instanceof Literal) {
-      return _compile((Literal)axs);
-    } else if (axs instanceof NameTest) {
-      return _compile((NameTest)axs);
-    } else if (axs instanceof NodeTest) {
-      return _compile((NodeTest)axs);
-    } else if (axs instanceof PrimaryExpr) {
-      return _compile((PrimaryExpr)axs);
-    } else if (axs instanceof ValueExpr) {
-      return _compile((ValueExpr)axs);
-    } else if (axs != null) {
-      return _compile(axs);
+  public CharSequence compile(final EObject d) {
+    if (d instanceof org.xtext.example.xpath.xPath.Double) {
+      return _compile((org.xtext.example.xpath.xPath.Double)d);
+    } else if (d instanceof NodeTest) {
+      return _compile((NodeTest)d);
+    } else if (d instanceof RelDouble) {
+      return _compile((RelDouble)d);
+    } else if (d instanceof RelSingle) {
+      return _compile((RelSingle)d);
+    } else if (d instanceof Single) {
+      return _compile((Single)d);
+    } else if (d instanceof UnprefixedName) {
+      return _compile((UnprefixedName)d);
+    } else if (d instanceof FilterExpr) {
+      return _compile((FilterExpr)d);
+    } else if (d instanceof Literal) {
+      return _compile((Literal)d);
+    } else if (d instanceof NameTest) {
+      return _compile((NameTest)d);
+    } else if (d instanceof PrimaryExpr) {
+      return _compile((PrimaryExpr)d);
+    } else if (d instanceof ValueExpr) {
+      return _compile((ValueExpr)d);
+    } else if (d != null) {
+      return _compile(d);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(axs).toString());
+        Arrays.<Object>asList(d).toString());
+    }
+  }
+  
+  public CharSequence compile(final EObject a, final Boolean isFirstStep, final StepChoice stepChoice) {
+    if (a instanceof Attribute) {
+      return _compile((Attribute)a, isFirstStep, stepChoice);
+    } else if (a instanceof Element) {
+      return _compile((Element)a, isFirstStep, stepChoice);
+    } else if (a instanceof AxisStep) {
+      return _compile((AxisStep)a, isFirstStep, stepChoice);
+    } else if (a instanceof ForwardStep) {
+      return _compile((ForwardStep)a, isFirstStep, stepChoice);
+    } else if (a instanceof StepExpr) {
+      return _compile((StepExpr)a, isFirstStep, stepChoice);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(a, isFirstStep, stepChoice).toString());
     }
   }
 }

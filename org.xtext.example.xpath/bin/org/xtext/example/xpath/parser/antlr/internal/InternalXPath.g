@@ -1734,26 +1734,44 @@ ruleStepExpr returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
-    { 
-        newCompositeNode(grammarAccess.getStepExprAccess().getFilterExprParserRuleCall_0()); 
-    }
-    this_FilterExpr_0=ruleFilterExpr
-    { 
-        $current = $this_FilterExpr_0.current; 
-        afterParserOrEnumRuleCall();
-    }
+		{ 
+	        newCompositeNode(grammarAccess.getStepExprAccess().getStepExprFilterExprParserRuleCall_0_0()); 
+	    }
+		lv_stepExpr_0_0=ruleFilterExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStepExprRule());
+	        }
+       		set(
+       			$current, 
+       			"stepExpr",
+        		lv_stepExpr_0_0, 
+        		"FilterExpr");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    |
-    { 
-        newCompositeNode(grammarAccess.getStepExprAccess().getAxisStepParserRuleCall_1()); 
-    }
-    this_AxisStep_1=ruleAxisStep
-    { 
-        $current = $this_AxisStep_1.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStepExprAccess().getStepExprAxisStepParserRuleCall_1_0()); 
+	    }
+		lv_stepExpr_1_0=ruleAxisStep		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStepExprRule());
+	        }
+       		set(
+       			$current, 
+       			"stepExpr",
+        		lv_stepExpr_1_0, 
+        		"AxisStep");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 
@@ -1852,19 +1870,19 @@ ruleForwardStep returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_forward_0_0=RULE_FORWARDAXIS
-		{
-			newLeafNode(lv_forward_0_0, grammarAccess.getForwardStepAccess().getForwardFORWARDAXISTerminalRuleCall_0_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getForwardStepAccess().getForwardForwardAxisParserRuleCall_0_0_0()); 
+	    }
+		lv_forward_0_0=ruleForwardAxis		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getForwardStepRule());
+	            $current = createModelElementForParent(grammarAccess.getForwardStepRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"forward",
         		lv_forward_0_0, 
-        		"FORWARDAXIS");
+        		"ForwardAxis");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -1912,6 +1930,186 @@ ruleForwardStep returns [EObject current=null]
 
 
 
+// Entry rule entryRuleForwardAxis
+entryRuleForwardAxis returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getForwardAxisRule()); }
+	 iv_ruleForwardAxis=ruleForwardAxis 
+	 { $current=$iv_ruleForwardAxis.current; } 
+	 EOF 
+;
+
+// Rule ForwardAxis
+ruleForwardAxis returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(((
+(
+		lv_axis_0_0=	'child' 
+    {
+        newLeafNode(lv_axis_0_0, grammarAccess.getForwardAxisAccess().getAxisChildKeyword_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_0_0, "child");
+	    }
+
+)
+)	otherlv_1='::' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getForwardAxisAccess().getColonColonKeyword_0_1());
+    }
+)
+    |((
+(
+		lv_axis_2_0=	'descendant' 
+    {
+        newLeafNode(lv_axis_2_0, grammarAccess.getForwardAxisAccess().getAxisDescendantKeyword_1_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_2_0, "descendant");
+	    }
+
+)
+)	otherlv_3='::' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getForwardAxisAccess().getColonColonKeyword_1_1());
+    }
+)
+    |((
+(
+		lv_axis_4_0=	'attribute' 
+    {
+        newLeafNode(lv_axis_4_0, grammarAccess.getForwardAxisAccess().getAxisAttributeKeyword_2_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_4_0, "attribute");
+	    }
+
+)
+)	otherlv_5='::' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getForwardAxisAccess().getColonColonKeyword_2_1());
+    }
+)
+    |((
+(
+		lv_axis_6_0=	'self' 
+    {
+        newLeafNode(lv_axis_6_0, grammarAccess.getForwardAxisAccess().getAxisSelfKeyword_3_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_6_0, "self");
+	    }
+
+)
+)	otherlv_7='::' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getForwardAxisAccess().getColonColonKeyword_3_1());
+    }
+)
+    |((
+(
+		lv_axis_8_0=	'descendant-or-self' 
+    {
+        newLeafNode(lv_axis_8_0, grammarAccess.getForwardAxisAccess().getAxisDescendantOrSelfKeyword_4_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_8_0, "descendant-or-self");
+	    }
+
+)
+)	otherlv_9='::' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getForwardAxisAccess().getColonColonKeyword_4_1());
+    }
+)
+    |((
+(
+		lv_axis_10_0=	'following-sibling' 
+    {
+        newLeafNode(lv_axis_10_0, grammarAccess.getForwardAxisAccess().getAxisFollowingSiblingKeyword_5_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_10_0, "following-sibling");
+	    }
+
+)
+)	otherlv_11='::' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getForwardAxisAccess().getColonColonKeyword_5_1());
+    }
+)
+    |((
+(
+		lv_axis_12_0=	'following' 
+    {
+        newLeafNode(lv_axis_12_0, grammarAccess.getForwardAxisAccess().getAxisFollowingKeyword_6_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_12_0, "following");
+	    }
+
+)
+)	otherlv_13='::' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getForwardAxisAccess().getColonColonKeyword_6_1());
+    }
+)
+    |((
+(
+		lv_axis_14_0=	'namespace' 
+    {
+        newLeafNode(lv_axis_14_0, grammarAccess.getForwardAxisAccess().getAxisNamespaceKeyword_7_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForwardAxisRule());
+	        }
+       		setWithLastConsumed($current, "axis", lv_axis_14_0, "namespace");
+	    }
+
+)
+)	otherlv_15='::' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getForwardAxisAccess().getColonColonKeyword_7_1());
+    }
+))
+;
+
+
+
+
+
 // Entry rule entryRuleAbbrevForwardStep
 entryRuleAbbrevForwardStep returns [EObject current=null] 
 	:
@@ -1926,40 +2124,42 @@ ruleAbbrevForwardStep returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
-(
-		lv_attr_0_0=	'@' 
+((	otherlv_0='@' 
     {
-        newLeafNode(lv_attr_0_0, grammarAccess.getAbbrevForwardStepAccess().getAttrCommercialAtKeyword_0_0());
+    	newLeafNode(otherlv_0, grammarAccess.getAbbrevForwardStepAccess().getCommercialAtKeyword_0_0());
     }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAbbrevForwardStepRule());
-	        }
-       		setWithLastConsumed($current, "attr", lv_attr_0_0, "@");
-	    }
 
-)
-)?(
+    { 
+        newCompositeNode(grammarAccess.getAbbrevForwardStepAccess().getNodeTestParserRuleCall_0_1()); 
+    }
+    this_NodeTest_1=ruleNodeTest
+    { 
+        $current = $this_NodeTest_1.current; 
+        afterParserOrEnumRuleCall();
+    }
 (
-		{ 
-	        newCompositeNode(grammarAccess.getAbbrevForwardStepAccess().getTestNodeTestParserRuleCall_1_0()); 
-	    }
-		lv_test_1_0=ruleNodeTest		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getAbbrevForwardStepRule());
-	        }
-       		set(
-       			$current, 
-       			"test",
-        		lv_test_1_0, 
-        		"NodeTest");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getAbbrevForwardStepAccess().getAttributeTestAction_0_2(),
+            $current);
+    }
 ))
+    |(
+    { 
+        newCompositeNode(grammarAccess.getAbbrevForwardStepAccess().getNodeTestParserRuleCall_1_0()); 
+    }
+    this_NodeTest_3=ruleNodeTest
+    { 
+        $current = $this_NodeTest_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+(
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getAbbrevForwardStepAccess().getElementTestAction_1_1(),
+            $current);
+    }
+)))
 ;
 
 
@@ -4214,8 +4414,6 @@ RULE_EMPTYITEMTYPE : 'item' '(' ')';
 RULE_EMPTYSEQUENCETYPE : 'empty-sequence' '(' ')';
 
 RULE_REVERSEAXIS : ('parent' '::'|'ancestor' '::'|'preceding-sibling' '::'|'preceding' '::'|'ancestor-or-self' '::');
-
-RULE_FORWARDAXIS : ('child' '::'|'descendant' '::'|'attribute' '::'|'self' '::'|'descendant-or-self' '::'|'following-sibling' '::'|'following' '::'|'namespace' '::');
 
 RULE_NODECOMP : ('is'|'<<'|'>>');
 

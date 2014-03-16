@@ -927,13 +927,31 @@ public interface XPathPackage extends EPackage
   int STEP_EXPR = 23;
 
   /**
+   * The feature id for the '<em><b>Step Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_EXPR__STEP_EXPR = 0;
+
+  /**
+   * The feature id for the '<em><b>Step</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_EXPR__STEP = 1;
+
+  /**
    * The number of structural features of the '<em>Step Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP_EXPR_FEATURE_COUNT = 0;
+  int STEP_EXPR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl <em>Axis Step</em>}' class.
@@ -952,7 +970,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AXIS_STEP__STEP = STEP_EXPR_FEATURE_COUNT + 0;
+  int AXIS_STEP__STEP = 0;
 
   /**
    * The feature id for the '<em><b>Predicate List</b></em>' containment reference.
@@ -961,7 +979,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AXIS_STEP__PREDICATE_LIST = STEP_EXPR_FEATURE_COUNT + 1;
+  int AXIS_STEP__PREDICATE_LIST = 1;
 
   /**
    * The number of structural features of the '<em>Axis Step</em>' class.
@@ -970,7 +988,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AXIS_STEP_FEATURE_COUNT = STEP_EXPR_FEATURE_COUNT + 2;
+  int AXIS_STEP_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ForwardStepImpl <em>Forward Step</em>}' class.
@@ -983,7 +1001,7 @@ public interface XPathPackage extends EPackage
   int FORWARD_STEP = 25;
 
   /**
-   * The feature id for the '<em><b>Forward</b></em>' attribute.
+   * The feature id for the '<em><b>Forward</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1019,6 +1037,34 @@ public interface XPathPackage extends EPackage
   int FORWARD_STEP_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ForwardAxisImpl <em>Forward Axis</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.ForwardAxisImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getForwardAxis()
+   * @generated
+   */
+  int FORWARD_AXIS = 26;
+
+  /**
+   * The feature id for the '<em><b>Axis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORWARD_AXIS__AXIS = 0;
+
+  /**
+   * The number of structural features of the '<em>Forward Axis</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORWARD_AXIS_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.AbbrevForwardStepImpl <em>Abbrev Forward Step</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1026,25 +1072,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAbbrevForwardStep()
    * @generated
    */
-  int ABBREV_FORWARD_STEP = 26;
-
-  /**
-   * The feature id for the '<em><b>Attr</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABBREV_FORWARD_STEP__ATTR = 0;
-
-  /**
-   * The feature id for the '<em><b>Test</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABBREV_FORWARD_STEP__TEST = 1;
+  int ABBREV_FORWARD_STEP = 27;
 
   /**
    * The number of structural features of the '<em>Abbrev Forward Step</em>' class.
@@ -1053,7 +1081,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABBREV_FORWARD_STEP_FEATURE_COUNT = 2;
+  int ABBREV_FORWARD_STEP_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ReverseStepImpl <em>Reverse Step</em>}' class.
@@ -1063,7 +1091,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getReverseStep()
    * @generated
    */
-  int REVERSE_STEP = 27;
+  int REVERSE_STEP = 28;
 
   /**
    * The feature id for the '<em><b>Reverse</b></em>' attribute.
@@ -1109,7 +1137,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNodeTest()
    * @generated
    */
-  int NODE_TEST = 28;
+  int NODE_TEST = 29;
 
   /**
    * The feature id for the '<em><b>Test</b></em>' containment reference.
@@ -1118,7 +1146,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_TEST__TEST = 0;
+  int NODE_TEST__TEST = ABBREV_FORWARD_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Node Test</em>' class.
@@ -1127,7 +1155,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_TEST_FEATURE_COUNT = 1;
+  int NODE_TEST_FEATURE_COUNT = ABBREV_FORWARD_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.NameTestImpl <em>Name Test</em>}' class.
@@ -1137,7 +1165,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNameTest()
    * @generated
    */
-  int NAME_TEST = 29;
+  int NAME_TEST = 30;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -1174,7 +1202,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getWildcard()
    * @generated
    */
-  int WILDCARD = 30;
+  int WILDCARD = 31;
 
   /**
    * The feature id for the '<em><b>Wild</b></em>' attribute.
@@ -1220,7 +1248,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getFilterExpr()
    * @generated
    */
-  int FILTER_EXPR = 31;
+  int FILTER_EXPR = 32;
 
   /**
    * The feature id for the '<em><b>Primary</b></em>' containment reference.
@@ -1229,7 +1257,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_EXPR__PRIMARY = STEP_EXPR_FEATURE_COUNT + 0;
+  int FILTER_EXPR__PRIMARY = 0;
 
   /**
    * The feature id for the '<em><b>Predicate List</b></em>' containment reference.
@@ -1238,7 +1266,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_EXPR__PREDICATE_LIST = STEP_EXPR_FEATURE_COUNT + 1;
+  int FILTER_EXPR__PREDICATE_LIST = 1;
 
   /**
    * The number of structural features of the '<em>Filter Expr</em>' class.
@@ -1247,7 +1275,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_EXPR_FEATURE_COUNT = STEP_EXPR_FEATURE_COUNT + 2;
+  int FILTER_EXPR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.PredicateListImpl <em>Predicate List</em>}' class.
@@ -1257,7 +1285,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPredicateList()
    * @generated
    */
-  int PREDICATE_LIST = 32;
+  int PREDICATE_LIST = 33;
 
   /**
    * The feature id for the '<em><b>Predicates</b></em>' containment reference list.
@@ -1285,7 +1313,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPredicate()
    * @generated
    */
-  int PREDICATE = 33;
+  int PREDICATE = 34;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1313,7 +1341,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPrimaryExpr()
    * @generated
    */
-  int PRIMARY_EXPR = 34;
+  int PRIMARY_EXPR = 35;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' containment reference.
@@ -1377,7 +1405,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 35;
+  int LITERAL = 36;
 
   /**
    * The feature id for the '<em><b>Num</b></em>' containment reference.
@@ -1414,7 +1442,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 36;
+  int NUMERIC_LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Int Lit</b></em>' attribute.
@@ -1460,7 +1488,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getVarRef()
    * @generated
    */
-  int VAR_REF = 37;
+  int VAR_REF = 38;
 
   /**
    * The number of structural features of the '<em>Var Ref</em>' class.
@@ -1479,7 +1507,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getVarName()
    * @generated
    */
-  int VAR_NAME = 38;
+  int VAR_NAME = 39;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -1507,7 +1535,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getParenthesizedExpr()
    * @generated
    */
-  int PARENTHESIZED_EXPR = 39;
+  int PARENTHESIZED_EXPR = 40;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1535,7 +1563,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 40;
+  int FUNCTION_CALL = 41;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -1581,7 +1609,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSingleType()
    * @generated
    */
-  int SINGLE_TYPE = 41;
+  int SINGLE_TYPE = 42;
 
   /**
    * The number of structural features of the '<em>Single Type</em>' class.
@@ -1600,7 +1628,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSequenceType()
    * @generated
    */
-  int SEQUENCE_TYPE = 42;
+  int SEQUENCE_TYPE = 43;
 
   /**
    * The feature id for the '<em><b>Empty</b></em>' attribute.
@@ -1646,7 +1674,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getItemType()
    * @generated
    */
-  int ITEM_TYPE = 43;
+  int ITEM_TYPE = 44;
 
   /**
    * The feature id for the '<em><b>Kind Test</b></em>' containment reference.
@@ -1692,7 +1720,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAtomicType()
    * @generated
    */
-  int ATOMIC_TYPE = 44;
+  int ATOMIC_TYPE = 45;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1720,7 +1748,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getKindTest()
    * @generated
    */
-  int KIND_TEST = 45;
+  int KIND_TEST = 46;
 
   /**
    * The feature id for the '<em><b>Doc Test</b></em>' containment reference.
@@ -1820,7 +1848,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDocumentTest()
    * @generated
    */
-  int DOCUMENT_TEST = 46;
+  int DOCUMENT_TEST = 47;
 
   /**
    * The feature id for the '<em><b>Elem Test</b></em>' containment reference.
@@ -1857,7 +1885,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPITest()
    * @generated
    */
-  int PI_TEST = 47;
+  int PI_TEST = 48;
 
   /**
    * The number of structural features of the '<em>PI Test</em>' class.
@@ -1876,7 +1904,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttributeTest()
    * @generated
    */
-  int ATTRIBUTE_TEST = 48;
+  int ATTRIBUTE_TEST = 49;
 
   /**
    * The feature id for the '<em><b>Attr Or Wild</b></em>' containment reference.
@@ -1913,7 +1941,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttribNameOrWildcard()
    * @generated
    */
-  int ATTRIB_NAME_OR_WILDCARD = 49;
+  int ATTRIB_NAME_OR_WILDCARD = 50;
 
   /**
    * The feature id for the '<em><b>Att Name</b></em>' containment reference.
@@ -1941,7 +1969,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSchemaAttributeTest()
    * @generated
    */
-  int SCHEMA_ATTRIBUTE_TEST = 50;
+  int SCHEMA_ATTRIBUTE_TEST = 51;
 
   /**
    * The feature id for the '<em><b>Att Dec</b></em>' containment reference.
@@ -1969,7 +1997,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttributeDeclaration()
    * @generated
    */
-  int ATTRIBUTE_DECLARATION = 51;
+  int ATTRIBUTE_DECLARATION = 52;
 
   /**
    * The feature id for the '<em><b>Att Name</b></em>' containment reference.
@@ -1997,7 +2025,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementTest()
    * @generated
    */
-  int ELEMENT_TEST = 52;
+  int ELEMENT_TEST = 53;
 
   /**
    * The feature id for the '<em><b>Elem Or Wild</b></em>' containment reference.
@@ -2034,7 +2062,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementNameOrWildcard()
    * @generated
    */
-  int ELEMENT_NAME_OR_WILDCARD = 53;
+  int ELEMENT_NAME_OR_WILDCARD = 54;
 
   /**
    * The feature id for the '<em><b>Elem Name</b></em>' containment reference.
@@ -2062,7 +2090,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSchemaElementTest()
    * @generated
    */
-  int SCHEMA_ELEMENT_TEST = 54;
+  int SCHEMA_ELEMENT_TEST = 55;
 
   /**
    * The feature id for the '<em><b>Elem Dec</b></em>' containment reference.
@@ -2090,7 +2118,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementDeclaration()
    * @generated
    */
-  int ELEMENT_DECLARATION = 55;
+  int ELEMENT_DECLARATION = 56;
 
   /**
    * The number of structural features of the '<em>Element Declaration</em>' class.
@@ -2109,7 +2137,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttributeName()
    * @generated
    */
-  int ATTRIBUTE_NAME = 56;
+  int ATTRIBUTE_NAME = 57;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -2137,7 +2165,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementName()
    * @generated
    */
-  int ELEMENT_NAME = 57;
+  int ELEMENT_NAME = 58;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -2165,7 +2193,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getTypeName()
    * @generated
    */
-  int TYPE_NAME = 58;
+  int TYPE_NAME = 59;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -2193,7 +2221,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNCName()
    * @generated
    */
-  int NC_NAME = 59;
+  int NC_NAME = 60;
 
   /**
    * The feature id for the '<em><b>Nc Name</b></em>' attribute.
@@ -2221,7 +2249,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getQName()
    * @generated
    */
-  int QNAME = 60;
+  int QNAME = 61;
 
   /**
    * The feature id for the '<em><b>Local Part</b></em>' containment reference.
@@ -2249,7 +2277,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPrefixedName()
    * @generated
    */
-  int PREFIXED_NAME = 61;
+  int PREFIXED_NAME = 62;
 
   /**
    * The feature id for the '<em><b>Local Part</b></em>' containment reference.
@@ -2286,7 +2314,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnprefixedName()
    * @generated
    */
-  int UNPREFIXED_NAME = 62;
+  int UNPREFIXED_NAME = 63;
 
   /**
    * The feature id for the '<em><b>Local Part</b></em>' containment reference.
@@ -2314,7 +2342,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelSingle()
    * @generated
    */
-  int REL_SINGLE = 63;
+  int REL_SINGLE = 64;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2342,7 +2370,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelDouble()
    * @generated
    */
-  int REL_DOUBLE = 64;
+  int REL_DOUBLE = 65;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2370,7 +2398,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelNoSelector()
    * @generated
    */
-  int REL_NO_SELECTOR = 65;
+  int REL_NO_SELECTOR = 66;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2398,7 +2426,16 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSingle()
    * @generated
    */
-  int SINGLE = 66;
+  int SINGLE = 67;
+
+  /**
+   * The feature id for the '<em><b>Step Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE__STEP_EXPR = STEP_EXPR__STEP_EXPR;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference.
@@ -2407,7 +2444,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE__STEP = STEP_EXPR_FEATURE_COUNT + 0;
+  int SINGLE__STEP = STEP_EXPR__STEP;
 
   /**
    * The number of structural features of the '<em>Single</em>' class.
@@ -2416,7 +2453,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_FEATURE_COUNT = STEP_EXPR_FEATURE_COUNT + 1;
+  int SINGLE_FEATURE_COUNT = STEP_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.DoubleImpl <em>Double</em>}' class.
@@ -2426,7 +2463,16 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDouble()
    * @generated
    */
-  int DOUBLE = 67;
+  int DOUBLE = 68;
+
+  /**
+   * The feature id for the '<em><b>Step Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE__STEP_EXPR = STEP_EXPR__STEP_EXPR;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference.
@@ -2435,7 +2481,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOUBLE__STEP = STEP_EXPR_FEATURE_COUNT + 0;
+  int DOUBLE__STEP = STEP_EXPR__STEP;
 
   /**
    * The number of structural features of the '<em>Double</em>' class.
@@ -2444,7 +2490,63 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOUBLE_FEATURE_COUNT = STEP_EXPR_FEATURE_COUNT + 1;
+  int DOUBLE_FEATURE_COUNT = STEP_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.AttributeImpl <em>Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.AttributeImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttribute()
+   * @generated
+   */
+  int ATTRIBUTE = 69;
+
+  /**
+   * The feature id for the '<em><b>Test</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__TEST = ABBREV_FORWARD_STEP_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_FEATURE_COUNT = ABBREV_FORWARD_STEP_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ElementImpl <em>Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.ElementImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElement()
+   * @generated
+   */
+  int ELEMENT = 70;
+
+  /**
+   * The feature id for the '<em><b>Test</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__TEST = ABBREV_FORWARD_STEP_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = ABBREV_FORWARD_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.PITTestImpl <em>PIT Test</em>}' class.
@@ -2454,7 +2556,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPITTest()
    * @generated
    */
-  int PIT_TEST = 68;
+  int PIT_TEST = 71;
 
   /**
    * The feature id for the '<em><b>Nc Name</b></em>' containment reference.
@@ -3242,6 +3344,28 @@ public interface XPathPackage extends EPackage
   EClass getStepExpr();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.StepExpr#getStepExpr <em>Step Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Step Expr</em>'.
+   * @see org.xtext.example.xpath.xPath.StepExpr#getStepExpr()
+   * @see #getStepExpr()
+   * @generated
+   */
+  EReference getStepExpr_StepExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.StepExpr#getStep <em>Step</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Step</em>'.
+   * @see org.xtext.example.xpath.xPath.StepExpr#getStep()
+   * @see #getStepExpr()
+   * @generated
+   */
+  EReference getStepExpr_Step();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.AxisStep <em>Axis Step</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3284,15 +3408,15 @@ public interface XPathPackage extends EPackage
   EClass getForwardStep();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ForwardStep#getForward <em>Forward</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ForwardStep#getForward <em>Forward</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Forward</em>'.
+   * @return the meta object for the containment reference '<em>Forward</em>'.
    * @see org.xtext.example.xpath.xPath.ForwardStep#getForward()
    * @see #getForwardStep()
    * @generated
    */
-  EAttribute getForwardStep_Forward();
+  EReference getForwardStep_Forward();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ForwardStep#getTest <em>Test</em>}'.
@@ -3317,6 +3441,27 @@ public interface XPathPackage extends EPackage
   EReference getForwardStep_AbbrForward();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.ForwardAxis <em>Forward Axis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Forward Axis</em>'.
+   * @see org.xtext.example.xpath.xPath.ForwardAxis
+   * @generated
+   */
+  EClass getForwardAxis();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ForwardAxis#getAxis <em>Axis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Axis</em>'.
+   * @see org.xtext.example.xpath.xPath.ForwardAxis#getAxis()
+   * @see #getForwardAxis()
+   * @generated
+   */
+  EAttribute getForwardAxis_Axis();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.AbbrevForwardStep <em>Abbrev Forward Step</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3325,28 +3470,6 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EClass getAbbrevForwardStep();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.AbbrevForwardStep#getAttr <em>Attr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Attr</em>'.
-   * @see org.xtext.example.xpath.xPath.AbbrevForwardStep#getAttr()
-   * @see #getAbbrevForwardStep()
-   * @generated
-   */
-  EAttribute getAbbrevForwardStep_Attr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.AbbrevForwardStep#getTest <em>Test</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Test</em>'.
-   * @see org.xtext.example.xpath.xPath.AbbrevForwardStep#getTest()
-   * @see #getAbbrevForwardStep()
-   * @generated
-   */
-  EReference getAbbrevForwardStep_Test();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.ReverseStep <em>Reverse Step</em>}'.
@@ -4453,17 +4576,6 @@ public interface XPathPackage extends EPackage
   EClass getSingle();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Single#getStep <em>Step</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Step</em>'.
-   * @see org.xtext.example.xpath.xPath.Single#getStep()
-   * @see #getSingle()
-   * @generated
-   */
-  EReference getSingle_Step();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Double <em>Double</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4474,15 +4586,46 @@ public interface XPathPackage extends EPackage
   EClass getDouble();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Double#getStep <em>Step</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Step</em>'.
-   * @see org.xtext.example.xpath.xPath.Double#getStep()
-   * @see #getDouble()
+   * @return the meta object for class '<em>Attribute</em>'.
+   * @see org.xtext.example.xpath.xPath.Attribute
    * @generated
    */
-  EReference getDouble_Step();
+  EClass getAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Attribute#getTest <em>Test</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Test</em>'.
+   * @see org.xtext.example.xpath.xPath.Attribute#getTest()
+   * @see #getAttribute()
+   * @generated
+   */
+  EReference getAttribute_Test();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element</em>'.
+   * @see org.xtext.example.xpath.xPath.Element
+   * @generated
+   */
+  EClass getElement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Element#getTest <em>Test</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Test</em>'.
+   * @see org.xtext.example.xpath.xPath.Element#getTest()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_Test();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.PITTest <em>PIT Test</em>}'.
@@ -5156,6 +5299,22 @@ public interface XPathPackage extends EPackage
     EClass STEP_EXPR = eINSTANCE.getStepExpr();
 
     /**
+     * The meta object literal for the '<em><b>Step Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP_EXPR__STEP_EXPR = eINSTANCE.getStepExpr_StepExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Step</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP_EXPR__STEP = eINSTANCE.getStepExpr_Step();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.AxisStepImpl <em>Axis Step</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5192,12 +5351,12 @@ public interface XPathPackage extends EPackage
     EClass FORWARD_STEP = eINSTANCE.getForwardStep();
 
     /**
-     * The meta object literal for the '<em><b>Forward</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Forward</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FORWARD_STEP__FORWARD = eINSTANCE.getForwardStep_Forward();
+    EReference FORWARD_STEP__FORWARD = eINSTANCE.getForwardStep_Forward();
 
     /**
      * The meta object literal for the '<em><b>Test</b></em>' containment reference feature.
@@ -5216,6 +5375,24 @@ public interface XPathPackage extends EPackage
     EReference FORWARD_STEP__ABBR_FORWARD = eINSTANCE.getForwardStep_AbbrForward();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ForwardAxisImpl <em>Forward Axis</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.ForwardAxisImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getForwardAxis()
+     * @generated
+     */
+    EClass FORWARD_AXIS = eINSTANCE.getForwardAxis();
+
+    /**
+     * The meta object literal for the '<em><b>Axis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORWARD_AXIS__AXIS = eINSTANCE.getForwardAxis_Axis();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.AbbrevForwardStepImpl <em>Abbrev Forward Step</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5224,22 +5401,6 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EClass ABBREV_FORWARD_STEP = eINSTANCE.getAbbrevForwardStep();
-
-    /**
-     * The meta object literal for the '<em><b>Attr</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ABBREV_FORWARD_STEP__ATTR = eINSTANCE.getAbbrevForwardStep_Attr();
-
-    /**
-     * The meta object literal for the '<em><b>Test</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ABBREV_FORWARD_STEP__TEST = eINSTANCE.getAbbrevForwardStep_Test();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ReverseStepImpl <em>Reverse Step</em>}' class.
@@ -6154,14 +6315,6 @@ public interface XPathPackage extends EPackage
     EClass SINGLE = eINSTANCE.getSingle();
 
     /**
-     * The meta object literal for the '<em><b>Step</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SINGLE__STEP = eINSTANCE.getSingle_Step();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.DoubleImpl <em>Double</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6172,12 +6325,40 @@ public interface XPathPackage extends EPackage
     EClass DOUBLE = eINSTANCE.getDouble();
 
     /**
-     * The meta object literal for the '<em><b>Step</b></em>' containment reference feature.
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.AttributeImpl <em>Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.AttributeImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttribute()
+     * @generated
+     */
+    EClass ATTRIBUTE = eINSTANCE.getAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Test</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOUBLE__STEP = eINSTANCE.getDouble_Step();
+    EReference ATTRIBUTE__TEST = eINSTANCE.getAttribute_Test();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ElementImpl <em>Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.ElementImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElement()
+     * @generated
+     */
+    EClass ELEMENT = eINSTANCE.getElement();
+
+    /**
+     * The meta object literal for the '<em><b>Test</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__TEST = eINSTANCE.getElement_Test();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.PITTestImpl <em>PIT Test</em>}' class.

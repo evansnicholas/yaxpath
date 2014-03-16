@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ForwardStep extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Forward</b></em>' attribute.
+   * Returns the value of the '<em><b>Forward</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Forward</em>' attribute isn't clear,
+   * If the meaning of the '<em>Forward</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Forward</em>' attribute.
-   * @see #setForward(String)
+   * @return the value of the '<em>Forward</em>' containment reference.
+   * @see #setForward(ForwardAxis)
    * @see org.xtext.example.xpath.xPath.XPathPackage#getForwardStep_Forward()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getForward();
+  ForwardAxis getForward();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ForwardStep#getForward <em>Forward</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ForwardStep#getForward <em>Forward</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Forward</em>' attribute.
+   * @param value the new value of the '<em>Forward</em>' containment reference.
    * @see #getForward()
    * @generated
    */
-  void setForward(String value);
+  void setForward(ForwardAxis value);
 
   /**
    * Returns the value of the '<em><b>Test</b></em>' containment reference.

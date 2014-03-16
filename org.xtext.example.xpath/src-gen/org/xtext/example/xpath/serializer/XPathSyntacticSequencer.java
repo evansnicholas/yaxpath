@@ -74,7 +74,7 @@ public class XPathSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     '-' | '+'
+	 *     '+' | '-'
 	 */
 	protected void emit_AdditiveExpr_HyphenMinusKeyword_1_0_1_or_PlusSignKeyword_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -98,7 +98,7 @@ public class XPathSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'idiv' | '*' | 'div' | 'mod'
+	 *     '*' | 'div' | 'idiv' | 'mod'
 	 */
 	protected void emit_MultiplicativeExpr_AsteriskKeyword_1_0_0_or_DivKeyword_1_0_1_or_IdivKeyword_1_0_2_or_ModKeyword_1_0_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -130,7 +130,7 @@ public class XPathSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'union' | '|'
+	 *     '|' | 'union'
 	 */
 	protected void emit_UnionExpr_UnionKeyword_1_0_0_or_VerticalLineKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

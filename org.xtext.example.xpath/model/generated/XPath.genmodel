@@ -98,20 +98,23 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RelativePathExpr/step"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RelativePathExpr/extraSteps"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//StepExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//StepExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//StepExpr/stepExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//StepExpr/step"/>
+    </genClasses>
     <genClasses ecoreClass="XPath.ecore#//AxisStep">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AxisStep/step"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AxisStep/predicateList"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ForwardStep">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ForwardStep/forward"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ForwardStep/forward"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ForwardStep/test"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ForwardStep/abbrForward"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//AbbrevForwardStep">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//AbbrevForwardStep/attr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AbbrevForwardStep/test"/>
+    <genClasses ecoreClass="XPath.ecore#//ForwardAxis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ForwardAxis/axis"/>
     </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//AbbrevForwardStep"/>
     <genClasses ecoreClass="XPath.ecore#//ReverseStep">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ReverseStep/reverse"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ReverseStep/test"/>
@@ -249,11 +252,13 @@
     <genClasses ecoreClass="XPath.ecore#//RelNoSelector">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RelNoSelector/relPathExpr"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//Single">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Single/step"/>
+    <genClasses ecoreClass="XPath.ecore#//Single"/>
+    <genClasses ecoreClass="XPath.ecore#//Double"/>
+    <genClasses ecoreClass="XPath.ecore#//Attribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Attribute/test"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//Double">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Double/step"/>
+    <genClasses ecoreClass="XPath.ecore#//Element">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Element/test"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//PITTest">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PITTest/ncName"/>

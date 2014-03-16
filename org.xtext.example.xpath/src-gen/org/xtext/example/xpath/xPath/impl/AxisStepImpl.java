@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.AxisStep;
 import org.xtext.example.xpath.xPath.PredicateList;
@@ -29,7 +30,7 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  *
  * @generated
  */
-public class AxisStepImpl extends StepExprImpl implements AxisStep
+public class AxisStepImpl extends MinimalEObjectImpl.Container implements AxisStep
 {
   /**
    * The cached value of the '{@link #getStep() <em>Step</em>}' containment reference.

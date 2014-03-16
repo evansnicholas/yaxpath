@@ -257,6 +257,15 @@ public interface XPathFactory extends EFactory
   ForwardStep createForwardStep();
 
   /**
+   * Returns a new object of class '<em>Forward Axis</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Forward Axis</em>'.
+   * @generated
+   */
+  ForwardAxis createForwardAxis();
+
+  /**
    * Returns a new object of class '<em>Abbrev Forward Step</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -633,6 +642,24 @@ public interface XPathFactory extends EFactory
    * @generated
    */
   Double createDouble();
+
+  /**
+   * Returns a new object of class '<em>Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute</em>'.
+   * @generated
+   */
+  Attribute createAttribute();
+
+  /**
+   * Returns a new object of class '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element</em>'.
+   * @generated
+   */
+  Element createElement();
 
   /**
    * Returns a new object of class '<em>PIT Test</em>'.

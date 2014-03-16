@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.XPathPackage;
@@ -28,7 +27,7 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  *
  * @generated
  */
-public class NodeTestImpl extends MinimalEObjectImpl.Container implements NodeTest
+public class NodeTestImpl extends AbbrevForwardStepImpl implements NodeTest
 {
   /**
    * The cached value of the '{@link #getTest() <em>Test</em>}' containment reference.

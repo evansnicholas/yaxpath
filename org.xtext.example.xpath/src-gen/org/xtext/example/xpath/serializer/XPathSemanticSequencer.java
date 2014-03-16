@@ -14,12 +14,12 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.xpath.services.XPathGrammarAccess;
-import org.xtext.example.xpath.xPath.AbbrevForwardStep;
 import org.xtext.example.xpath.xPath.AdditionalIn;
 import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.AtomicType;
 import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
@@ -28,12 +28,14 @@ import org.xtext.example.xpath.xPath.CastExpr;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
 import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
 import org.xtext.example.xpath.xPath.ElementTest;
 import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
 import org.xtext.example.xpath.xPath.IfExpr;
@@ -66,6 +68,7 @@ import org.xtext.example.xpath.xPath.SchemaElementTest;
 import org.xtext.example.xpath.xPath.SequenceType;
 import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
+import org.xtext.example.xpath.xPath.StepExpr;
 import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
@@ -84,12 +87,6 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == XPathPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case XPathPackage.ABBREV_FORWARD_STEP:
-				if(context == grammarAccess.getAbbrevForwardStepRule()) {
-					sequence_AbbrevForwardStep(context, (AbbrevForwardStep) semanticObject); 
-					return; 
-				}
-				else break;
 			case XPathPackage.ADDITIONAL_IN:
 				if(context == grammarAccess.getAdditionalInRule()) {
 					sequence_AdditionalIn(context, (AdditionalIn) semanticObject); 
@@ -121,6 +118,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.ATTRIBUTE:
+				if(context == grammarAccess.getAbbrevForwardStepRule()) {
+					sequence_AbbrevForwardStep(context, (Attribute) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.ATTRIBUTE_DECLARATION:
 				if(context == grammarAccess.getAttributeDeclarationRule()) {
 					sequence_AttributeDeclaration(context, (AttributeDeclaration) semanticObject); 
@@ -140,10 +143,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case XPathPackage.AXIS_STEP:
-				if(context == grammarAccess.getAxisStepRule() ||
-				   context == grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2() ||
-				   context == grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2() ||
-				   context == grammarAccess.getStepExprRule()) {
+				if(context == grammarAccess.getAxisStepRule()) {
 					sequence_AxisStep(context, (AxisStep) semanticObject); 
 					return; 
 				}
@@ -178,6 +178,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.ELEMENT:
+				if(context == grammarAccess.getAbbrevForwardStepRule()) {
+					sequence_AbbrevForwardStep(context, (Element) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.ELEMENT_NAME:
 				if(context == grammarAccess.getElementDeclarationRule() ||
 				   context == grammarAccess.getElementNameRule()) {
@@ -204,10 +210,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case XPathPackage.FILTER_EXPR:
-				if(context == grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2() ||
-				   context == grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2() ||
-				   context == grammarAccess.getFilterExprRule() ||
-				   context == grammarAccess.getStepExprRule()) {
+				if(context == grammarAccess.getFilterExprRule()) {
 					sequence_FilterExpr(context, (FilterExpr) semanticObject); 
 					return; 
 				}
@@ -216,6 +219,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				if(context == grammarAccess.getExprSingleRule() ||
 				   context == grammarAccess.getForExprRule()) {
 					sequence_ForExpr(context, (ForExpr) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.FORWARD_AXIS:
+				if(context == grammarAccess.getForwardAxisRule()) {
+					sequence_ForwardAxis(context, (ForwardAxis) semanticObject); 
 					return; 
 				}
 				else break;
@@ -287,7 +296,9 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case XPathPackage.NODE_TEST:
-				if(context == grammarAccess.getNodeTestRule()) {
+				if(context == grammarAccess.getAbbrevForwardStepAccess().getAttributeTestAction_0_2() ||
+				   context == grammarAccess.getAbbrevForwardStepAccess().getElementTestAction_1_1() ||
+				   context == grammarAccess.getNodeTestRule()) {
 					sequence_NodeTest(context, (NodeTest) semanticObject); 
 					return; 
 				}
@@ -418,6 +429,14 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.STEP_EXPR:
+				if(context == grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2() ||
+				   context == grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2() ||
+				   context == grammarAccess.getStepExprRule()) {
+					sequence_StepExpr(context, (StepExpr) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.TREAT_EXPR:
 				if(context == grammarAccess.getTreatExprRule()) {
 					sequence_TreatExpr(context, (TreatExpr) semanticObject); 
@@ -474,10 +493,33 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (attr='@'? test=NodeTest)
+	 *     test=AbbrevForwardStep_Attribute_0_2
 	 */
-	protected void sequence_AbbrevForwardStep(EObject context, AbbrevForwardStep semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_AbbrevForwardStep(EObject context, Attribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.ATTRIBUTE__TEST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.ATTRIBUTE__TEST));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAbbrevForwardStepAccess().getAttributeTestAction_0_2(), semanticObject.getTest());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     test=AbbrevForwardStep_Element_1_1
+	 */
+	protected void sequence_AbbrevForwardStep(EObject context, Element semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.ELEMENT__TEST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.ELEMENT__TEST));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAbbrevForwardStepAccess().getElementTestAction_1_1(), semanticObject.getTest());
+		feeder.finish();
 	}
 	
 	
@@ -677,14 +719,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     step=ExtraStepExpr_Double_1_2
 	 */
 	protected void sequence_ExtraStepExpr(EObject context, org.xtext.example.xpath.xPath.Double semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.DOUBLE__STEP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.DOUBLE__STEP));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExtraStepExprAccess().getDoubleStepAction_1_2(), semanticObject.getStep());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -693,14 +728,7 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     step=ExtraStepExpr_Single_0_2
 	 */
 	protected void sequence_ExtraStepExpr(EObject context, Single semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.SINGLE__STEP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.SINGLE__STEP));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExtraStepExprAccess().getSingleStepAction_0_2(), semanticObject.getStep());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -744,7 +772,25 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ((forward=FORWARDAXIS test=NodeTest) | abbrForward=AbbrevForwardStep)
+	 *     (
+	 *         axis='child' | 
+	 *         axis='descendant' | 
+	 *         axis='attribute' | 
+	 *         axis='self' | 
+	 *         axis='descendant-or-self' | 
+	 *         axis='following-sibling' | 
+	 *         axis='following' | 
+	 *         axis='namespace'
+	 *     )
+	 */
+	protected void sequence_ForwardAxis(EObject context, ForwardAxis semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((forward=ForwardAxis test=NodeTest) | abbrForward=AbbrevForwardStep)
 	 */
 	protected void sequence_ForwardStep(EObject context, ForwardStep semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1099,6 +1145,15 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (forVar=VarName in=ExprSingle additionalIn+=AdditionalIn*)
 	 */
 	protected void sequence_SimpleForClause(EObject context, SimpleForClause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (stepExpr=FilterExpr | stepExpr=AxisStep)
+	 */
+	protected void sequence_StepExpr(EObject context, StepExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

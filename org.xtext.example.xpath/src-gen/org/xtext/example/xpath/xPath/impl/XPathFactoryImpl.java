@@ -16,6 +16,7 @@ import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.AtomicType;
 import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
+import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
@@ -24,6 +25,7 @@ import org.xtext.example.xpath.xPath.CastExpr;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
 import org.xtext.example.xpath.xPath.DocumentTest;
+import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
@@ -32,6 +34,7 @@ import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForExpr;
+import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
 import org.xtext.example.xpath.xPath.IfExpr;
@@ -159,6 +162,7 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       case XPathPackage.STEP_EXPR: return createStepExpr();
       case XPathPackage.AXIS_STEP: return createAxisStep();
       case XPathPackage.FORWARD_STEP: return createForwardStep();
+      case XPathPackage.FORWARD_AXIS: return createForwardAxis();
       case XPathPackage.ABBREV_FORWARD_STEP: return createAbbrevForwardStep();
       case XPathPackage.REVERSE_STEP: return createReverseStep();
       case XPathPackage.NODE_TEST: return createNodeTest();
@@ -201,6 +205,8 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       case XPathPackage.REL_NO_SELECTOR: return createRelNoSelector();
       case XPathPackage.SINGLE: return createSingle();
       case XPathPackage.DOUBLE: return createDouble();
+      case XPathPackage.ATTRIBUTE: return createAttribute();
+      case XPathPackage.ELEMENT: return createElement();
       case XPathPackage.PIT_TEST: return createPITTest();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -491,6 +497,17 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     ForwardStepImpl forwardStep = new ForwardStepImpl();
     return forwardStep;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ForwardAxis createForwardAxis()
+  {
+    ForwardAxisImpl forwardAxis = new ForwardAxisImpl();
+    return forwardAxis;
   }
 
   /**
@@ -953,6 +970,28 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     DoubleImpl double_ = new DoubleImpl();
     return double_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Attribute createAttribute()
+  {
+    AttributeImpl attribute = new AttributeImpl();
+    return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Element createElement()
+  {
+    ElementImpl element = new ElementImpl();
+    return element;
   }
 
   /**

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface NodeTest extends EObject
+public interface NodeTest extends AbbrevForwardStep
 {
   /**
    * Returns the value of the '<em><b>Test</b></em>' containment reference.

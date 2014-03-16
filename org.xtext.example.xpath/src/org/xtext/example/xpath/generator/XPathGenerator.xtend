@@ -8,6 +8,7 @@ import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.xtext.example.xpath.xPath.*
 import org.eclipse.emf.ecore.EObject;
+import org.xtext.example.xpath.constants.StepChoice
 
 import java.lang.StringBuilder
 
@@ -22,7 +23,7 @@ class XPathGenerator implements IGenerator {
 		val sb = new StringBuilder() 
 		for (e: resource.allContents.toIterable.filter(ValueExpr)){
 			val compiled = 
-			'''def xpath(elem: Elem): IndexedSeq[Elem] = {
+			'''def xpath(elem: Elem): IndexedSeq[Any] = {
 				  val documentElem = Elem(QName("documentNode"))
                   val totalElem = documentElem.withChildren(Vector(elem))
 			      «e.compile»
@@ -38,7 +39,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(RelSingle rs) {
-		'''totalElem.filterChildElems(«rs.relPathExpr.step.compile»)
+		'''totalElem«rs.relPathExpr.step.compile(true, StepChoice.SINGLE)»
 		«IF rs.relPathExpr.extraSteps != null»
 		«FOR extra: rs.relPathExpr.extraSteps»
 		«extra.compile»
@@ -48,7 +49,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(RelDouble rd) {
-		'''totalElem.filterElemsOrSelf(«rd.relPathExpr.step.compile»)
+		'''totalElem«rd.relPathExpr.step.compile(true, StepChoice.DOUBLE)»
 		«IF rd.relPathExpr.extraSteps != null»
 		«FOR extra: rd.relPathExpr.extraSteps»
 		«extra.compile»
@@ -58,23 +59,53 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(Single s) {
-		'''.flatMap {  _.filterChildElems(«s.step.compile») }'''
+		'''«compile(s.step, false, StepChoice.SINGLE)»'''
 	}
 	
 	def dispatch compile(Double d) {
-		'''.flatMap { _.filterElemsOrSelf(«d.step.compile») }'''
+		'''«compile(d.step, false, StepChoice.DOUBLE)»'''
 	}
 	
-	def dispatch compile(AxisStep axs) {
-		'''«axs.step.compile»«axs.predicateList.compile»'''
+	def dispatch compile(StepExpr se, Boolean isFirstStep, StepChoice stepChoice) {
+		'''«se.stepExpr.compile(isFirstStep, stepChoice)»'''
 	}
 	
-	def dispatch compile(ForwardStep fs) {
-		'''«IF fs.forward != null»«fs.forward»«fs.test.compile»«ENDIF»«IF fs.abbrForward != null»«fs.abbrForward.compile»«ENDIF»'''
+	def dispatch compile(AxisStep axs, Boolean isFirstStep, StepChoice stepChoice) {
+		'''«compile(axs.step, isFirstStep, stepChoice)»«compile(axs.predicateList)»'''
 	}
 	
-	def dispatch compile(AbbrevForwardStep afs) {
-		'''«IF afs.attr != null»«afs.attr»«ENDIF»«afs.test.compile»'''
+	def dispatch compile(ForwardStep fs, Boolean isFirstStep, StepChoice stepChoice) {
+		'''«IF fs.forward != null»«fs.forward»«fs.test.compile»«ENDIF»«IF fs.abbrForward != null»«compile(fs.abbrForward, isFirstStep, stepChoice)»«ENDIF»'''
+	}
+	
+	def dispatch compile(Element e, Boolean isFirstStep, StepChoice stepChoice) {
+		switch isFirstStep {
+			Boolean case isFirstStep == true: switch stepChoice {
+				  case StepChoice.SINGLE: '''.filterChildElems { «e.test.compile» }'''
+			      case StepChoice.DOUBLE: '''.filterElemsOrSelf { «e.test.compile» }'''
+			    }
+			Boolean case isFirstStep == false: switch stepChoice {
+				  case StepChoice.SINGLE: '''.flatMap {  _.filterChildElems(«e.test.compile») }'''
+			      case StepChoice.DOUBLE: '''.flatMap { _.filterElemsOrSelf(«e.test.compile») }'''
+			    }    
+		}
+		
+	}
+	
+	def dispatch compile(Attribute a, Boolean isFirstStep, StepChoice stepChoice){
+		switch isFirstStep {
+		   Boolean case isFirstStep == true: switch stepChoice {
+			case StepChoice.SINGLE: '''.filterChildElems { elem => elem.attributeOption(«a.test.compile»).isDefined }
+			                     .map { _.attribute(«a.test.compile») }'''
+			case StepChoice.DOUBLE: '''.filterElemsOrSelf { elem => elem.attributeOption(«a.test.compile»).isDefined }
+			                     .map { _.attribute(«a.test.compile») }'''
+			}
+		   Boolean case isFirstStep == false: switch stepChoice {
+			case StepChoice.SINGLE: '''.collect {  case elem if elem.attributeOption(«a.test.compile»).isDefined =>  elem.attribute(«a.test.compile») }'''
+			case StepChoice.DOUBLE: '''.flatMap { _.filterElemsOrSelf { elem => elem.attributeOption(«a.test.compile»).isDefined }
+			                     .map { _.attribute(«a.test.compile») }'''
+			}
+		}
 	}
 	
 	def dispatch compile(NodeTest not) {
