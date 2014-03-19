@@ -19,6 +19,7 @@ import org.xtext.example.xpath.xPath.AbbrevForwardStep;
 import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AxisStep;
 import org.xtext.example.xpath.xPath.Element;
+import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
@@ -28,6 +29,7 @@ import org.xtext.example.xpath.xPath.NameTest;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
 import org.xtext.example.xpath.xPath.QName;
@@ -174,6 +176,55 @@ public class XPathGenerator implements IGenerator {
     PredicateList _predicateList = axs.getPredicateList();
     Object _compile_1 = this.compile(_predicateList);
     _builder.append(_compile_1, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final PredicateList pl) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<Predicate> _predicates = pl.getPredicates();
+      for(final Predicate p : _predicates) {
+        Object _compile = this.compile(p);
+        _builder.append(_compile, "");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Predicate p) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".filter { elem => ");
+    _builder.newLine();
+    _builder.append("\t\t     ");
+    _builder.append("{ ");
+    _builder.newLine();
+    _builder.append("\t\t      ");
+    _builder.append("val expr = ");
+    Expr _expr = p.getExpr();
+    Object _compile = this.compile(_expr);
+    _builder.append(_compile, "\t\t      ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t      ");
+    _builder.append("expr match {");
+    _builder.newLine();
+    _builder.append("\t\t      \t");
+    _builder.append("case b: Boolean => b");
+    _builder.newLine();
+    _builder.append("\t\t      \t");
+    _builder.append("case i: Int => ???");
+    _builder.newLine();
+    _builder.append("\t\t      \t");
+    _builder.append("case _ => ???");
+    _builder.newLine();
+    _builder.append("\t\t      ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t     ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t   ");
+    _builder.append("}");
+    _builder.newLine();
     return _builder;
   }
   
@@ -485,6 +536,10 @@ public class XPathGenerator implements IGenerator {
       return _compile((Literal)d);
     } else if (d instanceof NameTest) {
       return _compile((NameTest)d);
+    } else if (d instanceof Predicate) {
+      return _compile((Predicate)d);
+    } else if (d instanceof PredicateList) {
+      return _compile((PredicateList)d);
     } else if (d instanceof PrimaryExpr) {
       return _compile((PrimaryExpr)d);
     } else if (d instanceof ValueExpr) {

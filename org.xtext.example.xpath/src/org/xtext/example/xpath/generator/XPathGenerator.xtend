@@ -74,6 +74,24 @@ class XPathGenerator implements IGenerator {
 		'''«compile(axs.step, isFirstStep, stepChoice)»«compile(axs.predicateList)»'''
 	}
 	
+	def dispatch compile(PredicateList pl) {
+		'''«FOR p: pl.predicates»«p.compile»«ENDFOR»'''
+	}
+	
+	def dispatch compile(Predicate p) {
+		'''.filter { elem => 
+		     { 
+		      val expr = «p.expr.compile»
+		      expr match {
+		      	case b: Boolean => b
+		      	case i: Int => ???
+		      	case _ => ???
+		      }
+		     }
+		   }
+		'''
+	}
+	
 	def dispatch compile(ForwardStep fs, Boolean isFirstStep, StepChoice stepChoice) {
 		'''«IF fs.forward != null»«fs.forward»«fs.test.compile»«ENDIF»«IF fs.abbrForward != null»«compile(fs.abbrForward, isFirstStep, stepChoice)»«ENDIF»'''
 	}
