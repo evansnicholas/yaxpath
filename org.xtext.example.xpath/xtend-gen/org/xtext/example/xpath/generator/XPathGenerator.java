@@ -16,28 +16,47 @@ import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.xpath.constants.StepChoice;
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.AdditionalIn;
+import org.xtext.example.xpath.xPath.AdditiveExpr;
+import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.Attribute;
 import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.CastableExpr;
+import org.xtext.example.xpath.xPath.ComparisonExpr;
 import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.Expr;
+import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
+import org.xtext.example.xpath.xPath.ForExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
+import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.IntersectExceptExpr;
 import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.MultiplicativeExpr;
 import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
+import org.xtext.example.xpath.xPath.OrExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrimaryExpr;
 import org.xtext.example.xpath.xPath.QName;
+import org.xtext.example.xpath.xPath.QuantifiedExpr;
+import org.xtext.example.xpath.xPath.RangeExpr;
 import org.xtext.example.xpath.xPath.RelDouble;
 import org.xtext.example.xpath.xPath.RelSingle;
 import org.xtext.example.xpath.xPath.RelativePathExpr;
+import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.TreatExpr;
+import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.UnionExpr;
 import org.xtext.example.xpath.xPath.UnprefixedName;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.Wildcard;
@@ -60,24 +79,108 @@ public class XPathGenerator implements IGenerator {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("def xpath(elem: Elem): IndexedSeq[Any] = {");
         _builder.newLine();
-        _builder.append("\t\t\t\t  ");
+        _builder.append("  ");
         _builder.append("val documentElem = Elem(QName(\"documentNode\"))");
         _builder.newLine();
-        _builder.append("                  ");
+        _builder.append("  ");
         _builder.append("val totalElem = documentElem.withChildren(Vector(elem))");
         _builder.newLine();
-        _builder.append("\t\t\t      ");
-        CharSequence _compile = this.compile(e);
-        _builder.append(_compile, "\t\t\t      ");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t   ");
-        _builder.append("}");
+        _builder.append("  ");
+        _builder.append("var focus = Vector(Focus(totalElem, 1))");
         _builder.newLine();
+        _builder.append("  ");
+        CharSequence _compile = this.compile(e);
+        _builder.append(_compile, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("focus");
+        _builder.newLine();
+        _builder.append("}");
         final String compiled = _builder.toString();
         sb.append(compiled);
       }
     }
     fsa.generateFile("generation.scala", sb);
+  }
+  
+  protected CharSequence _compile(final Expr e) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final ExprSingle es) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final ForExpr fe) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final SimpleForClause sfc) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final AdditionalIn ai) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final QuantifiedExpr qe) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final IfExpr ie) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final OrExpr oe) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final AndExpr ae) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final ComparisonExpr ce) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final RangeExpr re) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final AdditiveExpr ae) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final MultiplicativeExpr me) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final UnionExpr ue) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final IntersectExceptExpr eie) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final InstanceofExpr ioe) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final TreatExpr te) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final CastableExpr ce) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final CastExpr ce) {
+    return null;
+  }
+  
+  protected CharSequence _compile(final UnaryExpr ue) {
+    return null;
   }
   
   protected CharSequence _compile(final ValueExpr ve) {
@@ -90,10 +193,9 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final RelSingle rs) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("totalElem");
     RelativePathExpr _relPathExpr = rs.getRelPathExpr();
     StepExpr _step = _relPathExpr.getStep();
-    CharSequence _compile = this.compile(_step, Boolean.valueOf(true), StepChoice.SINGLE);
+    CharSequence _compile = this.compile(_step, StepChoice.SINGLE);
     _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
     {
@@ -105,9 +207,8 @@ public class XPathGenerator implements IGenerator {
           RelativePathExpr _relPathExpr_2 = rs.getRelPathExpr();
           EList<StepExpr> _extraSteps_1 = _relPathExpr_2.getExtraSteps();
           for(final StepExpr extra : _extraSteps_1) {
-            _builder.append("\t\t");
             Object _compile_1 = this.compile(extra);
-            _builder.append(_compile_1, "\t\t");
+            _builder.append(_compile_1, "");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -118,10 +219,9 @@ public class XPathGenerator implements IGenerator {
   
   protected CharSequence _compile(final RelDouble rd) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("totalElem");
     RelativePathExpr _relPathExpr = rd.getRelPathExpr();
     StepExpr _step = _relPathExpr.getStep();
-    CharSequence _compile = this.compile(_step, Boolean.valueOf(true), StepChoice.DOUBLE);
+    CharSequence _compile = this.compile(_step, StepChoice.DOUBLE);
     _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
     {
@@ -133,9 +233,8 @@ public class XPathGenerator implements IGenerator {
           RelativePathExpr _relPathExpr_2 = rd.getRelPathExpr();
           EList<StepExpr> _extraSteps_1 = _relPathExpr_2.getExtraSteps();
           for(final StepExpr extra : _extraSteps_1) {
-            _builder.append("\t\t");
             Object _compile_1 = this.compile(extra);
-            _builder.append(_compile_1, "\t\t");
+            _builder.append(_compile_1, "");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -147,7 +246,7 @@ public class XPathGenerator implements IGenerator {
   protected CharSequence _compile(final Single s) {
     StringConcatenation _builder = new StringConcatenation();
     StepExpr _step = s.getStep();
-    CharSequence _compile = this.compile(_step, Boolean.valueOf(false), StepChoice.SINGLE);
+    CharSequence _compile = this.compile(_step, StepChoice.SINGLE);
     _builder.append(_compile, "");
     return _builder;
   }
@@ -155,23 +254,23 @@ public class XPathGenerator implements IGenerator {
   protected CharSequence _compile(final org.xtext.example.xpath.xPath.Double d) {
     StringConcatenation _builder = new StringConcatenation();
     StepExpr _step = d.getStep();
-    CharSequence _compile = this.compile(_step, Boolean.valueOf(false), StepChoice.DOUBLE);
+    CharSequence _compile = this.compile(_step, StepChoice.DOUBLE);
     _builder.append(_compile, "");
     return _builder;
   }
   
-  protected CharSequence _compile(final StepExpr se, final Boolean isFirstStep, final StepChoice stepChoice) {
+  protected CharSequence _compile(final StepExpr se, final StepChoice stepChoice) {
     StringConcatenation _builder = new StringConcatenation();
     EObject _stepExpr = se.getStepExpr();
-    Object _compile = this.compile(_stepExpr, isFirstStep, stepChoice);
+    Object _compile = this.compile(_stepExpr, stepChoice);
     _builder.append(_compile, "");
     return _builder;
   }
   
-  protected CharSequence _compile(final AxisStep axs, final Boolean isFirstStep, final StepChoice stepChoice) {
+  protected CharSequence _compile(final AxisStep axs, final StepChoice stepChoice) {
     StringConcatenation _builder = new StringConcatenation();
     EObject _step = axs.getStep();
-    Object _compile = this.compile(_step, isFirstStep, stepChoice);
+    Object _compile = this.compile(_step, stepChoice);
     _builder.append(_compile, "");
     PredicateList _predicateList = axs.getPredicateList();
     Object _compile_1 = this.compile(_predicateList);
@@ -228,7 +327,7 @@ public class XPathGenerator implements IGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final ForwardStep fs, final Boolean isFirstStep, final StepChoice stepChoice) {
+  protected CharSequence _compile(final ForwardStep fs, final StepChoice stepChoice) {
     StringConcatenation _builder = new StringConcatenation();
     {
       ForwardAxis _forward = fs.getForward();
@@ -246,181 +345,169 @@ public class XPathGenerator implements IGenerator {
       boolean _notEquals_1 = (!Objects.equal(_abbrForward, null));
       if (_notEquals_1) {
         AbbrevForwardStep _abbrForward_1 = fs.getAbbrForward();
-        Object _compile_1 = this.compile(_abbrForward_1, isFirstStep, stepChoice);
+        Object _compile_1 = this.compile(_abbrForward_1, stepChoice);
         _builder.append(_compile_1, "");
       }
     }
     return _builder;
   }
   
-  protected CharSequence _compile(final Element e, final Boolean isFirstStep, final StepChoice stepChoice) {
+  protected CharSequence _compile(final Element e, final StepChoice stepChoice) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
-      if (isFirstStep instanceof Boolean) {
-        if (((isFirstStep).booleanValue() == true)) {
-          _matched=true;
-          CharSequence _switchResult_1 = null;
-          boolean _matched_1 = false;
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
-              _matched_1=true;
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append(".filterChildElems { ");
-              NodeTest _test = e.getTest();
-              Object _compile = this.compile(_test);
-              _builder.append(_compile, "");
-              _builder.append(" }");
-              _switchResult_1 = _builder;
-            }
-          }
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
-              _matched_1=true;
-              StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append(".filterElemsOrSelf { ");
-              NodeTest _test_1 = e.getTest();
-              Object _compile_1 = this.compile(_test_1);
-              _builder_1.append(_compile_1, "");
-              _builder_1.append(" }");
-              _switchResult_1 = _builder_1;
-            }
-          }
-          _switchResult = _switchResult_1;
-        }
+      if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("focus = { ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("val search = focus flatMap { case Focus(contextItem, position) => ");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("contextItem match {");
+        _builder.newLine();
+        _builder.append("  \t  ");
+        _builder.append("case elem: Elem => elem.filterChildElems { ");
+        NodeTest _test = e.getTest();
+        Object _compile = this.compile(_test);
+        _builder.append(_compile, "  \t  ");
+        _builder.append(" } ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  \t  ");
+        _builder.append("case _ => ???");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("}");
+        _switchResult = _builder;
       }
     }
     if (!_matched) {
-      if (isFirstStep instanceof Boolean) {
-        if (((isFirstStep).booleanValue() == false)) {
-          _matched=true;
-          CharSequence _switchResult_1 = null;
-          boolean _matched_1 = false;
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
-              _matched_1=true;
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append(".flatMap {  _.filterChildElems(");
-              NodeTest _test = e.getTest();
-              Object _compile = this.compile(_test);
-              _builder.append(_compile, "");
-              _builder.append(") }");
-              _switchResult_1 = _builder;
-            }
-          }
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
-              _matched_1=true;
-              StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append(".flatMap { _.filterElemsOrSelf(");
-              NodeTest _test_1 = e.getTest();
-              Object _compile_1 = this.compile(_test_1);
-              _builder_1.append(_compile_1, "");
-              _builder_1.append(") }");
-              _switchResult_1 = _builder_1;
-            }
-          }
-          _switchResult = _switchResult_1;
-        }
+      if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
+        _matched=true;
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("focus = {");
+        _builder_1.newLine();
+        _builder_1.append("   ");
+        _builder_1.append("val search = focus flatMap { case Focus(contextItem, position) => ");
+        _builder_1.newLine();
+        _builder_1.append("     ");
+        _builder_1.append("contextItem match {");
+        _builder_1.newLine();
+        _builder_1.append("  \t   ");
+        _builder_1.append("case elem: Elem => elem.filterElemsOrSelf { ");
+        NodeTest _test_1 = e.getTest();
+        Object _compile_1 = this.compile(_test_1);
+        _builder_1.append(_compile_1, "  \t   ");
+        _builder_1.append(" } ");
+        _builder_1.newLineIfNotEmpty();
+        _builder_1.append("  \t   ");
+        _builder_1.append("case _ => ???");
+        _builder_1.newLine();
+        _builder_1.append("     ");
+        _builder_1.append("}");
+        _builder_1.newLine();
+        _builder_1.append("   ");
+        _builder_1.append("}");
+        _builder_1.newLine();
+        _builder_1.append("   ");
+        _builder_1.append("search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }");
+        _builder_1.newLine();
+        _builder_1.append("}");
+        _switchResult = _builder_1;
       }
     }
     return _switchResult;
   }
   
-  protected CharSequence _compile(final Attribute a, final Boolean isFirstStep, final StepChoice stepChoice) {
+  protected CharSequence _compile(final Attribute a, final StepChoice stepChoice) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
-      if (isFirstStep instanceof Boolean) {
-        if (((isFirstStep).booleanValue() == true)) {
-          _matched=true;
-          CharSequence _switchResult_1 = null;
-          boolean _matched_1 = false;
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
-              _matched_1=true;
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append(".filterChildElems { elem => elem.attributeOption(");
-              NodeTest _test = a.getTest();
-              Object _compile = this.compile(_test);
-              _builder.append(_compile, "");
-              _builder.append(").isDefined }");
-              _builder.newLineIfNotEmpty();
-              _builder.append("\t\t\t                     ");
-              _builder.append(".map { _.attribute(");
-              NodeTest _test_1 = a.getTest();
-              Object _compile_1 = this.compile(_test_1);
-              _builder.append(_compile_1, "\t\t\t                     ");
-              _builder.append(") }");
-              _switchResult_1 = _builder;
-            }
-          }
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
-              _matched_1=true;
-              StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append(".filterElemsOrSelf { elem => elem.attributeOption(");
-              NodeTest _test_2 = a.getTest();
-              Object _compile_2 = this.compile(_test_2);
-              _builder_1.append(_compile_2, "");
-              _builder_1.append(").isDefined }");
-              _builder_1.newLineIfNotEmpty();
-              _builder_1.append("\t\t\t                     ");
-              _builder_1.append(".map { _.attribute(");
-              NodeTest _test_3 = a.getTest();
-              Object _compile_3 = this.compile(_test_3);
-              _builder_1.append(_compile_3, "\t\t\t                     ");
-              _builder_1.append(") }");
-              _switchResult_1 = _builder_1;
-            }
-          }
-          _switchResult = _switchResult_1;
-        }
+      if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("focus = { ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("val search = focus collect {  case Focus(contextItem, position) => ");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("contextItem match {");
+        _builder.newLine();
+        _builder.append("\t  ");
+        _builder.append("case elem:Elem if elem.attributeOption(");
+        NodeTest _test = a.getTest();
+        Object _compile = this.compile(_test);
+        _builder.append(_compile, "\t  ");
+        _builder.append(").isDefined => elem.attribute(");
+        NodeTest _test_1 = a.getTest();
+        Object _compile_1 = this.compile(_test_1);
+        _builder.append(_compile_1, "\t  ");
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t  ");
+        _builder.append("case _ => ???");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }  ");
+        _builder.newLine();
+        _builder.append("}");
+        _switchResult = _builder;
       }
     }
     if (!_matched) {
-      if (isFirstStep instanceof Boolean) {
-        if (((isFirstStep).booleanValue() == false)) {
-          _matched=true;
-          CharSequence _switchResult_1 = null;
-          boolean _matched_1 = false;
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.SINGLE)) {
-              _matched_1=true;
-              StringConcatenation _builder = new StringConcatenation();
-              _builder.append(".collect {  case elem if elem.attributeOption(");
-              NodeTest _test = a.getTest();
-              Object _compile = this.compile(_test);
-              _builder.append(_compile, "");
-              _builder.append(").isDefined =>  elem.attribute(");
-              NodeTest _test_1 = a.getTest();
-              Object _compile_1 = this.compile(_test_1);
-              _builder.append(_compile_1, "");
-              _builder.append(") }");
-              _switchResult_1 = _builder;
-            }
-          }
-          if (!_matched_1) {
-            if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
-              _matched_1=true;
-              StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append(".flatMap { _.filterElemsOrSelf { elem => elem.attributeOption(");
-              NodeTest _test_2 = a.getTest();
-              Object _compile_2 = this.compile(_test_2);
-              _builder_1.append(_compile_2, "");
-              _builder_1.append(").isDefined }");
-              _builder_1.newLineIfNotEmpty();
-              _builder_1.append("\t\t\t                     ");
-              _builder_1.append(".map { _.attribute(");
-              NodeTest _test_3 = a.getTest();
-              Object _compile_3 = this.compile(_test_3);
-              _builder_1.append(_compile_3, "\t\t\t                     ");
-              _builder_1.append(") }");
-              _switchResult_1 = _builder_1;
-            }
-          }
-          _switchResult = _switchResult_1;
-        }
+      if (Objects.equal(stepChoice,StepChoice.DOUBLE)) {
+        _matched=true;
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("focus = { ");
+        _builder_1.newLine();
+        _builder_1.append("  ");
+        _builder_1.append("val search = focus flatMap { case Focus(contextItem, position) => ");
+        _builder_1.newLine();
+        _builder_1.append("    ");
+        _builder_1.append("contextItem match {");
+        _builder_1.newLine();
+        _builder_1.append("      ");
+        _builder_1.append("case elem:Elem =>\telem.filterElemsOrSelf { _.attributeOption(");
+        NodeTest _test_2 = a.getTest();
+        Object _compile_2 = this.compile(_test_2);
+        _builder_1.append(_compile_2, "      ");
+        _builder_1.append(").isDefined }");
+        _builder_1.newLineIfNotEmpty();
+        _builder_1.append("\t\t\t            ");
+        _builder_1.append(".map { _.attribute(");
+        NodeTest _test_3 = a.getTest();
+        Object _compile_3 = this.compile(_test_3);
+        _builder_1.append(_compile_3, "\t\t\t            ");
+        _builder_1.append(") }");
+        _builder_1.newLineIfNotEmpty();
+        _builder_1.append("    ");
+        _builder_1.append("}");
+        _builder_1.newLine();
+        _builder_1.append("  ");
+        _builder_1.append("}");
+        _builder_1.newLine();
+        _builder_1.append("  ");
+        _builder_1.append("search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }\t\t\t                     ");
+        _builder_1.newLine();
+        _builder_1.append("}");
+        _switchResult = _builder_1;
       }
     }
     return _switchResult;
@@ -520,8 +607,16 @@ public class XPathGenerator implements IGenerator {
   public CharSequence compile(final EObject d) {
     if (d instanceof org.xtext.example.xpath.xPath.Double) {
       return _compile((org.xtext.example.xpath.xPath.Double)d);
+    } else if (d instanceof ForExpr) {
+      return _compile((ForExpr)d);
+    } else if (d instanceof IfExpr) {
+      return _compile((IfExpr)d);
     } else if (d instanceof NodeTest) {
       return _compile((NodeTest)d);
+    } else if (d instanceof OrExpr) {
+      return _compile((OrExpr)d);
+    } else if (d instanceof QuantifiedExpr) {
+      return _compile((QuantifiedExpr)d);
     } else if (d instanceof RelDouble) {
       return _compile((RelDouble)d);
     } else if (d instanceof RelSingle) {
@@ -530,10 +625,32 @@ public class XPathGenerator implements IGenerator {
       return _compile((Single)d);
     } else if (d instanceof UnprefixedName) {
       return _compile((UnprefixedName)d);
+    } else if (d instanceof AdditionalIn) {
+      return _compile((AdditionalIn)d);
+    } else if (d instanceof AdditiveExpr) {
+      return _compile((AdditiveExpr)d);
+    } else if (d instanceof AndExpr) {
+      return _compile((AndExpr)d);
+    } else if (d instanceof CastExpr) {
+      return _compile((CastExpr)d);
+    } else if (d instanceof CastableExpr) {
+      return _compile((CastableExpr)d);
+    } else if (d instanceof ComparisonExpr) {
+      return _compile((ComparisonExpr)d);
+    } else if (d instanceof Expr) {
+      return _compile((Expr)d);
+    } else if (d instanceof ExprSingle) {
+      return _compile((ExprSingle)d);
     } else if (d instanceof FilterExpr) {
       return _compile((FilterExpr)d);
+    } else if (d instanceof InstanceofExpr) {
+      return _compile((InstanceofExpr)d);
+    } else if (d instanceof IntersectExceptExpr) {
+      return _compile((IntersectExceptExpr)d);
     } else if (d instanceof Literal) {
       return _compile((Literal)d);
+    } else if (d instanceof MultiplicativeExpr) {
+      return _compile((MultiplicativeExpr)d);
     } else if (d instanceof NameTest) {
       return _compile((NameTest)d);
     } else if (d instanceof Predicate) {
@@ -542,6 +659,16 @@ public class XPathGenerator implements IGenerator {
       return _compile((PredicateList)d);
     } else if (d instanceof PrimaryExpr) {
       return _compile((PrimaryExpr)d);
+    } else if (d instanceof RangeExpr) {
+      return _compile((RangeExpr)d);
+    } else if (d instanceof SimpleForClause) {
+      return _compile((SimpleForClause)d);
+    } else if (d instanceof TreatExpr) {
+      return _compile((TreatExpr)d);
+    } else if (d instanceof UnaryExpr) {
+      return _compile((UnaryExpr)d);
+    } else if (d instanceof UnionExpr) {
+      return _compile((UnionExpr)d);
     } else if (d instanceof ValueExpr) {
       return _compile((ValueExpr)d);
     } else if (d != null) {
@@ -552,20 +679,20 @@ public class XPathGenerator implements IGenerator {
     }
   }
   
-  public CharSequence compile(final EObject a, final Boolean isFirstStep, final StepChoice stepChoice) {
+  public CharSequence compile(final EObject a, final StepChoice stepChoice) {
     if (a instanceof Attribute) {
-      return _compile((Attribute)a, isFirstStep, stepChoice);
+      return _compile((Attribute)a, stepChoice);
     } else if (a instanceof Element) {
-      return _compile((Element)a, isFirstStep, stepChoice);
+      return _compile((Element)a, stepChoice);
     } else if (a instanceof AxisStep) {
-      return _compile((AxisStep)a, isFirstStep, stepChoice);
+      return _compile((AxisStep)a, stepChoice);
     } else if (a instanceof ForwardStep) {
-      return _compile((ForwardStep)a, isFirstStep, stepChoice);
+      return _compile((ForwardStep)a, stepChoice);
     } else if (a instanceof StepExpr) {
-      return _compile((StepExpr)a, isFirstStep, stepChoice);
+      return _compile((StepExpr)a, stepChoice);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(a, isFirstStep, stepChoice).toString());
+        Arrays.<Object>asList(a, stepChoice).toString());
     }
   }
 }
