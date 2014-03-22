@@ -20,63 +20,65 @@ import java.lang.StringBuilder
 class XPathGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		val sb = new StringBuilder() 
-		for (e: resource.allContents.toIterable.filter(ValueExpr)){
-			val compiled = 
-			'''def xpath(elem: Elem): IndexedSeq[Any] = {
+		 
+		for (e: resource.allContents.toIterable.filter(Xpath)){
+			fsa.generateFile("generation.scala", e.compile)
+		}
+		
+	}
+	
+	def dispatch compile(Xpath xe){
+		'''def xpath(elem: Elem): IndexedSeq[Any] = {
   val documentElem = Elem(QName("documentNode"))
   val totalElem = documentElem.withChildren(Vector(elem))
   var focus = Vector(Focus(totalElem, 1))
-  «e.compile»
+  «xe.xpath.compile»
   focus
-}'''
-			sb.append(compiled)
-		}
-		fsa.generateFile("generation.scala", sb)
+}'''	
 	}
 	
 	def dispatch compile(Expr e){
-		
+		'''«e.exprSingle.compile»'''
 	}
 	
 	def dispatch compile(ExprSingle es){
-		
+		''''''
 	}
 	
 	def dispatch compile(ForExpr fe){
-		
+		''''''
 	}
 	
 	def dispatch compile(SimpleForClause sfc){
-		
+		''''''
 	}
 	
 	def dispatch compile(AdditionalIn ai){
-		
+		''''''
 	}
 	
 	def dispatch compile(QuantifiedExpr qe){
-		
+		''''''
 	}
 	
 	def dispatch compile(IfExpr ie){
-		
+		''''''
 	}
 	
 	def dispatch compile(OrExpr oe){
-		
+		'''«oe.left.compile»'''
 	}
 	
 	def dispatch compile(AndExpr ae){
-		
+		'''«ae.left.compile»'''
 	}
 	
 	def dispatch compile(ComparisonExpr ce){
-		
+		'''«ce.left.compile»«IF ce.comp != null»«ce.comp.compile»«ce.right.compile»«ENDIF»'''
 	}
 	
 	def dispatch compile(RangeExpr re){
-		
+		'''«re.from.compile»'''
 	}
 	
 	def dispatch compile(AdditiveExpr ae){
@@ -112,7 +114,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(UnaryExpr ue){
-		
+		'''«ue.value.compile»'''
 	}
 	
 	def dispatch compile(ValueExpr ve) {
@@ -139,6 +141,10 @@ class XPathGenerator implements IGenerator {
 		'''
 	}
 	
+	def dispatch compile(RelNoSelector rns){
+		'''«rns.relPathExpr.step.compile(StepChoice.NO_SELECTOR)»'''
+	}
+	
 	def dispatch compile(Single s) {
 		'''«compile(s.step, StepChoice.SINGLE)»'''
 	}
@@ -162,17 +168,20 @@ class XPathGenerator implements IGenerator {
 	//Note the expr is evaluated against the inner focus... see the xpath spec.  This means that when calling expr.compile,
 	//the inner focus must be passed along.
 	def dispatch compile(Predicate p) {
-		'''.filter { elem => 
-		     { 
-		      val expr = «p.expr.compile»
-		      expr match {
-		      	case b: Boolean => b
-		      	case i: Int => ???
-		      	case _ => ???
-		      }
-		     }
-		   }
-		'''
+'''focus = {
+  focus filter { outerFocus => 
+    { 
+      var focus = Vector(outerFocus)
+      «p.expr.compile»
+	  focus match {
+	    case Vector(Focus(b:Boolean, pos)) => b
+		case Vector(Focus(int:Int, pos)) => outerFocus.position == int
+		case _ => ???
+	  }
+    }
+  }
+}
+'''
 	}
 	
 	def dispatch compile(ForwardStep fs, StepChoice stepChoice) {
@@ -190,7 +199,8 @@ class XPathGenerator implements IGenerator {
     }
   }
   search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
-  }'''
+  }
+'''
 				                          
 			      case StepChoice.DOUBLE: 
 '''focus = {
@@ -201,7 +211,8 @@ class XPathGenerator implements IGenerator {
      }
    }
    search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
-}'''
+}
+'''
       }		 
 	}
 	
@@ -216,7 +227,8 @@ class XPathGenerator implements IGenerator {
 	}
   }
   search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }  
-}'''
+}
+'''
 		case StepChoice.DOUBLE: 
 '''focus = { 
   val search = focus flatMap { case Focus(contextItem, position) => 
@@ -226,7 +238,8 @@ class XPathGenerator implements IGenerator {
     }
   }
   search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }			                     
-}'''
+}
+'''
 	  }
 		
 	}
@@ -239,7 +252,7 @@ class XPathGenerator implements IGenerator {
 		'''«IF nat.QName != null»«nat.QName.compile»«ENDIF»«IF nat.wildcard != null»«nat.wildcard.compile»«ENDIF»'''
 	}
 	
-	def dispatch compile(FilterExpr f) {
+	def dispatch compile(FilterExpr f, StepChoice stepChoice) {
 		'''«f.primary.compile»«f.predicateList.compile»'''
 	}
 	
@@ -248,7 +261,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(Literal l) {
-		'''«IF l.num != null»«l.num»«ENDIF»«IF l.string != null»«l.string»«ENDIF»'''
+		'''«IF l.num != null»focus = Vector(Focus(«l.num.intLit», 1))«ENDIF»«IF l.string != null»focus = Vector(Focus(«l.string», 1))«ENDIF»'''
 	}
 	
 	def dispatch compile(UnprefixedName un) {
@@ -256,6 +269,7 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(EObject o) {
+		''''''
 	}
 	
 }

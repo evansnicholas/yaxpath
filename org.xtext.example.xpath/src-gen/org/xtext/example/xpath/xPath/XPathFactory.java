@@ -23,6 +23,15 @@ public interface XPathFactory extends EFactory
   XPathFactory eINSTANCE = org.xtext.example.xpath.xPath.impl.XPathFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Xpath</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Xpath</em>'.
+   * @generated
+   */
+  Xpath createXpath();
+
+  /**
    * Returns a new object of class '<em>Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -210,6 +219,33 @@ public interface XPathFactory extends EFactory
    * @generated
    */
   ValueExpr createValueExpr();
+
+  /**
+   * Returns a new object of class '<em>General Comp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Comp</em>'.
+   * @generated
+   */
+  GeneralComp createGeneralComp();
+
+  /**
+   * Returns a new object of class '<em>Value Comp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Comp</em>'.
+   * @generated
+   */
+  ValueComp createValueComp();
+
+  /**
+   * Returns a new object of class '<em>Node Comp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Comp</em>'.
+   * @generated
+   */
+  NodeComp createNodeComp();
 
   /**
    * Returns a new object of class '<em>Path Expr</em>'.
@@ -597,6 +633,132 @@ public interface XPathFactory extends EFactory
    * @generated
    */
   UnprefixedName createUnprefixedName();
+
+  /**
+   * Returns a new object of class '<em>Addition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Addition</em>'.
+   * @generated
+   */
+  Addition createAddition();
+
+  /**
+   * Returns a new object of class '<em>Substraction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Substraction</em>'.
+   * @generated
+   */
+  Substraction createSubstraction();
+
+  /**
+   * Returns a new object of class '<em>Multiplication</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplication</em>'.
+   * @generated
+   */
+  Multiplication createMultiplication();
+
+  /**
+   * Returns a new object of class '<em>Division</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Division</em>'.
+   * @generated
+   */
+  Division createDivision();
+
+  /**
+   * Returns a new object of class '<em>IDivision</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>IDivision</em>'.
+   * @generated
+   */
+  IDivision createIDivision();
+
+  /**
+   * Returns a new object of class '<em>Mod</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mod</em>'.
+   * @generated
+   */
+  Mod createMod();
+
+  /**
+   * Returns a new object of class '<em>Union</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Union</em>'.
+   * @generated
+   */
+  Union createUnion();
+
+  /**
+   * Returns a new object of class '<em>Pipe</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pipe</em>'.
+   * @generated
+   */
+  Pipe createPipe();
+
+  /**
+   * Returns a new object of class '<em>Intersect</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Intersect</em>'.
+   * @generated
+   */
+  Intersect createIntersect();
+
+  /**
+   * Returns a new object of class '<em>Except</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Except</em>'.
+   * @generated
+   */
+  Except createExcept();
+
+  /**
+   * Returns a new object of class '<em>Instanceof</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instanceof</em>'.
+   * @generated
+   */
+  Instanceof createInstanceof();
+
+  /**
+   * Returns a new object of class '<em>Treat As</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Treat As</em>'.
+   * @generated
+   */
+  TreatAs createTreatAs();
+
+  /**
+   * Returns a new object of class '<em>Castable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Castable</em>'.
+   * @generated
+   */
+  Castable createCastable();
+
+  /**
+   * Returns a new object of class '<em>Cast As</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cast As</em>'.
+   * @generated
+   */
+  CastAs createCastAs();
 
   /**
    * Returns a new object of class '<em>Rel Single</em>'.

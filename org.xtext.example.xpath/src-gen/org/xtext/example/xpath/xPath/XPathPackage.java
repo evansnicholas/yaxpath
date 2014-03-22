@@ -57,6 +57,34 @@ public interface XPathPackage extends EPackage
   XPathPackage eINSTANCE = org.xtext.example.xpath.xPath.impl.XPathPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.XpathImpl <em>Xpath</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.XpathImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getXpath()
+   * @generated
+   */
+  int XPATH = 0;
+
+  /**
+   * The feature id for the '<em><b>Xpath</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XPATH__XPATH = 0;
+
+  /**
+   * The number of structural features of the '<em>Xpath</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XPATH_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ExprImpl <em>Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -64,7 +92,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 0;
+  int EXPR = 1;
 
   /**
    * The feature id for the '<em><b>Expr Single</b></em>' containment reference.
@@ -101,7 +129,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getExprSingle()
    * @generated
    */
-  int EXPR_SINGLE = 1;
+  int EXPR_SINGLE = 2;
 
   /**
    * The number of structural features of the '<em>Expr Single</em>' class.
@@ -120,7 +148,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getForExpr()
    * @generated
    */
-  int FOR_EXPR = 2;
+  int FOR_EXPR = 3;
 
   /**
    * The feature id for the '<em><b>For</b></em>' containment reference.
@@ -157,7 +185,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSimpleForClause()
    * @generated
    */
-  int SIMPLE_FOR_CLAUSE = 3;
+  int SIMPLE_FOR_CLAUSE = 4;
 
   /**
    * The feature id for the '<em><b>For Var</b></em>' containment reference.
@@ -203,7 +231,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAdditionalIn()
    * @generated
    */
-  int ADDITIONAL_IN = 4;
+  int ADDITIONAL_IN = 5;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -240,7 +268,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getQuantifiedExpr()
    * @generated
    */
-  int QUANTIFIED_EXPR = 5;
+  int QUANTIFIED_EXPR = 6;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -295,7 +323,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getIfExpr()
    * @generated
    */
-  int IF_EXPR = 6;
+  int IF_EXPR = 7;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -341,7 +369,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getOrExpr()
    * @generated
    */
-  int OR_EXPR = 7;
+  int OR_EXPR = 8;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -378,7 +406,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAndExpr()
    * @generated
    */
-  int AND_EXPR = 8;
+  int AND_EXPR = 9;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -415,52 +443,34 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getComparisonExpr()
    * @generated
    */
-  int COMPARISON_EXPR = 9;
+  int COMPARISON_EXPR = 10;
 
   /**
-   * The feature id for the '<em><b>Range</b></em>' containment reference.
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPARISON_EXPR__RANGE = 0;
+  int COMPARISON_EXPR__LEFT = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Comp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPARISON_EXPR__VALUE = 1;
+  int COMPARISON_EXPR__COMP = 1;
 
   /**
-   * The feature id for the '<em><b>Gen</b></em>' attribute.
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPARISON_EXPR__GEN = 2;
-
-  /**
-   * The feature id for the '<em><b>Node</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPARISON_EXPR__NODE = 3;
-
-  /**
-   * The feature id for the '<em><b>Other Range</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPARISON_EXPR__OTHER_RANGE = 4;
+  int COMPARISON_EXPR__RIGHT = 2;
 
   /**
    * The number of structural features of the '<em>Comparison Expr</em>' class.
@@ -469,7 +479,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPARISON_EXPR_FEATURE_COUNT = 5;
+  int COMPARISON_EXPR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.RangeExprImpl <em>Range Expr</em>}' class.
@@ -479,7 +489,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRangeExpr()
    * @generated
    */
-  int RANGE_EXPR = 10;
+  int RANGE_EXPR = 11;
 
   /**
    * The feature id for the '<em><b>From</b></em>' containment reference.
@@ -516,25 +526,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAdditiveExpr()
    * @generated
    */
-  int ADDITIVE_EXPR = 11;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Rights</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPR__RIGHTS = 1;
+  int ADDITIVE_EXPR = 12;
 
   /**
    * The number of structural features of the '<em>Additive Expr</em>' class.
@@ -543,7 +535,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADDITIVE_EXPR_FEATURE_COUNT = 2;
+  int ADDITIVE_EXPR_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.MultiplicativeExprImpl <em>Multiplicative Expr</em>}' class.
@@ -553,25 +545,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getMultiplicativeExpr()
    * @generated
    */
-  int MULTIPLICATIVE_EXPR = 12;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Rights</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPR__RIGHTS = 1;
+  int MULTIPLICATIVE_EXPR = 13;
 
   /**
    * The number of structural features of the '<em>Multiplicative Expr</em>' class.
@@ -580,7 +554,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MULTIPLICATIVE_EXPR_FEATURE_COUNT = 2;
+  int MULTIPLICATIVE_EXPR_FEATURE_COUNT = ADDITIVE_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.UnionExprImpl <em>Union Expr</em>}' class.
@@ -590,25 +564,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnionExpr()
    * @generated
    */
-  int UNION_EXPR = 13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNION_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Rights</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNION_EXPR__RIGHTS = 1;
+  int UNION_EXPR = 14;
 
   /**
    * The number of structural features of the '<em>Union Expr</em>' class.
@@ -617,7 +573,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNION_EXPR_FEATURE_COUNT = 2;
+  int UNION_EXPR_FEATURE_COUNT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.IntersectExceptExprImpl <em>Intersect Except Expr</em>}' class.
@@ -627,25 +583,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getIntersectExceptExpr()
    * @generated
    */
-  int INTERSECT_EXCEPT_EXPR = 14;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERSECT_EXCEPT_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Rights</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERSECT_EXCEPT_EXPR__RIGHTS = 1;
+  int INTERSECT_EXCEPT_EXPR = 15;
 
   /**
    * The number of structural features of the '<em>Intersect Except Expr</em>' class.
@@ -654,7 +592,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERSECT_EXCEPT_EXPR_FEATURE_COUNT = 2;
+  int INTERSECT_EXCEPT_EXPR_FEATURE_COUNT = UNION_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.InstanceofExprImpl <em>Instanceof Expr</em>}' class.
@@ -664,25 +602,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getInstanceofExpr()
    * @generated
    */
-  int INSTANCEOF_EXPR = 15;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCEOF_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCEOF_EXPR__RIGHT = 1;
+  int INSTANCEOF_EXPR = 16;
 
   /**
    * The number of structural features of the '<em>Instanceof Expr</em>' class.
@@ -691,7 +611,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCEOF_EXPR_FEATURE_COUNT = 2;
+  int INSTANCEOF_EXPR_FEATURE_COUNT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.TreatExprImpl <em>Treat Expr</em>}' class.
@@ -701,25 +621,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getTreatExpr()
    * @generated
    */
-  int TREAT_EXPR = 16;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TREAT_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TREAT_EXPR__RIGHT = 1;
+  int TREAT_EXPR = 17;
 
   /**
    * The number of structural features of the '<em>Treat Expr</em>' class.
@@ -728,7 +630,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TREAT_EXPR_FEATURE_COUNT = 2;
+  int TREAT_EXPR_FEATURE_COUNT = INSTANCEOF_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.CastableExprImpl <em>Castable Expr</em>}' class.
@@ -738,25 +640,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getCastableExpr()
    * @generated
    */
-  int CASTABLE_EXPR = 17;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASTABLE_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASTABLE_EXPR__RIGHT = 1;
+  int CASTABLE_EXPR = 18;
 
   /**
    * The number of structural features of the '<em>Castable Expr</em>' class.
@@ -765,7 +649,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASTABLE_EXPR_FEATURE_COUNT = 2;
+  int CASTABLE_EXPR_FEATURE_COUNT = TREAT_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.CastExprImpl <em>Cast Expr</em>}' class.
@@ -775,25 +659,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getCastExpr()
    * @generated
    */
-  int CAST_EXPR = 18;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CAST_EXPR__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CAST_EXPR__RIGHT = 1;
+  int CAST_EXPR = 19;
 
   /**
    * The number of structural features of the '<em>Cast Expr</em>' class.
@@ -802,7 +668,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CAST_EXPR_FEATURE_COUNT = 2;
+  int CAST_EXPR_FEATURE_COUNT = CASTABLE_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.UnaryExprImpl <em>Unary Expr</em>}' class.
@@ -812,16 +678,25 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnaryExpr()
    * @generated
    */
-  int UNARY_EXPR = 19;
+  int UNARY_EXPR = 20;
 
   /**
-   * The feature id for the '<em><b>Unary</b></em>' containment reference.
+   * The feature id for the '<em><b>Unary Ops</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPR__UNARY = 0;
+  int UNARY_EXPR__UNARY_OPS = CAST_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPR__VALUE = CAST_EXPR_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Unary Expr</em>' class.
@@ -830,7 +705,7 @@ public interface XPathPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNARY_EXPR_FEATURE_COUNT = 1;
+  int UNARY_EXPR_FEATURE_COUNT = CAST_EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ValueExprImpl <em>Value Expr</em>}' class.
@@ -840,7 +715,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getValueExpr()
    * @generated
    */
-  int VALUE_EXPR = 20;
+  int VALUE_EXPR = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -861,6 +736,90 @@ public interface XPathPackage extends EPackage
   int VALUE_EXPR_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.GeneralCompImpl <em>General Comp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.GeneralCompImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getGeneralComp()
+   * @generated
+   */
+  int GENERAL_COMP = 22;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_COMP__OP = 0;
+
+  /**
+   * The number of structural features of the '<em>General Comp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_COMP_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ValueCompImpl <em>Value Comp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.ValueCompImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getValueComp()
+   * @generated
+   */
+  int VALUE_COMP = 23;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_COMP__OP = 0;
+
+  /**
+   * The number of structural features of the '<em>Value Comp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_COMP_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.NodeCompImpl <em>Node Comp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.NodeCompImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNodeComp()
+   * @generated
+   */
+  int NODE_COMP = 24;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_COMP__OP = 0;
+
+  /**
+   * The number of structural features of the '<em>Node Comp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_COMP_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.PathExprImpl <em>Path Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -868,7 +827,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPathExpr()
    * @generated
    */
-  int PATH_EXPR = 21;
+  int PATH_EXPR = 25;
 
   /**
    * The number of structural features of the '<em>Path Expr</em>' class.
@@ -887,7 +846,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelativePathExpr()
    * @generated
    */
-  int RELATIVE_PATH_EXPR = 22;
+  int RELATIVE_PATH_EXPR = 26;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference.
@@ -924,7 +883,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getStepExpr()
    * @generated
    */
-  int STEP_EXPR = 23;
+  int STEP_EXPR = 27;
 
   /**
    * The feature id for the '<em><b>Step Expr</b></em>' containment reference.
@@ -961,7 +920,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAxisStep()
    * @generated
    */
-  int AXIS_STEP = 24;
+  int AXIS_STEP = 28;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference.
@@ -998,7 +957,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getForwardStep()
    * @generated
    */
-  int FORWARD_STEP = 25;
+  int FORWARD_STEP = 29;
 
   /**
    * The feature id for the '<em><b>Forward</b></em>' containment reference.
@@ -1044,7 +1003,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getForwardAxis()
    * @generated
    */
-  int FORWARD_AXIS = 26;
+  int FORWARD_AXIS = 30;
 
   /**
    * The feature id for the '<em><b>Axis</b></em>' attribute.
@@ -1072,7 +1031,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAbbrevForwardStep()
    * @generated
    */
-  int ABBREV_FORWARD_STEP = 27;
+  int ABBREV_FORWARD_STEP = 31;
 
   /**
    * The number of structural features of the '<em>Abbrev Forward Step</em>' class.
@@ -1091,7 +1050,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getReverseStep()
    * @generated
    */
-  int REVERSE_STEP = 28;
+  int REVERSE_STEP = 32;
 
   /**
    * The feature id for the '<em><b>Reverse</b></em>' attribute.
@@ -1137,7 +1096,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNodeTest()
    * @generated
    */
-  int NODE_TEST = 29;
+  int NODE_TEST = 33;
 
   /**
    * The feature id for the '<em><b>Test</b></em>' containment reference.
@@ -1165,7 +1124,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNameTest()
    * @generated
    */
-  int NAME_TEST = 30;
+  int NAME_TEST = 34;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -1202,7 +1161,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getWildcard()
    * @generated
    */
-  int WILDCARD = 31;
+  int WILDCARD = 35;
 
   /**
    * The feature id for the '<em><b>Wild</b></em>' attribute.
@@ -1248,7 +1207,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getFilterExpr()
    * @generated
    */
-  int FILTER_EXPR = 32;
+  int FILTER_EXPR = 36;
 
   /**
    * The feature id for the '<em><b>Primary</b></em>' containment reference.
@@ -1285,7 +1244,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPredicateList()
    * @generated
    */
-  int PREDICATE_LIST = 33;
+  int PREDICATE_LIST = 37;
 
   /**
    * The feature id for the '<em><b>Predicates</b></em>' containment reference list.
@@ -1313,7 +1272,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPredicate()
    * @generated
    */
-  int PREDICATE = 34;
+  int PREDICATE = 38;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1341,7 +1300,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPrimaryExpr()
    * @generated
    */
-  int PRIMARY_EXPR = 35;
+  int PRIMARY_EXPR = 39;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' containment reference.
@@ -1405,7 +1364,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 36;
+  int LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Num</b></em>' containment reference.
@@ -1442,7 +1401,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 37;
+  int NUMERIC_LITERAL = 41;
 
   /**
    * The feature id for the '<em><b>Int Lit</b></em>' attribute.
@@ -1488,7 +1447,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getVarRef()
    * @generated
    */
-  int VAR_REF = 38;
+  int VAR_REF = 42;
 
   /**
    * The number of structural features of the '<em>Var Ref</em>' class.
@@ -1507,7 +1466,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getVarName()
    * @generated
    */
-  int VAR_NAME = 39;
+  int VAR_NAME = 43;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -1535,7 +1494,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getParenthesizedExpr()
    * @generated
    */
-  int PARENTHESIZED_EXPR = 40;
+  int PARENTHESIZED_EXPR = 44;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1563,7 +1522,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 41;
+  int FUNCTION_CALL = 45;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -1609,7 +1568,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSingleType()
    * @generated
    */
-  int SINGLE_TYPE = 42;
+  int SINGLE_TYPE = 46;
 
   /**
    * The number of structural features of the '<em>Single Type</em>' class.
@@ -1628,7 +1587,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSequenceType()
    * @generated
    */
-  int SEQUENCE_TYPE = 43;
+  int SEQUENCE_TYPE = 47;
 
   /**
    * The feature id for the '<em><b>Empty</b></em>' attribute.
@@ -1674,7 +1633,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getItemType()
    * @generated
    */
-  int ITEM_TYPE = 44;
+  int ITEM_TYPE = 48;
 
   /**
    * The feature id for the '<em><b>Kind Test</b></em>' containment reference.
@@ -1720,7 +1679,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAtomicType()
    * @generated
    */
-  int ATOMIC_TYPE = 45;
+  int ATOMIC_TYPE = 49;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1748,7 +1707,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getKindTest()
    * @generated
    */
-  int KIND_TEST = 46;
+  int KIND_TEST = 50;
 
   /**
    * The feature id for the '<em><b>Doc Test</b></em>' containment reference.
@@ -1848,7 +1807,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDocumentTest()
    * @generated
    */
-  int DOCUMENT_TEST = 47;
+  int DOCUMENT_TEST = 51;
 
   /**
    * The feature id for the '<em><b>Elem Test</b></em>' containment reference.
@@ -1885,7 +1844,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPITest()
    * @generated
    */
-  int PI_TEST = 48;
+  int PI_TEST = 52;
 
   /**
    * The number of structural features of the '<em>PI Test</em>' class.
@@ -1904,7 +1863,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttributeTest()
    * @generated
    */
-  int ATTRIBUTE_TEST = 49;
+  int ATTRIBUTE_TEST = 53;
 
   /**
    * The feature id for the '<em><b>Attr Or Wild</b></em>' containment reference.
@@ -1941,7 +1900,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttribNameOrWildcard()
    * @generated
    */
-  int ATTRIB_NAME_OR_WILDCARD = 50;
+  int ATTRIB_NAME_OR_WILDCARD = 54;
 
   /**
    * The feature id for the '<em><b>Att Name</b></em>' containment reference.
@@ -1969,7 +1928,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSchemaAttributeTest()
    * @generated
    */
-  int SCHEMA_ATTRIBUTE_TEST = 51;
+  int SCHEMA_ATTRIBUTE_TEST = 55;
 
   /**
    * The feature id for the '<em><b>Att Dec</b></em>' containment reference.
@@ -1997,7 +1956,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttributeDeclaration()
    * @generated
    */
-  int ATTRIBUTE_DECLARATION = 52;
+  int ATTRIBUTE_DECLARATION = 56;
 
   /**
    * The feature id for the '<em><b>Att Name</b></em>' containment reference.
@@ -2025,7 +1984,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementTest()
    * @generated
    */
-  int ELEMENT_TEST = 53;
+  int ELEMENT_TEST = 57;
 
   /**
    * The feature id for the '<em><b>Elem Or Wild</b></em>' containment reference.
@@ -2062,7 +2021,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementNameOrWildcard()
    * @generated
    */
-  int ELEMENT_NAME_OR_WILDCARD = 54;
+  int ELEMENT_NAME_OR_WILDCARD = 58;
 
   /**
    * The feature id for the '<em><b>Elem Name</b></em>' containment reference.
@@ -2090,7 +2049,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSchemaElementTest()
    * @generated
    */
-  int SCHEMA_ELEMENT_TEST = 55;
+  int SCHEMA_ELEMENT_TEST = 59;
 
   /**
    * The feature id for the '<em><b>Elem Dec</b></em>' containment reference.
@@ -2118,7 +2077,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementDeclaration()
    * @generated
    */
-  int ELEMENT_DECLARATION = 56;
+  int ELEMENT_DECLARATION = 60;
 
   /**
    * The number of structural features of the '<em>Element Declaration</em>' class.
@@ -2137,7 +2096,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttributeName()
    * @generated
    */
-  int ATTRIBUTE_NAME = 57;
+  int ATTRIBUTE_NAME = 61;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -2165,7 +2124,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElementName()
    * @generated
    */
-  int ELEMENT_NAME = 58;
+  int ELEMENT_NAME = 62;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -2193,7 +2152,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getTypeName()
    * @generated
    */
-  int TYPE_NAME = 59;
+  int TYPE_NAME = 63;
 
   /**
    * The feature id for the '<em><b>QName</b></em>' containment reference.
@@ -2221,7 +2180,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNCName()
    * @generated
    */
-  int NC_NAME = 60;
+  int NC_NAME = 64;
 
   /**
    * The feature id for the '<em><b>Nc Name</b></em>' attribute.
@@ -2249,7 +2208,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getQName()
    * @generated
    */
-  int QNAME = 61;
+  int QNAME = 65;
 
   /**
    * The feature id for the '<em><b>Local Part</b></em>' containment reference.
@@ -2277,7 +2236,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPrefixedName()
    * @generated
    */
-  int PREFIXED_NAME = 62;
+  int PREFIXED_NAME = 66;
 
   /**
    * The feature id for the '<em><b>Local Part</b></em>' containment reference.
@@ -2314,7 +2273,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnprefixedName()
    * @generated
    */
-  int UNPREFIXED_NAME = 63;
+  int UNPREFIXED_NAME = 67;
 
   /**
    * The feature id for the '<em><b>Local Part</b></em>' containment reference.
@@ -2335,6 +2294,524 @@ public interface XPathPackage extends EPackage
   int UNPREFIXED_NAME_FEATURE_COUNT = QNAME_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.AdditionImpl <em>Addition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.AdditionImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAddition()
+   * @generated
+   */
+  int ADDITION = 68;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION__LEFT = ADDITIVE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION__RIGHT = ADDITIVE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Addition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_FEATURE_COUNT = ADDITIVE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.SubstractionImpl <em>Substraction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.SubstractionImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSubstraction()
+   * @generated
+   */
+  int SUBSTRACTION = 69;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSTRACTION__LEFT = ADDITIVE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSTRACTION__RIGHT = ADDITIVE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Substraction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSTRACTION_FEATURE_COUNT = ADDITIVE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.MultiplicationImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getMultiplication()
+   * @generated
+   */
+  int MULTIPLICATION = 70;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION__LEFT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION__RIGHT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Multiplication</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_FEATURE_COUNT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.DivisionImpl <em>Division</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.DivisionImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDivision()
+   * @generated
+   */
+  int DIVISION = 71;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__LEFT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__RIGHT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Division</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_FEATURE_COUNT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.IDivisionImpl <em>IDivision</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.IDivisionImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getIDivision()
+   * @generated
+   */
+  int IDIVISION = 72;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDIVISION__LEFT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDIVISION__RIGHT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>IDivision</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDIVISION_FEATURE_COUNT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ModImpl <em>Mod</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.ModImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getMod()
+   * @generated
+   */
+  int MOD = 73;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD__LEFT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD__RIGHT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Mod</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_FEATURE_COUNT = MULTIPLICATIVE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.UnionImpl <em>Union</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.UnionImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnion()
+   * @generated
+   */
+  int UNION = 74;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNION__LEFT = UNION_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNION__RIGHT = UNION_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Union</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNION_FEATURE_COUNT = UNION_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.PipeImpl <em>Pipe</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.PipeImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPipe()
+   * @generated
+   */
+  int PIPE = 75;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIPE__LEFT = UNION_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIPE__RIGHT = UNION_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Pipe</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIPE_FEATURE_COUNT = UNION_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.IntersectImpl <em>Intersect</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.IntersectImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getIntersect()
+   * @generated
+   */
+  int INTERSECT = 76;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERSECT__LEFT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERSECT__RIGHT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Intersect</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERSECT_FEATURE_COUNT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.ExceptImpl <em>Except</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.ExceptImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getExcept()
+   * @generated
+   */
+  int EXCEPT = 77;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXCEPT__LEFT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXCEPT__RIGHT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Except</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXCEPT_FEATURE_COUNT = INTERSECT_EXCEPT_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.InstanceofImpl <em>Instanceof</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.InstanceofImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getInstanceof()
+   * @generated
+   */
+  int INSTANCEOF = 78;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCEOF__LEFT = INSTANCEOF_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCEOF__RIGHT = INSTANCEOF_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Instanceof</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCEOF_FEATURE_COUNT = INSTANCEOF_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.TreatAsImpl <em>Treat As</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.TreatAsImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getTreatAs()
+   * @generated
+   */
+  int TREAT_AS = 79;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TREAT_AS__LEFT = TREAT_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TREAT_AS__RIGHT = TREAT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Treat As</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TREAT_AS_FEATURE_COUNT = TREAT_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.CastableImpl <em>Castable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.CastableImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getCastable()
+   * @generated
+   */
+  int CASTABLE = 80;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASTABLE__LEFT = CASTABLE_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASTABLE__RIGHT = CASTABLE_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Castable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASTABLE_FEATURE_COUNT = CASTABLE_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.CastAsImpl <em>Cast As</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.xpath.xPath.impl.CastAsImpl
+   * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getCastAs()
+   * @generated
+   */
+  int CAST_AS = 81;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAST_AS__LEFT = CAST_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAST_AS__RIGHT = CAST_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Cast As</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAST_AS_FEATURE_COUNT = CAST_EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.xpath.xPath.impl.RelSingleImpl <em>Rel Single</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2342,7 +2819,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelSingle()
    * @generated
    */
-  int REL_SINGLE = 64;
+  int REL_SINGLE = 82;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2370,7 +2847,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelDouble()
    * @generated
    */
-  int REL_DOUBLE = 65;
+  int REL_DOUBLE = 83;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2398,7 +2875,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getRelNoSelector()
    * @generated
    */
-  int REL_NO_SELECTOR = 66;
+  int REL_NO_SELECTOR = 84;
 
   /**
    * The feature id for the '<em><b>Rel Path Expr</b></em>' containment reference.
@@ -2426,7 +2903,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSingle()
    * @generated
    */
-  int SINGLE = 67;
+  int SINGLE = 85;
 
   /**
    * The feature id for the '<em><b>Step Expr</b></em>' containment reference.
@@ -2463,7 +2940,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDouble()
    * @generated
    */
-  int DOUBLE = 68;
+  int DOUBLE = 86;
 
   /**
    * The feature id for the '<em><b>Step Expr</b></em>' containment reference.
@@ -2500,7 +2977,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 69;
+  int ATTRIBUTE = 87;
 
   /**
    * The feature id for the '<em><b>Test</b></em>' containment reference.
@@ -2528,7 +3005,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 70;
+  int ELEMENT = 88;
 
   /**
    * The feature id for the '<em><b>Test</b></em>' containment reference.
@@ -2556,7 +3033,7 @@ public interface XPathPackage extends EPackage
    * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPITTest()
    * @generated
    */
-  int PIT_TEST = 71;
+  int PIT_TEST = 89;
 
   /**
    * The feature id for the '<em><b>Nc Name</b></em>' containment reference.
@@ -2585,6 +3062,27 @@ public interface XPathPackage extends EPackage
    */
   int PIT_TEST_FEATURE_COUNT = PI_TEST_FEATURE_COUNT + 2;
 
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Xpath <em>Xpath</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Xpath</em>'.
+   * @see org.xtext.example.xpath.xPath.Xpath
+   * @generated
+   */
+  EClass getXpath();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Xpath#getXpath <em>Xpath</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Xpath</em>'.
+   * @see org.xtext.example.xpath.xPath.Xpath#getXpath()
+   * @see #getXpath()
+   * @generated
+   */
+  EReference getXpath_Xpath();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Expr <em>Expr</em>}'.
@@ -2907,59 +3405,37 @@ public interface XPathPackage extends EPackage
   EClass getComparisonExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getRange <em>Range</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Range</em>'.
-   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getRange()
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getLeft()
    * @see #getComparisonExpr()
    * @generated
    */
-  EReference getComparisonExpr_Range();
+  EReference getComparisonExpr_Left();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getComp <em>Comp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getValue()
+   * @return the meta object for the containment reference '<em>Comp</em>'.
+   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getComp()
    * @see #getComparisonExpr()
    * @generated
    */
-  EAttribute getComparisonExpr_Value();
+  EReference getComparisonExpr_Comp();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getGen <em>Gen</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Gen</em>'.
-   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getGen()
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getRight()
    * @see #getComparisonExpr()
    * @generated
    */
-  EAttribute getComparisonExpr_Gen();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getNode <em>Node</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Node</em>'.
-   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getNode()
-   * @see #getComparisonExpr()
-   * @generated
-   */
-  EAttribute getComparisonExpr_Node();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getOtherRange <em>Other Range</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Other Range</em>'.
-   * @see org.xtext.example.xpath.xPath.ComparisonExpr#getOtherRange()
-   * @see #getComparisonExpr()
-   * @generated
-   */
-  EReference getComparisonExpr_OtherRange();
+  EReference getComparisonExpr_Right();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.RangeExpr <em>Range Expr</em>}'.
@@ -3004,28 +3480,6 @@ public interface XPathPackage extends EPackage
   EClass getAdditiveExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.AdditiveExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.AdditiveExpr#getLeft()
-   * @see #getAdditiveExpr()
-   * @generated
-   */
-  EReference getAdditiveExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.xpath.xPath.AdditiveExpr#getRights <em>Rights</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rights</em>'.
-   * @see org.xtext.example.xpath.xPath.AdditiveExpr#getRights()
-   * @see #getAdditiveExpr()
-   * @generated
-   */
-  EReference getAdditiveExpr_Rights();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.MultiplicativeExpr <em>Multiplicative Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3034,28 +3488,6 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EClass getMultiplicativeExpr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.MultiplicativeExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.MultiplicativeExpr#getLeft()
-   * @see #getMultiplicativeExpr()
-   * @generated
-   */
-  EReference getMultiplicativeExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.xpath.xPath.MultiplicativeExpr#getRights <em>Rights</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rights</em>'.
-   * @see org.xtext.example.xpath.xPath.MultiplicativeExpr#getRights()
-   * @see #getMultiplicativeExpr()
-   * @generated
-   */
-  EReference getMultiplicativeExpr_Rights();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.UnionExpr <em>Union Expr</em>}'.
@@ -3068,28 +3500,6 @@ public interface XPathPackage extends EPackage
   EClass getUnionExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.UnionExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.UnionExpr#getLeft()
-   * @see #getUnionExpr()
-   * @generated
-   */
-  EReference getUnionExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.xpath.xPath.UnionExpr#getRights <em>Rights</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rights</em>'.
-   * @see org.xtext.example.xpath.xPath.UnionExpr#getRights()
-   * @see #getUnionExpr()
-   * @generated
-   */
-  EReference getUnionExpr_Rights();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.IntersectExceptExpr <em>Intersect Except Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3098,28 +3508,6 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EClass getIntersectExceptExpr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.IntersectExceptExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.IntersectExceptExpr#getLeft()
-   * @see #getIntersectExceptExpr()
-   * @generated
-   */
-  EReference getIntersectExceptExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.xpath.xPath.IntersectExceptExpr#getRights <em>Rights</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rights</em>'.
-   * @see org.xtext.example.xpath.xPath.IntersectExceptExpr#getRights()
-   * @see #getIntersectExceptExpr()
-   * @generated
-   */
-  EReference getIntersectExceptExpr_Rights();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.InstanceofExpr <em>Instanceof Expr</em>}'.
@@ -3132,28 +3520,6 @@ public interface XPathPackage extends EPackage
   EClass getInstanceofExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.InstanceofExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.InstanceofExpr#getLeft()
-   * @see #getInstanceofExpr()
-   * @generated
-   */
-  EReference getInstanceofExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.InstanceofExpr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.example.xpath.xPath.InstanceofExpr#getRight()
-   * @see #getInstanceofExpr()
-   * @generated
-   */
-  EReference getInstanceofExpr_Right();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.TreatExpr <em>Treat Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3162,28 +3528,6 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EClass getTreatExpr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.TreatExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.TreatExpr#getLeft()
-   * @see #getTreatExpr()
-   * @generated
-   */
-  EReference getTreatExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.TreatExpr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.example.xpath.xPath.TreatExpr#getRight()
-   * @see #getTreatExpr()
-   * @generated
-   */
-  EReference getTreatExpr_Right();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.CastableExpr <em>Castable Expr</em>}'.
@@ -3196,28 +3540,6 @@ public interface XPathPackage extends EPackage
   EClass getCastableExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.CastableExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.CastableExpr#getLeft()
-   * @see #getCastableExpr()
-   * @generated
-   */
-  EReference getCastableExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.CastableExpr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.example.xpath.xPath.CastableExpr#getRight()
-   * @see #getCastableExpr()
-   * @generated
-   */
-  EReference getCastableExpr_Right();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.CastExpr <em>Cast Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3226,28 +3548,6 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EClass getCastExpr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.CastExpr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.xpath.xPath.CastExpr#getLeft()
-   * @see #getCastExpr()
-   * @generated
-   */
-  EReference getCastExpr_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.CastExpr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.example.xpath.xPath.CastExpr#getRight()
-   * @see #getCastExpr()
-   * @generated
-   */
-  EReference getCastExpr_Right();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.UnaryExpr <em>Unary Expr</em>}'.
@@ -3260,15 +3560,26 @@ public interface XPathPackage extends EPackage
   EClass getUnaryExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.UnaryExpr#getUnary <em>Unary</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.example.xpath.xPath.UnaryExpr#getUnaryOps <em>Unary Ops</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Unary</em>'.
-   * @see org.xtext.example.xpath.xPath.UnaryExpr#getUnary()
+   * @return the meta object for the attribute list '<em>Unary Ops</em>'.
+   * @see org.xtext.example.xpath.xPath.UnaryExpr#getUnaryOps()
    * @see #getUnaryExpr()
    * @generated
    */
-  EReference getUnaryExpr_Unary();
+  EAttribute getUnaryExpr_UnaryOps();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.UnaryExpr#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.example.xpath.xPath.UnaryExpr#getValue()
+   * @see #getUnaryExpr()
+   * @generated
+   */
+  EReference getUnaryExpr_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.ValueExpr <em>Value Expr</em>}'.
@@ -3290,6 +3601,69 @@ public interface XPathPackage extends EPackage
    * @generated
    */
   EReference getValueExpr_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.GeneralComp <em>General Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General Comp</em>'.
+   * @see org.xtext.example.xpath.xPath.GeneralComp
+   * @generated
+   */
+  EClass getGeneralComp();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.GeneralComp#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.xpath.xPath.GeneralComp#getOp()
+   * @see #getGeneralComp()
+   * @generated
+   */
+  EAttribute getGeneralComp_Op();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.ValueComp <em>Value Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Value Comp</em>'.
+   * @see org.xtext.example.xpath.xPath.ValueComp
+   * @generated
+   */
+  EClass getValueComp();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.ValueComp#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.xpath.xPath.ValueComp#getOp()
+   * @see #getValueComp()
+   * @generated
+   */
+  EAttribute getValueComp_Op();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.NodeComp <em>Node Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Node Comp</em>'.
+   * @see org.xtext.example.xpath.xPath.NodeComp
+   * @generated
+   */
+  EClass getNodeComp();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.xpath.xPath.NodeComp#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.xpath.xPath.NodeComp#getOp()
+   * @see #getNodeComp()
+   * @generated
+   */
+  EAttribute getNodeComp_Op();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.PathExpr <em>Path Expr</em>}'.
@@ -4503,6 +4877,454 @@ public interface XPathPackage extends EPackage
   EClass getUnprefixedName();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Addition <em>Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Addition</em>'.
+   * @see org.xtext.example.xpath.xPath.Addition
+   * @generated
+   */
+  EClass getAddition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Addition#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Addition#getLeft()
+   * @see #getAddition()
+   * @generated
+   */
+  EReference getAddition_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Addition#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Addition#getRight()
+   * @see #getAddition()
+   * @generated
+   */
+  EReference getAddition_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Substraction <em>Substraction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Substraction</em>'.
+   * @see org.xtext.example.xpath.xPath.Substraction
+   * @generated
+   */
+  EClass getSubstraction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Substraction#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Substraction#getLeft()
+   * @see #getSubstraction()
+   * @generated
+   */
+  EReference getSubstraction_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Substraction#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Substraction#getRight()
+   * @see #getSubstraction()
+   * @generated
+   */
+  EReference getSubstraction_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Multiplication <em>Multiplication</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplication</em>'.
+   * @see org.xtext.example.xpath.xPath.Multiplication
+   * @generated
+   */
+  EClass getMultiplication();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Multiplication#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Multiplication#getLeft()
+   * @see #getMultiplication()
+   * @generated
+   */
+  EReference getMultiplication_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Multiplication#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Multiplication#getRight()
+   * @see #getMultiplication()
+   * @generated
+   */
+  EReference getMultiplication_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Division <em>Division</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Division</em>'.
+   * @see org.xtext.example.xpath.xPath.Division
+   * @generated
+   */
+  EClass getDivision();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Division#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Division#getLeft()
+   * @see #getDivision()
+   * @generated
+   */
+  EReference getDivision_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Division#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Division#getRight()
+   * @see #getDivision()
+   * @generated
+   */
+  EReference getDivision_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.IDivision <em>IDivision</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>IDivision</em>'.
+   * @see org.xtext.example.xpath.xPath.IDivision
+   * @generated
+   */
+  EClass getIDivision();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.IDivision#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.IDivision#getLeft()
+   * @see #getIDivision()
+   * @generated
+   */
+  EReference getIDivision_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.IDivision#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.IDivision#getRight()
+   * @see #getIDivision()
+   * @generated
+   */
+  EReference getIDivision_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Mod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mod</em>'.
+   * @see org.xtext.example.xpath.xPath.Mod
+   * @generated
+   */
+  EClass getMod();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Mod#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Mod#getLeft()
+   * @see #getMod()
+   * @generated
+   */
+  EReference getMod_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Mod#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Mod#getRight()
+   * @see #getMod()
+   * @generated
+   */
+  EReference getMod_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Union <em>Union</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Union</em>'.
+   * @see org.xtext.example.xpath.xPath.Union
+   * @generated
+   */
+  EClass getUnion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Union#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Union#getLeft()
+   * @see #getUnion()
+   * @generated
+   */
+  EReference getUnion_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Union#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Union#getRight()
+   * @see #getUnion()
+   * @generated
+   */
+  EReference getUnion_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Pipe <em>Pipe</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pipe</em>'.
+   * @see org.xtext.example.xpath.xPath.Pipe
+   * @generated
+   */
+  EClass getPipe();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Pipe#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Pipe#getLeft()
+   * @see #getPipe()
+   * @generated
+   */
+  EReference getPipe_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Pipe#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Pipe#getRight()
+   * @see #getPipe()
+   * @generated
+   */
+  EReference getPipe_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Intersect <em>Intersect</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Intersect</em>'.
+   * @see org.xtext.example.xpath.xPath.Intersect
+   * @generated
+   */
+  EClass getIntersect();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Intersect#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Intersect#getLeft()
+   * @see #getIntersect()
+   * @generated
+   */
+  EReference getIntersect_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Intersect#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Intersect#getRight()
+   * @see #getIntersect()
+   * @generated
+   */
+  EReference getIntersect_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Except <em>Except</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Except</em>'.
+   * @see org.xtext.example.xpath.xPath.Except
+   * @generated
+   */
+  EClass getExcept();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Except#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Except#getLeft()
+   * @see #getExcept()
+   * @generated
+   */
+  EReference getExcept_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Except#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Except#getRight()
+   * @see #getExcept()
+   * @generated
+   */
+  EReference getExcept_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Instanceof <em>Instanceof</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Instanceof</em>'.
+   * @see org.xtext.example.xpath.xPath.Instanceof
+   * @generated
+   */
+  EClass getInstanceof();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Instanceof#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Instanceof#getLeft()
+   * @see #getInstanceof()
+   * @generated
+   */
+  EReference getInstanceof_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Instanceof#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Instanceof#getRight()
+   * @see #getInstanceof()
+   * @generated
+   */
+  EReference getInstanceof_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.TreatAs <em>Treat As</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Treat As</em>'.
+   * @see org.xtext.example.xpath.xPath.TreatAs
+   * @generated
+   */
+  EClass getTreatAs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.TreatAs#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.TreatAs#getLeft()
+   * @see #getTreatAs()
+   * @generated
+   */
+  EReference getTreatAs_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.TreatAs#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.TreatAs#getRight()
+   * @see #getTreatAs()
+   * @generated
+   */
+  EReference getTreatAs_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.Castable <em>Castable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Castable</em>'.
+   * @see org.xtext.example.xpath.xPath.Castable
+   * @generated
+   */
+  EClass getCastable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Castable#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.Castable#getLeft()
+   * @see #getCastable()
+   * @generated
+   */
+  EReference getCastable_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.Castable#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.Castable#getRight()
+   * @see #getCastable()
+   * @generated
+   */
+  EReference getCastable_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.CastAs <em>Cast As</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Cast As</em>'.
+   * @see org.xtext.example.xpath.xPath.CastAs
+   * @generated
+   */
+  EClass getCastAs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.CastAs#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.xpath.xPath.CastAs#getLeft()
+   * @see #getCastAs()
+   * @generated
+   */
+  EReference getCastAs_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.xpath.xPath.CastAs#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.xpath.xPath.CastAs#getRight()
+   * @see #getCastAs()
+   * @generated
+   */
+  EReference getCastAs_Right();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.xpath.xPath.RelSingle <em>Rel Single</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4682,6 +5504,24 @@ public interface XPathPackage extends EPackage
    */
   interface Literals
   {
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.XpathImpl <em>Xpath</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.XpathImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getXpath()
+     * @generated
+     */
+    EClass XPATH = eINSTANCE.getXpath();
+
+    /**
+     * The meta object literal for the '<em><b>Xpath</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XPATH__XPATH = eINSTANCE.getXpath_Xpath();
+
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ExprImpl <em>Expr</em>}' class.
      * <!-- begin-user-doc -->
@@ -4943,44 +5783,28 @@ public interface XPathPackage extends EPackage
     EClass COMPARISON_EXPR = eINSTANCE.getComparisonExpr();
 
     /**
-     * The meta object literal for the '<em><b>Range</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPARISON_EXPR__RANGE = eINSTANCE.getComparisonExpr_Range();
+    EReference COMPARISON_EXPR__LEFT = eINSTANCE.getComparisonExpr_Left();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Comp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPARISON_EXPR__VALUE = eINSTANCE.getComparisonExpr_Value();
+    EReference COMPARISON_EXPR__COMP = eINSTANCE.getComparisonExpr_Comp();
 
     /**
-     * The meta object literal for the '<em><b>Gen</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPARISON_EXPR__GEN = eINSTANCE.getComparisonExpr_Gen();
-
-    /**
-     * The meta object literal for the '<em><b>Node</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPARISON_EXPR__NODE = eINSTANCE.getComparisonExpr_Node();
-
-    /**
-     * The meta object literal for the '<em><b>Other Range</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPARISON_EXPR__OTHER_RANGE = eINSTANCE.getComparisonExpr_OtherRange();
+    EReference COMPARISON_EXPR__RIGHT = eINSTANCE.getComparisonExpr_Right();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.RangeExprImpl <em>Range Expr</em>}' class.
@@ -5019,22 +5843,6 @@ public interface XPathPackage extends EPackage
     EClass ADDITIVE_EXPR = eINSTANCE.getAdditiveExpr();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADDITIVE_EXPR__LEFT = eINSTANCE.getAdditiveExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Rights</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADDITIVE_EXPR__RIGHTS = eINSTANCE.getAdditiveExpr_Rights();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.MultiplicativeExprImpl <em>Multiplicative Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5043,22 +5851,6 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EClass MULTIPLICATIVE_EXPR = eINSTANCE.getMultiplicativeExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTIPLICATIVE_EXPR__LEFT = eINSTANCE.getMultiplicativeExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Rights</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTIPLICATIVE_EXPR__RIGHTS = eINSTANCE.getMultiplicativeExpr_Rights();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.UnionExprImpl <em>Union Expr</em>}' class.
@@ -5071,22 +5863,6 @@ public interface XPathPackage extends EPackage
     EClass UNION_EXPR = eINSTANCE.getUnionExpr();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNION_EXPR__LEFT = eINSTANCE.getUnionExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Rights</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNION_EXPR__RIGHTS = eINSTANCE.getUnionExpr_Rights();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.IntersectExceptExprImpl <em>Intersect Except Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5095,22 +5871,6 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EClass INTERSECT_EXCEPT_EXPR = eINSTANCE.getIntersectExceptExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERSECT_EXCEPT_EXPR__LEFT = eINSTANCE.getIntersectExceptExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Rights</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERSECT_EXCEPT_EXPR__RIGHTS = eINSTANCE.getIntersectExceptExpr_Rights();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.InstanceofExprImpl <em>Instanceof Expr</em>}' class.
@@ -5123,22 +5883,6 @@ public interface XPathPackage extends EPackage
     EClass INSTANCEOF_EXPR = eINSTANCE.getInstanceofExpr();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTANCEOF_EXPR__LEFT = eINSTANCE.getInstanceofExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTANCEOF_EXPR__RIGHT = eINSTANCE.getInstanceofExpr_Right();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.TreatExprImpl <em>Treat Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5147,22 +5891,6 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EClass TREAT_EXPR = eINSTANCE.getTreatExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TREAT_EXPR__LEFT = eINSTANCE.getTreatExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TREAT_EXPR__RIGHT = eINSTANCE.getTreatExpr_Right();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.CastableExprImpl <em>Castable Expr</em>}' class.
@@ -5175,22 +5903,6 @@ public interface XPathPackage extends EPackage
     EClass CASTABLE_EXPR = eINSTANCE.getCastableExpr();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CASTABLE_EXPR__LEFT = eINSTANCE.getCastableExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CASTABLE_EXPR__RIGHT = eINSTANCE.getCastableExpr_Right();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.CastExprImpl <em>Cast Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5199,22 +5911,6 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EClass CAST_EXPR = eINSTANCE.getCastExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CAST_EXPR__LEFT = eINSTANCE.getCastExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CAST_EXPR__RIGHT = eINSTANCE.getCastExpr_Right();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.UnaryExprImpl <em>Unary Expr</em>}' class.
@@ -5227,12 +5923,20 @@ public interface XPathPackage extends EPackage
     EClass UNARY_EXPR = eINSTANCE.getUnaryExpr();
 
     /**
-     * The meta object literal for the '<em><b>Unary</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Unary Ops</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference UNARY_EXPR__UNARY = eINSTANCE.getUnaryExpr_Unary();
+    EAttribute UNARY_EXPR__UNARY_OPS = eINSTANCE.getUnaryExpr_UnaryOps();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNARY_EXPR__VALUE = eINSTANCE.getUnaryExpr_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ValueExprImpl <em>Value Expr</em>}' class.
@@ -5251,6 +5955,60 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EReference VALUE_EXPR__VALUE = eINSTANCE.getValueExpr_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.GeneralCompImpl <em>General Comp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.GeneralCompImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getGeneralComp()
+     * @generated
+     */
+    EClass GENERAL_COMP = eINSTANCE.getGeneralComp();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_COMP__OP = eINSTANCE.getGeneralComp_Op();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ValueCompImpl <em>Value Comp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.ValueCompImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getValueComp()
+     * @generated
+     */
+    EClass VALUE_COMP = eINSTANCE.getValueComp();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_COMP__OP = eINSTANCE.getValueComp_Op();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.NodeCompImpl <em>Node Comp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.NodeCompImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getNodeComp()
+     * @generated
+     */
+    EClass NODE_COMP = eINSTANCE.getNodeComp();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NODE_COMP__OP = eINSTANCE.getNodeComp_Op();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.PathExprImpl <em>Path Expr</em>}' class.
@@ -6249,6 +7007,370 @@ public interface XPathPackage extends EPackage
      * @generated
      */
     EClass UNPREFIXED_NAME = eINSTANCE.getUnprefixedName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.AdditionImpl <em>Addition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.AdditionImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getAddition()
+     * @generated
+     */
+    EClass ADDITION = eINSTANCE.getAddition();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION__LEFT = eINSTANCE.getAddition_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION__RIGHT = eINSTANCE.getAddition_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.SubstractionImpl <em>Substraction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.SubstractionImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getSubstraction()
+     * @generated
+     */
+    EClass SUBSTRACTION = eINSTANCE.getSubstraction();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBSTRACTION__LEFT = eINSTANCE.getSubstraction_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBSTRACTION__RIGHT = eINSTANCE.getSubstraction_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.MultiplicationImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getMultiplication()
+     * @generated
+     */
+    EClass MULTIPLICATION = eINSTANCE.getMultiplication();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION__LEFT = eINSTANCE.getMultiplication_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION__RIGHT = eINSTANCE.getMultiplication_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.DivisionImpl <em>Division</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.DivisionImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getDivision()
+     * @generated
+     */
+    EClass DIVISION = eINSTANCE.getDivision();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION__LEFT = eINSTANCE.getDivision_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION__RIGHT = eINSTANCE.getDivision_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.IDivisionImpl <em>IDivision</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.IDivisionImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getIDivision()
+     * @generated
+     */
+    EClass IDIVISION = eINSTANCE.getIDivision();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IDIVISION__LEFT = eINSTANCE.getIDivision_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IDIVISION__RIGHT = eINSTANCE.getIDivision_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ModImpl <em>Mod</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.ModImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getMod()
+     * @generated
+     */
+    EClass MOD = eINSTANCE.getMod();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOD__LEFT = eINSTANCE.getMod_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOD__RIGHT = eINSTANCE.getMod_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.UnionImpl <em>Union</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.UnionImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getUnion()
+     * @generated
+     */
+    EClass UNION = eINSTANCE.getUnion();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNION__LEFT = eINSTANCE.getUnion_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNION__RIGHT = eINSTANCE.getUnion_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.PipeImpl <em>Pipe</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.PipeImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getPipe()
+     * @generated
+     */
+    EClass PIPE = eINSTANCE.getPipe();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIPE__LEFT = eINSTANCE.getPipe_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIPE__RIGHT = eINSTANCE.getPipe_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.IntersectImpl <em>Intersect</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.IntersectImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getIntersect()
+     * @generated
+     */
+    EClass INTERSECT = eINSTANCE.getIntersect();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERSECT__LEFT = eINSTANCE.getIntersect_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERSECT__RIGHT = eINSTANCE.getIntersect_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.ExceptImpl <em>Except</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.ExceptImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getExcept()
+     * @generated
+     */
+    EClass EXCEPT = eINSTANCE.getExcept();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXCEPT__LEFT = eINSTANCE.getExcept_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXCEPT__RIGHT = eINSTANCE.getExcept_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.InstanceofImpl <em>Instanceof</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.InstanceofImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getInstanceof()
+     * @generated
+     */
+    EClass INSTANCEOF = eINSTANCE.getInstanceof();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTANCEOF__LEFT = eINSTANCE.getInstanceof_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTANCEOF__RIGHT = eINSTANCE.getInstanceof_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.TreatAsImpl <em>Treat As</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.TreatAsImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getTreatAs()
+     * @generated
+     */
+    EClass TREAT_AS = eINSTANCE.getTreatAs();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TREAT_AS__LEFT = eINSTANCE.getTreatAs_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TREAT_AS__RIGHT = eINSTANCE.getTreatAs_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.CastableImpl <em>Castable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.CastableImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getCastable()
+     * @generated
+     */
+    EClass CASTABLE = eINSTANCE.getCastable();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASTABLE__LEFT = eINSTANCE.getCastable_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASTABLE__RIGHT = eINSTANCE.getCastable_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.CastAsImpl <em>Cast As</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.xpath.xPath.impl.CastAsImpl
+     * @see org.xtext.example.xpath.xPath.impl.XPathPackageImpl#getCastAs()
+     * @generated
+     */
+    EClass CAST_AS = eINSTANCE.getCastAs();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CAST_AS__LEFT = eINSTANCE.getCastAs_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CAST_AS__RIGHT = eINSTANCE.getCastAs_Right();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.xpath.xPath.impl.RelSingleImpl <em>Rel Single</em>}' class.

@@ -25,7 +25,7 @@ public class XPathParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPar
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Expr";
+		return "Xpath";
 	}
 	
 	public XPathGrammarAccess getGrammarAccess() {

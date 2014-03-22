@@ -12,11 +12,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getRange <em>Range</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getValue <em>Value</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getGen <em>Gen</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getNode <em>Node</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getOtherRange <em>Other Range</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getComp <em>Comp</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.ComparisonExpr#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,133 +25,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface ComparisonExpr extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Range</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Range</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Range</em>' containment reference.
-   * @see #setRange(RangeExpr)
-   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Range()
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(RangeExpr)
+   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Left()
    * @model containment="true"
    * @generated
    */
-  RangeExpr getRange();
+  RangeExpr getLeft();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getRange <em>Range</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Range</em>' containment reference.
-   * @see #getRange()
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
    * @generated
    */
-  void setRange(RangeExpr value);
+  void setLeft(RangeExpr value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Comp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Comp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Value()
-   * @model
-   * @generated
-   */
-  String getValue();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getValue <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
-   * @generated
-   */
-  void setValue(String value);
-
-  /**
-   * Returns the value of the '<em><b>Gen</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Gen</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Gen</em>' attribute.
-   * @see #setGen(String)
-   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Gen()
-   * @model
-   * @generated
-   */
-  String getGen();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getGen <em>Gen</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Gen</em>' attribute.
-   * @see #getGen()
-   * @generated
-   */
-  void setGen(String value);
-
-  /**
-   * Returns the value of the '<em><b>Node</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Node</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Node</em>' attribute.
-   * @see #setNode(String)
-   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Node()
-   * @model
-   * @generated
-   */
-  String getNode();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getNode <em>Node</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Node</em>' attribute.
-   * @see #getNode()
-   * @generated
-   */
-  void setNode(String value);
-
-  /**
-   * Returns the value of the '<em><b>Other Range</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Other Range</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Other Range</em>' containment reference.
-   * @see #setOtherRange(RangeExpr)
-   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_OtherRange()
+   * @return the value of the '<em>Comp</em>' containment reference.
+   * @see #setComp(EObject)
+   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Comp()
    * @model containment="true"
    * @generated
    */
-  RangeExpr getOtherRange();
+  EObject getComp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getOtherRange <em>Other Range</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getComp <em>Comp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Other Range</em>' containment reference.
-   * @see #getOtherRange()
+   * @param value the new value of the '<em>Comp</em>' containment reference.
+   * @see #getComp()
    * @generated
    */
-  void setOtherRange(RangeExpr value);
+  void setComp(EObject value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(RangeExpr)
+   * @see org.xtext.example.xpath.xPath.XPathPackage#getComparisonExpr_Right()
+   * @model containment="true"
+   * @generated
+   */
+  RangeExpr getRight();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.xpath.xPath.ComparisonExpr#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(RangeExpr value);
 
 } // ComparisonExpr

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.Addition;
 import org.xtext.example.xpath.xPath.AdditionalIn;
 import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
@@ -21,15 +22,19 @@ import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
 import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastAs;
 import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.Castable;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.Division;
 import org.xtext.example.xpath.xPath.DocumentTest;
 import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
 import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Except;
 import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
@@ -37,15 +42,22 @@ import org.xtext.example.xpath.xPath.ForExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.GeneralComp;
+import org.xtext.example.xpath.xPath.IDivision;
 import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.Instanceof;
 import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.Intersect;
 import org.xtext.example.xpath.xPath.IntersectExceptExpr;
 import org.xtext.example.xpath.xPath.ItemType;
 import org.xtext.example.xpath.xPath.KindTest;
 import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.Mod;
+import org.xtext.example.xpath.xPath.Multiplication;
 import org.xtext.example.xpath.xPath.MultiplicativeExpr;
 import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeComp;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.OrExpr;
@@ -53,6 +65,7 @@ import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.PITest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Pipe;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrefixedName;
@@ -72,17 +85,22 @@ import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.SingleType;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.Substraction;
+import org.xtext.example.xpath.xPath.TreatAs;
 import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.Union;
 import org.xtext.example.xpath.xPath.UnionExpr;
 import org.xtext.example.xpath.xPath.UnprefixedName;
+import org.xtext.example.xpath.xPath.ValueComp;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
 import org.xtext.example.xpath.xPath.Wildcard;
 import org.xtext.example.xpath.xPath.XPathFactory;
 import org.xtext.example.xpath.xPath.XPathPackage;
+import org.xtext.example.xpath.xPath.Xpath;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,6 +154,7 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     switch (eClass.getClassifierID())
     {
+      case XPathPackage.XPATH: return createXpath();
       case XPathPackage.EXPR: return createExpr();
       case XPathPackage.EXPR_SINGLE: return createExprSingle();
       case XPathPackage.FOR_EXPR: return createForExpr();
@@ -157,6 +176,9 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       case XPathPackage.CAST_EXPR: return createCastExpr();
       case XPathPackage.UNARY_EXPR: return createUnaryExpr();
       case XPathPackage.VALUE_EXPR: return createValueExpr();
+      case XPathPackage.GENERAL_COMP: return createGeneralComp();
+      case XPathPackage.VALUE_COMP: return createValueComp();
+      case XPathPackage.NODE_COMP: return createNodeComp();
       case XPathPackage.PATH_EXPR: return createPathExpr();
       case XPathPackage.RELATIVE_PATH_EXPR: return createRelativePathExpr();
       case XPathPackage.STEP_EXPR: return createStepExpr();
@@ -200,6 +222,20 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       case XPathPackage.QNAME: return createQName();
       case XPathPackage.PREFIXED_NAME: return createPrefixedName();
       case XPathPackage.UNPREFIXED_NAME: return createUnprefixedName();
+      case XPathPackage.ADDITION: return createAddition();
+      case XPathPackage.SUBSTRACTION: return createSubstraction();
+      case XPathPackage.MULTIPLICATION: return createMultiplication();
+      case XPathPackage.DIVISION: return createDivision();
+      case XPathPackage.IDIVISION: return createIDivision();
+      case XPathPackage.MOD: return createMod();
+      case XPathPackage.UNION: return createUnion();
+      case XPathPackage.PIPE: return createPipe();
+      case XPathPackage.INTERSECT: return createIntersect();
+      case XPathPackage.EXCEPT: return createExcept();
+      case XPathPackage.INSTANCEOF: return createInstanceof();
+      case XPathPackage.TREAT_AS: return createTreatAs();
+      case XPathPackage.CASTABLE: return createCastable();
+      case XPathPackage.CAST_AS: return createCastAs();
       case XPathPackage.REL_SINGLE: return createRelSingle();
       case XPathPackage.REL_DOUBLE: return createRelDouble();
       case XPathPackage.REL_NO_SELECTOR: return createRelNoSelector();
@@ -211,6 +247,17 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Xpath createXpath()
+  {
+    XpathImpl xpath = new XpathImpl();
+    return xpath;
   }
 
   /**
@@ -442,6 +489,39 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     ValueExprImpl valueExpr = new ValueExprImpl();
     return valueExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GeneralComp createGeneralComp()
+  {
+    GeneralCompImpl generalComp = new GeneralCompImpl();
+    return generalComp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueComp createValueComp()
+  {
+    ValueCompImpl valueComp = new ValueCompImpl();
+    return valueComp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodeComp createNodeComp()
+  {
+    NodeCompImpl nodeComp = new NodeCompImpl();
+    return nodeComp;
   }
 
   /**
@@ -915,6 +995,160 @@ public class XPathFactoryImpl extends EFactoryImpl implements XPathFactory
   {
     UnprefixedNameImpl unprefixedName = new UnprefixedNameImpl();
     return unprefixedName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Addition createAddition()
+  {
+    AdditionImpl addition = new AdditionImpl();
+    return addition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Substraction createSubstraction()
+  {
+    SubstractionImpl substraction = new SubstractionImpl();
+    return substraction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multiplication createMultiplication()
+  {
+    MultiplicationImpl multiplication = new MultiplicationImpl();
+    return multiplication;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Division createDivision()
+  {
+    DivisionImpl division = new DivisionImpl();
+    return division;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IDivision createIDivision()
+  {
+    IDivisionImpl iDivision = new IDivisionImpl();
+    return iDivision;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Mod createMod()
+  {
+    ModImpl mod = new ModImpl();
+    return mod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Union createUnion()
+  {
+    UnionImpl union = new UnionImpl();
+    return union;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Pipe createPipe()
+  {
+    PipeImpl pipe = new PipeImpl();
+    return pipe;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Intersect createIntersect()
+  {
+    IntersectImpl intersect = new IntersectImpl();
+    return intersect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Except createExcept()
+  {
+    ExceptImpl except = new ExceptImpl();
+    return except;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Instanceof createInstanceof()
+  {
+    InstanceofImpl instanceof_ = new InstanceofImpl();
+    return instanceof_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TreatAs createTreatAs()
+  {
+    TreatAsImpl treatAs = new TreatAsImpl();
+    return treatAs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Castable createCastable()
+  {
+    CastableImpl castable = new CastableImpl();
+    return castable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CastAs createCastAs()
+  {
+    CastAsImpl castAs = new CastAsImpl();
+    return castAs;
   }
 
   /**

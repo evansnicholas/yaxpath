@@ -2,14 +2,19 @@
  */
 package org.xtext.example.xpath.xPath.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.xtext.example.xpath.xPath.UnaryExpr;
 import org.xtext.example.xpath.xPath.ValueExpr;
@@ -22,23 +27,34 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.UnaryExprImpl#getUnary <em>Unary</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.UnaryExprImpl#getUnaryOps <em>Unary Ops</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.UnaryExprImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UnaryExprImpl extends MinimalEObjectImpl.Container implements UnaryExpr
+public class UnaryExprImpl extends CastExprImpl implements UnaryExpr
 {
   /**
-   * The cached value of the '{@link #getUnary() <em>Unary</em>}' containment reference.
+   * The cached value of the '{@link #getUnaryOps() <em>Unary Ops</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUnary()
+   * @see #getUnaryOps()
    * @generated
    * @ordered
    */
-  protected ValueExpr unary;
+  protected EList<String> unaryOps;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected ValueExpr value;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +82,13 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
    * <!-- end-user-doc -->
    * @generated
    */
-  public ValueExpr getUnary()
+  public EList<String> getUnaryOps()
   {
-    return unary;
+    if (unaryOps == null)
+    {
+      unaryOps = new EDataTypeEList<String>(String.class, this, XPathPackage.UNARY_EXPR__UNARY_OPS);
+    }
+    return unaryOps;
   }
 
   /**
@@ -76,13 +96,23 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetUnary(ValueExpr newUnary, NotificationChain msgs)
+  public ValueExpr getValue()
   {
-    ValueExpr oldUnary = unary;
-    unary = newUnary;
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValue(ValueExpr newValue, NotificationChain msgs)
+  {
+    ValueExpr oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.UNARY_EXPR__UNARY, oldUnary, newUnary);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.UNARY_EXPR__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +123,20 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUnary(ValueExpr newUnary)
+  public void setValue(ValueExpr newValue)
   {
-    if (newUnary != unary)
+    if (newValue != value)
     {
       NotificationChain msgs = null;
-      if (unary != null)
-        msgs = ((InternalEObject)unary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.UNARY_EXPR__UNARY, null, msgs);
-      if (newUnary != null)
-        msgs = ((InternalEObject)newUnary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.UNARY_EXPR__UNARY, null, msgs);
-      msgs = basicSetUnary(newUnary, msgs);
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.UNARY_EXPR__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.UNARY_EXPR__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.UNARY_EXPR__UNARY, newUnary, newUnary));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.UNARY_EXPR__VALUE, newValue, newValue));
   }
 
   /**
@@ -119,8 +149,8 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
   {
     switch (featureID)
     {
-      case XPathPackage.UNARY_EXPR__UNARY:
-        return basicSetUnary(null, msgs);
+      case XPathPackage.UNARY_EXPR__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +165,10 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
   {
     switch (featureID)
     {
-      case XPathPackage.UNARY_EXPR__UNARY:
-        return getUnary();
+      case XPathPackage.UNARY_EXPR__UNARY_OPS:
+        return getUnaryOps();
+      case XPathPackage.UNARY_EXPR__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,13 +178,18 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case XPathPackage.UNARY_EXPR__UNARY:
-        setUnary((ValueExpr)newValue);
+      case XPathPackage.UNARY_EXPR__UNARY_OPS:
+        getUnaryOps().clear();
+        getUnaryOps().addAll((Collection<? extends String>)newValue);
+        return;
+      case XPathPackage.UNARY_EXPR__VALUE:
+        setValue((ValueExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +205,11 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
   {
     switch (featureID)
     {
-      case XPathPackage.UNARY_EXPR__UNARY:
-        setUnary((ValueExpr)null);
+      case XPathPackage.UNARY_EXPR__UNARY_OPS:
+        getUnaryOps().clear();
+        return;
+      case XPathPackage.UNARY_EXPR__VALUE:
+        setValue((ValueExpr)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,10 +225,29 @@ public class UnaryExprImpl extends MinimalEObjectImpl.Container implements Unary
   {
     switch (featureID)
     {
-      case XPathPackage.UNARY_EXPR__UNARY:
-        return unary != null;
+      case XPathPackage.UNARY_EXPR__UNARY_OPS:
+        return unaryOps != null && !unaryOps.isEmpty();
+      case XPathPackage.UNARY_EXPR__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (unaryOps: ");
+    result.append(unaryOps);
+    result.append(')');
+    return result.toString();
   }
 
 } //UnaryExprImpl

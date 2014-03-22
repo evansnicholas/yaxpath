@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.Addition;
 import org.xtext.example.xpath.xPath.AdditionalIn;
 import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
@@ -20,15 +21,19 @@ import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
 import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastAs;
 import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.Castable;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.Division;
 import org.xtext.example.xpath.xPath.DocumentTest;
 import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
 import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Except;
 import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
@@ -36,15 +41,22 @@ import org.xtext.example.xpath.xPath.ForExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.GeneralComp;
+import org.xtext.example.xpath.xPath.IDivision;
 import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.Instanceof;
 import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.Intersect;
 import org.xtext.example.xpath.xPath.IntersectExceptExpr;
 import org.xtext.example.xpath.xPath.ItemType;
 import org.xtext.example.xpath.xPath.KindTest;
 import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.Mod;
+import org.xtext.example.xpath.xPath.Multiplication;
 import org.xtext.example.xpath.xPath.MultiplicativeExpr;
 import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeComp;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.OrExpr;
@@ -52,6 +64,7 @@ import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.PITest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Pipe;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrefixedName;
@@ -71,17 +84,22 @@ import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.SingleType;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.Substraction;
+import org.xtext.example.xpath.xPath.TreatAs;
 import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.Union;
 import org.xtext.example.xpath.xPath.UnionExpr;
 import org.xtext.example.xpath.xPath.UnprefixedName;
+import org.xtext.example.xpath.xPath.ValueComp;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
 import org.xtext.example.xpath.xPath.Wildcard;
 import org.xtext.example.xpath.xPath.XPathFactory;
 import org.xtext.example.xpath.xPath.XPathPackage;
+import org.xtext.example.xpath.xPath.Xpath;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,6 +109,13 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  */
 public class XPathPackageImpl extends EPackageImpl implements XPathPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xpathEClass = null;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -237,6 +262,27 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * @generated
    */
   private EClass valueExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass generalCompEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valueCompEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nodeCompEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -544,6 +590,104 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass additionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass substractionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass divisionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass iDivisionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass modEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pipeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass intersectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass exceptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instanceofEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass treatAsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass castableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass castAsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass relSingleEClass = null;
 
   /**
@@ -656,6 +800,26 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(XPathPackage.eNS_URI, theXPathPackage);
     return theXPathPackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getXpath()
+  {
+    return xpathEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXpath_Xpath()
+  {
+    return (EReference)xpathEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -963,7 +1127,7 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComparisonExpr_Range()
+  public EReference getComparisonExpr_Left()
   {
     return (EReference)comparisonExprEClass.getEStructuralFeatures().get(0);
   }
@@ -973,9 +1137,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComparisonExpr_Value()
+  public EReference getComparisonExpr_Comp()
   {
-    return (EAttribute)comparisonExprEClass.getEStructuralFeatures().get(1);
+    return (EReference)comparisonExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -983,29 +1147,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComparisonExpr_Gen()
+  public EReference getComparisonExpr_Right()
   {
-    return (EAttribute)comparisonExprEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getComparisonExpr_Node()
-  {
-    return (EAttribute)comparisonExprEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComparisonExpr_OtherRange()
-  {
-    return (EReference)comparisonExprEClass.getEStructuralFeatures().get(4);
+    return (EReference)comparisonExprEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1053,49 +1197,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAdditiveExpr_Left()
-  {
-    return (EReference)additiveExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAdditiveExpr_Rights()
-  {
-    return (EReference)additiveExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getMultiplicativeExpr()
   {
     return multiplicativeExprEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMultiplicativeExpr_Left()
-  {
-    return (EReference)multiplicativeExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMultiplicativeExpr_Rights()
-  {
-    return (EReference)multiplicativeExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1113,49 +1217,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUnionExpr_Left()
-  {
-    return (EReference)unionExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUnionExpr_Rights()
-  {
-    return (EReference)unionExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getIntersectExceptExpr()
   {
     return intersectExceptExprEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIntersectExceptExpr_Left()
-  {
-    return (EReference)intersectExceptExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIntersectExceptExpr_Rights()
-  {
-    return (EReference)intersectExceptExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1173,49 +1237,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInstanceofExpr_Left()
-  {
-    return (EReference)instanceofExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInstanceofExpr_Right()
-  {
-    return (EReference)instanceofExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTreatExpr()
   {
     return treatExprEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTreatExpr_Left()
-  {
-    return (EReference)treatExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTreatExpr_Right()
-  {
-    return (EReference)treatExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1233,49 +1257,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCastableExpr_Left()
-  {
-    return (EReference)castableExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCastableExpr_Right()
-  {
-    return (EReference)castableExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getCastExpr()
   {
     return castExprEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCastExpr_Left()
-  {
-    return (EReference)castExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCastExpr_Right()
-  {
-    return (EReference)castExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1293,9 +1277,19 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUnaryExpr_Unary()
+  public EAttribute getUnaryExpr_UnaryOps()
   {
-    return (EReference)unaryExprEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)unaryExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnaryExpr_Value()
+  {
+    return (EReference)unaryExprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1316,6 +1310,66 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
   public EReference getValueExpr_Value()
   {
     return (EReference)valueExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGeneralComp()
+  {
+    return generalCompEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGeneralComp_Op()
+  {
+    return (EAttribute)generalCompEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getValueComp()
+  {
+    return valueCompEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueComp_Op()
+  {
+    return (EAttribute)valueCompEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNodeComp()
+  {
+    return nodeCompEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNodeComp_Op()
+  {
+    return (EAttribute)nodeCompEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2463,6 +2517,426 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAddition()
+  {
+    return additionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAddition_Left()
+  {
+    return (EReference)additionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAddition_Right()
+  {
+    return (EReference)additionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSubstraction()
+  {
+    return substractionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubstraction_Left()
+  {
+    return (EReference)substractionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubstraction_Right()
+  {
+    return (EReference)substractionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiplication()
+  {
+    return multiplicationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplication_Left()
+  {
+    return (EReference)multiplicationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplication_Right()
+  {
+    return (EReference)multiplicationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDivision()
+  {
+    return divisionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDivision_Left()
+  {
+    return (EReference)divisionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDivision_Right()
+  {
+    return (EReference)divisionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIDivision()
+  {
+    return iDivisionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIDivision_Left()
+  {
+    return (EReference)iDivisionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIDivision_Right()
+  {
+    return (EReference)iDivisionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMod()
+  {
+    return modEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMod_Left()
+  {
+    return (EReference)modEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMod_Right()
+  {
+    return (EReference)modEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnion()
+  {
+    return unionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnion_Left()
+  {
+    return (EReference)unionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnion_Right()
+  {
+    return (EReference)unionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPipe()
+  {
+    return pipeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPipe_Left()
+  {
+    return (EReference)pipeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPipe_Right()
+  {
+    return (EReference)pipeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIntersect()
+  {
+    return intersectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIntersect_Left()
+  {
+    return (EReference)intersectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIntersect_Right()
+  {
+    return (EReference)intersectEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExcept()
+  {
+    return exceptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExcept_Left()
+  {
+    return (EReference)exceptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExcept_Right()
+  {
+    return (EReference)exceptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstanceof()
+  {
+    return instanceofEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstanceof_Left()
+  {
+    return (EReference)instanceofEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstanceof_Right()
+  {
+    return (EReference)instanceofEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTreatAs()
+  {
+    return treatAsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTreatAs_Left()
+  {
+    return (EReference)treatAsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTreatAs_Right()
+  {
+    return (EReference)treatAsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCastable()
+  {
+    return castableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCastable_Left()
+  {
+    return (EReference)castableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCastable_Right()
+  {
+    return (EReference)castableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCastAs()
+  {
+    return castAsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCastAs_Left()
+  {
+    return (EReference)castAsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCastAs_Right()
+  {
+    return (EReference)castAsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRelSingle()
   {
     return relSingleEClass;
@@ -2638,6 +3112,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     isCreated = true;
 
     // Create classes and their features
+    xpathEClass = createEClass(XPATH);
+    createEReference(xpathEClass, XPATH__XPATH);
+
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__EXPR_SINGLE);
     createEReference(exprEClass, EXPR__EXPRS_SINGLE);
@@ -2677,53 +3154,45 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     createEReference(andExprEClass, AND_EXPR__RIGHTS);
 
     comparisonExprEClass = createEClass(COMPARISON_EXPR);
-    createEReference(comparisonExprEClass, COMPARISON_EXPR__RANGE);
-    createEAttribute(comparisonExprEClass, COMPARISON_EXPR__VALUE);
-    createEAttribute(comparisonExprEClass, COMPARISON_EXPR__GEN);
-    createEAttribute(comparisonExprEClass, COMPARISON_EXPR__NODE);
-    createEReference(comparisonExprEClass, COMPARISON_EXPR__OTHER_RANGE);
+    createEReference(comparisonExprEClass, COMPARISON_EXPR__LEFT);
+    createEReference(comparisonExprEClass, COMPARISON_EXPR__COMP);
+    createEReference(comparisonExprEClass, COMPARISON_EXPR__RIGHT);
 
     rangeExprEClass = createEClass(RANGE_EXPR);
     createEReference(rangeExprEClass, RANGE_EXPR__FROM);
     createEReference(rangeExprEClass, RANGE_EXPR__TO);
 
     additiveExprEClass = createEClass(ADDITIVE_EXPR);
-    createEReference(additiveExprEClass, ADDITIVE_EXPR__LEFT);
-    createEReference(additiveExprEClass, ADDITIVE_EXPR__RIGHTS);
 
     multiplicativeExprEClass = createEClass(MULTIPLICATIVE_EXPR);
-    createEReference(multiplicativeExprEClass, MULTIPLICATIVE_EXPR__LEFT);
-    createEReference(multiplicativeExprEClass, MULTIPLICATIVE_EXPR__RIGHTS);
 
     unionExprEClass = createEClass(UNION_EXPR);
-    createEReference(unionExprEClass, UNION_EXPR__LEFT);
-    createEReference(unionExprEClass, UNION_EXPR__RIGHTS);
 
     intersectExceptExprEClass = createEClass(INTERSECT_EXCEPT_EXPR);
-    createEReference(intersectExceptExprEClass, INTERSECT_EXCEPT_EXPR__LEFT);
-    createEReference(intersectExceptExprEClass, INTERSECT_EXCEPT_EXPR__RIGHTS);
 
     instanceofExprEClass = createEClass(INSTANCEOF_EXPR);
-    createEReference(instanceofExprEClass, INSTANCEOF_EXPR__LEFT);
-    createEReference(instanceofExprEClass, INSTANCEOF_EXPR__RIGHT);
 
     treatExprEClass = createEClass(TREAT_EXPR);
-    createEReference(treatExprEClass, TREAT_EXPR__LEFT);
-    createEReference(treatExprEClass, TREAT_EXPR__RIGHT);
 
     castableExprEClass = createEClass(CASTABLE_EXPR);
-    createEReference(castableExprEClass, CASTABLE_EXPR__LEFT);
-    createEReference(castableExprEClass, CASTABLE_EXPR__RIGHT);
 
     castExprEClass = createEClass(CAST_EXPR);
-    createEReference(castExprEClass, CAST_EXPR__LEFT);
-    createEReference(castExprEClass, CAST_EXPR__RIGHT);
 
     unaryExprEClass = createEClass(UNARY_EXPR);
-    createEReference(unaryExprEClass, UNARY_EXPR__UNARY);
+    createEAttribute(unaryExprEClass, UNARY_EXPR__UNARY_OPS);
+    createEReference(unaryExprEClass, UNARY_EXPR__VALUE);
 
     valueExprEClass = createEClass(VALUE_EXPR);
     createEReference(valueExprEClass, VALUE_EXPR__VALUE);
+
+    generalCompEClass = createEClass(GENERAL_COMP);
+    createEAttribute(generalCompEClass, GENERAL_COMP__OP);
+
+    valueCompEClass = createEClass(VALUE_COMP);
+    createEAttribute(valueCompEClass, VALUE_COMP__OP);
+
+    nodeCompEClass = createEClass(NODE_COMP);
+    createEAttribute(nodeCompEClass, NODE_COMP__OP);
 
     pathExprEClass = createEClass(PATH_EXPR);
 
@@ -2882,6 +3351,62 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
 
     unprefixedNameEClass = createEClass(UNPREFIXED_NAME);
 
+    additionEClass = createEClass(ADDITION);
+    createEReference(additionEClass, ADDITION__LEFT);
+    createEReference(additionEClass, ADDITION__RIGHT);
+
+    substractionEClass = createEClass(SUBSTRACTION);
+    createEReference(substractionEClass, SUBSTRACTION__LEFT);
+    createEReference(substractionEClass, SUBSTRACTION__RIGHT);
+
+    multiplicationEClass = createEClass(MULTIPLICATION);
+    createEReference(multiplicationEClass, MULTIPLICATION__LEFT);
+    createEReference(multiplicationEClass, MULTIPLICATION__RIGHT);
+
+    divisionEClass = createEClass(DIVISION);
+    createEReference(divisionEClass, DIVISION__LEFT);
+    createEReference(divisionEClass, DIVISION__RIGHT);
+
+    iDivisionEClass = createEClass(IDIVISION);
+    createEReference(iDivisionEClass, IDIVISION__LEFT);
+    createEReference(iDivisionEClass, IDIVISION__RIGHT);
+
+    modEClass = createEClass(MOD);
+    createEReference(modEClass, MOD__LEFT);
+    createEReference(modEClass, MOD__RIGHT);
+
+    unionEClass = createEClass(UNION);
+    createEReference(unionEClass, UNION__LEFT);
+    createEReference(unionEClass, UNION__RIGHT);
+
+    pipeEClass = createEClass(PIPE);
+    createEReference(pipeEClass, PIPE__LEFT);
+    createEReference(pipeEClass, PIPE__RIGHT);
+
+    intersectEClass = createEClass(INTERSECT);
+    createEReference(intersectEClass, INTERSECT__LEFT);
+    createEReference(intersectEClass, INTERSECT__RIGHT);
+
+    exceptEClass = createEClass(EXCEPT);
+    createEReference(exceptEClass, EXCEPT__LEFT);
+    createEReference(exceptEClass, EXCEPT__RIGHT);
+
+    instanceofEClass = createEClass(INSTANCEOF);
+    createEReference(instanceofEClass, INSTANCEOF__LEFT);
+    createEReference(instanceofEClass, INSTANCEOF__RIGHT);
+
+    treatAsEClass = createEClass(TREAT_AS);
+    createEReference(treatAsEClass, TREAT_AS__LEFT);
+    createEReference(treatAsEClass, TREAT_AS__RIGHT);
+
+    castableEClass = createEClass(CASTABLE);
+    createEReference(castableEClass, CASTABLE__LEFT);
+    createEReference(castableEClass, CASTABLE__RIGHT);
+
+    castAsEClass = createEClass(CAST_AS);
+    createEReference(castAsEClass, CAST_AS__LEFT);
+    createEReference(castAsEClass, CAST_AS__RIGHT);
+
     relSingleEClass = createEClass(REL_SINGLE);
     createEReference(relSingleEClass, REL_SINGLE__REL_PATH_EXPR);
 
@@ -2939,6 +3464,14 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     quantifiedExprEClass.getESuperTypes().add(this.getExprSingle());
     ifExprEClass.getESuperTypes().add(this.getExprSingle());
     orExprEClass.getESuperTypes().add(this.getExprSingle());
+    multiplicativeExprEClass.getESuperTypes().add(this.getAdditiveExpr());
+    unionExprEClass.getESuperTypes().add(this.getMultiplicativeExpr());
+    intersectExceptExprEClass.getESuperTypes().add(this.getUnionExpr());
+    instanceofExprEClass.getESuperTypes().add(this.getIntersectExceptExpr());
+    treatExprEClass.getESuperTypes().add(this.getInstanceofExpr());
+    castableExprEClass.getESuperTypes().add(this.getTreatExpr());
+    castExprEClass.getESuperTypes().add(this.getCastableExpr());
+    unaryExprEClass.getESuperTypes().add(this.getCastExpr());
     relativePathExprEClass.getESuperTypes().add(this.getPathExpr());
     nodeTestEClass.getESuperTypes().add(this.getAbbrevForwardStep());
     varNameEClass.getESuperTypes().add(this.getVarRef());
@@ -2946,6 +3479,20 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     elementNameEClass.getESuperTypes().add(this.getElementDeclaration());
     prefixedNameEClass.getESuperTypes().add(this.getQName());
     unprefixedNameEClass.getESuperTypes().add(this.getQName());
+    additionEClass.getESuperTypes().add(this.getAdditiveExpr());
+    substractionEClass.getESuperTypes().add(this.getAdditiveExpr());
+    multiplicationEClass.getESuperTypes().add(this.getMultiplicativeExpr());
+    divisionEClass.getESuperTypes().add(this.getMultiplicativeExpr());
+    iDivisionEClass.getESuperTypes().add(this.getMultiplicativeExpr());
+    modEClass.getESuperTypes().add(this.getMultiplicativeExpr());
+    unionEClass.getESuperTypes().add(this.getUnionExpr());
+    pipeEClass.getESuperTypes().add(this.getUnionExpr());
+    intersectEClass.getESuperTypes().add(this.getIntersectExceptExpr());
+    exceptEClass.getESuperTypes().add(this.getIntersectExceptExpr());
+    instanceofEClass.getESuperTypes().add(this.getInstanceofExpr());
+    treatAsEClass.getESuperTypes().add(this.getTreatExpr());
+    castableEClass.getESuperTypes().add(this.getCastableExpr());
+    castAsEClass.getESuperTypes().add(this.getCastExpr());
     relSingleEClass.getESuperTypes().add(this.getPathExpr());
     relDoubleEClass.getESuperTypes().add(this.getPathExpr());
     relNoSelectorEClass.getESuperTypes().add(this.getPathExpr());
@@ -2956,6 +3503,9 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     pitTestEClass.getESuperTypes().add(this.getPITest());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(xpathEClass, Xpath.class, "Xpath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXpath_Xpath(), this.getExpr(), null, "xpath", null, 0, 1, Xpath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpr_ExprSingle(), this.getExprSingle(), null, "exprSingle", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpr_ExprsSingle(), this.getExprSingle(), null, "exprsSingle", null, 0, -1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2995,53 +3545,45 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getAndExpr_Rights(), this.getComparisonExpr(), null, "rights", null, 0, -1, AndExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comparisonExprEClass, ComparisonExpr.class, "ComparisonExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComparisonExpr_Range(), this.getRangeExpr(), null, "range", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComparisonExpr_Value(), ecorePackage.getEString(), "value", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComparisonExpr_Gen(), ecorePackage.getEString(), "gen", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComparisonExpr_Node(), ecorePackage.getEString(), "node", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComparisonExpr_OtherRange(), this.getRangeExpr(), null, "otherRange", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComparisonExpr_Left(), this.getRangeExpr(), null, "left", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComparisonExpr_Comp(), ecorePackage.getEObject(), null, "comp", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComparisonExpr_Right(), this.getRangeExpr(), null, "right", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rangeExprEClass, RangeExpr.class, "RangeExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRangeExpr_From(), this.getAdditiveExpr(), null, "from", null, 0, 1, RangeExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRangeExpr_To(), this.getAdditiveExpr(), null, "to", null, 0, 1, RangeExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(additiveExprEClass, AdditiveExpr.class, "AdditiveExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAdditiveExpr_Left(), this.getMultiplicativeExpr(), null, "left", null, 0, 1, AdditiveExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAdditiveExpr_Rights(), this.getMultiplicativeExpr(), null, "rights", null, 0, -1, AdditiveExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(multiplicativeExprEClass, MultiplicativeExpr.class, "MultiplicativeExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMultiplicativeExpr_Left(), this.getUnionExpr(), null, "left", null, 0, 1, MultiplicativeExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMultiplicativeExpr_Rights(), this.getUnionExpr(), null, "rights", null, 0, -1, MultiplicativeExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unionExprEClass, UnionExpr.class, "UnionExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnionExpr_Left(), this.getIntersectExceptExpr(), null, "left", null, 0, 1, UnionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUnionExpr_Rights(), this.getIntersectExceptExpr(), null, "rights", null, 0, -1, UnionExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intersectExceptExprEClass, IntersectExceptExpr.class, "IntersectExceptExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIntersectExceptExpr_Left(), this.getInstanceofExpr(), null, "left", null, 0, 1, IntersectExceptExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIntersectExceptExpr_Rights(), this.getInstanceofExpr(), null, "rights", null, 0, -1, IntersectExceptExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceofExprEClass, InstanceofExpr.class, "InstanceofExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInstanceofExpr_Left(), this.getTreatExpr(), null, "left", null, 0, 1, InstanceofExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInstanceofExpr_Right(), this.getSequenceType(), null, "right", null, 0, 1, InstanceofExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(treatExprEClass, TreatExpr.class, "TreatExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTreatExpr_Left(), this.getCastableExpr(), null, "left", null, 0, 1, TreatExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTreatExpr_Right(), this.getSequenceType(), null, "right", null, 0, 1, TreatExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(castableExprEClass, CastableExpr.class, "CastableExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCastableExpr_Left(), this.getCastExpr(), null, "left", null, 0, 1, CastableExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCastableExpr_Right(), this.getSingleType(), null, "right", null, 0, 1, CastableExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(castExprEClass, CastExpr.class, "CastExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCastExpr_Left(), this.getUnaryExpr(), null, "left", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCastExpr_Right(), this.getSingleType(), null, "right", null, 0, 1, CastExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unaryExprEClass, UnaryExpr.class, "UnaryExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnaryExpr_Unary(), this.getValueExpr(), null, "unary", null, 0, 1, UnaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUnaryExpr_UnaryOps(), ecorePackage.getEString(), "unaryOps", null, 0, -1, UnaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnaryExpr_Value(), this.getValueExpr(), null, "value", null, 0, 1, UnaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueExprEClass, ValueExpr.class, "ValueExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getValueExpr_Value(), this.getPathExpr(), null, "value", null, 0, 1, ValueExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generalCompEClass, GeneralComp.class, "GeneralComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGeneralComp_Op(), ecorePackage.getEString(), "op", null, 0, 1, GeneralComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valueCompEClass, ValueComp.class, "ValueComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getValueComp_Op(), ecorePackage.getEString(), "op", null, 0, 1, ValueComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nodeCompEClass, NodeComp.class, "NodeComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNodeComp_Op(), ecorePackage.getEString(), "op", null, 0, 1, NodeComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pathExprEClass, PathExpr.class, "PathExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3199,6 +3741,62 @@ public class XPathPackageImpl extends EPackageImpl implements XPathPackage
     initEReference(getPrefixedName_Prefix(), this.getNCName(), null, "prefix", null, 0, 1, PrefixedName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unprefixedNameEClass, UnprefixedName.class, "UnprefixedName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(additionEClass, Addition.class, "Addition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAddition_Left(), this.getMultiplicativeExpr(), null, "left", null, 0, 1, Addition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAddition_Right(), this.getMultiplicativeExpr(), null, "right", null, 0, 1, Addition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(substractionEClass, Substraction.class, "Substraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubstraction_Left(), this.getMultiplicativeExpr(), null, "left", null, 0, 1, Substraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubstraction_Right(), this.getMultiplicativeExpr(), null, "right", null, 0, 1, Substraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicationEClass, Multiplication.class, "Multiplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMultiplication_Left(), this.getUnionExpr(), null, "left", null, 0, 1, Multiplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplication_Right(), this.getUnionExpr(), null, "right", null, 0, 1, Multiplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(divisionEClass, Division.class, "Division", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDivision_Left(), this.getUnionExpr(), null, "left", null, 0, 1, Division.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDivision_Right(), this.getUnionExpr(), null, "right", null, 0, 1, Division.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(iDivisionEClass, IDivision.class, "IDivision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIDivision_Left(), this.getUnionExpr(), null, "left", null, 0, 1, IDivision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIDivision_Right(), this.getUnionExpr(), null, "right", null, 0, 1, IDivision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(modEClass, Mod.class, "Mod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMod_Left(), this.getUnionExpr(), null, "left", null, 0, 1, Mod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMod_Right(), this.getUnionExpr(), null, "right", null, 0, 1, Mod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unionEClass, Union.class, "Union", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnion_Left(), this.getIntersectExceptExpr(), null, "left", null, 0, 1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnion_Right(), this.getIntersectExceptExpr(), null, "right", null, 0, 1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pipeEClass, Pipe.class, "Pipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPipe_Left(), this.getIntersectExceptExpr(), null, "left", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPipe_Right(), this.getIntersectExceptExpr(), null, "right", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(intersectEClass, Intersect.class, "Intersect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIntersect_Left(), this.getInstanceofExpr(), null, "left", null, 0, 1, Intersect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIntersect_Right(), this.getInstanceofExpr(), null, "right", null, 0, 1, Intersect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(exceptEClass, Except.class, "Except", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExcept_Left(), this.getInstanceofExpr(), null, "left", null, 0, 1, Except.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExcept_Right(), this.getInstanceofExpr(), null, "right", null, 0, 1, Except.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instanceofEClass, Instanceof.class, "Instanceof", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInstanceof_Left(), this.getTreatExpr(), null, "left", null, 0, 1, Instanceof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanceof_Right(), this.getSequenceType(), null, "right", null, 0, 1, Instanceof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(treatAsEClass, TreatAs.class, "TreatAs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTreatAs_Left(), this.getCastableExpr(), null, "left", null, 0, 1, TreatAs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTreatAs_Right(), this.getSequenceType(), null, "right", null, 0, 1, TreatAs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(castableEClass, Castable.class, "Castable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCastable_Left(), this.getCastExpr(), null, "left", null, 0, 1, Castable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCastable_Right(), this.getSingleType(), null, "right", null, 0, 1, Castable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(castAsEClass, CastAs.class, "CastAs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCastAs_Left(), this.getUnaryExpr(), null, "left", null, 0, 1, CastAs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCastAs_Right(), this.getSingleType(), null, "right", null, 0, 1, CastAs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relSingleEClass, RelSingle.class, "RelSingle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelSingle_RelPathExpr(), this.getRelativePathExpr(), null, "relPathExpr", null, 0, 1, RelSingle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

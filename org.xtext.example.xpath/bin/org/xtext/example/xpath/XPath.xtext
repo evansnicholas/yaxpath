@@ -9,6 +9,10 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 //ambiguous, couldn't work out how to solve this.
 //Did the same for occInd=OccurenceIndicator? This also gave an ambiguity error but should be addressed.
 
+Xpath:
+   xpath=Expr
+;
+
 Expr:
 	exprSingle=ExprSingle (',' exprsSingle+=ExprSingle)*
 ;
@@ -46,7 +50,7 @@ AndExpr:
 ;
 
 ComparisonExpr:
-	range=RangeExpr ( (value=VALUECOMP | gen=GENERALCOMP | node=NODECOMP) otherRange=RangeExpr )?
+	left=RangeExpr ( (comp=ValueComp | comp=GeneralComp | comp=NodeComp) right=RangeExpr )?
 ;
 
 RangeExpr:
@@ -54,43 +58,55 @@ RangeExpr:
 ;
 
 AdditiveExpr:
-	left=MultiplicativeExpr ( ("+" | "-") rights+=MultiplicativeExpr )*
+	MultiplicativeExpr (( {Addition.left=current} "+" | {Substraction.left=current} "-") right=MultiplicativeExpr)*
 ;
 
 MultiplicativeExpr:
-	left=UnionExpr ( ("*" | "div" | "idiv" | "mod") rights+=UnionExpr )*
+	UnionExpr (( {Multiplication.left=current} "*" | {Division.left=current} "div" | {IDivision.left=current} "idiv" | {Mod.left=current} "mod") right=UnionExpr)*
 ;
 
 UnionExpr:
-	left=IntersectExceptExpr ( ("union" | "|") rights+=IntersectExceptExpr )*
+	IntersectExceptExpr (( {Union.left=current} "union" | {Pipe.left=current} "|") right=IntersectExceptExpr)*
 ;
 
 IntersectExceptExpr:
-	left=InstanceofExpr ( ("intersect" | "except") rights+=InstanceofExpr )*
+	InstanceofExpr (( {Intersect.left=current} "intersect" | {Except.left=current} "except") right=InstanceofExpr)*
 ;
 
 InstanceofExpr:
-	left=TreatExpr ( "instance" "of" right=SequenceType )?
-;
+	TreatExpr ( {Instanceof.left=current} "instance" "of" right=SequenceType)?
+; 
 
 TreatExpr:
-	left=CastableExpr ( "treat" "as" right=SequenceType )?
+	CastableExpr ( {TreatAs.left=current} "treat" "as" right=SequenceType)?
 ;
 
 CastableExpr:
-	left=CastExpr ( "castable" "as" right=SingleType )?
+	CastExpr ( {Castable.left=current} "castable" "as" right=SingleType)?
 ;
 
 CastExpr:
-	left=UnaryExpr ( "cast" "as" right=SingleType )?
+	UnaryExpr ( {CastAs.left=current} "cast" "as" right=SingleType )?
 ;
 
 UnaryExpr:
-	("-" | "+")* unary=ValueExpr
+	(unaryOps+=("-" | "+"))* value=ValueExpr
 ;
 
 ValueExpr:
 	value=PathExpr
+;
+
+GeneralComp:
+   op="=" | op="!=" | op="<" | op="<=" | op=">" | op=">="
+;
+
+ValueComp:
+	op="eq" | op="ne" | op="lt" | op="le" | op="gt" | op="ge"
+;
+	
+NodeComp:
+	op="is" | op="<<" | op=">>"
 ;
 
 PathExpr:
@@ -336,18 +352,6 @@ terminal REVERSEAXIS:
 	| ("preceding-sibling" "::")
 	| ("preceding" "::")
 	| ("ancestor-or-self" "::")
-;
-	
-terminal NODECOMP:
-	"is" | "<<" | ">>"
-;	
-	
-terminal VALUECOMP:
-	"eq" | "ne" | "lt" | "le" | "gt" | "ge"
-;
-
-terminal GENERALCOMP :
-   "=" | "!=" | "<" | "<=" | ">" | ">="
 ;	
 
 terminal ID :

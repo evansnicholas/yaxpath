@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,11 +23,9 @@ import org.xtext.example.xpath.xPath.XPathPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getRange <em>Range</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getGen <em>Gen</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getNode <em>Node</em>}</li>
- *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getOtherRange <em>Other Range</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getComp <em>Comp</em>}</li>
+ *   <li>{@link org.xtext.example.xpath.xPath.impl.ComparisonExprImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,84 +34,34 @@ import org.xtext.example.xpath.xPath.XPathPackage;
 public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements ComparisonExpr
 {
   /**
-   * The cached value of the '{@link #getRange() <em>Range</em>}' containment reference.
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRange()
+   * @see #getLeft()
    * @generated
    * @ordered
    */
-  protected RangeExpr range;
+  protected RangeExpr left;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getComp() <em>Comp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getComp()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected EObject comp;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getRight()
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getGen() <em>Gen</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGen()
-   * @generated
-   * @ordered
-   */
-  protected static final String GEN_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getGen() <em>Gen</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGen()
-   * @generated
-   * @ordered
-   */
-  protected String gen = GEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getNode() <em>Node</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNode()
-   * @generated
-   * @ordered
-   */
-  protected static final String NODE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNode() <em>Node</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNode()
-   * @generated
-   * @ordered
-   */
-  protected String node = NODE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getOtherRange() <em>Other Range</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOtherRange()
-   * @generated
-   * @ordered
-   */
-  protected RangeExpr otherRange;
+  protected RangeExpr right;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,9 +89,9 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public RangeExpr getRange()
+  public RangeExpr getLeft()
   {
-    return range;
+    return left;
   }
 
   /**
@@ -150,13 +99,13 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRange(RangeExpr newRange, NotificationChain msgs)
+  public NotificationChain basicSetLeft(RangeExpr newLeft, NotificationChain msgs)
   {
-    RangeExpr oldRange = range;
-    range = newRange;
+    RangeExpr oldLeft = left;
+    left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__RANGE, oldRange, newRange);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -167,20 +116,20 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRange(RangeExpr newRange)
+  public void setLeft(RangeExpr newLeft)
   {
-    if (newRange != range)
+    if (newLeft != left)
     {
       NotificationChain msgs = null;
-      if (range != null)
-        msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__RANGE, null, msgs);
-      if (newRange != null)
-        msgs = ((InternalEObject)newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__RANGE, null, msgs);
-      msgs = basicSetRange(newRange, msgs);
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__RANGE, newRange, newRange));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -188,9 +137,9 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public EObject getComp()
   {
-    return value;
+    return comp;
   }
 
   /**
@@ -198,82 +147,13 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public NotificationChain basicSetComp(EObject newComp, NotificationChain msgs)
   {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__VALUE, oldValue, value));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getGen()
-  {
-    return gen;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setGen(String newGen)
-  {
-    String oldGen = gen;
-    gen = newGen;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__GEN, oldGen, gen));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getNode()
-  {
-    return node;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNode(String newNode)
-  {
-    String oldNode = node;
-    node = newNode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__NODE, oldNode, node));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RangeExpr getOtherRange()
-  {
-    return otherRange;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOtherRange(RangeExpr newOtherRange, NotificationChain msgs)
-  {
-    RangeExpr oldOtherRange = otherRange;
-    otherRange = newOtherRange;
+    EObject oldComp = comp;
+    comp = newComp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__OTHER_RANGE, oldOtherRange, newOtherRange);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__COMP, oldComp, newComp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -284,20 +164,68 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOtherRange(RangeExpr newOtherRange)
+  public void setComp(EObject newComp)
   {
-    if (newOtherRange != otherRange)
+    if (newComp != comp)
     {
       NotificationChain msgs = null;
-      if (otherRange != null)
-        msgs = ((InternalEObject)otherRange).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__OTHER_RANGE, null, msgs);
-      if (newOtherRange != null)
-        msgs = ((InternalEObject)newOtherRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__OTHER_RANGE, null, msgs);
-      msgs = basicSetOtherRange(newOtherRange, msgs);
+      if (comp != null)
+        msgs = ((InternalEObject)comp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__COMP, null, msgs);
+      if (newComp != null)
+        msgs = ((InternalEObject)newComp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__COMP, null, msgs);
+      msgs = basicSetComp(newComp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__OTHER_RANGE, newOtherRange, newOtherRange));
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__COMP, newComp, newComp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RangeExpr getRight()
+  {
+    return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight(RangeExpr newRight, NotificationChain msgs)
+  {
+    RangeExpr oldRight = right;
+    right = newRight;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__RIGHT, oldRight, newRight);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRight(RangeExpr newRight)
+  {
+    if (newRight != right)
+    {
+      NotificationChain msgs = null;
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XPathPackage.COMPARISON_EXPR__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XPathPackage.COMPARISON_EXPR__RIGHT, newRight, newRight));
   }
 
   /**
@@ -310,10 +238,12 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case XPathPackage.COMPARISON_EXPR__RANGE:
-        return basicSetRange(null, msgs);
-      case XPathPackage.COMPARISON_EXPR__OTHER_RANGE:
-        return basicSetOtherRange(null, msgs);
+      case XPathPackage.COMPARISON_EXPR__LEFT:
+        return basicSetLeft(null, msgs);
+      case XPathPackage.COMPARISON_EXPR__COMP:
+        return basicSetComp(null, msgs);
+      case XPathPackage.COMPARISON_EXPR__RIGHT:
+        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -328,16 +258,12 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case XPathPackage.COMPARISON_EXPR__RANGE:
-        return getRange();
-      case XPathPackage.COMPARISON_EXPR__VALUE:
-        return getValue();
-      case XPathPackage.COMPARISON_EXPR__GEN:
-        return getGen();
-      case XPathPackage.COMPARISON_EXPR__NODE:
-        return getNode();
-      case XPathPackage.COMPARISON_EXPR__OTHER_RANGE:
-        return getOtherRange();
+      case XPathPackage.COMPARISON_EXPR__LEFT:
+        return getLeft();
+      case XPathPackage.COMPARISON_EXPR__COMP:
+        return getComp();
+      case XPathPackage.COMPARISON_EXPR__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -352,20 +278,14 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case XPathPackage.COMPARISON_EXPR__RANGE:
-        setRange((RangeExpr)newValue);
+      case XPathPackage.COMPARISON_EXPR__LEFT:
+        setLeft((RangeExpr)newValue);
         return;
-      case XPathPackage.COMPARISON_EXPR__VALUE:
-        setValue((String)newValue);
+      case XPathPackage.COMPARISON_EXPR__COMP:
+        setComp((EObject)newValue);
         return;
-      case XPathPackage.COMPARISON_EXPR__GEN:
-        setGen((String)newValue);
-        return;
-      case XPathPackage.COMPARISON_EXPR__NODE:
-        setNode((String)newValue);
-        return;
-      case XPathPackage.COMPARISON_EXPR__OTHER_RANGE:
-        setOtherRange((RangeExpr)newValue);
+      case XPathPackage.COMPARISON_EXPR__RIGHT:
+        setRight((RangeExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -381,20 +301,14 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case XPathPackage.COMPARISON_EXPR__RANGE:
-        setRange((RangeExpr)null);
+      case XPathPackage.COMPARISON_EXPR__LEFT:
+        setLeft((RangeExpr)null);
         return;
-      case XPathPackage.COMPARISON_EXPR__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case XPathPackage.COMPARISON_EXPR__COMP:
+        setComp((EObject)null);
         return;
-      case XPathPackage.COMPARISON_EXPR__GEN:
-        setGen(GEN_EDEFAULT);
-        return;
-      case XPathPackage.COMPARISON_EXPR__NODE:
-        setNode(NODE_EDEFAULT);
-        return;
-      case XPathPackage.COMPARISON_EXPR__OTHER_RANGE:
-        setOtherRange((RangeExpr)null);
+      case XPathPackage.COMPARISON_EXPR__RIGHT:
+        setRight((RangeExpr)null);
         return;
     }
     super.eUnset(featureID);
@@ -410,39 +324,14 @@ public class ComparisonExprImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case XPathPackage.COMPARISON_EXPR__RANGE:
-        return range != null;
-      case XPathPackage.COMPARISON_EXPR__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case XPathPackage.COMPARISON_EXPR__GEN:
-        return GEN_EDEFAULT == null ? gen != null : !GEN_EDEFAULT.equals(gen);
-      case XPathPackage.COMPARISON_EXPR__NODE:
-        return NODE_EDEFAULT == null ? node != null : !NODE_EDEFAULT.equals(node);
-      case XPathPackage.COMPARISON_EXPR__OTHER_RANGE:
-        return otherRange != null;
+      case XPathPackage.COMPARISON_EXPR__LEFT:
+        return left != null;
+      case XPathPackage.COMPARISON_EXPR__COMP:
+        return comp != null;
+      case XPathPackage.COMPARISON_EXPR__RIGHT:
+        return right != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(", gen: ");
-    result.append(gen);
-    result.append(", node: ");
-    result.append(node);
-    result.append(')');
-    return result.toString();
   }
 
 } //ComparisonExprImpl

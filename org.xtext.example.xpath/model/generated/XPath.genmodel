@@ -7,6 +7,9 @@
     editorPluginID="org.xtext.example.xpath.editor" runtimeVersion="2.9">
   <genPackages prefix="XPath" basePackage="org.xtext.example.xpath" disposableProviderFactory="true"
       fileExtensions="xpath" ecorePackage="XPath.ecore#/">
+    <genClasses ecoreClass="XPath.ecore#//Xpath">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Xpath/xpath"/>
+    </genClasses>
     <genClasses ecoreClass="XPath.ecore#//Expr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Expr/exprSingle"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Expr/exprsSingle"/>
@@ -45,53 +48,37 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AndExpr/rights"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ComparisonExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/range"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ComparisonExpr/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ComparisonExpr/gen"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ComparisonExpr/node"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/otherRange"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/comp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/right"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//RangeExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RangeExpr/from"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RangeExpr/to"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//AdditiveExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AdditiveExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AdditiveExpr/rights"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//MultiplicativeExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//MultiplicativeExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//MultiplicativeExpr/rights"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//UnionExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//UnionExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//UnionExpr/rights"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//IntersectExceptExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//IntersectExceptExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//IntersectExceptExpr/rights"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//InstanceofExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//InstanceofExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//InstanceofExpr/right"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//TreatExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//TreatExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//TreatExpr/right"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//CastableExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//CastableExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//CastableExpr/right"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//CastExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//CastExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//CastExpr/right"/>
-    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//AdditiveExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//MultiplicativeExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//UnionExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//IntersectExceptExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//InstanceofExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//TreatExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//CastableExpr"/>
+    <genClasses ecoreClass="XPath.ecore#//CastExpr"/>
     <genClasses ecoreClass="XPath.ecore#//UnaryExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//UnaryExpr/unary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//UnaryExpr/unaryOps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//UnaryExpr/value"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ValueExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ValueExpr/value"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//GeneralComp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//GeneralComp/op"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//ValueComp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ValueComp/op"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//NodeComp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//NodeComp/op"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//PathExpr"/>
     <genClasses ecoreClass="XPath.ecore#//RelativePathExpr">
@@ -243,6 +230,62 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrefixedName/prefix"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//UnprefixedName"/>
+    <genClasses ecoreClass="XPath.ecore#//Addition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Addition/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Addition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Substraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Substraction/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Substraction/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Multiplication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Multiplication/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Multiplication/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Division">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Division/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Division/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//IDivision">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//IDivision/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//IDivision/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Mod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Mod/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Mod/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Union">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Union/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Union/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Pipe">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Pipe/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Pipe/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Intersect">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Intersect/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Intersect/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Except">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Except/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Except/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Instanceof">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Instanceof/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Instanceof/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//TreatAs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//TreatAs/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//TreatAs/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//Castable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Castable/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Castable/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//CastAs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//CastAs/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//CastAs/right"/>
+    </genClasses>
     <genClasses ecoreClass="XPath.ecore#//RelSingle">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RelSingle/relPathExpr"/>
     </genClasses>

@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.Addition;
 import org.xtext.example.xpath.xPath.AdditionalIn;
 import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
@@ -18,15 +19,19 @@ import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
 import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastAs;
 import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.Castable;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.Division;
 import org.xtext.example.xpath.xPath.DocumentTest;
 import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
 import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Except;
 import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
@@ -34,15 +39,22 @@ import org.xtext.example.xpath.xPath.ForExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.GeneralComp;
+import org.xtext.example.xpath.xPath.IDivision;
 import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.Instanceof;
 import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.Intersect;
 import org.xtext.example.xpath.xPath.IntersectExceptExpr;
 import org.xtext.example.xpath.xPath.ItemType;
 import org.xtext.example.xpath.xPath.KindTest;
 import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.Mod;
+import org.xtext.example.xpath.xPath.Multiplication;
 import org.xtext.example.xpath.xPath.MultiplicativeExpr;
 import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeComp;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.OrExpr;
@@ -50,6 +62,7 @@ import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.PITest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Pipe;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrefixedName;
@@ -69,16 +82,21 @@ import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.SingleType;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.Substraction;
+import org.xtext.example.xpath.xPath.TreatAs;
 import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.Union;
 import org.xtext.example.xpath.xPath.UnionExpr;
 import org.xtext.example.xpath.xPath.UnprefixedName;
+import org.xtext.example.xpath.xPath.ValueComp;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
 import org.xtext.example.xpath.xPath.Wildcard;
 import org.xtext.example.xpath.xPath.XPathPackage;
+import org.xtext.example.xpath.xPath.Xpath;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,6 +161,13 @@ public class XPathSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case XPathPackage.XPATH:
+      {
+        Xpath xpath = (Xpath)theEObject;
+        T result = caseXpath(xpath);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XPathPackage.EXPR:
       {
         Expr expr = (Expr)theEObject;
@@ -235,6 +260,7 @@ public class XPathSwitch<T> extends Switch<T>
       {
         MultiplicativeExpr multiplicativeExpr = (MultiplicativeExpr)theEObject;
         T result = caseMultiplicativeExpr(multiplicativeExpr);
+        if (result == null) result = caseAdditiveExpr(multiplicativeExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -242,6 +268,8 @@ public class XPathSwitch<T> extends Switch<T>
       {
         UnionExpr unionExpr = (UnionExpr)theEObject;
         T result = caseUnionExpr(unionExpr);
+        if (result == null) result = caseMultiplicativeExpr(unionExpr);
+        if (result == null) result = caseAdditiveExpr(unionExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,6 +277,9 @@ public class XPathSwitch<T> extends Switch<T>
       {
         IntersectExceptExpr intersectExceptExpr = (IntersectExceptExpr)theEObject;
         T result = caseIntersectExceptExpr(intersectExceptExpr);
+        if (result == null) result = caseUnionExpr(intersectExceptExpr);
+        if (result == null) result = caseMultiplicativeExpr(intersectExceptExpr);
+        if (result == null) result = caseAdditiveExpr(intersectExceptExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -256,6 +287,10 @@ public class XPathSwitch<T> extends Switch<T>
       {
         InstanceofExpr instanceofExpr = (InstanceofExpr)theEObject;
         T result = caseInstanceofExpr(instanceofExpr);
+        if (result == null) result = caseIntersectExceptExpr(instanceofExpr);
+        if (result == null) result = caseUnionExpr(instanceofExpr);
+        if (result == null) result = caseMultiplicativeExpr(instanceofExpr);
+        if (result == null) result = caseAdditiveExpr(instanceofExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -263,6 +298,11 @@ public class XPathSwitch<T> extends Switch<T>
       {
         TreatExpr treatExpr = (TreatExpr)theEObject;
         T result = caseTreatExpr(treatExpr);
+        if (result == null) result = caseInstanceofExpr(treatExpr);
+        if (result == null) result = caseIntersectExceptExpr(treatExpr);
+        if (result == null) result = caseUnionExpr(treatExpr);
+        if (result == null) result = caseMultiplicativeExpr(treatExpr);
+        if (result == null) result = caseAdditiveExpr(treatExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -270,6 +310,12 @@ public class XPathSwitch<T> extends Switch<T>
       {
         CastableExpr castableExpr = (CastableExpr)theEObject;
         T result = caseCastableExpr(castableExpr);
+        if (result == null) result = caseTreatExpr(castableExpr);
+        if (result == null) result = caseInstanceofExpr(castableExpr);
+        if (result == null) result = caseIntersectExceptExpr(castableExpr);
+        if (result == null) result = caseUnionExpr(castableExpr);
+        if (result == null) result = caseMultiplicativeExpr(castableExpr);
+        if (result == null) result = caseAdditiveExpr(castableExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -277,6 +323,13 @@ public class XPathSwitch<T> extends Switch<T>
       {
         CastExpr castExpr = (CastExpr)theEObject;
         T result = caseCastExpr(castExpr);
+        if (result == null) result = caseCastableExpr(castExpr);
+        if (result == null) result = caseTreatExpr(castExpr);
+        if (result == null) result = caseInstanceofExpr(castExpr);
+        if (result == null) result = caseIntersectExceptExpr(castExpr);
+        if (result == null) result = caseUnionExpr(castExpr);
+        if (result == null) result = caseMultiplicativeExpr(castExpr);
+        if (result == null) result = caseAdditiveExpr(castExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -284,6 +337,14 @@ public class XPathSwitch<T> extends Switch<T>
       {
         UnaryExpr unaryExpr = (UnaryExpr)theEObject;
         T result = caseUnaryExpr(unaryExpr);
+        if (result == null) result = caseCastExpr(unaryExpr);
+        if (result == null) result = caseCastableExpr(unaryExpr);
+        if (result == null) result = caseTreatExpr(unaryExpr);
+        if (result == null) result = caseInstanceofExpr(unaryExpr);
+        if (result == null) result = caseIntersectExceptExpr(unaryExpr);
+        if (result == null) result = caseUnionExpr(unaryExpr);
+        if (result == null) result = caseMultiplicativeExpr(unaryExpr);
+        if (result == null) result = caseAdditiveExpr(unaryExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -291,6 +352,27 @@ public class XPathSwitch<T> extends Switch<T>
       {
         ValueExpr valueExpr = (ValueExpr)theEObject;
         T result = caseValueExpr(valueExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.GENERAL_COMP:
+      {
+        GeneralComp generalComp = (GeneralComp)theEObject;
+        T result = caseGeneralComp(generalComp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.VALUE_COMP:
+      {
+        ValueComp valueComp = (ValueComp)theEObject;
+        T result = caseValueComp(valueComp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.NODE_COMP:
+      {
+        NodeComp nodeComp = (NodeComp)theEObject;
+        T result = caseNodeComp(nodeComp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -602,6 +684,154 @@ public class XPathSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XPathPackage.ADDITION:
+      {
+        Addition addition = (Addition)theEObject;
+        T result = caseAddition(addition);
+        if (result == null) result = caseAdditiveExpr(addition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.SUBSTRACTION:
+      {
+        Substraction substraction = (Substraction)theEObject;
+        T result = caseSubstraction(substraction);
+        if (result == null) result = caseAdditiveExpr(substraction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.MULTIPLICATION:
+      {
+        Multiplication multiplication = (Multiplication)theEObject;
+        T result = caseMultiplication(multiplication);
+        if (result == null) result = caseMultiplicativeExpr(multiplication);
+        if (result == null) result = caseAdditiveExpr(multiplication);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.DIVISION:
+      {
+        Division division = (Division)theEObject;
+        T result = caseDivision(division);
+        if (result == null) result = caseMultiplicativeExpr(division);
+        if (result == null) result = caseAdditiveExpr(division);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.IDIVISION:
+      {
+        IDivision iDivision = (IDivision)theEObject;
+        T result = caseIDivision(iDivision);
+        if (result == null) result = caseMultiplicativeExpr(iDivision);
+        if (result == null) result = caseAdditiveExpr(iDivision);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.MOD:
+      {
+        Mod mod = (Mod)theEObject;
+        T result = caseMod(mod);
+        if (result == null) result = caseMultiplicativeExpr(mod);
+        if (result == null) result = caseAdditiveExpr(mod);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.UNION:
+      {
+        Union union = (Union)theEObject;
+        T result = caseUnion(union);
+        if (result == null) result = caseUnionExpr(union);
+        if (result == null) result = caseMultiplicativeExpr(union);
+        if (result == null) result = caseAdditiveExpr(union);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.PIPE:
+      {
+        Pipe pipe = (Pipe)theEObject;
+        T result = casePipe(pipe);
+        if (result == null) result = caseUnionExpr(pipe);
+        if (result == null) result = caseMultiplicativeExpr(pipe);
+        if (result == null) result = caseAdditiveExpr(pipe);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.INTERSECT:
+      {
+        Intersect intersect = (Intersect)theEObject;
+        T result = caseIntersect(intersect);
+        if (result == null) result = caseIntersectExceptExpr(intersect);
+        if (result == null) result = caseUnionExpr(intersect);
+        if (result == null) result = caseMultiplicativeExpr(intersect);
+        if (result == null) result = caseAdditiveExpr(intersect);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.EXCEPT:
+      {
+        Except except = (Except)theEObject;
+        T result = caseExcept(except);
+        if (result == null) result = caseIntersectExceptExpr(except);
+        if (result == null) result = caseUnionExpr(except);
+        if (result == null) result = caseMultiplicativeExpr(except);
+        if (result == null) result = caseAdditiveExpr(except);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.INSTANCEOF:
+      {
+        Instanceof instanceof_ = (Instanceof)theEObject;
+        T result = caseInstanceof(instanceof_);
+        if (result == null) result = caseInstanceofExpr(instanceof_);
+        if (result == null) result = caseIntersectExceptExpr(instanceof_);
+        if (result == null) result = caseUnionExpr(instanceof_);
+        if (result == null) result = caseMultiplicativeExpr(instanceof_);
+        if (result == null) result = caseAdditiveExpr(instanceof_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.TREAT_AS:
+      {
+        TreatAs treatAs = (TreatAs)theEObject;
+        T result = caseTreatAs(treatAs);
+        if (result == null) result = caseTreatExpr(treatAs);
+        if (result == null) result = caseInstanceofExpr(treatAs);
+        if (result == null) result = caseIntersectExceptExpr(treatAs);
+        if (result == null) result = caseUnionExpr(treatAs);
+        if (result == null) result = caseMultiplicativeExpr(treatAs);
+        if (result == null) result = caseAdditiveExpr(treatAs);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.CASTABLE:
+      {
+        Castable castable = (Castable)theEObject;
+        T result = caseCastable(castable);
+        if (result == null) result = caseCastableExpr(castable);
+        if (result == null) result = caseTreatExpr(castable);
+        if (result == null) result = caseInstanceofExpr(castable);
+        if (result == null) result = caseIntersectExceptExpr(castable);
+        if (result == null) result = caseUnionExpr(castable);
+        if (result == null) result = caseMultiplicativeExpr(castable);
+        if (result == null) result = caseAdditiveExpr(castable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XPathPackage.CAST_AS:
+      {
+        CastAs castAs = (CastAs)theEObject;
+        T result = caseCastAs(castAs);
+        if (result == null) result = caseCastExpr(castAs);
+        if (result == null) result = caseCastableExpr(castAs);
+        if (result == null) result = caseTreatExpr(castAs);
+        if (result == null) result = caseInstanceofExpr(castAs);
+        if (result == null) result = caseIntersectExceptExpr(castAs);
+        if (result == null) result = caseUnionExpr(castAs);
+        if (result == null) result = caseMultiplicativeExpr(castAs);
+        if (result == null) result = caseAdditiveExpr(castAs);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XPathPackage.REL_SINGLE:
       {
         RelSingle relSingle = (RelSingle)theEObject;
@@ -668,6 +898,22 @@ public class XPathSwitch<T> extends Switch<T>
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Xpath</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Xpath</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXpath(Xpath object)
+  {
+    return null;
   }
 
   /**
@@ -1002,6 +1248,54 @@ public class XPathSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseValueExpr(ValueExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Comp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Comp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralComp(GeneralComp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Value Comp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Value Comp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValueComp(ValueComp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Node Comp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Node Comp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNodeComp(NodeComp object)
   {
     return null;
   }
@@ -1690,6 +1984,230 @@ public class XPathSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUnprefixedName(UnprefixedName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Addition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Addition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAddition(Addition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Substraction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Substraction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubstraction(Substraction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplication</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplication</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplication(Multiplication object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Division</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Division</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDivision(Division object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>IDivision</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>IDivision</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIDivision(IDivision object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mod</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mod</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMod(Mod object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Union</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Union</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnion(Union object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pipe</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pipe</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePipe(Pipe object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Intersect</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Intersect</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntersect(Intersect object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Except</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Except</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExcept(Except object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instanceof</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instanceof</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstanceof(Instanceof object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Treat As</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Treat As</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTreatAs(TreatAs object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Castable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Castable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCastable(Castable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cast As</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cast As</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCastAs(CastAs object)
   {
     return null;
   }

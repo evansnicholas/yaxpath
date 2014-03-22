@@ -14,8 +14,8 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.xpath.services.XPathGrammarAccess;
+import org.xtext.example.xpath.xPath.Addition;
 import org.xtext.example.xpath.xPath.AdditionalIn;
-import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
 import org.xtext.example.xpath.xPath.AtomicType;
 import org.xtext.example.xpath.xPath.AttribNameOrWildcard;
@@ -24,34 +24,41 @@ import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
 import org.xtext.example.xpath.xPath.AxisStep;
-import org.xtext.example.xpath.xPath.CastExpr;
-import org.xtext.example.xpath.xPath.CastableExpr;
+import org.xtext.example.xpath.xPath.CastAs;
+import org.xtext.example.xpath.xPath.Castable;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.Division;
 import org.xtext.example.xpath.xPath.DocumentTest;
 import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
 import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Except;
 import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.FilterExpr;
 import org.xtext.example.xpath.xPath.ForExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.GeneralComp;
+import org.xtext.example.xpath.xPath.IDivision;
 import org.xtext.example.xpath.xPath.IfExpr;
-import org.xtext.example.xpath.xPath.InstanceofExpr;
-import org.xtext.example.xpath.xPath.IntersectExceptExpr;
+import org.xtext.example.xpath.xPath.Instanceof;
+import org.xtext.example.xpath.xPath.Intersect;
 import org.xtext.example.xpath.xPath.ItemType;
 import org.xtext.example.xpath.xPath.KindTest;
 import org.xtext.example.xpath.xPath.Literal;
-import org.xtext.example.xpath.xPath.MultiplicativeExpr;
+import org.xtext.example.xpath.xPath.Mod;
+import org.xtext.example.xpath.xPath.Multiplication;
 import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeComp;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.OrExpr;
 import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
+import org.xtext.example.xpath.xPath.Pipe;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrefixedName;
@@ -69,15 +76,18 @@ import org.xtext.example.xpath.xPath.SequenceType;
 import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.StepExpr;
-import org.xtext.example.xpath.xPath.TreatExpr;
+import org.xtext.example.xpath.xPath.Substraction;
+import org.xtext.example.xpath.xPath.TreatAs;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
-import org.xtext.example.xpath.xPath.UnionExpr;
+import org.xtext.example.xpath.xPath.Union;
 import org.xtext.example.xpath.xPath.UnprefixedName;
+import org.xtext.example.xpath.xPath.ValueComp;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.Wildcard;
 import org.xtext.example.xpath.xPath.XPathPackage;
+import org.xtext.example.xpath.xPath.Xpath;
 
 @SuppressWarnings("all")
 public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -87,15 +97,17 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == XPathPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case XPathPackage.ADDITIONAL_IN:
-				if(context == grammarAccess.getAdditionalInRule()) {
-					sequence_AdditionalIn(context, (AdditionalIn) semanticObject); 
+			case XPathPackage.ADDITION:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0()) {
+					sequence_AdditiveExpr(context, (Addition) semanticObject); 
 					return; 
 				}
 				else break;
-			case XPathPackage.ADDITIVE_EXPR:
-				if(context == grammarAccess.getAdditiveExprRule()) {
-					sequence_AdditiveExpr(context, (AdditiveExpr) semanticObject); 
+			case XPathPackage.ADDITIONAL_IN:
+				if(context == grammarAccess.getAdditionalInRule()) {
+					sequence_AdditionalIn(context, (AdditionalIn) semanticObject); 
 					return; 
 				}
 				else break;
@@ -148,21 +160,72 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case XPathPackage.CAST_EXPR:
-				if(context == grammarAccess.getCastExprRule()) {
-					sequence_CastExpr(context, (CastExpr) semanticObject); 
+			case XPathPackage.CAST_AS:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getCastExprRule() ||
+				   context == grammarAccess.getCastableExprRule() ||
+				   context == grammarAccess.getCastableExprAccess().getCastableLeftAction_1_0() ||
+				   context == grammarAccess.getInstanceofExprRule() ||
+				   context == grammarAccess.getInstanceofExprAccess().getInstanceofLeftAction_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getTreatExprRule() ||
+				   context == grammarAccess.getTreatExprAccess().getTreatAsLeftAction_1_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_CastExpr(context, (CastAs) semanticObject); 
 					return; 
 				}
 				else break;
-			case XPathPackage.CASTABLE_EXPR:
-				if(context == grammarAccess.getCastableExprRule()) {
-					sequence_CastableExpr(context, (CastableExpr) semanticObject); 
+			case XPathPackage.CASTABLE:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getCastableExprRule() ||
+				   context == grammarAccess.getInstanceofExprRule() ||
+				   context == grammarAccess.getInstanceofExprAccess().getInstanceofLeftAction_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getTreatExprRule() ||
+				   context == grammarAccess.getTreatExprAccess().getTreatAsLeftAction_1_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_CastableExpr(context, (Castable) semanticObject); 
 					return; 
 				}
 				else break;
 			case XPathPackage.COMPARISON_EXPR:
 				if(context == grammarAccess.getComparisonExprRule()) {
 					sequence_ComparisonExpr(context, (ComparisonExpr) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.DIVISION:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0()) {
+					sequence_MultiplicativeExpr(context, (Division) semanticObject); 
 					return; 
 				}
 				else break;
@@ -203,6 +266,25 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.EXCEPT:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_IntersectExceptExpr(context, (Except) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.EXPR:
 				if(context == grammarAccess.getExprRule()) {
 					sequence_Expr(context, (Expr) semanticObject); 
@@ -240,6 +322,25 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case XPathPackage.GENERAL_COMP:
+				if(context == grammarAccess.getGeneralCompRule()) {
+					sequence_GeneralComp(context, (GeneralComp) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.IDIVISION:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0()) {
+					sequence_MultiplicativeExpr(context, (IDivision) semanticObject); 
+					return; 
+				}
+				else break;
 			case XPathPackage.IF_EXPR:
 				if(context == grammarAccess.getExprSingleRule() ||
 				   context == grammarAccess.getIfExprRule()) {
@@ -247,15 +348,42 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case XPathPackage.INSTANCEOF_EXPR:
-				if(context == grammarAccess.getInstanceofExprRule()) {
-					sequence_InstanceofExpr(context, (InstanceofExpr) semanticObject); 
+			case XPathPackage.INSTANCEOF:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getInstanceofExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_InstanceofExpr(context, (Instanceof) semanticObject); 
 					return; 
 				}
 				else break;
-			case XPathPackage.INTERSECT_EXCEPT_EXPR:
-				if(context == grammarAccess.getIntersectExceptExprRule()) {
-					sequence_IntersectExceptExpr(context, (IntersectExceptExpr) semanticObject); 
+			case XPathPackage.INTERSECT:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_IntersectExceptExpr(context, (Intersect) semanticObject); 
 					return; 
 				}
 				else break;
@@ -277,9 +405,29 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case XPathPackage.MULTIPLICATIVE_EXPR:
-				if(context == grammarAccess.getMultiplicativeExprRule()) {
-					sequence_MultiplicativeExpr(context, (MultiplicativeExpr) semanticObject); 
+			case XPathPackage.MOD:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0()) {
+					sequence_MultiplicativeExpr(context, (Mod) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.MULTIPLICATION:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0()) {
+					sequence_MultiplicativeExpr(context, (Multiplication) semanticObject); 
 					return; 
 				}
 				else break;
@@ -292,6 +440,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case XPathPackage.NAME_TEST:
 				if(context == grammarAccess.getNameTestRule()) {
 					sequence_NameTest(context, (NameTest) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.NODE_COMP:
+				if(context == grammarAccess.getNodeCompRule()) {
+					sequence_NodeComp(context, (NodeComp) semanticObject); 
 					return; 
 				}
 				else break;
@@ -325,6 +479,22 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case XPathPackage.PARENTHESIZED_EXPR:
 				if(context == grammarAccess.getParenthesizedExprRule()) {
 					sequence_ParenthesizedExpr(context, (ParenthesizedExpr) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.PIPE:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_UnionExpr(context, (Pipe) semanticObject); 
 					return; 
 				}
 				else break;
@@ -437,9 +607,33 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case XPathPackage.TREAT_EXPR:
-				if(context == grammarAccess.getTreatExprRule()) {
-					sequence_TreatExpr(context, (TreatExpr) semanticObject); 
+			case XPathPackage.SUBSTRACTION:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0()) {
+					sequence_AdditiveExpr(context, (Substraction) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.TREAT_AS:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getInstanceofExprRule() ||
+				   context == grammarAccess.getInstanceofExprAccess().getInstanceofLeftAction_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getTreatExprRule() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_TreatExpr(context, (TreatAs) semanticObject); 
 					return; 
 				}
 				else break;
@@ -450,14 +644,46 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case XPathPackage.UNARY_EXPR:
-				if(context == grammarAccess.getUnaryExprRule()) {
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getCastExprRule() ||
+				   context == grammarAccess.getCastExprAccess().getCastAsLeftAction_1_0() ||
+				   context == grammarAccess.getCastableExprRule() ||
+				   context == grammarAccess.getCastableExprAccess().getCastableLeftAction_1_0() ||
+				   context == grammarAccess.getInstanceofExprRule() ||
+				   context == grammarAccess.getInstanceofExprAccess().getInstanceofLeftAction_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprRule() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getTreatExprRule() ||
+				   context == grammarAccess.getTreatExprAccess().getTreatAsLeftAction_1_0() ||
+				   context == grammarAccess.getUnaryExprRule() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
 					sequence_UnaryExpr(context, (UnaryExpr) semanticObject); 
 					return; 
 				}
 				else break;
-			case XPathPackage.UNION_EXPR:
-				if(context == grammarAccess.getUnionExprRule()) {
-					sequence_UnionExpr(context, (UnionExpr) semanticObject); 
+			case XPathPackage.UNION:
+				if(context == grammarAccess.getAdditiveExprRule() ||
+				   context == grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprRule() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0() ||
+				   context == grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getUnionExprRule() ||
+				   context == grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0()) {
+					sequence_UnionExpr(context, (Union) semanticObject); 
 					return; 
 				}
 				else break;
@@ -465,6 +691,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				if(context == grammarAccess.getQNameRule() ||
 				   context == grammarAccess.getUnprefixedNameRule()) {
 					sequence_UnprefixedName(context, (UnprefixedName) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.VALUE_COMP:
+				if(context == grammarAccess.getValueCompRule()) {
+					sequence_ValueComp(context, (ValueComp) semanticObject); 
 					return; 
 				}
 				else break;
@@ -484,6 +716,12 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case XPathPackage.WILDCARD:
 				if(context == grammarAccess.getWildcardRule()) {
 					sequence_Wildcard(context, (Wildcard) semanticObject); 
+					return; 
+				}
+				else break;
+			case XPathPackage.XPATH:
+				if(context == grammarAccess.getXpathRule()) {
+					sequence_Xpath(context, (Xpath) semanticObject); 
 					return; 
 				}
 				else break;
@@ -544,10 +782,39 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=MultiplicativeExpr rights+=MultiplicativeExpr*)
+	 *     (left=AdditiveExpr_Addition_1_0_0_0 right=MultiplicativeExpr)
 	 */
-	protected void sequence_AdditiveExpr(EObject context, AdditiveExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_AdditiveExpr(EObject context, Addition semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.ADDITION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.ADDITION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.ADDITION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.ADDITION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAdditiveExprAccess().getAdditionLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAdditiveExprAccess().getRightMultiplicativeExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=AdditiveExpr_Substraction_1_0_1_0 right=MultiplicativeExpr)
+	 */
+	protected void sequence_AdditiveExpr(EObject context, Substraction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.SUBSTRACTION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.SUBSTRACTION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.SUBSTRACTION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.SUBSTRACTION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAdditiveExprAccess().getSubstractionLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAdditiveExprAccess().getRightMultiplicativeExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -637,25 +904,45 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=UnaryExpr right=SingleType?)
+	 *     (left=CastExpr_CastAs_1_0 right=SingleType)
 	 */
-	protected void sequence_CastExpr(EObject context, CastExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_CastExpr(EObject context, CastAs semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.CAST_AS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.CAST_AS__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.CAST_AS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.CAST_AS__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCastExprAccess().getCastAsLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getCastExprAccess().getRightSingleTypeParserRuleCall_1_3_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (left=CastExpr right=SingleType?)
+	 *     (left=CastableExpr_Castable_1_0 right=SingleType)
 	 */
-	protected void sequence_CastableExpr(EObject context, CastableExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_CastableExpr(EObject context, Castable semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.CASTABLE__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.CASTABLE__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.CASTABLE__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.CASTABLE__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCastableExprAccess().getCastableLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getCastableExprAccess().getRightSingleTypeParserRuleCall_1_3_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (range=RangeExpr ((value=VALUECOMP | gen=GENERALCOMP | node=NODECOMP) otherRange=RangeExpr)?)
+	 *     (left=RangeExpr ((comp=ValueComp | comp=GeneralComp | comp=NodeComp) right=RangeExpr)?)
 	 */
 	protected void sequence_ComparisonExpr(EObject context, ComparisonExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -808,6 +1095,22 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         op='=' | 
+	 *         op='!=' | 
+	 *         op='<' | 
+	 *         op='<=' | 
+	 *         op='>' | 
+	 *         op='>='
+	 *     )
+	 */
+	protected void sequence_GeneralComp(EObject context, GeneralComp semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (if=Expr then=ExprSingle else=ExprSingle)
 	 */
 	protected void sequence_IfExpr(EObject context, IfExpr semanticObject) {
@@ -830,19 +1133,58 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=TreatExpr right=SequenceType?)
+	 *     (left=InstanceofExpr_Instanceof_1_0 right=SequenceType)
 	 */
-	protected void sequence_InstanceofExpr(EObject context, InstanceofExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_InstanceofExpr(EObject context, Instanceof semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.INSTANCEOF__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.INSTANCEOF__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.INSTANCEOF__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.INSTANCEOF__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInstanceofExprAccess().getInstanceofLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getInstanceofExprAccess().getRightSequenceTypeParserRuleCall_1_3_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (left=InstanceofExpr rights+=InstanceofExpr*)
+	 *     (left=IntersectExceptExpr_Except_1_0_1_0 right=InstanceofExpr)
 	 */
-	protected void sequence_IntersectExceptExpr(EObject context, IntersectExceptExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_IntersectExceptExpr(EObject context, Except semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.EXCEPT__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.EXCEPT__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.EXCEPT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.EXCEPT__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIntersectExceptExprAccess().getExceptLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getIntersectExceptExprAccess().getRightInstanceofExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=IntersectExceptExpr_Intersect_1_0_0_0 right=InstanceofExpr)
+	 */
+	protected void sequence_IntersectExceptExpr(EObject context, Intersect semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.INTERSECT__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.INTERSECT__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.INTERSECT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.INTERSECT__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIntersectExceptExprAccess().getIntersectLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getIntersectExceptExprAccess().getRightInstanceofExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -885,10 +1227,77 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=UnionExpr rights+=UnionExpr*)
+	 *     (left=MultiplicativeExpr_Division_1_0_1_0 right=UnionExpr)
 	 */
-	protected void sequence_MultiplicativeExpr(EObject context, MultiplicativeExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_MultiplicativeExpr(EObject context, Division semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.DIVISION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.DIVISION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.DIVISION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.DIVISION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getDivisionLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getRightUnionExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=MultiplicativeExpr_IDivision_1_0_2_0 right=UnionExpr)
+	 */
+	protected void sequence_MultiplicativeExpr(EObject context, IDivision semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.IDIVISION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.IDIVISION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.IDIVISION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.IDIVISION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getIDivisionLeftAction_1_0_2_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getRightUnionExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=MultiplicativeExpr_Mod_1_0_3_0 right=UnionExpr)
+	 */
+	protected void sequence_MultiplicativeExpr(EObject context, Mod semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.MOD__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.MOD__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.MOD__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.MOD__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getModLeftAction_1_0_3_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getRightUnionExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=MultiplicativeExpr_Multiplication_1_0_0_0 right=UnionExpr)
+	 */
+	protected void sequence_MultiplicativeExpr(EObject context, Multiplication semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.MULTIPLICATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.MULTIPLICATION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.MULTIPLICATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.MULTIPLICATION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getMultiplicationLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicativeExprAccess().getRightUnionExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -913,6 +1322,15 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (qName=QName | wildcard=Wildcard)
 	 */
 	protected void sequence_NameTest(EObject context, NameTest semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (op='is' | op='<<' | op='>>')
+	 */
+	protected void sequence_NodeComp(EObject context, NodeComp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1160,10 +1578,20 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=CastableExpr right=SequenceType?)
+	 *     (left=TreatExpr_TreatAs_1_0 right=SequenceType)
 	 */
-	protected void sequence_TreatExpr(EObject context, TreatExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_TreatExpr(EObject context, TreatAs semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.TREAT_AS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.TREAT_AS__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.TREAT_AS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.TREAT_AS__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTreatExprAccess().getTreatAsLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getTreatExprAccess().getRightSequenceTypeParserRuleCall_1_3_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -1185,26 +1613,48 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     unary=ValueExpr
+	 *     ((unaryOps+='-' | unaryOps+='+')* value=ValueExpr)
 	 */
 	protected void sequence_UnaryExpr(EObject context, UnaryExpr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=UnionExpr_Pipe_1_0_1_0 right=IntersectExceptExpr)
+	 */
+	protected void sequence_UnionExpr(EObject context, Pipe semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.UNARY_EXPR__UNARY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.UNARY_EXPR__UNARY));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.PIPE__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.PIPE__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.PIPE__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.PIPE__RIGHT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUnaryExprAccess().getUnaryValueExprParserRuleCall_1_0(), semanticObject.getUnary());
+		feeder.accept(grammarAccess.getUnionExprAccess().getPipeLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getUnionExprAccess().getRightIntersectExceptExprParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (left=IntersectExceptExpr rights+=IntersectExceptExpr*)
+	 *     (left=UnionExpr_Union_1_0_0_0 right=IntersectExceptExpr)
 	 */
-	protected void sequence_UnionExpr(EObject context, UnionExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_UnionExpr(EObject context, Union semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.UNION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.UNION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.UNION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.UNION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUnionExprAccess().getUnionLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getUnionExprAccess().getRightIntersectExceptExprParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -1221,6 +1671,22 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getUnprefixedNameAccess().getLocalPartNCNameParserRuleCall_0(), semanticObject.getLocalPart());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         op='eq' | 
+	 *         op='ne' | 
+	 *         op='lt' | 
+	 *         op='le' | 
+	 *         op='gt' | 
+	 *         op='ge'
+	 *     )
+	 */
+	protected void sequence_ValueComp(EObject context, ValueComp semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1262,5 +1728,21 @@ public class XPathSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Wildcard(EObject context, Wildcard semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     xpath=Expr
+	 */
+	protected void sequence_Xpath(EObject context, Xpath semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, XPathPackage.Literals.XPATH__XPATH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XPathPackage.Literals.XPATH__XPATH));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXpathAccess().getXpathExprParserRuleCall_0(), semanticObject.getXpath());
+		feeder.finish();
 	}
 }

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.xtext.example.xpath.xPath.AbbrevForwardStep;
+import org.xtext.example.xpath.xPath.Addition;
 import org.xtext.example.xpath.xPath.AdditionalIn;
 import org.xtext.example.xpath.xPath.AdditiveExpr;
 import org.xtext.example.xpath.xPath.AndExpr;
@@ -20,15 +21,19 @@ import org.xtext.example.xpath.xPath.AttributeDeclaration;
 import org.xtext.example.xpath.xPath.AttributeName;
 import org.xtext.example.xpath.xPath.AttributeTest;
 import org.xtext.example.xpath.xPath.AxisStep;
+import org.xtext.example.xpath.xPath.CastAs;
 import org.xtext.example.xpath.xPath.CastExpr;
+import org.xtext.example.xpath.xPath.Castable;
 import org.xtext.example.xpath.xPath.CastableExpr;
 import org.xtext.example.xpath.xPath.ComparisonExpr;
+import org.xtext.example.xpath.xPath.Division;
 import org.xtext.example.xpath.xPath.DocumentTest;
 import org.xtext.example.xpath.xPath.Element;
 import org.xtext.example.xpath.xPath.ElementDeclaration;
 import org.xtext.example.xpath.xPath.ElementName;
 import org.xtext.example.xpath.xPath.ElementNameOrWildcard;
 import org.xtext.example.xpath.xPath.ElementTest;
+import org.xtext.example.xpath.xPath.Except;
 import org.xtext.example.xpath.xPath.Expr;
 import org.xtext.example.xpath.xPath.ExprSingle;
 import org.xtext.example.xpath.xPath.FilterExpr;
@@ -36,15 +41,22 @@ import org.xtext.example.xpath.xPath.ForExpr;
 import org.xtext.example.xpath.xPath.ForwardAxis;
 import org.xtext.example.xpath.xPath.ForwardStep;
 import org.xtext.example.xpath.xPath.FunctionCall;
+import org.xtext.example.xpath.xPath.GeneralComp;
+import org.xtext.example.xpath.xPath.IDivision;
 import org.xtext.example.xpath.xPath.IfExpr;
+import org.xtext.example.xpath.xPath.Instanceof;
 import org.xtext.example.xpath.xPath.InstanceofExpr;
+import org.xtext.example.xpath.xPath.Intersect;
 import org.xtext.example.xpath.xPath.IntersectExceptExpr;
 import org.xtext.example.xpath.xPath.ItemType;
 import org.xtext.example.xpath.xPath.KindTest;
 import org.xtext.example.xpath.xPath.Literal;
+import org.xtext.example.xpath.xPath.Mod;
+import org.xtext.example.xpath.xPath.Multiplication;
 import org.xtext.example.xpath.xPath.MultiplicativeExpr;
 import org.xtext.example.xpath.xPath.NCName;
 import org.xtext.example.xpath.xPath.NameTest;
+import org.xtext.example.xpath.xPath.NodeComp;
 import org.xtext.example.xpath.xPath.NodeTest;
 import org.xtext.example.xpath.xPath.NumericLiteral;
 import org.xtext.example.xpath.xPath.OrExpr;
@@ -52,6 +64,7 @@ import org.xtext.example.xpath.xPath.PITTest;
 import org.xtext.example.xpath.xPath.PITest;
 import org.xtext.example.xpath.xPath.ParenthesizedExpr;
 import org.xtext.example.xpath.xPath.PathExpr;
+import org.xtext.example.xpath.xPath.Pipe;
 import org.xtext.example.xpath.xPath.Predicate;
 import org.xtext.example.xpath.xPath.PredicateList;
 import org.xtext.example.xpath.xPath.PrefixedName;
@@ -71,16 +84,21 @@ import org.xtext.example.xpath.xPath.SimpleForClause;
 import org.xtext.example.xpath.xPath.Single;
 import org.xtext.example.xpath.xPath.SingleType;
 import org.xtext.example.xpath.xPath.StepExpr;
+import org.xtext.example.xpath.xPath.Substraction;
+import org.xtext.example.xpath.xPath.TreatAs;
 import org.xtext.example.xpath.xPath.TreatExpr;
 import org.xtext.example.xpath.xPath.TypeName;
 import org.xtext.example.xpath.xPath.UnaryExpr;
+import org.xtext.example.xpath.xPath.Union;
 import org.xtext.example.xpath.xPath.UnionExpr;
 import org.xtext.example.xpath.xPath.UnprefixedName;
+import org.xtext.example.xpath.xPath.ValueComp;
 import org.xtext.example.xpath.xPath.ValueExpr;
 import org.xtext.example.xpath.xPath.VarName;
 import org.xtext.example.xpath.xPath.VarRef;
 import org.xtext.example.xpath.xPath.Wildcard;
 import org.xtext.example.xpath.xPath.XPathPackage;
+import org.xtext.example.xpath.xPath.Xpath;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,6 +163,11 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
   protected XPathSwitch<Adapter> modelSwitch =
     new XPathSwitch<Adapter>()
     {
+      @Override
+      public Adapter caseXpath(Xpath object)
+      {
+        return createXpathAdapter();
+      }
       @Override
       public Adapter caseExpr(Expr object)
       {
@@ -249,6 +272,21 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
       public Adapter caseValueExpr(ValueExpr object)
       {
         return createValueExprAdapter();
+      }
+      @Override
+      public Adapter caseGeneralComp(GeneralComp object)
+      {
+        return createGeneralCompAdapter();
+      }
+      @Override
+      public Adapter caseValueComp(ValueComp object)
+      {
+        return createValueCompAdapter();
+      }
+      @Override
+      public Adapter caseNodeComp(NodeComp object)
+      {
+        return createNodeCompAdapter();
       }
       @Override
       public Adapter casePathExpr(PathExpr object)
@@ -466,6 +504,76 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
         return createUnprefixedNameAdapter();
       }
       @Override
+      public Adapter caseAddition(Addition object)
+      {
+        return createAdditionAdapter();
+      }
+      @Override
+      public Adapter caseSubstraction(Substraction object)
+      {
+        return createSubstractionAdapter();
+      }
+      @Override
+      public Adapter caseMultiplication(Multiplication object)
+      {
+        return createMultiplicationAdapter();
+      }
+      @Override
+      public Adapter caseDivision(Division object)
+      {
+        return createDivisionAdapter();
+      }
+      @Override
+      public Adapter caseIDivision(IDivision object)
+      {
+        return createIDivisionAdapter();
+      }
+      @Override
+      public Adapter caseMod(Mod object)
+      {
+        return createModAdapter();
+      }
+      @Override
+      public Adapter caseUnion(Union object)
+      {
+        return createUnionAdapter();
+      }
+      @Override
+      public Adapter casePipe(Pipe object)
+      {
+        return createPipeAdapter();
+      }
+      @Override
+      public Adapter caseIntersect(Intersect object)
+      {
+        return createIntersectAdapter();
+      }
+      @Override
+      public Adapter caseExcept(Except object)
+      {
+        return createExceptAdapter();
+      }
+      @Override
+      public Adapter caseInstanceof(Instanceof object)
+      {
+        return createInstanceofAdapter();
+      }
+      @Override
+      public Adapter caseTreatAs(TreatAs object)
+      {
+        return createTreatAsAdapter();
+      }
+      @Override
+      public Adapter caseCastable(Castable object)
+      {
+        return createCastableAdapter();
+      }
+      @Override
+      public Adapter caseCastAs(CastAs object)
+      {
+        return createCastAsAdapter();
+      }
+      @Override
       public Adapter caseRelSingle(RelSingle object)
       {
         return createRelSingleAdapter();
@@ -526,6 +634,21 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
     return modelSwitch.doSwitch((EObject)target);
   }
 
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Xpath <em>Xpath</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Xpath
+   * @generated
+   */
+  public Adapter createXpathAdapter()
+  {
+    return null;
+  }
 
   /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Expr <em>Expr</em>}'.
@@ -838,6 +961,51 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createValueExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.GeneralComp <em>General Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.GeneralComp
+   * @generated
+   */
+  public Adapter createGeneralCompAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.ValueComp <em>Value Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.ValueComp
+   * @generated
+   */
+  public Adapter createValueCompAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.NodeComp <em>Node Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.NodeComp
+   * @generated
+   */
+  public Adapter createNodeCompAdapter()
   {
     return null;
   }
@@ -1483,6 +1651,216 @@ public class XPathAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUnprefixedNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Addition <em>Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Addition
+   * @generated
+   */
+  public Adapter createAdditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Substraction <em>Substraction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Substraction
+   * @generated
+   */
+  public Adapter createSubstractionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Multiplication <em>Multiplication</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Multiplication
+   * @generated
+   */
+  public Adapter createMultiplicationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Division <em>Division</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Division
+   * @generated
+   */
+  public Adapter createDivisionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.IDivision <em>IDivision</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.IDivision
+   * @generated
+   */
+  public Adapter createIDivisionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Mod <em>Mod</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Mod
+   * @generated
+   */
+  public Adapter createModAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Union <em>Union</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Union
+   * @generated
+   */
+  public Adapter createUnionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Pipe <em>Pipe</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Pipe
+   * @generated
+   */
+  public Adapter createPipeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Intersect <em>Intersect</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Intersect
+   * @generated
+   */
+  public Adapter createIntersectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Except <em>Except</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Except
+   * @generated
+   */
+  public Adapter createExceptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Instanceof <em>Instanceof</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Instanceof
+   * @generated
+   */
+  public Adapter createInstanceofAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.TreatAs <em>Treat As</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.TreatAs
+   * @generated
+   */
+  public Adapter createTreatAsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.Castable <em>Castable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.Castable
+   * @generated
+   */
+  public Adapter createCastableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.xpath.xPath.CastAs <em>Cast As</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.xpath.xPath.CastAs
+   * @generated
+   */
+  public Adapter createCastAsAdapter()
   {
     return null;
   }
