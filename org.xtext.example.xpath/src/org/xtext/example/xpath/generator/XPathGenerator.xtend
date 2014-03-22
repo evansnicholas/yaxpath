@@ -189,8 +189,12 @@ class XPathGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(Element e, StepChoice stepChoice) {
-	  switch stepChoice {
-				  case StepChoice.SINGLE: 
+		
+	  switch e.test {	
+	  
+	  KindTest: '''«e.test.compile»'''
+	  NameTest: switch stepChoice {
+				       case StepChoice.SINGLE: 
 '''focus = { 
   val search = focus flatMap { case Focus(contextItem, position) => 
     contextItem match {
@@ -202,8 +206,8 @@ class XPathGenerator implements IGenerator {
   }
 '''
 				                          
-			      case StepChoice.DOUBLE: 
-'''focus = {
+			           case StepChoice.DOUBLE: 
+'''focus = { 
    val search = focus flatMap { case Focus(contextItem, position) => 
      contextItem match {
   	   case elem: Elem => elem.filterElemsOrSelf { «e.test.compile» } 
@@ -213,7 +217,9 @@ class XPathGenerator implements IGenerator {
    search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
 }
 '''
-      }		 
+                     }		   
+      
+      } 
 	}
 	
 	def dispatch compile(Attribute a, StepChoice stepChoice){
@@ -244,8 +250,17 @@ class XPathGenerator implements IGenerator {
 		
 	}
 	
-	def dispatch compile(NodeTest not) {
-		'''«not.test.compile»'''
+	def dispatch compile(TextTest tt) {
+'''
+focus = { 
+	val result = focus map { case Focus(contextItem, pos) => 
+          contextItem match {
+          	case elem: Elem => elem.text
+          	case _ => ???
+          }
+     }
+    result.zip(1 until result.size + 1) map { case (text, pos) => Focus(text, pos) }
+}'''
 	}
 	
 	def dispatch compile(NameTest nat) {

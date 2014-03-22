@@ -107,9 +107,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ReverseStep/test"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ReverseStep/abbrRevSet"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//NodeTest">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NodeTest/test"/>
-    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//NodeTest"/>
     <genClasses ecoreClass="XPath.ecore#//NameTest">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NameTest/qName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NameTest/wildcard"/>
@@ -171,17 +169,7 @@
     <genClasses ecoreClass="XPath.ecore#//AtomicType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//AtomicType/type"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//KindTest">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//KindTest/docTest"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//KindTest/elemTest"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//KindTest/attributeTest"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//KindTest/schemaElemTest"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//KindTest/schemaAttributeTest"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//KindTest/pitTest"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//KindTest/commentTest"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//KindTest/textTest"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//KindTest/anyKindTest"/>
-    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//KindTest"/>
     <genClasses ecoreClass="XPath.ecore#//DocumentTest">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//DocumentTest/elemTest"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//DocumentTest/schemaElemTest"/>
@@ -303,6 +291,9 @@
     <genClasses ecoreClass="XPath.ecore#//Element">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Element/test"/>
     </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//CommentTest"/>
+    <genClasses ecoreClass="XPath.ecore#//TextTest"/>
+    <genClasses ecoreClass="XPath.ecore#//AnyKindTest"/>
     <genClasses ecoreClass="XPath.ecore#//PITTest">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PITTest/ncName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//PITTest/string"/>

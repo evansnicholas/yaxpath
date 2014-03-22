@@ -157,7 +157,7 @@ ReverseStep:
 ;
 
 NodeTest:
-	test=KindTest | test=NameTest
+	KindTest | NameTest
 ;
 
 NameTest:
@@ -237,20 +237,32 @@ AtomicType:
 	type=ID
 ;
 
-KindTest:
-	docTest=DocumentTest
-	| elemTest=ElementTest
-	| attributeTest=AttributeTest
-	| schemaElemTest=SchemaElementTest
-	| schemaAttributeTest=SchemaAttributeTest
-	| pitTest=PITest
-	| commentTest=COMMENTTEST
-	| textTest=TEXTTEST
-	| anyKindTest=ANYKINDTEST
+KindTest returns KindTest:
+	DocumentTest
+	| ElementTest
+	| AttributeTest
+	| SchemaElementTest
+	| SchemaAttributeTest
+	| PITest
+	| CommentTest {CommentTest}
+	| TextTest {TextTest}
+	| AnyKindTest {AnyKindTest}
+;
+
+AnyKindTest:
+	"node" "(" ")"
 ;
 
 DocumentTest:
 	{DocumentTest} "document-node" "(" (elemTest=ElementTest | schemaElemTest=SchemaElementTest)? ")"
+;
+
+TextTest:
+	"text" "(" ")"
+;
+
+CommentTest:
+	"comment" "(" ")"
 ;
 
 PITest:
@@ -326,17 +338,7 @@ terminal CONTEXTITEMEXPR:
 	"."
 ;
 
-terminal ANYKINDTEST:
-	"node" "(" ")"
-;
 
-terminal TEXTTEST:
-	"text" "(" ")"
-;
-
-terminal COMMENTTEST:
-	"comment" "(" ")"
-;
 
 terminal EMPTYITEMTYPE:
 	"item" "(" ")"
