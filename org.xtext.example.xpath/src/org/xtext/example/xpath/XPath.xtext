@@ -50,7 +50,7 @@ AndExpr:
 ;
 
 ComparisonExpr:
-	left=RangeExpr ( (comp=ValueComp | comp=GeneralComp | comp=NodeComp) right=RangeExpr )?
+	RangeExpr (( {ValueComp.left=current} op=ValueComp | {GeneralComp.left=current} op=GeneralComp | {NodeComp.left=current} op=NodeComp) right=RangeExpr )?
 ;
 
 RangeExpr:
@@ -98,15 +98,15 @@ ValueExpr:
 ;
 
 GeneralComp:
-   op="=" | op="!=" | op="<" | op="<=" | op=">" | op=">="
+   "=" | "!=" | "<" | "<=" | ">" | ">="
 ;
 
 ValueComp:
-	op="eq" | op="ne" | op="lt" | op="le" | op="gt" | op="ge"
+	"eq" | "ne" | "lt" | "le" | "gt" | "ge"
 ;
 	
 NodeComp:
-	op="is" | op="<<" | op=">>"
+	"is" | "<<" | ">>"
 ;
 
 PathExpr:
@@ -183,11 +183,11 @@ Predicate:
 ;
 
 PrimaryExpr:
-	literal=Literal 
-	| varRef=VarRef 
-	| parExpr=ParenthesizedExpr 
-	| conItemExpr=CONTEXTITEMEXPR 
-	| functionCall=FunctionCall
+	term=Literal 
+	| term=VarRef 
+	| term=ParenthesizedExpr 
+	| {ContextItemExpr} ContextItemExpr 
+	| term=FunctionCall
 ;
 
 Literal:
@@ -210,6 +210,10 @@ VarName:
 
 ParenthesizedExpr:
 	{ParenthesizedExpr} "(" expr=Expr? ")"
+;
+
+ContextItemExpr:
+	"."
 ;
 
 FunctionCall:
@@ -333,12 +337,6 @@ UnprefixedName:
 terminal ABBREVREVERSESTEP:
 	".."
 ;
-
-terminal CONTEXTITEMEXPR:
-	"."
-;
-
-
 
 terminal EMPTYITEMTYPE:
 	"item" "(" ")"

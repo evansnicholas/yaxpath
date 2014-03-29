@@ -3,9 +3,11 @@ package eu.nevans.yaxpath.experiments
 import eu.cdevreeze.yaidom.convert.ScalaXmlConversions
 import eu.cdevreeze.yaidom.{ EName, indexed, Elem, QName }
 import org.junit.Test
+import eu.nevans.yaxpath.function.standard.StandardFunctions 
+import eu.nevans.yaxpath.function.standard.fnDataEName
 
 class YaxpathExperiments {
-
+  
   @Test
   def testReport = {
    
@@ -45,28 +47,21 @@ def xpath(elem: Elem): IndexedSeq[Any] = {
   val totalElem = documentElem.withChildren(Vector(elem))
   var focus = Vector(Focus(totalElem, 1))
   focus = { 
-    val search = focus flatMap { case Focus(contextItem, position) => 
-      contextItem match {
-    	  case elem: Elem => elem.filterChildElems { EName("Books") } 
-    	  case _ => ???
-      }
-    }
-    search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
-    }
-  focus = { 
-    val search = focus flatMap { case Focus(contextItem, position) => 
-      contextItem match {
-    	  case elem: Elem => elem.filterChildElems { EName("Book") } 
-    	  case _ => ???
-      }
-    }
-    search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
-    }
+     val search = focus flatMap { case Focus(contextItem, position) => 
+       contextItem match {
+    	   case elem: Elem => elem.filterElemsOrSelf { EName("Book") } 
+    	   case _ => ???
+       }
+     }
+     search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
+  }
   focus = {
     focus filter { outerFocus => 
       { 
         var focus = Vector(outerFocus)
-        focus = Vector(Focus(2, 1))
+        focus = Vector(Focus(StandardFunctions(fnDataEName)({ focus = focus
+         focus map { _.contextItem } }) == StandardFunctions(fnDataEName)({ focus = Vector(Focus(" The Leopard ", 1)) 
+         focus map { _.contextItem } }),1))
   	  focus match {
   	    case Vector(Focus(b:Boolean, pos)) => b
   		case Vector(Focus(int:Int, pos)) => outerFocus.position == int
@@ -74,24 +69,6 @@ def xpath(elem: Elem): IndexedSeq[Any] = {
   	  }
       }
     }
-  }
-  focus = { 
-    val search = focus flatMap { case Focus(contextItem, position) => 
-      contextItem match {
-    	  case elem: Elem => elem.filterChildElems { EName("Title") } 
-    	  case _ => ???
-      }
-    }
-    search.zip(1 until search.size + 1) map { case (result, position) => Focus(result, position) }
-    }
-  focus = { 
-  	val result = focus map { case Focus(contextItem, pos) => 
-            contextItem match {
-            	case elem: Elem => elem.text
-            	case _ => ???
-            }
-       }
-      result.zip(1 until result.size + 1) map { case (text, pos) => Focus(text, pos) }
   }
   focus
 }
@@ -102,3 +79,4 @@ def xpath(elem: Elem): IndexedSeq[Any] = {
   }
   
 }
+

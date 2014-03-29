@@ -20,7 +20,8 @@ object StandardFunctions {
     }
     
     
-  type SeqToSeqFunc = IndexedSeq[Any] => IndexedSeq[Any]  
+  type SeqToSeqFunc = IndexedSeq[Any] => IndexedSeq[Any]
+  type GeneralFunction =  Any => Any
    
   val seqFunctionsByEName: Map[EName, SeqToSeqFunc] =
     Map(fnDataEName -> fnDataFunc)

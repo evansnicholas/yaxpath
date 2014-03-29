@@ -73,8 +73,18 @@ class XPathGenerator implements IGenerator {
 		'''«ae.left.compile»'''
 	}
 	
-	def dispatch compile(ComparisonExpr ce){
-		'''«ce.left.compile»«IF ce.comp != null»«ce.comp.compile»«ce.right.compile»«ENDIF»'''
+	def dispatch compile(ValueComp vc){
+		switch vc.op {
+			case 'eq' : '''focus = Vector(Focus(StandardFunctions(fnDataEName)({ «vc.left.compile»
+ focus map { _.contextItem } }) == StandardFunctions(fnDataEName)({ «vc.right.compile» 
+ focus map { _.contextItem } }),1))'''
+			case 'ne' : '''focus = StandardFunctions(fnDataEName)(«vc.left.compile») != StandardFunctions(fnDataEName)(«vc.right.compile»)'''
+			case 'lt' : '''focus = StandardFunctions(fnDataEName)(«vc.left.compile») < StandardFunctions(fnDataEName)(«vc.right.compile»)'''
+			case 'le' : '''focus = StandardFunctions(fnDataEName)(«vc.left.compile») <= StandardFunctions(fnDataEName)(«vc.right.compile»)'''
+			case 'gt' : '''focus = StandardFunctions(fnDataEName)(«vc.left.compile») > StandardFunctions(fnDataEName)(«vc.right.compile»)'''
+			case 'ge' : '''focus = StandardFunctions(fnDataEName)(«vc.left.compile») >= StandardFunctions(fnDataEName)(«vc.right.compile»)'''
+		}
+		
 	}
 	
 	def dispatch compile(RangeExpr re){
@@ -272,7 +282,7 @@ focus = {
 	}
 	
 	def dispatch compile(PrimaryExpr pe) {
-		'''«IF pe.literal != null»«pe.literal.compile»«ENDIF»'''
+		'''«pe.term.compile»'''
 	}
 	
 	def dispatch compile(Literal l) {
@@ -281,6 +291,10 @@ focus = {
 	
 	def dispatch compile(UnprefixedName un) {
 		'''EName("«un.localPart.ncName»")'''
+	}
+	
+	def dispatch compile(ContextItemExpr cie) {
+		'''focus = focus'''
 	}
 	
 	def dispatch compile(EObject o) {

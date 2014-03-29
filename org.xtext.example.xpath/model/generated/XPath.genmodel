@@ -47,11 +47,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AndExpr/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//AndExpr/rights"/>
     </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//ComparisonExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/comp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ComparisonExpr/right"/>
-    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//ComparisonExpr"/>
     <genClasses ecoreClass="XPath.ecore#//RangeExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RangeExpr/from"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//RangeExpr/to"/>
@@ -70,15 +66,6 @@
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//ValueExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ValueExpr/value"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//GeneralComp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//GeneralComp/op"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//ValueComp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ValueComp/op"/>
-    </genClasses>
-    <genClasses ecoreClass="XPath.ecore#//NodeComp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//NodeComp/op"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//PathExpr"/>
     <genClasses ecoreClass="XPath.ecore#//RelativePathExpr">
@@ -128,11 +115,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Predicate/expr"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//PrimaryExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrimaryExpr/literal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrimaryExpr/varRef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrimaryExpr/parExpr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//PrimaryExpr/conItemExpr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrimaryExpr/functionCall"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrimaryExpr/term"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//Literal">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Literal/num"/>
@@ -218,6 +201,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//PrefixedName/prefix"/>
     </genClasses>
     <genClasses ecoreClass="XPath.ecore#//UnprefixedName"/>
+    <genClasses ecoreClass="XPath.ecore#//ValueComp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ValueComp/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//ValueComp/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//ValueComp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//GeneralComp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//GeneralComp/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//GeneralComp/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//GeneralComp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//NodeComp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NodeComp/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPath.ecore#//NodeComp/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//NodeComp/right"/>
+    </genClasses>
     <genClasses ecoreClass="XPath.ecore#//Addition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Addition/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Addition/right"/>
@@ -291,6 +289,7 @@
     <genClasses ecoreClass="XPath.ecore#//Element">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPath.ecore#//Element/test"/>
     </genClasses>
+    <genClasses ecoreClass="XPath.ecore#//ContextItemExpr"/>
     <genClasses ecoreClass="XPath.ecore#//CommentTest"/>
     <genClasses ecoreClass="XPath.ecore#//TextTest"/>
     <genClasses ecoreClass="XPath.ecore#//AnyKindTest"/>

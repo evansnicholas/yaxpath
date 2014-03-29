@@ -61,15 +61,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rights" upperBound="-1"
         eType="#//ComparisonExpr" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//RangeExpr"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//RangeExpr"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RangeExpr">
+  <eClassifiers xsi:type="ecore:EClass" name="ComparisonExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RangeExpr" eSuperTypes="#//ComparisonExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//AdditiveExpr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//AdditiveExpr"
@@ -92,15 +85,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ValueExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//PathExpr"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GeneralComp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ValueComp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NodeComp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PathExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="RelativePathExpr" eSuperTypes="#//PathExpr">
@@ -167,14 +151,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryExpr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//Literal"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//VarRef"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parExpr" eType="#//ParenthesizedExpr"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conItemExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCall" eType="#//FunctionCall"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="term" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Literal">
@@ -285,6 +262,27 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnprefixedName" eSuperTypes="#//QName"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueComp" eSuperTypes="#//ComparisonExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//RangeExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//RangeExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralComp" eSuperTypes="#//ComparisonExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//RangeExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//RangeExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeComp" eSuperTypes="#//ComparisonExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//RangeExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//RangeExpr"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Addition" eSuperTypes="#//AdditiveExpr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//MultiplicativeExpr"
         containment="true"/>
@@ -391,6 +389,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="test" eType="#//NodeTest"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextItemExpr" eSuperTypes="#//PrimaryExpr"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommentTest" eSuperTypes="#//KindTest"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextTest" eSuperTypes="#//KindTest"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnyKindTest" eSuperTypes="#//KindTest"/>
