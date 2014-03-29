@@ -78,5 +78,33 @@ def xpath(elem: Elem): IndexedSeq[Any] = {
         
   }
   
+  @Test
+  def testStandaloneXtext(): Unit = {
+    
+    import org.xtext.example.xpath.XPathStandaloneSetup
+    import org.eclipse.emf.ecore.resource.Resource
+    import org.eclipse.xtext.resource.{XtextResourceSet, XtextResource}
+    import com.google.inject.Injector
+    import java.io.ByteArrayInputStream
+    import java.lang.Boolean
+    import org.eclipse.emf.common.util.URI
+    
+    import org.xtext.example.xpath.generator.XPathGenerator
+    
+    //new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
+    val injector = new XPathStandaloneSetup().createInjectorAndDoEMFRegistration();
+    val resourceSet = injector.getInstance(classOf[XtextResourceSet])
+    resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+    val resource = resourceSet.createResource(URI.createURI("dummy:/example.xpath"));
+    val in = new ByteArrayInputStream("/book".getBytes());
+    resource.load(in, resourceSet.getLoadOptions());
+    //Model model = (Model) resource.getContents().get(0);
+    
+    val generator = new XPathGenerator()
+    val compiled = generator.compileToString(resource)
+    println(compiled)
+    
+    
+  }
 }
 

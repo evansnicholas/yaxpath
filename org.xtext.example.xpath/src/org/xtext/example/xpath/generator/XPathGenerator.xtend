@@ -27,6 +27,15 @@ class XPathGenerator implements IGenerator {
 		
 	}
 	
+	//Try adding my own method to compile
+	def String compileToString(Resource resource) {
+		val sb = new StringBuilder()
+		for (e: resource.allContents.toIterable.filter(Xpath)){
+			sb.append(e.compile.toString())
+		}
+		return sb.toString()
+	}
+	
 	def dispatch compile(Xpath xe){
 		'''def xpath(elem: Elem): IndexedSeq[Any] = {
   val documentElem = Elem(QName("documentNode"))
